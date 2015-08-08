@@ -55,6 +55,14 @@
     <Folder Include="static\static\assets\js\ie\" />
     <Folder Include="static\static\assets\sass\" />
     <Folder Include="static\static\assets\sass\libs\" />
+    <Folder Include="static\static\bootstrap\" />
+    <Folder Include="static\static\bootstrap\css\" />
+    <Folder Include="static\static\bootstrap\fonts\" />
+    <Folder Include="static\static\bootstrap\js\" />
+    <Folder Include="static\static\jquery\" />
+    <Folder Include="static\static\jquery\js\" />
+    <Folder Include="static\static\mondja\" />
+    <Folder Include="static\static\mondja\css\" />
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +71,7 @@
     <Content Include="static\static\assets\css\font-awesome.min.css" />
     <Content Include="static\static\assets\css\ie8.css" />
     <Content Include="static\static\assets\css\images\bg.jpg" />
+    <Content Include="static\static\assets\css\images\bgmobile.jpg" />
     <Content Include="static\static\assets\css\images\overlay.png" />
     <Content Include="static\static\assets\css\main.css" />
     <Content Include="static\static\assets\css\noscript.css" />
@@ -87,6 +96,35 @@
     <Content Include="static\static\assets\sass\libs\_vars.scss" />
     <Content Include="static\static\assets\sass\main.scss" />
     <Content Include="static\static\assets\sass\noscript.scss" />
+    <Content Include="static\static\bootstrap\css\bootstrap-select.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-select.css.map" />
+    <Content Include="static\static\bootstrap\css\bootstrap-select.min.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="static\static\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-toggle.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-toggle.min.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap.css.map" />
+    <Content Include="static\static\bootstrap\css\bootstrap.min.css" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\static\bootstrap\js\bootstrap-select.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap-select.js.map" />
+    <Content Include="static\static\bootstrap\js\bootstrap-select.min.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap-toggle.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap-toggle.min.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap-toggle.min.js.map" />
+    <Content Include="static\static\bootstrap\js\bootstrap.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap.min.js" />
+    <Content Include="static\static\bootstrap\js\npm.js" />
+    <Content Include="static\static\jquery\js\jquery-1.11.3.js" />
+    <Content Include="static\static\jquery\js\jquery-1.11.3.min.js" />
+    <Content Include="static\static\jquery\js\jquery-1.11.3.min.map" />
+    <Content Include="static\static\mondja\css\mondja.css" />
     <Content Include="static\templates\index.html" />
     <Content Include="static\templates\layout.html" />
   </ItemGroup>

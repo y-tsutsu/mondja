@@ -47,11 +47,46 @@
     <Folder Include="static\media\" />
     <Folder Include="static\media\identicon\" />
     <Folder Include="static\static\" />
+    <Folder Include="static\static\assets\" />
+    <Folder Include="static\static\assets\css\" />
+    <Folder Include="static\static\assets\css\images\" />
+    <Folder Include="static\static\assets\fonts\" />
+    <Folder Include="static\static\assets\js\" />
+    <Folder Include="static\static\assets\js\ie\" />
+    <Folder Include="static\static\assets\sass\" />
+    <Folder Include="static\static\assets\sass\libs\" />
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="static\static\assets\css\font-awesome.min.css" />
+    <Content Include="static\static\assets\css\ie8.css" />
+    <Content Include="static\static\assets\css\images\bg.jpg" />
+    <Content Include="static\static\assets\css\images\overlay.png" />
+    <Content Include="static\static\assets\css\main.css" />
+    <Content Include="static\static\assets\css\noscript.css" />
+    <Content Include="static\static\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="static\static\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="static\static\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="static\static\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="static\static\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="static\static\assets\fonts\FontAwesome.otf" />
+    <Content Include="static\static\assets\js\ie\backgroundsize.min.htc" />
+    <Content Include="static\static\assets\js\ie\html5shiv.js" />
+    <Content Include="static\static\assets\js\ie\respond.min.js" />
+    <Content Include="static\static\assets\js\jquery.min.js" />
+    <Content Include="static\static\assets\js\main.js" />
+    <Content Include="static\static\assets\js\skel-viewport.min.js" />
+    <Content Include="static\static\assets\js\skel.min.js" />
+    <Content Include="static\static\assets\js\util.js" />
+    <Content Include="static\static\assets\sass\ie8.scss" />
+    <Content Include="static\static\assets\sass\libs\_functions.scss" />
+    <Content Include="static\static\assets\sass\libs\_mixins.scss" />
+    <Content Include="static\static\assets\sass\libs\_skel.scss" />
+    <Content Include="static\static\assets\sass\libs\_vars.scss" />
+    <Content Include="static\static\assets\sass\main.scss" />
+    <Content Include="static\static\assets\sass\noscript.scss" />
     <Content Include="static\templates\index.html" />
     <Content Include="static\templates\layout.html" />
   </ItemGroup>

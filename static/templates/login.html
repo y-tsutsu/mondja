@@ -1,0 +1,40 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- Main -->
+    <div id="main" class="mylogin">
+
+        <!-- Login -->
+        <article id="login" class="panel">
+            <header>
+                <h2>Log-in to mondja</h2>
+                {% if form.errors %}
+                    <p style="color:crimson">Incorrect username or password.</p>
+                {% else %}
+                    <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes.</p>
+                {% endif %}
+            </header>
+
+            <form method="post" action="." role="form">
+            {% csrf_token %}
+                <div>
+                    <div class="row">
+                        <div class="12u$">
+                            <input type="text" class="form-control" name="username" id="id_username" maxlength="256" placeholder="User ID" required />
+                        </div>
+                        <div class="12u$">
+                            <input type="text" class="form-control" name="password" id="id_password" maxlength="256" placeholder="Password" required/>
+                        </div>
+                        <div class="12u$">
+                            <input type="submit" value="Login" />
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </article>
+
+    </div>
+
+{% endblock %}

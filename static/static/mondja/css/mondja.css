@@ -33,7 +33,7 @@
         margin-right: 2.8%;
     }
 
-    div .mylogin {
+    div .mylogin, .mylogout {
         margin-top: -64px;
     }
 }
@@ -62,7 +62,7 @@
         margin-right: 4.5%;
     }
 
-    div .mylogin {
+    div .mylogin, .mylogout {
         margin-top: 164px;
     }
 

@@ -7,7 +7,7 @@
     height: 101%;
 }
 
-#memo * {
+#mymemo * {
     word-wrap:break-word;
 }
 
@@ -28,7 +28,7 @@
         margin-top: 0;
     }
 
-    #memo {
+    #mymemo {
         background-color: #d9edf7;
         margin-right: 2.8%;
     }
@@ -61,7 +61,7 @@
         margin-right: auto;
     }
 
-    #memo {
+    #mymemo {
         background-color: #d9edf7;
         margin-right: 4.5%;
     }

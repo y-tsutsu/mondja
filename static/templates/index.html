@@ -6,7 +6,8 @@
     <nav id="nav">
         <a href="#me" class="icon fa-home active"><span>Home</span></a>
         <a href="#work" class="icon fa-folder"><span>Work</span></a>
-        <a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
+        <a href="#about" class="icon fa-smile-o"><span>About</span></a>
+        <a href="https://github.com/y-tsutsu/mondja" class="icon fa-github" target="_blank"><span>GitHub</span></a>
         <a href="/logout/" class="icon fa-sign-out"><span>Log-out</span></a>
     </nav>
 
@@ -78,31 +79,26 @@
         </article>
 
         <!-- Contact -->
-        <article id="contact" class="panel">
-            <header>
-                <h2>Contact Me</h2>
+        <article id="about" class="panel">
+            <header style="margin-left: 2%;">
+                <h2>_mondja_py_( ..)φ</h2>
             </header>
-            <form action="#" method="post">
-                <div>
-                    <div class="row">
-                        <div class="6u 12u$(mobile)">
-                            <input type="text" name="name" placeholder="Name" />
-                        </div>
-                        <div class="6u$ 12u$(mobile)">
-                            <input type="text" name="email" placeholder="Email" />
-                        </div>
-                        <div class="12u$">
-                            <input type="text" name="subject" placeholder="Subject" />
-                        </div>
-                        <div class="12u$">
-                            <textarea name="message" placeholder="Message" rows="8"></textarea>
-                        </div>
-                        <div class="12u$">
-                            <input type="submit" value="Send Message" />
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="12u 12u$(mobile)" id="myabout">
+                    <p>
+                        I thought what I'd do was, I'd pretend I was one of those deaf-mutes or shou'd i?
+                    </p>
+                    <pre><code># Python 3: Fibonacci series up to n
+&gt;&gt;&gt; def fib(n):
+&gt;&gt;&gt;     a, b = 0, 1
+&gt;&gt;&gt;     while a &lt; n:
+&gt;&gt;&gt;         print(a, end=' ')
+&gt;&gt;&gt;         a, b = b, a+b
+&gt;&gt;&gt;     print()
+&gt;&gt;&gt; fib(1000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</code></pre>
                 </div>
-            </form>
+            </div>
         </article>
 
     </div>

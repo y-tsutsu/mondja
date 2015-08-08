@@ -36,6 +36,10 @@
     div .mylogin, .mylogout {
         margin-top: -64px;
     }
+
+    #myabout * {
+        margin-right: 2.8%;
+    }
 }
 
 /* Mobile */
@@ -68,5 +72,9 @@
 
     .modal button {
         text-align: right;
+    }
+
+    #myabout * {
+        margin-right: 4.5%;
     }
 }

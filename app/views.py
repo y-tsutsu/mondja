@@ -12,5 +12,5 @@ def home(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/index.html'
+        'index.html'
     )

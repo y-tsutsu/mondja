@@ -4,15 +4,19 @@ Definition of urls for mondja.
 
 from datetime import datetime
 from django.conf.urls import patterns, url
-
-# Uncomment the next lines to enable the admin:
-# from django.conf.urls import include
-# from django.contrib import admin
-# admin.autodiscover()
+from django.conf.urls import include
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Home:
     url(r'^$', 'app.views.home', name='home'),
+
+    # Uncomment the admin/doc line below to enable admin documentation:
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
 
     # Log-in:
     url(r'^login/$',
@@ -30,10 +34,4 @@ urlpatterns = patterns('',
             'next_page': '../login/'
         },
         name = 'logout'),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
 )

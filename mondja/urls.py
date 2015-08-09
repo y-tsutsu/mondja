@@ -12,6 +12,15 @@ urlpatterns = patterns('',
     # Home:
     url(r'^$', 'app.views.home', name='home'),
 
+     # Add:
+    url(r'^add/$', 'app.views.add_memo', name = 'add_memo'),
+
+    # Edit:
+    url(r'^edit/(?P<id>.*)/$', 'app.views.edit_memo', name = 'edit_memo'),
+
+    # Delete:
+    url(r'^delete/(?P<id>.*)/$', 'app.views.delete_memo', name = 'delete_memo'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

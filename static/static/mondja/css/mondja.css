@@ -11,6 +11,11 @@
     word-wrap:break-word;
 }
 
+form input[type="text"] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
 /* Desktop */
 @media screen and (min-width: 737px) {
     body {

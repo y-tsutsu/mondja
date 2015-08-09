@@ -176,6 +176,7 @@
     <Content Include="static\templates\login.html" />
     <Content Include="static\templates\logout.html" />
     <Content Include="static\templates\memo.html" />
+    <Content Include="static\templates\memotop.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">

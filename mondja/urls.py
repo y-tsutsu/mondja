@@ -6,6 +6,8 @@ from datetime import datetime
 from django.conf.urls import patterns, url
 from django.conf.urls import include
 from django.contrib import admin
+from django.conf import settings
+from django.views.generic import RedirectView
 admin.autodiscover()
 
 from mondja import settings
@@ -31,6 +33,9 @@ urlpatterns = patterns('',
 
     # MEDIA_ROOT
     (r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),
+
+    # favicon
+    url(r'^favicon\.ico$', RedirectView.as_view(url = '/static/images/favicon.ico')),
 
     # Log-in:
     url(r'^login/$',

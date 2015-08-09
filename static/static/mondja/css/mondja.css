@@ -11,7 +11,7 @@
     word-wrap:break-word;
 }
 
-form input[type="text"] {
+#memo form input[type="text"] {
     background-color: #fff;
     border: 1px solid #ccc;
 }

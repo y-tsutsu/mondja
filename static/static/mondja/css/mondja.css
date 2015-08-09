@@ -20,6 +20,17 @@ pre {
     background-color: #23241f;
 }
 
+#memo hr{
+    border-top-color: #7a99cf;
+}
+
+#memo-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Desktop */
 @media screen and (min-width: 737px) {
     body {
@@ -37,17 +48,63 @@ pre {
         margin-top: 0;
     }
 
-    /*#memo {
-        background-color: #d9edf7;
-        margin-right: 2.8%;
-    }*/
-
     div .mylogin, .mylogout, .my404, .my500 {
         margin-top: -64px;
     }
 
-    #myabout p, pre, code {
+    #myabout p, pre {
         margin-right: 2.8%;
+    }
+
+    #memo-title {
+        font-size: 1.6em;
+        color: midnightblue;
+    }
+
+    #memo-date {
+        margin-top:1%;
+        vertical-align:middle
+    }
+
+    #memo-button {
+        margin-top:1%;
+        vertical-align:middle;
+    }
+
+    #memo-body {
+        margin-top: -2.5%;
+    }
+
+    #memo-body h1 {
+        font-size: 1.3em;
+    }
+
+    #memo-body h2 {
+        font-size: 1.2em;
+    }
+
+    #memo-body h3 {
+        font-size: 1.1em;
+    }
+
+    #memo-body h4 {
+        font-size: 1.0em;
+    }
+
+    #memo-body h5 {
+        font-size: 0.9em;
+    }
+
+    #memo-body h6 {
+        font-size: 0.8em;
+    }
+
+    #memo-body pre {
+        margin-right: 0%;
+    }
+
+    #memo-tag {
+        margin-top: -5%;
     }
 }
 
@@ -83,7 +140,7 @@ pre {
         text-align: right;
     }
 
-    #myabout p, pre, code {
+    #myabout p, pre {
         margin-right: 4.5%;
     }
 

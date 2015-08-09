@@ -55,7 +55,7 @@
     </form>
 
     <!-- ソートダイアログ -->
-    <form method="get" action="{% url 'home' %}">
+    <form method="get" action="{% url 'home' %}#memo">
         {% csrf_token %}
         <div class="modal fade" id="myModalSort" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -118,7 +118,7 @@
     </form>
 
     <!-- 検索ダイアログ -->
-    <form method="get" action="{% url 'home' %}">
+    <form method="get" action="{% url 'home' %}#memo">
         {% csrf_token %}
         <div class="modal fade" id="myModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -179,7 +179,7 @@
     </form>
 
     <!-- タグ一覧ダイアログ -->
-    <form method="get" action="{% url 'home' %}">
+    <form method="get" action="{% url 'home' %}#memo">
         {% csrf_token %}
         <div class="modal fade" id="myModalTags" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">

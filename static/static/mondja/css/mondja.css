@@ -16,6 +16,10 @@ form input[type="text"] {
     border: 1px solid #ccc;
 }
 
+pre {
+    background-color: #23241f;
+}
+
 /* Desktop */
 @media screen and (min-width: 737px) {
     body {
@@ -42,7 +46,7 @@ form input[type="text"] {
         margin-top: -64px;
     }
 
-    #myabout * {
+    #myabout p, pre, code {
         margin-right: 2.8%;
     }
 }
@@ -79,7 +83,7 @@ form input[type="text"] {
         text-align: right;
     }
 
-    #myabout * {
+    #myabout p, pre, code {
         margin-right: 4.5%;
     }
 

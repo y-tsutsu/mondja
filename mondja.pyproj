@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="static\media\identicon\sample.png" />
     <Content Include="static\static\assets\css\font-awesome.min.css" />
     <Content Include="static\static\assets\css\ie8.css" />
     <Content Include="static\static\assets\css\images\bg.jpg" />

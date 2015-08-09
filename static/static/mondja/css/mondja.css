@@ -92,11 +92,15 @@ pre {
     }
 
     #memo-body h5 {
-        font-size: 0.9em;
+        font-size: 1.0em;
     }
 
     #memo-body h6 {
-        font-size: 0.8em;
+        font-size: 1.0em;
+    }
+
+    #memo-body p {
+        font-size: 0.9em;
     }
 
     #memo-body pre {

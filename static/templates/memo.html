@@ -44,7 +44,7 @@
         <form method="post" action="{% url 'edit_memo' item.id %}" class="col-xs-5 col-md-3 pull-right">
             {% csrf_token %}
             <div class="modal fade" id="myModalEdit{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content" style="background-color:whitesmoke">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

@@ -42,7 +42,7 @@ pre {
         margin-right: 2.8%;
     }*/
 
-    div .mylogin, .mylogout {
+    div .mylogin, .mylogout, .my404, .my500 {
         margin-top: -64px;
     }
 
@@ -75,7 +75,7 @@ pre {
         margin-right: 4.5%;
     }*/
 
-    div .mylogin, .mylogout {
+    div .mylogin, .mylogout, .my404, .my500 {
         margin-top: 164px;
     }
 

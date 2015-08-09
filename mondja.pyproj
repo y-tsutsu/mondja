@@ -252,6 +252,8 @@
     <Content Include="static\static\jquery\js\jquery-1.11.3.min.js" />
     <Content Include="static\static\jquery\js\jquery-1.11.3.min.map" />
     <Content Include="static\static\mondja\css\mondja.css" />
+    <Content Include="static\templates\404.html" />
+    <Content Include="static\templates\500.html" />
     <Content Include="static\templates\index.html" />
     <Content Include="static\templates\layout.html" />
     <Content Include="static\templates\login.html" />

@@ -1,54 +1,106 @@
-﻿<article id="memo" class="panel">
+﻿{% load myfilter %}
+
+<article id="memo" class="panel">
 
     <!-- トップのまるボタン -->
     {% include 'memotop.html' %}
 
-    <header>
-        <h2>Memo</h2>
-    </header>
-    <p>
-        Phasellus enim sapien, blandit ullamcorper elementum eu, condimentum eu elit.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-        luctus elit eget interdum.
-    </p>
-    <section>
-        <div class="row">
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+    {% for item in all_memo %}
+
+        <div class="well" style="background-color: #b2cbe4">
+            <h1 class="memo-header">
+                <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="32" style="margin-top:-6px; vertical-align:middle" />
+                {{item.title}}
+            </h1>
+            <div class="row">
+                <div class="memo-header col-md-8" style="font-size:16px; color:#556b2f; margin-top:5px; vertical-align:middle">
+                    <i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}
+                </div>
+
+                {% if user.is_superuser %}
+                    <div class="memo-header col-md-4 text-right" style="font-size:16px; margin-top:5px; vertical-align:middle;">
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalEdit{{item.id}}"><i class="fa fa-edit fa-fw"></i></button>
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModalDelete{{item.id}}"><i class="fa fa-trash-o fa-fw"></i></button>
+                    </div>
+                {% endif %}
+
             </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
+            <hr />
+            <div class="alert alert-success memo-body" role="alert" style="background-color: #eaedf7; margin-top: -3%">
+                {{ item.content | mark2html | safe }}
             </div>
-            <div class="4u$ 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
+            {% for tag in item.tags.all %}
+                <span class="{{ tag.get_label_classname }}">{{ tag }}</span>
+            {% endfor %}
+        </div>
+
+        <!-- 編集ダイアログ -->
+        <form method="post" action="{% url 'edit_memo' item.id %}" class="col-xs-5 col-md-3 pull-right">
+            {% csrf_token %}
+            <div class="modal fade" id="myModalEdit{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color:whitesmoke">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="id_title">Title:</label>
+                                <input id="id_title" class="form-control" maxlength="200" name="title" type="text" value="{{item.title}}" autofocus required />
+                            </div>
+                            <div class="form-group">
+                                <label for="id_content">Text:</label>
+                                <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize:vertical" placeholder="Type a comment" required >{{item.content}}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_tags">Tags:</label>
+                                <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type a tags" value="{{item.get_tags_str}}" />
+                            </div>
+                            <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-xs-4 col-md-2 pull-right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
+                                </div>
+                                <div class="col-xs-4 col-md-2 pull-right">
+                                    <button type="submit" class="btn btn-success" style="width:80px;"><i class="fa fa-save"></i>Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-            </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-            </div>
-            <div class="4u$ 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-            </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-            </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-            </div>
-            <div class="4u$ 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-            </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-            </div>
-            <div class="4u 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-            </div>
-            <div class="4u$ 12u$(mobile)">
-                <a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
+        </form>
+
+        <!-- 削除確認ダイアログ -->
+        <div class="modal fade" id="myModalDelete{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>メモを削除してもよろしいですか？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <form class="col-xs-4 col-md-2 pull-right">
+                                {% csrf_token %}
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
+                            </form>
+                            <form method="post" action="{% url 'delete_memo' item.id %}" class="col-xs-4 col-md-2 pull-right">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+    {% endfor%}
+
 </article>

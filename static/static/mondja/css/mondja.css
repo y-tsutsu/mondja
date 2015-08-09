@@ -82,4 +82,11 @@ form input[type="text"] {
     #myabout * {
         margin-right: 4.5%;
     }
+
+    button {
+        display: initial;
+        width: initial;
+        padding: initial;
+        text-align: initial;
+    }
 }

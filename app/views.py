@@ -2,19 +2,93 @@
 Definition of views.
 """
 
-from django.shortcuts import render
+from django.shortcuts import *
 from django.http import HttpRequest
 from django.template import RequestContext
-from datetime import datetime
+from django.contrib.auth import models as usermodels
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.db.models import Count
+from django.core.exceptions import ObjectDoesNotExist
+from datetime import datetime
 from app.models import Memo, Tag
 from app.forms import MemoForm, TagForm
 from mondja.pydenticon_wrapper import create_identicon
 
 @login_required
 def home(request):
-    """Renders the home page."""
-    assert isinstance(request, HttpRequest)
+    """Homeページを表示する．"""
+    types = request.GET.get('types')
+
+    if types == 'sort':
+        sort_item = request.GET.get('sort_item')
+        if sort_item is not '' and request.GET.get('sort_op') == 'desc':
+            sort_item = '-' + sort_item
+
+        sort_tag_id = request.GET.get('sort_tag_id')
+        all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(id = sort_tag_id).memo_set.all()
+
+        sort_user_id = request.GET.get('sort_user_id')
+        if sort_user_id is not '':
+            all_memo = all_memo.filter(user = usermodels.User.objects.get(id = sort_user_id))
+
+        if sort_item is '':
+            all_memo = all_memo.order_by('-pub_date')
+        else:
+            all_memo = all_memo.order_by(sort_item)
+
+    elif types == 'search':
+        search_title = request.GET.get('search_title')
+        search_content = request.GET.get('search_content')
+        search_tag_id = request.GET.get('search_tag_id')
+        search_user_id = request.GET.get('search_user_id')
+
+        if search_tag_id is '':
+            all_memo = Memo.objects.all()
+        else:
+            try:
+                all_memo = Tag.objects.get(id = search_tag_id).memo_set.all()
+            except ObjectDoesNotExist:
+                all_memo = Memo.objects.filter(title = '')
+
+        if search_user_id is not '':
+            try:
+                user = usermodels.User.objects.get(id = search_user_id)
+                all_memo = all_memo.filter(user = user)
+            except ObjectDoesNotExist:
+                all_memo = Memo.objects.filter(title = '')
+
+        if search_title is not '' and search_content is not '':
+            all_memo = all_memo.filter(title__icontains = search_title, content__icontains = search_content)
+        elif search_title is not '':
+            all_memo = all_memo.filter(title__icontains = search_title)
+        elif search_content is not '':
+            all_memo = all_memo.filter(content__icontains = search_content)
+        else:
+            pass
+
+        all_memo = all_memo.order_by('-pub_date')
+
+    elif types == 'tags':
+        memos = []
+        for tid in request.GET.getlist('select_tag'):
+            tag = Tag.objects.get(id = tid)
+            for memo in tag.memo_set.all():
+                memos.append(memo)
+        all_memo = sorted(set(memos), key = lambda x: x.pub_date)
+        all_memo.reverse()
+
+    else:
+         all_memo = Memo.objects.all().order_by('-pub_date')
+
+    all_memo = all_memo[:100]
+
+    for item in all_memo:
+        create_identicon(item.user.username)
+
+    all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
+    all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
+    top32_tags = all_tags[:32]
+
     return render(
         request,
         'index.html',
@@ -49,7 +123,7 @@ def add_memo(request):
                     new_memo.tags.add(tag)
                     new_memo.save()
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/#memo')
 
 @user_passes_test(lambda u: u.is_superuser)
 def edit_memo(request, id):
@@ -85,7 +159,7 @@ def edit_memo(request, id):
 
             clear_notused_tag()
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/#memo')
 
 @user_passes_test(lambda u: u.is_superuser)
 def delete_memo(request, id):
@@ -97,7 +171,7 @@ def delete_memo(request, id):
 
         clear_notused_tag()
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/#memo')
 
 def is_valid_tag(tag):
     ''' tagの文字長チェック '''

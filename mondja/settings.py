@@ -110,6 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mondja.middleware.MondjaMiddleware',
 )
 
 ROOT_URLCONF = 'mondja.urls'
@@ -135,6 +136,7 @@ INSTALLED_APPS = (
     'app',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'markdown2',
 )
 
 # A sample logging configuration. The only tangible logging

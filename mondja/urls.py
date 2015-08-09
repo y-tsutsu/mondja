@@ -8,6 +8,8 @@ from django.conf.urls import include
 from django.contrib import admin
 admin.autodiscover()
 
+from mondja import settings
+
 urlpatterns = patterns('',
     # Home:
     url(r'^$', 'app.views.home', name='home'),
@@ -26,6 +28,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    # MEDIA_ROOT
+    (r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),
 
     # Log-in:
     url(r'^login/$',

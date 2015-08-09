@@ -7,31 +7,37 @@
 
     {% for item in all_memo %}
 
-        <div class="well" style="background-color: #b2cbe4">
-            <h1 class="memo-header">
+        <div class="well" style="background-color: #d9edf7; border-color: #bce8f1;">
+            <h1 class="memo-header" id="memo-title">
                 <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="32" style="margin-top:-6px; vertical-align:middle" />
                 {{item.title}}
             </h1>
             <div class="row">
-                <div class="memo-header col-md-8" style="font-size:16px; color:#556b2f; margin-top:5px; vertical-align:middle">
+                <div class="memo-header col-md-8" id="memo-date">
                     <i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}
                 </div>
 
                 {% if user.is_superuser %}
-                    <div class="memo-header col-md-4 text-right" style="font-size:16px; margin-top:5px; vertical-align:middle;">
+                    <div class="memo-header col-md-4 text-right" id="memo-button">
                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalEdit{{item.id}}"><i class="fa fa-edit fa-lg fa-fw"></i></button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModalDelete{{item.id}}"><i class="fa fa-trash-o fa-lg fa-fw"></i></button>
                     </div>
                 {% endif %}
-
             </div>
+
             <hr />
-            <div class="alert alert-success memo-body" role="alert" style="background-color: #eaedf7; margin-top: -3%">
+
+            <div id="memo-body">
                 {{ item.content | mark2html | safe }}
             </div>
-            {% for tag in item.tags.all %}
-                <span class="{{ tag.get_label_classname }}">{{ tag }}</span>
-            {% endfor %}
+
+            <hr />
+
+            <div id="memo-tag">
+                {% for tag in item.tags.all %}
+                    <span class="{{ tag.get_label_classname }}">{{ tag }}</span>
+                {% endfor %}
+            </div>
         </div>
 
         <!-- 編集ダイアログ -->

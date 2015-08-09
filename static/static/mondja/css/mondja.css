@@ -7,7 +7,7 @@
     height: 101%;
 }
 
-#mymemo * {
+#memo * {
     word-wrap:break-word;
 }
 
@@ -33,10 +33,10 @@ form input[type="text"] {
         margin-top: 0;
     }
 
-    #mymemo {
+    /*#memo {
         background-color: #d9edf7;
         margin-right: 2.8%;
-    }
+    }*/
 
     div .mylogin, .mylogout {
         margin-top: -64px;
@@ -66,10 +66,10 @@ form input[type="text"] {
         margin-right: auto;
     }
 
-    #mymemo {
+    /*#memo {
         background-color: #d9edf7;
         margin-right: 4.5%;
-    }
+    }*/
 
     div .mylogin, .mylogout {
         margin-top: 164px;

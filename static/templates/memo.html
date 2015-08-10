@@ -7,7 +7,7 @@
 
     {% for item in all_memo %}
 
-        <div class="well" style="background-color: #d9edf7; border-color: #bce8f1;">
+        <div class="well">
             <h1 class="memo-header" id="memo-title">
                 <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="32" style="margin-top:-6px; vertical-align:middle" />
                 {{item.title}}

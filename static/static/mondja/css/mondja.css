@@ -20,8 +20,13 @@ pre {
     background-color: #23241f;
 }
 
+#memo .well {
+    background-color: ghostwhite;
+    border-color: darkblue;
+}
+
 #memo hr{
-    border-top-color: #7a99cf;
+    border-top-color: darkblue;
 }
 
 #memo-body img {
@@ -29,6 +34,28 @@ pre {
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+/*○ボタン*/
+#social-icon a {
+    margin: 0 5px 5px 0;
+    padding: 0;
+    color: #fff;
+}
+
+#social-icon i {
+    margin: 0;
+    border-radius: 50%;
+    background: lightsteelblue;
+    text-align: center;
+}
+
+#social-icon i:before {
+    padding: 0;
+}
+
+#social-icon a:hover i {
+    background: lightblue;
 }
 
 /* Desktop */
@@ -57,11 +84,13 @@ pre {
     }
 
     #memo-title {
+        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
         font-size: 1.6em;
         color: midnightblue;
     }
 
     #memo-date {
+        font-family: Georgia, "Times New Roman", Times, serif;
         margin-top:1%;
         vertical-align:middle
     }
@@ -73,6 +102,10 @@ pre {
 
     #memo-body {
         margin-top: -2.5%;
+    }
+
+    #memo-body > h1, h2, h3, h4, h5, h6, p {
+        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
     }
 
     #memo-body h1 {
@@ -110,6 +143,18 @@ pre {
     #memo-tag {
         margin-top: -5%;
     }
+
+    /*○ボタン*/
+
+    #social-icon i {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    #social-icon i:before {
+        line-height: 50px;
+    }
 }
 
 /* Mobile */
@@ -131,11 +176,6 @@ pre {
         margin-right: auto;
     }
 
-    /*#memo {
-        background-color: #d9edf7;
-        margin-right: 4.5%;
-    }*/
-
     div .mylogin, .mylogout, .my404, .my500 {
         margin-top: 164px;
     }
@@ -153,5 +193,78 @@ pre {
         width: initial;
         padding: initial;
         text-align: initial;
+    }
+
+    #memo-title {
+        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+        font-size: 1.6em;
+        color: midnightblue;
+    }
+
+    #memo-date {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin-top:1%;
+        vertical-align:middle
+    }
+
+    #memo-button {
+        margin-top:1%;
+        vertical-align:middle;
+    }
+
+    #memo-body {
+        margin-top: -2.5%;
+    }
+
+    #memo-body > h1, h2, h3, h4, h5, h6, p {
+        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    }
+
+    #memo-body h1 {
+        font-size: 1.3em;
+    }
+
+    #memo-body h2 {
+        font-size: 1.2em;
+    }
+
+    #memo-body h3 {
+        font-size: 1.1em;
+    }
+
+    #memo-body h4 {
+        font-size: 1.0em;
+    }
+
+    #memo-body h5 {
+        font-size: 1.0em;
+    }
+
+    #memo-body h6 {
+        font-size: 1.0em;
+    }
+
+    #memo-body p {
+        font-size: 0.9em;
+    }
+
+    #memo-body pre {
+        margin-right: 0%;
+    }
+
+    #memo-tag {
+        margin-top: -5%;
+    }
+
+    /*○ボタン*/
+
+    #social-icon i {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    #social-icon i:before {
+        line-height: 30px;
     }
 }

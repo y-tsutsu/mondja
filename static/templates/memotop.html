@@ -1,12 +1,5 @@
 ﻿{% if user.is_superuser %}
 
-    <style>
-        #social-icon a { margin: 0 5px 5px 0; padding: 0; color: #fff; }
-        #social-icon i { width: 50px; height: 50px; margin: 0; border-radius: 50%; background: #698aab; line-height: 50px; text-align: center; }
-        #social-icon i:before { padding: 0; line-height: 50px; }
-        #social-icon a:hover i { background: #84a2d4; }
-    </style>
-
     <div id="social-icon" class="clear row" style="text-align:center; margin-top: -10%;">
         <div class="col-md-3 col-xs-3"><a data-toggle="modal" data-target="#myModalEdit"><i class="fa fa-pencil fa-2x"></i></a></div>
         <div class="col-md-3 col-xs-3"><a data-toggle="modal" data-target="#myModalSort"><i class="fa fa-sort fa-2x"></i></a></div>

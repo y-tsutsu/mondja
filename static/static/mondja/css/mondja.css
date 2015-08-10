@@ -46,7 +46,7 @@ pre {
 #social-icon i {
     margin: 0;
     border-radius: 50%;
-    background: lightsteelblue;
+    background: #a2c2e6;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ pre {
 }
 
 #social-icon a:hover i {
-    background: lightblue;
+    background: #cce5ff;
 }
 
 /* Desktop */
@@ -104,7 +104,7 @@ pre {
         margin-top: -2.5%;
     }
 
-    #memo-body > h1, h2, h3, h4, h5, h6, p {
+    #memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
     }
 
@@ -216,7 +216,7 @@ pre {
         margin-top: -2.5%;
     }
 
-    #memo-body > h1, h2, h3, h4, h5, h6, p {
+    #memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
     }
 

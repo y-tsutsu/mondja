@@ -142,11 +142,7 @@ pre {
     }
 
     #memo-body pre {
-        margin-right: 0%;
-    }
-
-    #memo-tag {
-        margin-top: -5%;
+        margin-right: 0;
     }
 
     /*○ボタン*/
@@ -201,20 +197,13 @@ pre {
         margin-right: 4.5%;
     }
 
-    button {
-        display: initial;
-        width: initial;
-        padding: initial;
-        text-align: initial;
-    }
-
     #social-icon {
         text-align:center;
         margin-top: -20px;
     }
 
     #memo hr {
-        margin-bottom: 0px;
+        margin-bottom: -10px;
     }
 
     #memo-title {
@@ -229,8 +218,12 @@ pre {
         vertical-align:middle
     }
 
-    #memo-button {
-        margin-top:-0.8%;
+    #memo-button button {
+        display: initial;
+        width: initial;
+        padding: initial;
+        text-align: initial;
+        margin-top: 1px;
         vertical-align:middle;
     }
 
@@ -271,11 +264,7 @@ pre {
     }
 
     #memo-body pre {
-        margin-right: 0%;
-    }
-
-    #memo-tag {
-        margin-top: -5%;
+        margin-right: 0;
     }
 
     /*○ボタン*/

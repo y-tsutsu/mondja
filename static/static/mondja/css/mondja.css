@@ -25,7 +25,7 @@ pre {
     border-color: darkblue;
 }
 
-#memo hr{
+#memo hr {
     border-top-color: darkblue;
 }
 
@@ -75,11 +75,11 @@ pre {
         margin-top: 0;
     }
 
-    div .mylogin, .mylogout, .my404, .my500 {
-        margin-top: -64px;
+    div .mylogin, div .mylogout, div .my404, div .my500 {
+        margin-top: -10%;
     }
 
-    #myabout p, pre {
+    #myabout p, #myabout pre {
         margin-right: 2.8%;
     }
 
@@ -159,6 +159,10 @@ pre {
 
 /* Mobile */
 @media screen and (max-width: 736px) {
+    #footer ul {
+        padding-left: initial;
+    }
+
     body {
         background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bgmobile.jpg");
         background-repeat: repeat, repeat;
@@ -176,15 +180,19 @@ pre {
         margin-right: auto;
     }
 
-    div .mylogin, .mylogout, .my404, .my500 {
-        margin-top: 164px;
+    div .mylogin, div .mylogout, div .my404, div .my500 {
+        margin-top: 42%;
+    }
+
+    .mylogin form {
+        margin-right: 4.6%;
     }
 
     .modal button {
         text-align: right;
     }
 
-    #myabout p, pre {
+    #myabout p, #myabout pre {
         margin-right: 4.5%;
     }
 
@@ -195,6 +203,10 @@ pre {
         text-align: initial;
     }
 
+    #memo hr {
+        margin-bottom: initial;
+    }
+
     #memo-title {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
         font-size: 1.6em;
@@ -203,12 +215,12 @@ pre {
 
     #memo-date {
         font-family: Georgia, "Times New Roman", Times, serif;
-        margin-top:1%;
+        margin-top: 1%;
         vertical-align:middle
     }
 
     #memo-button {
-        margin-top:1%;
+        margin-top:-0.8%;
         vertical-align:middle;
     }
 

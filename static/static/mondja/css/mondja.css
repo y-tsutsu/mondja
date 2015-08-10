@@ -79,6 +79,11 @@ pre {
         margin-top: -10%;
     }
 
+    #login form {
+        margin-left: -10px;
+        margin-right: 15px;
+    }
+
     #myabout p, #myabout pre {
         margin-right: 2.8%;
     }

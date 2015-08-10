@@ -46,7 +46,7 @@ pre {
 #social-icon i {
     margin: 0;
     border-radius: 50%;
-    background: #a2c2e6;
+    background: #7a99cf;
     text-align: center;
 }
 
@@ -55,7 +55,7 @@ pre {
 }
 
 #social-icon a:hover i {
-    background: #cce5ff;
+    background: #b2cbe4;
 }
 
 /* Desktop */
@@ -86,6 +86,10 @@ pre {
     #social-icon {
         text-align:center;
         margin-top: -10%;
+    }
+
+    #memo hr {
+        margin-bottom: -16px;
     }
 
     #memo-title {

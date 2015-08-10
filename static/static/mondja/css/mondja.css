@@ -1,4 +1,4 @@
-﻿#nav a {
+#nav a {
     text-decoration: none;
 }
 
@@ -81,6 +81,11 @@ pre {
 
     #myabout p, #myabout pre {
         margin-right: 2.8%;
+    }
+
+    #social-icon {
+        text-align:center;
+        margin-top: -10%;
     }
 
     #memo-title {
@@ -203,8 +208,13 @@ pre {
         text-align: initial;
     }
 
+    #social-icon {
+        text-align:center;
+        margin-top: -20px;
+    }
+
     #memo hr {
-        margin-bottom: initial;
+        margin-bottom: 0px;
     }
 
     #memo-title {

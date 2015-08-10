@@ -184,7 +184,7 @@
                     <div class="modal-body">
                         <div class="row">
                             {% for item in top32_tags %}
-                                <div class="col-md-3 col-xs-6" style="margin-bottom: 5px; text-align:center">
+                                <div class="col-md-3 col-xs-6" style="text-align:center">
                                     <input type="checkbox" data-toggle="toggle" data-on={{item.name}} data-off={{item.name}} data-onstyle={{item.get_toggle_onstyle}} data-size="mini" data-width="125px" name="select_tag" value={{item.id}}>
                                 </div>
                             {% endfor %}

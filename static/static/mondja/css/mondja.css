@@ -12,7 +12,7 @@ pre {
 }
 
 #memo * {
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 #memo form input[type="text"] {
@@ -80,7 +80,7 @@ pre {
     }
 
     div .mylogin, div .mylogout, div .my404, div .my500 {
-        margin-top: -10%;
+        margin-top: -95px;
     }
 
     #login form {
@@ -89,12 +89,12 @@ pre {
     }
 
     #myabout p, #myabout pre {
-        margin-right: 2.8%;
+        margin-right: 24px;
     }
 
     #social-icon {
-        text-align:center;
-        margin-top: -10%;
+        text-align: center;
+        margin-top: -89px;
     }
 
     #memo hr {
@@ -109,17 +109,17 @@ pre {
 
     #memo-date {
         font-family: Georgia, "Times New Roman", Times, serif;
-        margin-top:1%;
-        vertical-align:middle
+        margin-top: 10px;
+        vertical-align: middle
     }
 
     #memo-button {
-        margin-top:1%;
-        vertical-align:middle;
+        margin-top: 8px;
+        vertical-align: middle;
     }
 
     #memo-body {
-        margin-top: -2.5%;
+        margin-top: -23px;
     }
 
     #memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p {
@@ -195,20 +195,24 @@ pre {
     }
 
     div .mylogin, div .mylogout, div .my404, div .my500 {
-        margin-top: 23%;
+        margin-top: 82px;
     }
 
-    .mylogin form {
-        margin-right: 4.6%;
+    #login form {
+        margin-right: 15px;
     }
 
     #myabout p, #myabout pre {
-        margin-right: 4.5%;
+        margin-right: 15px;
     }
 
     #social-icon {
-        text-align:center;
+        text-align: center;
         margin-top: -20px;
+    }
+
+    .modal-header button {
+        text-align: right;
     }
 
     #memo hr {
@@ -223,8 +227,8 @@ pre {
 
     #memo-date {
         font-family: Georgia, "Times New Roman", Times, serif;
-        margin-top: 1%;
-        vertical-align:middle
+        margin-top: 3px;
+        vertical-align: middle
     }
 
     #memo-button button {
@@ -233,11 +237,11 @@ pre {
         padding: initial;
         text-align: initial;
         margin-top: 1px;
-        vertical-align:middle;
+        vertical-align: middle;
     }
 
     #memo-body {
-        margin-top: -2.5%;
+        margin-top: -23px;
     }
 
     #memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p {

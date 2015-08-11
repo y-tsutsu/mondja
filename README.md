@@ -33,7 +33,8 @@ https://mondja.herokuapp.com
 お好きにどうぞ．
 
 # Link
-* http://www.python.jp
-* http://django-docs-ja.readthedocs.org
+* https://www.python.org
+* https://www.djangoproject.com
 * https://www.heroku.com
+* http://getbootstrap.com
 * http://html5up.net

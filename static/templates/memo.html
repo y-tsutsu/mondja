@@ -41,11 +41,11 @@
         </div>
 
         <!-- 編集ダイアログ -->
-        <form method="post" action="{% url 'edit_memo' item.id %}" class="col-xs-5 col-md-3 pull-right">
+        <form method="post" action="{% url 'edit_memo' item.id %}">
             {% csrf_token %}
             <div class="modal fade" id="myModalEdit{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                    <div class="modal-content" style="background-color:whitesmoke">
+                    <div class="modal-content" style="background-color: whitesmoke">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title">_mondja_py_( ..)φ</h4>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="id_content">Text:</label>
-                                <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize:vertical" placeholder="Type a comment" required >{{item.content}}</textarea>
+                                <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize: vertical" placeholder="Type a comment" required >{{item.content}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="id_tags">Tags:</label>
@@ -81,31 +81,32 @@
         </form>
 
         <!-- 削除確認ダイアログ -->
-        <div class="modal fade" id="myModalDelete{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>メモを削除してもよろしいですか？</p>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <form class="col-xs-4 col-md-2 pull-right">
-                                {% csrf_token %}
-                                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
-                            </form>
-                            <form method="post" action="{% url 'delete_memo' item.id %}" class="col-xs-4 col-md-2 pull-right">
-                                {% csrf_token %}
-                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
-                            </form>
+        <form method="post" action="{% url 'delete_memo' item.id %}">
+            {% csrf_token %}
+            <div class="modal fade" id="myModalDelete{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>メモを削除してもよろしいですか？</p>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-xs-4 col-md-2 pull-right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
+                                </div>
+                                <div class="col-xs-4 col-md-2 pull-right">
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
 
     {% endfor%}
 

@@ -25,6 +25,9 @@ urlpatterns = patterns('',
     # Delete:
     url(r'^delete/(?P<id>.*)/$', 'app.views.delete_memo', name = 'delete_memo'),
 
+    # Refresh:
+    url(r'^refresh/$', 'app.views.refresh_memo', name = 'refresh_memo'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

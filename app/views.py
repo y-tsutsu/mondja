@@ -173,6 +173,10 @@ def delete_memo(request, id):
 
     return HttpResponseRedirect('/#memo')
 
+def refresh_memo(request):
+    """メモの表示をリフレッシュする"""
+    return HttpResponseRedirect('/#memo')
+
 def is_valid_tag(tag):
     ''' tagの文字長チェック '''
     return len(tag) <= 10

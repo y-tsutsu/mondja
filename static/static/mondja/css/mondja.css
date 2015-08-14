@@ -1,3 +1,9 @@
+body {
+    background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bg.jpg");
+    background-repeat: repeat, repeat;
+    background-size: auto, 100% 100%;
+}
+
 #nav a {
     text-decoration: none;
 }
@@ -40,6 +46,10 @@ pre {
     width: 80px;
 }
 
+.modal-title {
+    font-size: 1.0em;
+}
+
 /*○ボタン*/
 #social-icon a {
     margin: 0 5px 5px 0;
@@ -64,12 +74,6 @@ pre {
 
 /* Desktop */
 @media screen and (min-width: 737px) {
-    body {
-        background-image: url("../../assets/css/images/bg.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-
     #me header > p {
         position: absolute;
         left: 0;
@@ -108,7 +112,7 @@ pre {
     }
 
     #memo-date {
-        font-family: Georgia, "Times New Roman", Times, serif;
+        font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
         margin-top: 10px;
         vertical-align: middle
     }
@@ -177,12 +181,6 @@ pre {
         padding-left: initial;
     }
 
-    body {
-        background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bgmobile.jpg");
-        background-repeat: repeat, repeat;
-        background-size: auto, 100% 100%;
-    }
-
     #me header > p {
         font-size: 1.0em;
     }
@@ -226,7 +224,7 @@ pre {
     }
 
     #memo-date {
-        font-family: Georgia, "Times New Roman", Times, serif;
+        font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
         margin-top: 3px;
         vertical-align: middle
     }

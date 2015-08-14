@@ -8,7 +8,7 @@ from django.utils import timezone
 from django.contrib.auth import models as usermodels
 
 class Tag(models.Model):
-    name = models.TextField(max_length = 10, unique = True)
+    name = models.CharField(max_length = 10, unique = True)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
     user = models.ForeignKey(usermodels.User)
 

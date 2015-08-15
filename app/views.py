@@ -69,12 +69,16 @@ def home(request):
         all_memo = all_memo.order_by('-pub_date')
 
     elif types == 'tags':
-        memos = []
-        for tid in request.GET.getlist('select_tag'):
-            tag = Tag.objects.get(id = tid)
-            for memo in tag.memo_set.all():
-                memos.append(memo)
-        all_memo = sorted(set(memos), key = lambda x: x.pub_date)
+        tids = request.GET.getlist('select_tag')
+        if tids == []:
+            all_memo = Memo.objects.all().filter(tags__isnull = True)
+        else:
+            memos = []
+            for tid in tids:
+                tag = Tag.objects.get(id = tid)
+                for memo in tag.memo_set.all():
+                    memos.append(memo)
+            all_memo = sorted(set(memos), key = lambda x: x.pub_date)
         all_memo.reverse()
 
     else:
@@ -173,6 +177,7 @@ def delete_memo(request, id):
 
     return HttpResponseRedirect('/#memo')
 
+@user_passes_test(lambda u: u.is_superuser)
 def refresh_memo(request):
     """メモの表示をリフレッシュする"""
     return HttpResponseRedirect('/#memo')

@@ -4,12 +4,17 @@ body {
     background-size: auto, 100% 100%;
 }
 
-#nav a {
-    text-decoration: none;
-}
-
 pre {
     background-color: #23241f;
+    border-color: #23241f;
+}
+
+#main * {
+    border-radius: initial;
+}
+
+#nav a {
+    text-decoration: none;
 }
 
 #me .pic > img {
@@ -101,10 +106,10 @@ pre {
     }
 
     #memo .memo-header img {
-        width: 42px;
+        width: 38px;
         height: auto;
         vertical-align: middle;
-        margin-top: -5px;
+        margin-top: -6px;
     }
 
     #memo-title {
@@ -222,9 +227,10 @@ pre {
     }
 
     #memo .memo-header img {
-        width: 32px;
+        width: 27px;
         height: auto;
         vertical-align: middle;
+        margin-top: -3px;
     }
 
     #memo-title {

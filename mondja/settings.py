@@ -136,7 +136,6 @@ INSTALLED_APPS = (
     'app',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'markdown2',
 )
 
 # A sample logging configuration. The only tangible logging

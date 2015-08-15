@@ -26,13 +26,17 @@ pre {
     border: 1px solid #ccc;
 }
 
+#memo hr {
+    border-top-color: darkblue;
+}
+
 #memo .well {
     background-color: ghostwhite;
     border-color: darkblue;
 }
 
-#memo hr {
-    border-top-color: darkblue;
+#memo .modal-footer button {
+    width: 80px;
 }
 
 #memo-body img {
@@ -40,10 +44,6 @@ pre {
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
-#memo .modal-footer button {
-    width: 80px;
 }
 
 .modal-title {
@@ -98,6 +98,13 @@ pre {
 
     #memo hr {
         margin-bottom: -16px;
+    }
+
+    #memo .memo-header img {
+        width: 42px;
+        height: auto;
+        vertical-align: middle;
+        margin-top: -5px;
     }
 
     #memo-title {
@@ -212,6 +219,12 @@ pre {
 
     #memo hr {
         margin-bottom: -10px;
+    }
+
+    #memo .memo-header img {
+        width: 32px;
+        height: auto;
+        vertical-align: middle;
     }
 
     #memo-title {

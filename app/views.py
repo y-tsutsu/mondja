@@ -134,7 +134,7 @@ def edit_memo(request, id):
     """既存のメモを編集する"""
     memo = Memo.objects.get(id = id)
 
-    if request.method == 'POST':
+    if request.method == 'POST' and memo.user == request.user:
         memo_form = MemoForm(request.POST or None, instance = memo)
 
         if memo_form.is_valid():
@@ -170,7 +170,7 @@ def delete_memo(request, id):
     """メモを削除する"""
     memo = Memo.objects.get(id = id)
 
-    if request.method == 'POST':
+    if request.method == 'POST' and memo.user == request.user:
         memo.delete()
 
         clear_notused_tag()

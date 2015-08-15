@@ -17,12 +17,12 @@
                     <i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}
                 </div>
 
-                {% if user.is_superuser %}
+                {% ifequal user item.user %}
                     <div class="memo-header col-md-4 col-xs-4 text-right" id="memo-button">
                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalEdit{{item.id}}"><i class="fa fa-edit fa-lg fa-fw"></i></button>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModalDelete{{item.id}}"><i class="fa fa-trash-o fa-lg fa-fw"></i></button>
                     </div>
-                {% endif %}
+                {% endifequal %}
             </div>
 
             <hr />

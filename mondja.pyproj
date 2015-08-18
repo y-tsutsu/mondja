@@ -93,7 +93,6 @@
     <Content Include="static\static\assets\css\font-awesome.min.css" />
     <Content Include="static\static\assets\css\ie8.css" />
     <Content Include="static\static\assets\css\images\bg.jpg" />
-    <Content Include="static\static\assets\css\images\bgmobile.jpg" />
     <Content Include="static\static\assets\css\images\overlay.png" />
     <Content Include="static\static\assets\css\main.css" />
     <Content Include="static\static\assets\css\noscript.css" />

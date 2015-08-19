@@ -106,15 +106,14 @@ pre {
     }
 
     #memo .memo-header img {
-        width: 38px;
+        width: 1.5em;
         height: auto;
         vertical-align: middle;
-        margin-top: -6px;
     }
 
     #memo-title {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-        font-size: 1.6em;
+        font-size: 1.5em;
         color: midnightblue;
     }
 
@@ -227,15 +226,14 @@ pre {
     }
 
     #memo .memo-header img {
-        width: 27px;
+        width: 1.5em;
         height: auto;
         vertical-align: middle;
-        margin-top: -3px;
     }
 
     #memo-title {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-        font-size: 1.6em;
+        font-size: 1.5em;
         color: midnightblue;
     }
 

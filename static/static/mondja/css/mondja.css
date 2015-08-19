@@ -55,6 +55,10 @@ pre {
     font-size: 1.0em;
 }
 
+.memo-panel {
+    padding-top: initial;
+}
+
 /*○ボタン*/
 #social-icon a {
     margin: 0 5px 5px 0;
@@ -67,10 +71,14 @@ pre {
     border-radius: 50%;
     background: #7a99cf;
     text-align: center;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
 }
 
 #social-icon i:before {
     padding: 0;
+    line-height: 1.5em;
 }
 
 #social-icon a:hover i {
@@ -166,18 +174,9 @@ pre {
 
     #social-icon {
         text-align: center;
-        margin-top: -88px;
-        margin-right: -21px;
-    }
-
-    #social-icon i {
-        width: 42px;
-        height: 42px;
-        line-height: 42px;
-    }
-
-    #social-icon i:before {
-        line-height: 42px;
+        margin-top: -13px;
+        margin-left: 0;
+        margin-right: -6px;
     }
 }
 
@@ -292,18 +291,9 @@ pre {
 
     #social-icon {
         text-align: center;
-        margin-top: -23px;
-        margin-right: -20px;
-    }
-
-    #social-icon i {
-        width: 23px;
-        height: 23px;
-        line-height: 23px;
-    }
-
-    #social-icon i:before {
-        line-height: 23px;
+        margin-top: -7px;
+        margin-left: 0;
+        margin-right: -5px;
     }
 }
 

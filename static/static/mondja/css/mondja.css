@@ -105,16 +105,17 @@ pre {
         margin-bottom: -16px;
     }
 
-    #memo .memo-header img {
-        width: 1.5em;
-        height: auto;
-        vertical-align: middle;
-    }
-
     #memo-title {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
         font-size: 1.5em;
         color: midnightblue;
+        margin-top: initial;
+    }
+
+    #memo-title img {
+        width: 1.5em;
+        height: auto;
+        vertical-align: middle;
     }
 
     #memo-date {
@@ -225,16 +226,17 @@ pre {
         margin-bottom: -10px;
     }
 
-    #memo .memo-header img {
-        width: 1.5em;
-        height: auto;
-        vertical-align: middle;
-    }
-
     #memo-title {
         font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
         font-size: 1.5em;
         color: midnightblue;
+        margin-top: initial;
+    }
+
+    #memo-title img {
+        width: 1.5em;
+        height: auto;
+        vertical-align: middle;
     }
 
     #memo-date {

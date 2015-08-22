@@ -55,10 +55,6 @@ pre {
     font-size: 1.0em;
 }
 
-.memo-panel {
-    padding-top: initial;
-}
-
 /*○ボタン*/
 #social-icon a {
     margin: 0 5px 5px 0;
@@ -174,7 +170,7 @@ pre {
 
     #social-icon {
         text-align: center;
-        margin-top: -13px;
+        margin-top: -89px;
         margin-left: 0;
         margin-right: -6px;
     }
@@ -291,7 +287,7 @@ pre {
 
     #social-icon {
         text-align: center;
-        margin-top: -7px;
+        margin-top: -22px;
         margin-left: 0;
         margin-right: -5px;
     }

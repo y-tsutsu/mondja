@@ -84,6 +84,7 @@
     <Folder Include="static\static\jquery\js\" />
     <Folder Include="static\static\mondja\" />
     <Folder Include="static\static\mondja\css\" />
+    <Folder Include="static\static\mondja\js\" />
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +252,7 @@
     <Content Include="static\static\jquery\js\jquery-1.11.3.min.js" />
     <Content Include="static\static\jquery\js\jquery-1.11.3.min.map" />
     <Content Include="static\static\mondja\css\mondja.css" />
+    <Content Include="static\static\mondja\js\mondja.js" />
     <Content Include="static\templates\404.html" />
     <Content Include="static\templates\500.html" />
     <Content Include="static\templates\index.html" />

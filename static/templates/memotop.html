@@ -53,40 +53,49 @@
                         <h4 class="modal-title">_mondja_py_( ..)φ</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" data-header="Select a sort item" name="sort_item">
-                                <option value=""></option>
-                                <option value="pub_date">日付</option>
-                                <option value="title">タイトル</option>
-                                <option value="content">本文</option>
-                            </select>
-                            <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="sort_op" value="asc" autocomplete="off" checked><i class="fa fa-sort-amount-asc fa-fw"></i>
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="sort_op" value="desc" autocomplete="off"><i class="fa fa-sort-amount-desc fa-fw"></i>
-                                </label>
+                        <div class="form-group">
+                            <label for="id_sort">Sort:</label>
+                            <div class="row" id="id_sort">
+                                <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" data-header="Select a sort item" name="sort_item">
+                                    <option value=""></option>
+                                    <option value="pub_date">日付</option>
+                                    <option value="title">タイトル</option>
+                                    <option value="content">本文</option>
+                                </select>
+                                <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                        <input type="radio" name="sort_op" value="asc" autocomplete="off" checked><i class="fa fa-sort-amount-asc fa-fw"></i>
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio" name="sort_op" value="desc" autocomplete="off"><i class="fa fa-sort-amount-desc fa-fw"></i>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" name="sort_tag_id">
-                                <option value=""></option>
-                                {% for item in all_tags %}
-                                    <option value="{{item.id}}">{{item.name}}</option>
-                                {% endfor%}
-                            </select>
+                        <div class="form-group">
+                            <label for="id_tag">Tag:</label>
+                            <div class="row" id="id_tag">
+                                <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" name="sort_tag_id">
+                                    <option value=""></option>
+                                    {% for item in all_tags %}
+                                        <option value="{{item.id}}">{{item.name}}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
                         </div>
-                        <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" name="sort_user_id">
-                                <option value=""></option>
-                                {% if user.is_superuser %}
-                                    <option value={{user.id}}>My user</option>
-                                {% endif %}
-                                {% for item in all_users %}
-                                    <option value="{{item.id}}">{{item.username}}</option>
-                                {% endfor%}
-                            </select>
+                        <div class="form-group">
+                            <label for="id_user">User:</label>
+                            <div class="row" id="id_user">
+                                <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" name="sort_user_id">
+                                    <option value=""></option>
+                                    {% if user.is_superuser %}
+                                        <option value={{user.id}}>My user</option>
+                                    {% endif %}
+                                    {% for item in all_users %}
+                                        <option value="{{item.id}}">{{item.username}}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">

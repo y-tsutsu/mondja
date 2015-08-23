@@ -53,11 +53,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="id_title">Title:</label>
-                                <input id="id_title" class="form-control" maxlength="200" name="title" type="text" value="{{item.title}}" autofocus required />
+                                <input id="id_title" class="form-control" maxlength="200" name="title" type="text" placeholder="Type a title" value="{{item.title}}" autofocus required />
                             </div>
                             <div class="form-group">
-                                <label for="id_content">Text:</label>
-                                <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize: vertical" placeholder="Type a comment" required >{{item.content}}</textarea>
+                                <label for="id_content">Content:</label>
+                                <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize: vertical" placeholder="Type a content (Markdown)" required >{{item.content}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="id_tags">Tags:</label>
@@ -85,7 +85,7 @@
                             <h4 class="modal-title">_mondja_py_( ..)φ</h4>
                         </div>
                         <div class="modal-body">
-                            <p>メモを削除してもよろしいですか？</p>
+                            <p>Are you sure you want to permanently delete this memo ?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>

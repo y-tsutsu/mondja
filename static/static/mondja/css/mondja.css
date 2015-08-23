@@ -51,6 +51,10 @@ pre {
     margin: 0 auto;
 }
 
+#memo-body a {
+    word-break: break-all;
+}
+
 .modal-title {
     font-size: 1.0em;
 }

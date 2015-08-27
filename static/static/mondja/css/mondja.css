@@ -59,6 +59,57 @@ pre {
     font-size: 1.0em;
 }
 
+#memo-title {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    font-size: 1.5em;
+    color: midnightblue;
+    margin-top: initial;
+}
+
+#memo-date {
+    font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+}
+
+#memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p, #memo-body li {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+}
+
+#memo-body h1 {
+    font-size: 1.3em;
+}
+
+#memo-body h2 {
+    font-size: 1.2em;
+}
+
+#memo-body h3 {
+    font-size: 1.1em;
+}
+
+#memo-body h4 {
+    font-size: 1.0em;
+}
+
+#memo-body h5 {
+    font-size: 1.0em;
+}
+
+#memo-body h6 {
+    font-size: 1.0em;
+}
+
+#memo-body p {
+    font-size: 0.9em;
+}
+
+#memo-body li {
+    font-size: 0.9em;
+}
+
+#memo-body pre {
+    margin-right: 0;
+}
+
 /*○ボタン*/
 #social-icon a {
     margin: 0 5px 5px 0;
@@ -113,61 +164,14 @@ pre {
         margin-bottom: -16px;
     }
 
-    #memo-title {
-        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-        font-size: 1.5em;
-        color: midnightblue;
-        margin-top: initial;
-    }
-
     #memo-title img {
         width: 1.5em;
         height: auto;
         vertical-align: middle;
     }
 
-    #memo-date {
-        font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-    }
-
     #memo-body {
         margin-top: -23px;
-    }
-
-    #memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p {
-        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-    }
-
-    #memo-body h1 {
-        font-size: 1.3em;
-    }
-
-    #memo-body h2 {
-        font-size: 1.2em;
-    }
-
-    #memo-body h3 {
-        font-size: 1.1em;
-    }
-
-    #memo-body h4 {
-        font-size: 1.0em;
-    }
-
-    #memo-body h5 {
-        font-size: 1.0em;
-    }
-
-    #memo-body h6 {
-        font-size: 1.0em;
-    }
-
-    #memo-body p {
-        font-size: 0.9em;
-    }
-
-    #memo-body pre {
-        margin-right: 0;
     }
 
     /*○ボタン*/
@@ -225,21 +229,10 @@ pre {
         margin-bottom: -10px;
     }
 
-    #memo-title {
-        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-        font-size: 1.5em;
-        color: midnightblue;
-        margin-top: initial;
-    }
-
     #memo-title img {
         width: 1.5em;
         height: auto;
         vertical-align: middle;
-    }
-
-    #memo-date {
-        font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
     }
 
     #memo-button button {
@@ -249,42 +242,6 @@ pre {
 
     #memo-body {
         margin-top: -13px;
-    }
-
-    #memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p {
-        font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-    }
-
-    #memo-body h1 {
-        font-size: 1.3em;
-    }
-
-    #memo-body h2 {
-        font-size: 1.2em;
-    }
-
-    #memo-body h3 {
-        font-size: 1.1em;
-    }
-
-    #memo-body h4 {
-        font-size: 1.0em;
-    }
-
-    #memo-body h5 {
-        font-size: 1.0em;
-    }
-
-    #memo-body h6 {
-        font-size: 1.0em;
-    }
-
-    #memo-body p {
-        font-size: 0.9em;
-    }
-
-    #memo-body pre {
-        margin-right: 0;
     }
 
     /*○ボタン*/

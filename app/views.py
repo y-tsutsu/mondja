@@ -91,7 +91,7 @@ def home(request):
 
     all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
     all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
-    top32_tags = all_tags[:32]
+    top48_tags = all_tags[:48]
 
     return render(
         request,

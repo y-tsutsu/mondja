@@ -247,7 +247,9 @@
     <Content Include="static\static\highlight\css\xcode.css" />
     <Content Include="static\static\highlight\css\zenburn.css" />
     <Content Include="static\static\highlight\js\highlight.pack.js" />
+    <Content Include="static\static\images\favicon.ico" />
     <Content Include="static\static\images\me.jpg" />
+    <Content Include="static\static\images\profile.png" />
     <Content Include="static\static\jquery\js\jquery-1.11.3.js" />
     <Content Include="static\static\jquery\js\jquery-1.11.3.min.js" />
     <Content Include="static\static\jquery\js\jquery-1.11.3.min.map" />

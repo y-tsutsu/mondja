@@ -6,7 +6,7 @@ Djangoを使ったシンプルなWebメモアプリ（Python Tools for Visual St
 
 # Requirements
 * Python: 3.4.3
-* Django: 1.8.3
+* Django: 1.8.4
 
 # Run
 ```

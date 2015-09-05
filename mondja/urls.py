@@ -35,7 +35,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # MEDIA_ROOT
-    (r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),
+    (r'media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT }),
 
     # favicon
     url(r'^favicon\.ico$', RedirectView.as_view(url = '/static/images/favicon.ico')),

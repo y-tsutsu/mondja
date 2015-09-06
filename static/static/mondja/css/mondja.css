@@ -110,6 +110,38 @@ pre {
     margin-right: 0;
 }
 
+.modal-content {
+    background-color: whitesmoke;
+}
+
+textarea.mydialog {
+    resize: vertical;
+}
+
+.mydialogtag {
+    text-align: center;
+}
+
+.mylogin header #error {
+    color: crimson;
+}
+
+.my404 .panel .alert {
+    font-size: 38px;
+}
+
+.my404 .panel h2 {
+    margin-bottom: 13px;
+}
+
+.my500 .panel .alert {
+    font-size: 38px;
+}
+
+.my500 .panel h2 {
+    margin-bottom: 13px;
+}
+
 /*○ボタン*/
 #social-icon a {
     margin: 0 5px 5px 0;
@@ -174,8 +206,11 @@ pre {
         margin-top: -23px;
     }
 
-    /*○ボタン*/
+    #about header {
+        margin-left: 12px;
+    }
 
+    /*○ボタン*/
     #social-icon {
         text-align: center;
         margin-top: -89px;
@@ -244,8 +279,11 @@ pre {
         margin-top: -13px;
     }
 
-    /*○ボタン*/
+    #about header {
+        margin-left: 2px;
+    }
 
+    /*○ボタン*/
     #social-icon {
         text-align: center;
         margin-top: -22px;

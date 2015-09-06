@@ -45,7 +45,7 @@
             {% csrf_token %}
             <div class="modal fade" id="myModalEdit{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
-                    <div class="modal-content" style="background-color: whitesmoke">
+                    <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title">_mondja_py_( ..)φ</h4>
@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="id_content">Content:</label>
-                                <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize: vertical" placeholder="Type a content (Markdown)" required >{{item.content}}</textarea>
+                                <textarea cols="75" id="id_content" class="form-control mydialog" name="content" rows="12" placeholder="Type a content (Markdown)" required >{{item.content}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="id_tags">Tags:</label>

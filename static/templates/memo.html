@@ -9,18 +9,18 @@
 
         <div class="well">
             <h1 class="memo-header" id="memo-title">
-                <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" />
-                {{item.title}}
+                <img src="{{ MEDIA_URL }}identicon/{{ item.user.username }}.png" class="img-rounded" />
+                {{ item.title }}
             </h1>
             <div class="row">
                 <div class="memo-header col-md-8 col-xs-8" id="memo-date">
-                    <i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}
+                    <i class="fa fa-calendar fa-lg"></i> {{ item.pub_date }}
                 </div>
 
                 {% ifequal user item.user %}
                     <div class="memo-header col-md-4 col-xs-4 text-right" id="memo-button">
-                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalEdit{{item.id}}"><i class="fa fa-pencil-square-o fa-lg fa-fw"></i></button>
-                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModalDelete{{item.id}}"><i class="fa fa-trash-o fa-lg fa-fw"></i></button>
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModalEdit{{ item.id }}"><i class="fa fa-pencil-square-o fa-lg fa-fw"></i></button>
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModalDelete{{ item.id }}"><i class="fa fa-trash-o fa-lg fa-fw"></i></button>
                     </div>
                 {% endifequal %}
             </div>
@@ -43,7 +43,7 @@
         <!-- 編集ダイアログ -->
         <form method="post" action="{% url 'edit_memo' item.id %}">
             {% csrf_token %}
-            <div class="modal fade" id="myModalEdit{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModalEdit{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -53,17 +53,17 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="id_title">Title:</label>
-                                <input id="id_title" class="form-control" maxlength="200" name="title" type="text" placeholder="Type a title" value="{{item.title}}" autofocus required />
+                                <input id="id_title" class="form-control" maxlength="200" name="title" type="text" placeholder="Type a title" value="{{ item.title }}" autofocus required />
                             </div>
                             <div class="form-group">
                                 <label for="id_content">Content:</label>
-                                <textarea cols="75" id="id_content" class="form-control mydialog" name="content" rows="12" placeholder="Type a content (Markdown)" required >{{item.content}}</textarea>
+                                <textarea cols="75" id="id_content" class="form-control mydialog" name="content" rows="12" placeholder="Type a content (Markdown)" required >{{ item.content }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="id_tags">Tags:</label>
-                                <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type a tags" value="{{item.get_tags_str}}" />
+                                <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type a tags" value="{{ item.get_tags_str }}" />
                             </div>
-                            <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
+                            <input type="hidden" name="user" value="{{ user.id }}" id="id_user" />
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
@@ -77,7 +77,7 @@
         <!-- 削除確認ダイアログ -->
         <form method="post" action="{% url 'delete_memo' item.id %}">
             {% csrf_token %}
-            <div class="modal fade" id="myModalDelete{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModalDelete{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

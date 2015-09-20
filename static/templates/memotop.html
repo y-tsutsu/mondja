@@ -31,7 +31,7 @@
                             <label for="id_tags">Tags:</label>
                             <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type tags" />
                         </div>
-                        <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
+                        <input type="hidden" name="user" value="{{ user.id }}" id="id_user" />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
@@ -78,7 +78,7 @@
                                 <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" name="sort_tag_id">
                                     <option value=""></option>
                                     {% for item in all_tags %}
-                                        <option value="{{item.id}}">{{item.name}}</option>
+                                        <option value="{{ item.id }}">{{ item.name }}</option>
                                     {% endfor%}
                                 </select>
                             </div>
@@ -89,10 +89,10 @@
                                 <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" name="sort_user_id">
                                     <option value=""></option>
                                     {% if user.is_superuser %}
-                                        <option value={{user.id}}>My user</option>
+                                        <option value={{ user.id }}>My user</option>
                                     {% endif %}
                                     {% for item in all_users %}
-                                        <option value="{{item.id}}">{{item.username}}</option>
+                                        <option value="{{ item.id }}">{{ item.username }}</option>
                                     {% endfor%}
                                 </select>
                             </div>
@@ -133,7 +133,7 @@
                                 <select class="selectpicker" data-style="btn-info" data-header="Select a tag" data-live-search="true" data-width="100%" name="search_tag_id">
                                     <option value=""></option>
                                     {% for item in all_tags %}
-                                        <option value="{{item.id}}">{{item.name}}</option>
+                                        <option value="{{ item.id }}">{{ item.name }}</option>
                                     {% endfor%}
                                 </select>
                             </div>
@@ -144,10 +144,10 @@
                                 <select class="selectpicker" data-style="btn-warning" data-header="Select a user" data-live-search="true" data-width="100%" name="search_user_id">
                                     <option value=""></option>
                                     {% if user.is_superuser %}
-                                        <option value={{user.id}}>My user</option>
+                                        <option value={{ user.id }}>My user</option>
                                     {% endif %}
                                     {% for item in all_users %}
-                                        <option value="{{item.id}}">{{item.username}}</option>
+                                        <option value="{{ item.id }}">{{ item.username }}</option>
                                     {% endfor%}
                                 </select>
                             </div>
@@ -177,7 +177,7 @@
                         <div class="row">
                             {% for item in top48_tags %}
                                 <div class="col-md-3 col-xs-6 mydialogtag">
-                                    <input type="checkbox" data-toggle="toggle" data-on={{item.name}} data-off={{item.name}} data-onstyle={{item.get_toggle_onstyle}} data-size="mini" data-width="125px" name="select_tag" value={{item.id}}>
+                                    <input type="checkbox" data-toggle="toggle" data-on={{ item.name }} data-off={{ item.name }} data-onstyle={{ item.get_toggle_onstyle }} data-size="mini" data-width="125px" name="select_tag" value={{ item.id }}>
                                 </div>
                             {% endfor %}
                         </div>

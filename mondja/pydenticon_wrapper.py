@@ -1,6 +1,4 @@
-﻿# coding: utf-8
-
-from django.conf import settings
+﻿from django.conf import settings
 import pydenticon
 import os.path
 

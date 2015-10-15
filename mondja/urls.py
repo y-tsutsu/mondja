@@ -28,6 +28,9 @@ urlpatterns = patterns('',
     # Refresh:
     url(r'^refresh/$', 'app.views.refresh_memo', name = 'refresh_memo'),
 
+    # Dumpdata:
+    url(r'^dumpdata/(?P<app_name>.*)/$', 'mondja.dumpdata.dumpdata_app', name = 'dumpdata_app'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

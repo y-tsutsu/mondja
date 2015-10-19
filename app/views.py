@@ -71,15 +71,14 @@ def home(request):
     elif types == 'tags':
         tids = request.GET.getlist('select_tag')
         if tids == []:
-            all_memo = Memo.objects.all().filter(tags__isnull = True)
+            all_memo = Memo.objects.all().filter(tags__isnull = True).order_by('-pub_date')
         else:
-            memos = []
+            memos = set()
             for tid in tids:
                 tag = Tag.objects.get(id = tid)
                 for memo in tag.memo_set.all():
-                    memos.append(memo)
-            all_memo = sorted(set(memos), key = lambda x: x.pub_date)
-        all_memo.reverse()
+                    memos.add(memo)
+            all_memo = sorted(memos, key = lambda x: x.pub_date, reverse = True)
 
     else:
          all_memo = Memo.objects.all().order_by('-pub_date')

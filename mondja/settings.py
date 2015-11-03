@@ -2,14 +2,16 @@
 Django settings for mondja project.
 """
 
-from os import path
+from os import path, environ
+
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
-DEBUG = True
+DEBUG = environ.get('DEBUG') == '1'
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = (
     'localhost',
+    'mondja.herokuapp.com',
 )
 
 ADMINS = (
@@ -18,15 +20,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': path.join(PROJECT_ROOT, 'db.sqlite3'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': dj_database_url.config()
 }
 
 LOGIN_URL = '/login'
@@ -136,6 +132,7 @@ INSTALLED_APPS = (
     'app',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -182,3 +179,6 @@ LOGIN_URL = '/login/'
 
 # Specify the default test runner.
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

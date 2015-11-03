@@ -91,8 +91,10 @@
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Procfile" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="runtime.txt" />
     <Content Include="static\media\identicon\sample.png" />
     <Content Include="static\static\assets\css\font-awesome.min.css" />
     <Content Include="static\static\assets\css\ie8.css" />

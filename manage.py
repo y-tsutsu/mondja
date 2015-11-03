@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 """
 Command-line utility for administrative tasks.
 """
@@ -11,6 +11,9 @@ if __name__ == "__main__":
         "DJANGO_SETTINGS_MODULE",
         "mondja.settings"
     )
+
+    import dotenv
+    dotenv.read_dotenv()
 
     from django.core.management import execute_from_command_line
 

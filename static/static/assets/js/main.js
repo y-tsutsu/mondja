@@ -9,10 +9,10 @@
 	var settings = {
 
 		// Speed to resize panel.
-			resizeSpeed: 600,
+			resizeSpeed: 0,
 
 		// Speed to fade in/out.
-			fadeSpeed: 300,
+			fadeSpeed: 0,
 
 		// Size factor.
 			sizeFactor: 11.5,
@@ -58,14 +58,6 @@
 					firstPanelId = null,
 					isLocked = false,
 					hash = window.location.hash.substring(1);
-
-				if (skel.vars.touch) {
-
-					settings.fadeSpeed = 0;
-					settings.resizeSpeed = 0;
-					$nav_links.find('span').remove();
-
-				}
 
 				// Body.
 					$body._resize = function() {
@@ -135,11 +127,6 @@
 									// Set new active.
 										activePanelId = id;
 
-										// Force scroll to top.
-											$hbw.animate({
-												scrollTop: 0
-											}, settings.resizeSpeed, 'swing');
-
 										// Reposition.
 											$body._reposition();
 
@@ -148,14 +135,21 @@
 												height: panels[activePanelId].outerHeight()
 											}, instant ? 0 : settings.resizeSpeed, 'swing', function() {
 
-												// Fade in new active panel.
-													$footer.fadeTo(instant ? 0 : settings.fadeSpeed, 1.0);
-													panels[activePanelId].fadeIn(instant ? 0 : settings.fadeSpeed, function() {
+												// Force scroll to top.
+													$hbw.animate({
+														scrollTop: 0
+													}, settings.resizeSpeed, 'swing', function() {
 
-														// Unlock.
-															isLocked = false;
+														// Fade in new active panel.
+															$footer.fadeTo(instant ? 0 : settings.fadeSpeed, 1.0);
+															panels[activePanelId].fadeIn(instant ? 0 : settings.fadeSpeed, function() {
 
+																// Unlock.
+																	isLocked = false;
+
+															});
 													});
+
 											});
 
 								});

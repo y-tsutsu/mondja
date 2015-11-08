@@ -1,0 +1,32 @@
+[
+{
+  "fields": {
+    "extra_data": "{\"expires\": null, \"access_token\": \"CAAVbZABrjtAIBAAxuybEfUCNDOGh5naDQKlgX70CrGZCBGK9ZBjG4akqsXFmN4wIqbHhmDukD0aWmARxZARcqnF3VHZAOJJCJc6FQCzR8rc5YTYfaKLohJUPBv36qfrdZCfVxMJDlXlDgxLRBz9tGIbK0YKGpJ1sAOj9LlbNgetTeXbHMo4YeWld6IHv6s68gZD\", \"id\": \"739475012824881\"}",
+    "provider": "facebook",
+    "user": 4,
+    "uid": "739475012824881"
+  },
+  "model": "default.usersocialauth",
+  "pk": 1
+},
+{
+  "fields": {
+    "extra_data": "{\"access_token\": {\"screen_name\": \"tsutsu09282\", \"user_id\": \"3277361576\", \"oauth_token_secret\": \"a1I9xYuF0zXlHo0nLJRAYkaOVA1B1KWbIV5E3V3D9BTS8\", \"oauth_token\": \"3277361576-SK6PuqzzZ7NzAMjKQy7pO76TpzNTwFDQ4u9Yf0J\", \"x_auth_expires\": \"0\"}, \"id\": 3277361576}",
+    "provider": "twitter",
+    "user": 5,
+    "uid": "3277361576"
+  },
+  "model": "default.usersocialauth",
+  "pk": 2
+},
+{
+  "fields": {
+    "extra_data": "{\"expires\": null, \"access_token\": \"e5b83bbec32405abc23a598cec856cabfc7ff124\", \"login\": \"y-tsutsu\", \"id\": 1199726}",
+    "provider": "github",
+    "user": 6,
+    "uid": "1199726"
+  },
+  "model": "default.usersocialauth",
+  "pk": 3
+}
+]

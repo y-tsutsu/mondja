@@ -59,4 +59,7 @@ urlpatterns = patterns('',
             'next_page': '../login/'
         },
         name = 'logout'),
+
+    # python social auth
+    url('', include('social.apps.django_app.urls', namespace='social')),
 )

@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'gunicorn',
+    'social.apps.django_app.default',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -172,6 +173,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
 )
 
 LOGIN_REDIRECT_URL = '/'
@@ -182,3 +185,30 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1507860389540866'
+SOCIAL_AUTH_FACEBOOK_SECRET = '37c5826d4cf783d3a2bf5bbda51566a4'
+SOCIAL_AUTH_TWITTER_KEY = 'JpxyJFh5PXh4ovXi7MmFSkOCY'
+SOCIAL_AUTH_TWITTER_SECRET = '97eflkkQMt7MUCPAm6SgI9fRLFFFtLWkj7iFJ1Vh6wvIteL6zo'
+SOCIAL_AUTH_GITHUB_KEY = '0fe6dbc401e3b9968c46'
+SOCIAL_AUTH_GITHUB_SECRET = 'e88e408af4e6a5400105e9d94e0e0db280b6b10a'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'mondja.custom_pipeline.set_superuser',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)

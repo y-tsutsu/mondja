@@ -236,8 +236,12 @@ textarea.mydialog {
         margin-right: auto;
     }
 
-    div .mylogin, div .mylogout, div .my404, div .my500 {
+    div .my404, div .my500 {
         margin-top: 82px;
+    }
+
+    div .mylogin, div .mylogout {
+        margin-top: 64px;
     }
 
     #login form {

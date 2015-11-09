@@ -31,14 +31,11 @@
                         </div>
                         <div class="12u$">
                             <div class="row">
-                                <div class="col-md-3 col-xs-4">
-                                    <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'" class="btn btn-default mysociallogin"><i class="fa fa-facebook fa-lg"></i>Facebook</button>
+                                <div class="col-md-6 col-xs-6">
+                                    <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fa fa-facebook fa-lg fa-fw"></i>Facebook</button>
                                 </div>
-                                <div class="col-md-3 col-xs-4">
-                                    <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'" class="btn btn-default mysociallogin"><i class="fa fa-twitter fa-lg"></i>Twitter</button>
-                                </div>
-                                <div class="col-md-3 col-xs-4">
-                                    <button type="button" onclick="location.href='{% url 'social:begin' 'github' %}'" class="btn btn-default mysociallogin"><i class="fa fa-github fa-lg"></i>GitHub</button>
+                                <div class="col-md-6 col-xs-6">
+                                    <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fa fa-twitter fa-lg fa-fw"></i>Twitter</button>
                                 </div>
                             </div>
                         </div>
@@ -47,6 +44,10 @@
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>
         </article>
+
+        {% if not user.is_anonymous %}
+            <meta http-equiv="refresh" content="0; URL=/logout/">
+        {% endif %}
 
     </div>
 

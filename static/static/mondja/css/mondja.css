@@ -292,6 +292,10 @@ textarea.mydialog {
         margin-top: -13px;
     }
 
+    #memo-body blockquote p {
+        font-size: 0.7em;
+    }
+
     #about header {
         margin-left: 2px;
     }

@@ -10,6 +10,8 @@ Djangoを使ったシンプルなWebメモアプリ（Python Tools for Visual St
 
 # Run
 ```
+python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver
 ```
 Access to http://127.0.0.1:8000/

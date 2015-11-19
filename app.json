@@ -1,0 +1,19 @@
+{
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "description": "Simple web memo application.",
+  "keywords": [
+    "python",
+    "django",
+    "markdown"
+  ],
+  "logo": "https://avatars1.githubusercontent.com/u/1199726?v=3&s=140",
+  "name": "mondja",
+  "repository": "https://github.com/y-tsutsu/mondja",
+  "scripts": {
+    "postdeploy": "sh -c 'python manage.py migrate auth; python manage.py migrate'; python manage.py loaddata ./backup/init_db.json"
+  },
+  "success_url": "/",
+  "website": "https://github.com/y-tsutsu/mondja"
+}

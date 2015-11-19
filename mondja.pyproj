@@ -94,7 +94,10 @@
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
+    <Content Include="app.json" />
     <Content Include="Procfile" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="runtime.txt" />

@@ -1,20 +1,20 @@
 [
 {
   "fields": {
-    "user": 4,
     "provider": "facebook",
-    "extra_data": "{\"id\": \"739475012824881\", \"access_token\": \"CAAVbZABrjtAIBAGCQxIiRoFuYwcTfs76QkhZBHZCkITtpULNJfXycnaJWZBqnpoXk4TzeP3zf7rJNZBpc9FP3hexDcTtCLUTpdApacFKrwkjyVjn7Q21CBdhVAR05tA5RGIbjZBAPY4dVgTDQSBe94ZAVjVB6zP74605imNNrLlJg6tpPwYbyqZBnIwAyC25B7MZD\", \"expires\": null}",
-    "uid": "739475012824881"
+    "uid": "739475012824881",
+    "user": 4,
+    "extra_data": "{\"access_token\": \"CAAVbZABrjtAIBAFfl8FU3YWOrI56rs9SPqzhrZBbnGZArG8E2A71bafawifKssPYtnoNQdMVn0gyd0lroxEMuAtGvfBRWlxfXQsCZAEoW8AlEIEFOz8DdGWZCGdy40KUDtnVSZCicdP5MWEN08MLDUdAagZB4SvKxfcTZADBivFPr38wsk6K7NxvSSff30vn874ZD\", \"expires\": null, \"id\": \"739475012824881\"}"
   },
   "model": "default.usersocialauth",
   "pk": 1
 },
 {
   "fields": {
-    "user": 5,
     "provider": "twitter",
-    "extra_data": "{\"id\": 3277361576, \"access_token\": {\"oauth_token_secret\": \"a1I9xYuF0zXlHo0nLJRAYkaOVA1B1KWbIV5E3V3D9BTS8\", \"x_auth_expires\": \"0\", \"user_id\": \"3277361576\", \"oauth_token\": \"3277361576-SK6PuqzzZ7NzAMjKQy7pO76TpzNTwFDQ4u9Yf0J\", \"screen_name\": \"tsutsu09282\"}}",
-    "uid": "3277361576"
+    "uid": "3277361576",
+    "user": 5,
+    "extra_data": "{\"access_token\": {\"screen_name\": \"tsutsu09282\", \"oauth_token\": \"3277361576-SK6PuqzzZ7NzAMjKQy7pO76TpzNTwFDQ4u9Yf0J\", \"user_id\": \"3277361576\", \"oauth_token_secret\": \"a1I9xYuF0zXlHo0nLJRAYkaOVA1B1KWbIV5E3V3D9BTS8\", \"x_auth_expires\": \"0\"}, \"id\": 3277361576}"
   },
   "model": "default.usersocialauth",
   "pk": 2

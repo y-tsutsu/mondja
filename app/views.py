@@ -9,6 +9,7 @@ from django.contrib.auth import models as usermodels
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from app.models import Memo, Tag
 from app.forms import MemoForm, TagForm
@@ -84,7 +85,15 @@ def home(request):
     else:
          all_memo = Memo.objects.all().order_by('-pub_date')
 
-    all_memo = all_memo[:100]
+    paginator = Paginator(all_memo, 50)
+    page = request.GET.get('page')
+
+    try:
+        all_memo = paginator.page(page)
+    except PageNotAnInteger:
+        all_memo = paginator.page(1)
+    except EmptyPage:
+        all_memo = paginator.page(paginator.num_pages)
 
     for item in all_memo:
         create_identicon(item.user.username)

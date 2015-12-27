@@ -8,3 +8,9 @@ register = template.Library()
 @stringfilter
 def mark2html(value):
     return markdown2.markdown(value, extras = { 'code-friendly': 1, 'fenced-code-blocks': { 'cssclass': 'highlight' } })
+
+@register.simple_tag
+def url_replace(request, field, value):
+    gets = request.GET.copy()
+    gets[field] = value
+    return gets.urlencode()

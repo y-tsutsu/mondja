@@ -18,7 +18,7 @@ from datetime import datetime
 
 @login_required
 def home(request):
-    """Homeページを表示する．"""
+    ''' Homeページを表示する． '''
     types = request.GET.get('types')
 
     if types == 'sort':
@@ -111,7 +111,7 @@ def home(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def add_memo(request):
-    """メモを新規に追加する．"""
+    ''' メモを新規に追加する． '''
     if request.method == 'POST':
         memo_form = MemoForm(request.POST or None)
 
@@ -141,7 +141,7 @@ def add_memo(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def edit_memo(request, id):
-    """既存のメモを編集する．"""
+    ''' 既存のメモを編集する． '''
     memo = Memo.objects.get(id = id)
 
     if request.method == 'POST' and memo.user == request.user:
@@ -177,7 +177,7 @@ def edit_memo(request, id):
 
 @user_passes_test(lambda u: u.is_superuser)
 def delete_memo(request, id):
-    """メモを削除する．"""
+    ''' メモを削除する． '''
     memo = Memo.objects.get(id = id)
 
     if request.method == 'POST' and memo.user == request.user:
@@ -189,7 +189,7 @@ def delete_memo(request, id):
 
 @user_passes_test(lambda u: u.is_superuser)
 def refresh_memo(request):
-    """メモの表示をリフレッシュする．"""
+    ''' メモの表示をリフレッシュする． '''
     return HttpResponseRedirect('/#memo')
 
 def is_valid_tag(tag):

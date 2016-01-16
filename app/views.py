@@ -5,6 +5,7 @@ Definition of views.
 from django.shortcuts import *
 from django.http import HttpRequest
 from django.template import RequestContext
+from django.contrib import messages
 from django.contrib.auth import models as usermodels
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Count
@@ -132,10 +133,14 @@ def add_memo(request):
                         new_tag.save()
                         new_memo.tags.add(new_tag)
                         new_memo.save()
+                    else:
+                        messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
                 else:
                     tag = Tag.objects.get(name = stag)
                     new_memo.tags.add(tag)
                     new_memo.save()
+        else:
+            messages.error(request, 'Incorrect title or content.')
 
     return HttpResponseRedirect('/#memo')
 
@@ -166,12 +171,16 @@ def edit_memo(request, id):
                         new_tag.save()
                         new_memo.tags.add(new_tag)
                         new_memo.save()
+                    else:
+                        messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
                 else:
                     tag = Tag.objects.get(name = stag)
                     new_memo.tags.add(tag)
                     new_memo.save()
 
             clear_notused_tag()
+        else:
+            messages.error(request, 'Incorrect title or content.')
 
     return HttpResponseRedirect('/#memo')
 

@@ -126,9 +126,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'app.apps.AppConfig',
     'gunicorn',
     'social.apps.django_app.default',
 )

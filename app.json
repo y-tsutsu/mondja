@@ -12,7 +12,7 @@
   "name": "mondja",
   "repository": "https://github.com/y-tsutsu/mondja",
   "scripts": {
-    "postdeploy": "python manage.py migrate auth; python manage.py migrate; python manage.py loaddata ./backup/init_db.json"
+    "postdeploy": "python manage.py migrate; python manage.py loaddata ./backup/init_db.json"
   },
   "success_url": "/",
   "website": "https://github.com/y-tsutsu/mondja"

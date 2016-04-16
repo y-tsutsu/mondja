@@ -30,4 +30,4 @@ _ReSharper*/
 env
 __pycache__
 web.debug.config
-static/media/identicon/
+media/identicon/

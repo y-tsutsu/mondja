@@ -16,7 +16,7 @@ from mondja import settings
 from mondja import dumpdata
 from app import views as appviews
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Home:
     url(r'^$', appviews.home, name='home'),
 
@@ -42,7 +42,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # MEDIA_ROOT
-    (r'media/(?P<path>.*)$', static.serve, { 'document_root': settings.MEDIA_ROOT }),
+    url(r'media/(?P<path>.*)$', static.serve, { 'document_root': settings.MEDIA_ROOT }),
 
     # favicon
     url(r'^favicon\.ico$', RedirectView.as_view(url = '/static/images/favicon.ico')),
@@ -66,4 +66,4 @@ urlpatterns = patterns('',
 
     # python social auth
     url(r'', include('social.apps.django_app.urls', namespace='social')),
-)
+]

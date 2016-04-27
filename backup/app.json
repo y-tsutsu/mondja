@@ -694,7 +694,7 @@
   "pk": 26,
   "fields": {
     "title": "Python\u3067OpenCV",
-    "content": "# \u57fa\u790e\u7684\u306a\u3053\u3068\u304c\u304b\u306a\u308a\u7db2\u7f85\u3055\u308c\u3066\u3044\u308b\u30b5\u30a4\u30c8\r\n\r\n[http://opencv.blog.jp/python/\u4f7f\u3044\u65b9](http://opencv.blog.jp/python/\u4f7f\u3044\u65b9)\r\n\r\n![image](http://livedoor.blogimg.jp/progr-python2/imgs/b/4/b4d28d74.jpg)\r\n",
+    "content": "# \u57fa\u790e\u7684\u306a\u3053\u3068\u304c\u304b\u306a\u308a\u7db2\u7f85\u3055\u308c\u3066\u3044\u308b\u30b5\u30a4\u30c8\r\n\r\n[http://opencv.blog.jp/python/\u4f7f\u3044\u65b9](http://opencv.blog.jp/python/\u4f7f\u3044\u65b9)\r\n\r\n![image](http://opencv.jp/wordpress/wp-content/uploads/q100_7.01bpp-300x300.png)",
     "pub_date": "2015-08-09T15:13:58.685Z",
     "user": 2,
     "tags": [
@@ -1374,7 +1374,7 @@
   "pk": 88,
   "fields": {
     "title": "python\u3067\u30de\u30eb\u30c1\u30b9\u30ec\u30c3\u30c9",
-    "content": "# threading.Thread\u306e\u30b5\u30d6\u30af\u30e9\u30b9\u3092\u7528\u610f\u3057\u306a\u3044\u65b9\u6cd5\r\n\r\n```\r\nimport threading, random\r\n\r\nmy_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g']\r\n\r\nlock = threading.Lock()\r\ndef sub(num):\r\n    with lock:\r\n        for _ in range(num):\r\n            print(my_list[random.randint(0, len(my_list) - 1)])\r\n\r\nsub1 = threading.Thread(target = sub, args = (10, ))\r\nsub2 = threading.Thread(target = sub, args = (20, ))\r\nsub1.start()\r\nsub2.start()\r\n```",
+    "content": "# \u30af\u30e9\u30b9\u3092\u7528\u610f\u3057\u306a\u3044\u7c21\u6613\u7684\u306a\u65b9\u6cd5\r\n\r\nthreading.Thread\u306e\u30b5\u30d6\u30af\u30e9\u30b9\u3092\u7528\u610f\u3057\u306a\u3044\u65b9\u6cd5\u3068\u5f15\u6570\u306e\u6e21\u3057\u65b9\r\n\r\n```\r\nimport threading, random\r\n\r\nmy_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g']\r\n\r\nlock = threading.Lock()\r\ndef sub(num):\r\n    with lock:\r\n        for _ in range(num):\r\n            print(my_list[random.randint(0, len(my_list) - 1)])\r\n\r\nsub1 = threading.Thread(target = sub, args = (10, ))\r\nsub2 = threading.Thread(target = sub, args = (20, ))\r\nsub1.start()\r\nsub2.start()\r\n```",
     "pub_date": "2016-04-15T12:36:35.539Z",
     "user": 2,
     "tags": [

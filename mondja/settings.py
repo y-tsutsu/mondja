@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'app',
+    'app.apps.AppConfig',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.admindocs',

@@ -24,7 +24,6 @@ SECRET_KEY = 'a858094f-6e6e-4a42-9bdf-24369f9a4395'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') == '1'
-TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
@@ -75,6 +74,7 @@ TEMPLATES = [
                 'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect',
             ],
+            'debug': DEBUG,
         },
     },
 ]

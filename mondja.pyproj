@@ -133,11 +133,13 @@
     <Content Include="static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="static\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="static\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="static\bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="static\bootstrap\css\bootstrap-toggle.css" />
     <Content Include="static\bootstrap\css\bootstrap-toggle.min.css" />
     <Content Include="static\bootstrap\css\bootstrap.css" />
     <Content Include="static\bootstrap\css\bootstrap.css.map" />
     <Content Include="static\bootstrap\css\bootstrap.min.css" />
+    <Content Include="static\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="static\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="static\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />

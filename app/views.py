@@ -116,31 +116,7 @@ def add_memo(request):
     if request.method == 'POST':
         memo_form = MemoForm(request.POST or None)
 
-        if memo_form.is_valid():
-            new_memo = memo_form.save(commit = False)
-            new_memo.save()
-
-            tags = request.POST['tags-text']
-
-            for stag in [s.rstrip() for s in tags.split()]:
-
-                if len(Tag.objects.filter(name = stag)) == 0:
-                    tag = Tag(name = stag, user = request.user)
-                    tag_form = TagForm(instance = tag)
-
-                    if is_valid_tag(stag):
-                        new_tag = tag_form.save(commit = False)
-                        new_tag.save()
-                        new_memo.tags.add(new_tag)
-                        new_memo.save()
-                    else:
-                        messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
-                else:
-                    tag = Tag.objects.get(name = stag)
-                    new_memo.tags.add(tag)
-                    new_memo.save()
-        else:
-            messages.error(request, 'Incorrect title or content.')
+        add_or_edit_memo(request, memo_form, False)
 
     return HttpResponseRedirect('/#memo')
 
@@ -152,37 +128,43 @@ def edit_memo(request, id):
     if request.method == 'POST' and memo.user == request.user:
         memo_form = MemoForm(request.POST or None, instance = memo)
 
-        if memo_form.is_valid():
-            new_memo = memo_form.save(commit = False)
-            new_memo.save()
+        add_or_edit_memo(request, memo_form, True)
+
+    return HttpResponseRedirect('/#memo')
+
+def add_or_edit_memo(request, memo_form, is_edit):
+    ''' メモを新規に追加，または既存のメモを編集する． '''
+    if memo_form.is_valid():
+        new_memo = memo_form.save(commit = False)
+        new_memo.save()
+        if is_edit:
             new_memo.tags.clear()
             new_memo.save()
 
-            tags = request.POST['tags-text']
+        tags = request.POST['tags-text']
 
-            for stag in [s.rstrip() for s in tags.split()]:
+        for stag in [s.rstrip() for s in tags.split()]:
 
-                if len(Tag.objects.filter(name = stag)) == 0:
-                    tag = Tag(name = stag, user = request.user)
-                    tag_form = TagForm(instance = tag)
+            if len(Tag.objects.filter(name = stag)) == 0:
+                tag = Tag(name = stag, user = request.user)
+                tag_form = TagForm(instance = tag)
 
-                    if is_valid_tag(stag):
-                        new_tag = tag_form.save(commit = False)
-                        new_tag.save()
-                        new_memo.tags.add(new_tag)
-                        new_memo.save()
-                    else:
-                        messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
-                else:
-                    tag = Tag.objects.get(name = stag)
-                    new_memo.tags.add(tag)
+                if is_valid_tag(stag):
+                    new_tag = tag_form.save(commit = False)
+                    new_tag.save()
+                    new_memo.tags.add(new_tag)
                     new_memo.save()
+                else:
+                    messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
+            else:
+                tag = Tag.objects.get(name = stag)
+                new_memo.tags.add(tag)
+                new_memo.save()
 
+        if is_edit:
             clear_notused_tag()
-        else:
-            messages.error(request, 'Incorrect title or content.')
-
-    return HttpResponseRedirect('/#memo')
+    else:
+        messages.error(request, 'Incorrect title or content.')
 
 @user_passes_test(lambda u: u.is_superuser)
 def delete_memo(request, id):

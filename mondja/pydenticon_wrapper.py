@@ -2,18 +2,18 @@
 import pydenticon
 import os.path
 
-dir = settings.MEDIA_ROOT + '/identicon'
+dir = settings.MEDIA_ROOT + '/identicon/'
 
-foreground = ['rgb(45, 79, 255)', 'rgb(254, 180, 44)', 'rgb(226, 121, 234)', 'rgb(30, 179, 253)', 'rgb(232, 77, 65)', 'rgb(49, 203, 115)', 'rgb(141, 69, 170)']
+foreground = ['rgb(63, 81, 181)', 'rgb(255, 152, 0)', 'rgb(156, 39, 176)', 'rgb(33, 150, 243)', 'rgb(244, 67, 54)', 'rgb(76, 175, 80)', 'rgb(156, 39, 176)']
 
-background = 'rgb(224, 224, 224)'
+background = 'rgb(237, 231, 246)'
 
 padding = (20, 20, 20, 20)
 
 generator = pydenticon.Generator(5, 5, foreground = foreground, background = background)
 
 def create_identicon(username):
-    filename = dir + '/' + username + '.png'
+    filename = dir + username + '.png'
     if os.path.isfile(filename): return
 
     identicon = generator.generate(username, 200, 200, padding = padding, output_format = 'png')

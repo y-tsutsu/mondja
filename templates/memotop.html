@@ -166,7 +166,7 @@
     <!-- タグ一覧ダイアログ -->
     <form method="get" action="{% url 'home' %}#memo">
         <div class="modal fade" id="myModalTags" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -175,8 +175,8 @@
                     <div class="modal-body">
                         <div class="row">
                             {% for item in top48_tags %}
-                                <div class="col-md-3 col-xs-6 mydialogtag">
-                                    <input type="checkbox" data-toggle="toggle" data-on={{ item.name }} data-off={{ item.name }} data-onstyle={{ item.get_toggle_onstyle }} data-size="mini" data-width="125px" name="select_tag" value={{ item.id }}>
+                                <div class="col-md-2 col-xs-6 mydialogtag">
+                                    <input type="checkbox" data-toggle="toggle" data-on={{ item.name }} data-off={{ item.name }} data-onstyle={{ item.get_toggle_onstyle }} data-size="mini" data-width="100%" name="select_tag" value={{ item.id }}>
                                 </div>
                             {% endfor %}
                         </div>

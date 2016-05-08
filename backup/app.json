@@ -342,6 +342,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 47,
+  "fields": {
+    "name": "Electron",
+    "pub_date": "2016-05-08T00:34:42.168Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -1314,11 +1323,12 @@
   "pk": 82,
   "fields": {
     "title": "Web\u6280\u8853\u3067\u30c7\u30b9\u30af\u30c8\u30c3\u30d7\u30a2\u30d7\u30ea\u306e\u958b\u767a",
-    "content": "# Electron\r\n\r\n> Electron\u306fGitHub\u793e\u304c\u958b\u767a\u3057\u305f\u3001\u30c7\u30b9\u30af\u30c8\u30c3\u30d7\u30a2\u30d7\u30ea\u3092\u4f5c\u308c\u308b\u30af\u30ed\u30b9\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u5b9f\u884c\u74b0\u5883\u3067\u3059\u3002\u30aa\u30fc\u30d7\u30f3\u30bd\u30fc\u30b9\u306eMIT\u30e9\u30a4\u30bb\u30f3\u30b9\u306a\u306e\u3067\u3001\u5546\u7528\u5229\u7528\u3082\u7121\u6599\u3067\u53ef\u80fd\u3068\u306a\u3063\u3066\u3044\u307e\u3059\u3002\r\n\r\n[http://electron.atom.io](http://electron.atom.io)\r\n\r\n![image](http://cdn.liginc.co.jp/wp-content/uploads/2015/08/ele.png)\r\n",
+    "content": "# Electron\r\n\r\n> Electron\u306fGitHub\u793e\u304c\u958b\u767a\u3057\u305f\u3001\u30c7\u30b9\u30af\u30c8\u30c3\u30d7\u30a2\u30d7\u30ea\u3092\u4f5c\u308c\u308b\u30af\u30ed\u30b9\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u5b9f\u884c\u74b0\u5883\u3067\u3059\u3002\u30aa\u30fc\u30d7\u30f3\u30bd\u30fc\u30b9\u306eMIT\u30e9\u30a4\u30bb\u30f3\u30b9\u306a\u306e\u3067\u3001\u5546\u7528\u5229\u7528\u3082\u7121\u6599\u3067\u53ef\u80fd\u3068\u306a\u3063\u3066\u3044\u307e\u3059\u3002\r\n\r\n[http://electron.atom.io](http://electron.atom.io)\r\n\r\n![image](http://cdn.liginc.co.jp/wp-content/uploads/2015/08/ele.png)",
     "pub_date": "2016-02-12T00:17:29.980Z",
     "user": 2,
     "tags": [
-      1
+      1,
+      47
     ]
   }
 },
@@ -1458,6 +1468,20 @@
     "user": 2,
     "tags": [
       39
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 95,
+  "fields": {
+    "title": "Electron\u306e\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0",
+    "content": "# electron-packager\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0\r\n\r\n```\r\n$ npm i electron-packager -g\r\n$ electron-packager ./sample sample --platform=win32 --arch=x64 --version=0.37.2\r\n```\r\n\r\n* platform \u30fb\u30fb\u30fb all\uff0clinux\uff0cwin32\uff0cdarwin\u3092\u30ab\u30f3\u30de\u533a\u5207\u308a\u3067\uff0e\r\n* arch \u30fb\u30fb\u30fb all\uff0cia32\uff0cx64\u306e\u3044\u305a\u308c\u304b\u3092\u9078\u629e\uff0e\r\n* version \u30fb\u30fb\u30fb Electron\u306e\u30d0\u30fc\u30b8\u30e7\u30f3\u3092\u6307\u5b9a\uff0e\r\n\r\n![image](http://codezine.jp/static/images/article/8782/8782_t.gif)",
+    "pub_date": "2016-05-08T00:34:42.151Z",
+    "user": 2,
+    "tags": [
+      1,
+      47
     ]
   }
 }

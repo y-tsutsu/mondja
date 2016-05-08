@@ -2,7 +2,7 @@
 Definition of views.
 """
 
-from django.shortcuts import *
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest
 from django.template import RequestContext
 from django.contrib import messages
@@ -118,19 +118,19 @@ def add_memo(request):
 
         add_or_edit_memo(request, memo_form, False)
 
-    return HttpResponseRedirect('/#memo')
+    return redirect('/#memo')
 
 @user_passes_test(lambda u: u.is_superuser)
 def edit_memo(request, id):
     ''' 既存のメモを編集する． '''
-    memo = Memo.objects.get(id = id)
+    memo = get_object_or_404(Memo, pk = id)
 
     if request.method == 'POST' and memo.user == request.user:
         memo_form = MemoForm(request.POST or None, instance = memo)
 
         add_or_edit_memo(request, memo_form, True)
 
-    return HttpResponseRedirect('/#memo')
+    return redirect('/#memo')
 
 def add_or_edit_memo(request, memo_form, is_edit):
     ''' メモを新規に追加，または既存のメモを編集する． '''
@@ -176,12 +176,12 @@ def delete_memo(request, id):
 
         clear_notused_tag()
 
-    return HttpResponseRedirect('/#memo')
+    return redirect('/#memo')
 
 @user_passes_test(lambda u: u.is_superuser)
 def refresh_memo(request):
     ''' メモの表示をリフレッシュする． '''
-    return HttpResponseRedirect('/#memo')
+    return redirect('/#memo')
 
 def is_valid_tag(tag):
     ''' tagの文字長チェック '''

@@ -19,7 +19,7 @@ python manage.py runserver
 Access to http://127.0.0.1:8000/
 
 # Demo
-http://mondja-demo.herokuapp.com  
+https://mondja-demo.herokuapp.com  
 * User: admin  
 * Pass: admin
 

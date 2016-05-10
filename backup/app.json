@@ -1336,8 +1336,8 @@
   "model": "app.memo",
   "pk": 83,
   "fields": {
-    "title": "Django\u30a2\u30d7\u30ea\u306eHeroku\u30c7\u30d7\u30ed\u30a4\u624b\u9806",
-    "content": "# Django\u95a2\u9023\u30e9\u30a4\u30d6\u30e9\u30ea\r\n\r\n```\r\n$ pip install django-toolbelt\r\n```\r\n\r\n* Django (the web framework)\r\n* Gunicorn (WSGI server)\r\n* dj-database-url (a Django configuration helper)\r\n* dj-static (a Django static file server)\r\n\r\n# Procfile\u30d5\u30a1\u30a4\u30eb\r\n\r\n```\r\nweb: gunicorn myapp.wsgi --log-file -\r\n```\r\n\r\n# settings.py\u306e\u7de8\u96c6\r\n\r\n```\r\n# Parse database configuration from $DATABASE_URL\r\nimport dj_database_url\r\nDATABASES = {\r\n    'default': dj_database_url.config()\r\n}\r\n\r\n# Honor the 'X-Forwarded-Proto' header for request.is_secure()\r\nSECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')\r\n\r\n# Allow all host headers\r\nALLOWED_HOSTS = ('*')\r\n\r\n# Static asset configuration\r\nfrom os import path\r\nPROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))\r\nSTATIC_ROOT = path.join(PROJECT_ROOT, 'staticfiles').replace('\\\\', '/')\r\nSTATIC_URL = '/static/'\r\nSTATICFILES_DIRS = (\r\n    path.join(PROJECT_ROOT, 'static').replace('\\\\', '/'),\r\n)\r\n\r\n# Installed apps\r\nINSTALLED_APPS = (\r\n    ...\r\n    \"gunicorn\",\r\n)\r\n```\r\n\r\n# wsgi.py\u306e\u7de8\u96c6\r\n\r\n```\r\nfrom dj_static import Cling\r\napplication = Cling(get_wsgi_application())\r\n```\r\n\r\n# \u74b0\u5883\u5909\u6570\u306e\u8a2d\u5b9a\r\n\r\n.env\r\n\r\n```\r\nDEBUG=1\r\nDATABASE_URL=sqlite:///db.sqlite3\r\n```\r\n\r\nmanage.py\r\n\r\n```\r\nimport dotenv\r\ndotenv.read_dotenv()\r\n```\r\n\r\nsettings.py\r\n\r\n```\r\nfrom os import environ\r\nDEBUG = environ.get('DEBUG') == '1'\r\n```",
+    "title": "Django\u30a2\u30d7\u30ea\u306eHeroku\u30c7\u30d7\u30ed\u30a4\u624b\u9806\uff08\u65e7\uff09",
+    "content": "# Django\u95a2\u9023\u30e9\u30a4\u30d6\u30e9\u30ea\r\n\r\n```\r\n$ pip install django-toolbelt\r\n```\r\n\r\n* Django (the web framework)\r\n* Gunicorn (WSGI server)\r\n* dj-database-url (a Django configuration helper)\r\n* dj-static (a Django static file server)\r\n\r\n# Procfile\u30d5\u30a1\u30a4\u30eb\r\n\r\n```\r\nweb: gunicorn myapp.wsgi --log-file -\r\n```\r\n\r\n# settings.py\u306e\u7de8\u96c6\r\n\r\n```\r\n# Parse database configuration from $DATABASE_URL\r\nimport dj_database_url\r\nDATABASES = {\r\n    'default': dj_database_url.config()\r\n}\r\n\r\n# Honor the 'X-Forwarded-Proto' header for request.is_secure()\r\nSECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')\r\n\r\n# Allow all host headers\r\nALLOWED_HOSTS = ('*')\r\n\r\n# Static asset configuration\r\nfrom os import path\r\nPROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))\r\nSTATIC_ROOT = path.join(PROJECT_ROOT, 'staticfiles').replace('\\\\', '/')\r\nSTATIC_URL = '/static/'\r\nSTATICFILES_DIRS = (\r\n    path.join(PROJECT_ROOT, 'static').replace('\\\\', '/'),\r\n)\r\n\r\n# Installed apps\r\nINSTALLED_APPS = (\r\n    ...\r\n    \"gunicorn\",\r\n)\r\n```\r\n\r\n# wsgi.py\u306e\u7de8\u96c6\r\n\r\n```\r\nfrom dj_static import Cling\r\napplication = Cling(get_wsgi_application())\r\n```\r\n\r\n# \u74b0\u5883\u5909\u6570\u306e\u8a2d\u5b9a\uff08\u30ed\u30fc\u30ab\u30eb\u7528\uff09\r\n\r\n.env\r\n\r\n```\r\nDEBUG=1\r\nDATABASE_URL=sqlite:///db.sqlite3\r\n```\r\n\r\nmanage.py\r\n\r\n```\r\nimport dotenv\r\ndotenv.read_dotenv()\r\n```\r\n\r\nsettings.py\r\n\r\n```\r\nfrom os import environ\r\nDEBUG = environ.get('DEBUG') == '1'\r\n```",
     "pub_date": "2016-02-13T13:09:07.591Z",
     "user": 2,
     "tags": [
@@ -1482,6 +1482,62 @@
     "tags": [
       1,
       47
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 96,
+  "fields": {
+    "title": "Atom\u306eproxy\u8a2d\u5b9a",
+    "content": "proxy\u4e0b\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u306a\u3069\u3092\u3059\u308b\u5834\u5408\r\n\r\n```\r\napm config set http-proxy http://proxy-server.example.com:8080\r\napm config set https-proxy http://proxy-server.example.com:8080\r\n```\r\n\r\n\u30e6\u30fc\u30b6\uff08\u30d1\u30b9\u30ef\u30fc\u30c9\uff09\u304c\u5fc5\u8981\u306a\u5834\u5408\r\n\r\n```\r\napm config set http-proxy http://username:password@proxy-server.example.com:8080\r\napm config set https-proxy http://username:password@proxy-server.example.com:8080\r\n```\r\n\r\n\u307e\u305f\u305d\u308c\u3067\u3082\u30c0\u30e1\u306a\u5834\u5408\u306f\u4ee5\u4e0b\u3067\u89e3\u6c7a\u3059\u308b\u304b\u3082\r\n\r\n```\r\nsetx ATOM_NODE_URL http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist\r\n```",
+    "pub_date": "2016-05-10T04:08:17.785Z",
+    "user": 2,
+    "tags": [
+      1,
+      46
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 97,
+  "fields": {
+    "title": "Django\u30a2\u30d7\u30ea\u306eHeroku\u30c7\u30d7\u30ed\u30a4\u624b\u9806",
+    "content": "# \u6700\u65b0\u306eHeroku\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\r\n\u4ee5\u524d\u3067\u306fstatic\u30d5\u30a1\u30a4\u30eb\u30b5\u30fc\u30d0\u306b\u306f`dj-static`\u304c\u4f7f\u308f\u308c\u3066\u3044\u305f\u304c\uff0c\u4eca\u306fWhitenoise\u304c\u63a8\u5968\u3055\u308c\u3066\u3044\u308b\u3063\u307d\u3044\uff0e\r\n\r\n# Django\u95a2\u9023\u30e9\u30a4\u30d6\u30e9\u30ea\r\n\r\n```\r\n$ pip install django gunicorn dj-database-url whitenoise\r\n```\r\n\r\n* Django (the web framework)\r\n* Gunicorn (WSGI server)\r\n* dj-database-url (a Django configuration helper)\r\n* Whitenoise (a Django static file server)\r\n\r\n# Procfile\u30d5\u30a1\u30a4\u30eb\r\n\r\n```\r\nweb: gunicorn myapp.wsgi --log-file -\r\n```\r\n\r\n# settings.py\u306e\u7de8\u96c6\r\n\r\n```\r\n# Parse database configuration from $DATABASE_URL\r\nimport dj_database_url\r\nDATABASES = {\r\n    'default': dj_database_url.config()\r\n}\r\n\r\n# Honor the 'X-Forwarded-Proto' header for request.is_secure()\r\nSECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')\r\n\r\n# Allow all host headers\r\nALLOWED_HOSTS = ['*']\r\n\r\n# Static asset configuration\r\nimport os\r\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\r\nSTATIC_URL = '/static/'\r\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles').replace('\\\\', '/')\r\nSTATICFILES_DIRS = [\r\n    os.path.join(BASE_DIR, 'static').replace('\\\\', '/')\r\n]\r\n\r\n# Installed apps\r\nINSTALLED_APPS = (\r\n    ...\r\n    \"gunicorn\",\r\n)\r\n```\r\n\r\n\u3064\u3044\u3067\u306bDjango1.9\u65b9\u5f0f\u3067\u306etemplates\u3084media\u306e\u8a2d\u5b9a\u65b9\u6cd5\r\n\r\n```\r\nTEMPLATES = [\r\n    {\r\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\r\n        'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\\\', '/')],\r\n        'APP_DIRS': True,\r\n        'OPTIONS': {\r\n            'context_processors': [\r\n                'django.template.context_processors.debug',\r\n                'django.template.context_processors.request',\r\n                'django.contrib.auth.context_processors.auth',\r\n                'django.contrib.messages.context_processors.messages',\r\n                \"django.template.context_processors.media\",\r\n                \"django.template.context_processors.static\",\r\n                'social.apps.django_app.context_processors.backends',\r\n                'social.apps.django_app.context_processors.login_redirect',\r\n            ],\r\n            'debug': DEBUG,\r\n        },\r\n    },\r\n]\r\n\r\nMEDIA_URL = '/media/'\r\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\\\', '/')\r\n```\r\n\r\n# wsgi.py\u306e\u7de8\u96c6\r\n\r\n```\r\nfrom django.core.wsgi import get_wsgi_application\r\nfrom whitenoise.django import DjangoWhiteNoise\r\napplication = DjangoWhiteNoise(get_wsgi_application())\r\n```\r\n\r\n# \u74b0\u5883\u5909\u6570\u306e\u8a2d\u5b9a\uff08\u30ed\u30fc\u30ab\u30eb\u7528\uff09\r\n\r\n.env\r\n\r\n```\r\nDEBUG=1\r\nDATABASE_URL=sqlite:///db.sqlite3\r\n```\r\n\r\nmanage.py\r\n\r\n```\r\nimport dotenv\r\ndotenv.read_dotenv()\r\n```\r\n\r\nsettings.py\r\n\r\n```\r\nfrom os import environ\r\nDEBUG = environ.get('DEBUG') == '1'\r\n```",
+    "pub_date": "2016-05-10T12:01:36.621Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      33
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 98,
+  "fields": {
+    "title": "Material Design for Bootstrap",
+    "content": "# Bootstrap\u3092Material Design\u306b\r\n\r\n[http://mdbootstrap.com](http://mdbootstrap.com)\r\n\r\n![image](http://mdbootstrap.com/images/material%20design%20for%20bootstrap%20about%20(2).jpg)\r\n\r\n```\r\n<!-- Bootstrap core CSS -->\r\n<link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n<!-- MDB core CSS -->\r\n<link href=\"http://mdbootstrap.com/mdbcdn/mdb.min.css\" rel=\"stylesheet\">\r\n\r\n<!-- JQuery -->\r\n<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-2.1.4.min.js\"></script>\r\n<!-- Bootstrap core JavaScript -->\r\n<script type=\"text/javascript\" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>\r\n<!-- MDB core JavaScript -->\r\n<script type=\"text/javascript\" src=\"http://mdbootstrap.com/mdbcdn/mdb.min.js\"></script>\r\n```",
+    "pub_date": "2016-05-10T12:26:12.802Z",
+    "user": 2,
+    "tags": [
+      1,
+      25
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 99,
+  "fields": {
+    "title": "Cloud9",
+    "content": "# \u30af\u30e9\u30a6\u30c9\u4e0a\u306b\u74b0\u5883\u69cb\u7bc9\r\n\r\n\u304b\u306a\u308a\u304a\u624b\u8efd\u306a\u306e\u3067\u304a\u8a66\u3057\u74b0\u5883\u3084\u6559\u80b2\u7528\u306a\u3069\u306b\u3074\u3063\u305f\u308a\uff0e\r\n\r\n[https://c9.io](https://c9.io)\r\n\r\n![image](http://nelog.jp/wp-content/uploads/2016/01/Cloud9-3.png)",
+    "pub_date": "2016-05-10T12:45:12.192Z",
+    "user": 2,
+    "tags": [
+      1
     ]
   }
 }

@@ -16,12 +16,12 @@
                 {% endif %}
             </header>
 
-            <form method="post" action="." role="form">
+            <form method="post" action="{% url 'login' %}" role="form">
             {% csrf_token %}
                 <div>
                     <div class="row">
                         <div class="12u$">
-                            <input id="id_username" maxlength="256" name="username" type="text" class="form-control" placeholder="User ID" aria-describedby="sizing-addon1" autofocus required />
+                            <input id="id_username" maxlength="254" name="username" type="text" class="form-control" placeholder="User ID" aria-describedby="sizing-addon1" autofocus required />
                         </div>
                         <div class="12u$">
                             <input id="id_password" maxlength="256" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" required />

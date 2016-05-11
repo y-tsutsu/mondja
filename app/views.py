@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth import models as usermodels
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Count
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from app.models import Memo, Tag
@@ -115,7 +115,6 @@ def add_memo(request):
     ''' メモを新規に追加する． '''
     if request.method == 'POST':
         memo_form = MemoForm(request.POST or None)
-
         add_or_edit_memo(request, memo_form, False)
 
     return redirect('/#memo')
@@ -125,9 +124,11 @@ def edit_memo(request, id):
     ''' 既存のメモを編集する． '''
     memo = get_object_or_404(Memo, pk = id)
 
-    if request.method == 'POST' and memo.user == request.user:
-        memo_form = MemoForm(request.POST or None, instance = memo)
+    if request.method == 'POST':
+        if memo.user != request.user:
+            raise PermissionDenied
 
+        memo_form = MemoForm(request.POST or None, instance = memo)
         add_or_edit_memo(request, memo_form, True)
 
     return redirect('/#memo')
@@ -171,9 +172,11 @@ def delete_memo(request, id):
     ''' メモを削除する． '''
     memo = Memo.objects.get(id = id)
 
-    if request.method == 'POST' and memo.user == request.user:
-        memo.delete()
+    if request.method == 'POST':
+        if memo.user != request.user:
+            raise PermissionDenied
 
+        memo.delete()
         clear_notused_tag()
 
     return redirect('/#memo')

@@ -51,7 +51,6 @@ urlpatterns = [
     url(r'^logout/$',
         django.contrib.auth.views.logout,
         {
-            'template_name': 'logout.html',
             'next_page': '../login/'
         },
         name = 'logout'),

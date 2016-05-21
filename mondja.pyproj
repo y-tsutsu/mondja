@@ -273,7 +273,6 @@
     <Content Include="templates\index.html" />
     <Content Include="templates\layout.html" />
     <Content Include="templates\login.html" />
-    <Content Include="templates\logout.html" />
     <Content Include="templates\memo.html" />
     <Content Include="templates\memotop.html" />
   </ItemGroup>

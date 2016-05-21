@@ -184,7 +184,7 @@ textarea.mydialog {
         margin-top: 0;
     }
 
-    div .mylogin, div .mylogout, div .my404, div .my500 {
+    div .mylogin, div .my404, div .my500 {
         margin-top: -95px;
     }
 
@@ -249,7 +249,7 @@ textarea.mydialog {
         margin-top: 82px;
     }
 
-    div .mylogin, div .mylogout {
+    div .mylogin {
         margin-top: 64px;
     }
 

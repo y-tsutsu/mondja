@@ -17,7 +17,6 @@ import app.views
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
 from django.contrib import admin
-from os import name
 admin.autodiscover()
 
 urlpatterns = [
@@ -51,7 +50,7 @@ urlpatterns = [
     url(r'^logout/$',
         django.contrib.auth.views.logout,
         {
-            'next_page': '../login/'
+            'next_page': '/'
         },
         name = 'logout'),
 

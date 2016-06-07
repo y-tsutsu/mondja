@@ -117,7 +117,7 @@ def add_memo(request):
         memo_form = MemoForm(request.POST or None)
         add_or_edit_memo(request, memo_form, False)
 
-    return redirect('/#memo')
+    return redirect(request.META['HTTP_REFERER'] + '#memo')
 
 @user_passes_test(lambda u: u.is_superuser)
 def edit_memo(request, id):
@@ -131,7 +131,7 @@ def edit_memo(request, id):
         memo_form = MemoForm(request.POST or None, instance = memo)
         add_or_edit_memo(request, memo_form, True)
 
-    return redirect('/#memo')
+    return redirect(request.META['HTTP_REFERER'] + '#memo')
 
 def add_or_edit_memo(request, memo_form, is_edit):
     ''' メモを新規に追加，または既存のメモを編集する． '''
@@ -179,7 +179,7 @@ def delete_memo(request, id):
         memo.delete()
         clear_notused_tag()
 
-    return redirect('/#memo')
+    return redirect(request.META['HTTP_REFERER'] + '#memo')
 
 @user_passes_test(lambda u: u.is_superuser)
 def refresh_memo(request):

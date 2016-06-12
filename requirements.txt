@@ -1,5 +1,5 @@
 defusedxml==0.4.1
-Django==1.9.6
+Django==1.9.7
 django-dotenv==1.4.1
 dj-database-url==0.4.1
 docutils==0.12

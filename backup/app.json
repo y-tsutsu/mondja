@@ -1612,5 +1612,90 @@
       2
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 103,
+  "fields": {
+    "title": "Django REST framework",
+    "content": "# Django\u3092\u4f7f\u3063\u3066RESTful\r\n\r\n[http://www.django-rest-framework.org](http://www.django-rest-framework.org)\r\n\r\n![image](http://www.django-rest-framework.org/img/logo.png)\r\n\r\n\u53c2\u8003\uff1a  \r\n[http://qiita.com/kimihiro_n/items/86e0a9e619720e57ecd8](http://qiita.com/kimihiro_n/items/86e0a9e619720e57ecd8)",
+    "pub_date": "2016-06-09T13:53:23.238Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      48
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 104,
+  "fields": {
+    "title": "3\u884c\u3067\u3067\u304d\u308b\u6a5f\u68b0\u5b66\u7fd2",
+    "content": "# 3\u884c\u306e\u30bd\u30fc\u30b9\u30b3\u30fc\u30c9\u3060\u3051\u3067\u3067\u304d\u308b\u300cindico\u300d\r\n\r\n[https://indico.io](https://indico.io)\r\n\r\n```\r\nimport indicoio\r\nindicoio.config.api_key = 'YOUR_API_KEY'\r\nprint(indicoio.sentiment_hq('indico is so easy to use!'))\r\n```\r\n\r\n\u53c2\u8003\uff1a  \r\n[http://qiita.com/n0bisuke/items/868b43411078bc2018fb](http://qiita.com/n0bisuke/items/868b43411078bc2018fb)  \r\n[http://liginc.co.jp/275684](http://liginc.co.jp/275684)",
+    "pub_date": "2016-06-09T14:02:15.183Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 105,
+  "fields": {
+    "title": "Django\u3067\u30ea\u30c0\u30a4\u30ec\u30af\u30c8",
+    "content": "urls.py\u306b\u8a18\u8ff0\u3059\u308b\u65b9\u6cd5\r\n\r\n```\r\nfrom django.views.generic.base import RedirectView\r\n\r\nurlpatterns = [\r\n    url(r'^spam/', RedirectView.as_view(url = '/ham/'), name='spam'),\r\n]\r\n```\r\n\r\nviews.py\u306b\u8a18\u8ff0\u3059\u308b\u65b9\u6cd5\r\n\r\n```\r\nfrom django.shortcuts import redirect\r\n\r\ndef spam(request):\r\n    return redirect('/ham/')\r\n```",
+    "pub_date": "2016-06-11T09:47:51.885Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      48
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 106,
+  "fields": {
+    "title": "umaru-chan2",
+    "content": "![image](http://ringosya.jp/wp-content/uploads/2015/09/umaru-tanjou-1.jpg)",
+    "pub_date": "2016-06-12T09:47:28.427Z",
+    "user": 2,
+    "tags": [
+      41
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 107,
+  "fields": {
+    "title": "python\u3067\u753b\u50cf\u691c\u7d22",
+    "content": "# python\u3067\u753b\u50cf\u306e\u691c\u7d22&\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\r\n\r\nGoogle Image API\u304c\u4f7f\u3048\u306a\u304f\u306a\u3063\u305f\u306e\u3067\u305d\u306e\u4ee3\u7528\uff0e\r\n\r\n## \u30e9\u30a4\u30d6\u30e9\u30ea\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ pip install beautifulsoup4\r\n```\r\n\r\n## \u30b3\u30fc\u30c9\r\n\r\n```\r\nimport os, sys, time, shutil\r\nimport bs4, urllib.request\r\n\r\ndef download_image(keyword, num, dirname):\r\n    if os.path.exists(dirname):\r\n        shutil.rmtree(dirname)\r\n        time.sleep(1)\r\n    os.mkdir(dirname)\r\n\r\n    extensions = ['.jpg', '.jpeg', '.gif', '.png']\r\n    count = 0\r\n    download_num = 0\r\n    while download_num < num:\r\n        url = 'http://image.search.yahoo.co.jp/search?p={0}&ktot=30&dtot=0&ei=UTF-8&xargs={1}&b={2}'.format(urllib.request.quote(keyword), count + 1, 20 * count + 1)\r\n        count += 1\r\n        download_num += crawring(url, extensions, dirname, num - download_num)\r\n\r\ndef crawring(url, extensions, dirname, download_num):\r\n    # \u6307\u5b9a\u3057\u305fURL\u306eHTML\u3092\u53d6\u5f97\r\n    html = get_html_string(url)\r\n    if len(html) < 1:\r\n        print('damepo!!')\r\n        sys.exit(1)\r\n\r\n    # \u30ea\u30bd\u30fc\u30b9\u53d6\u5f97\r\n    return get_resource(html, extensions, dirname, download_num)\r\n\r\ndef get_html_string(url):\r\n    decoded_html = ''\r\n\r\n    # HTML\u3092\u53d6\u5f97\r\n    try:\r\n        request = urllib.request.urlopen(url)\r\n        html = request.read()\r\n    except:\r\n        return decoded_html\r\n\r\n    # HTML\u3092\u30c7\u30b3\u30fc\u30c9\r\n    decoded_html = html.decode('utf_8')\r\n\r\n    return decoded_html\r\n\r\ndef get_resource(html, extensions, dirname, download_num):\r\n    resource_list = []\r\n\r\n    soup = bs4.BeautifulSoup(html)\r\n    for a_tag in soup.find_all('a'):\r\n        href_str = a_tag.get('href')\r\n        try:\r\n            (path, ext) = os.path.splitext(href_str)\r\n            if ext in extensions:\r\n                resource_list.append(href_str)\r\n        except:\r\n            pass\r\n\r\n    resource_list = sorted(set(resource_list), key = resource_list.index)\r\n    count = 0\r\n    for resource in resource_list:\r\n        try:\r\n            filename = os.path.basename(resource)\r\n            savename = '{0}\\\\{1}'.format(dirname, filename)\r\n            if os.path.exists(savename):\r\n                continue\r\n            print('download ---> [{0}]'.format(filename))\r\n            request = urllib.request.urlopen(resource)\r\n            with open(savename, 'wb') as f:\r\n                f.write(request.read())\r\n            count += 1\r\n            if download_num <= count:\r\n                break\r\n        except Exception as e:\r\n            print(e)\r\n            print('download failed ... [{0}]'.format(filename))\r\n\r\n    return count\r\n\r\nif __name__ == '__main__':\r\n    keyword = '\u4f50\u3005\u6728\u5e0c'\r\n    dirname  = 'image'\r\n    download_image(keyword, 100, dirname)\r\n```",
+    "pub_date": "2016-06-12T10:00:43.912Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 108,
+  "fields": {
+    "title": "\u30ab\u30e9\u30fc\u30bb\u30ec\u30af\u30bf\u306e\u30b5\u30f3\u30d7\u30eb",
+    "content": "# PyQt5\u3067\u30b5\u30f3\u30d7\u30eb\u30d7\u30ed\u30b0\u30e9\u30e0\r\n\r\n```\r\nimport sys\r\nimport numpy as np\r\nimport cv2\r\n\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\n\r\ndef hsv_to_rgb(h, s, v):\r\n    bgr = cv2.cvtColor(np.array([[[h, s, v]]], dtype=np.uint8), cv2.COLOR_HSV2BGR)[0][0]\r\n    return (bgr[2], bgr[1], bgr[0])\r\n\r\ndef rgb_to_hsv(r, g, b):\r\n    hsv = cv2.cvtColor(np.array([[[b, g, r]]], dtype=np.uint8), cv2.COLOR_BGR2HSV)[0][0]\r\n    return (hsv[0], hsv[1], hsv[2])\r\n\r\nclass MainWindow(QWidget):\r\n    color_base = (0, 0, 255)\r\n    color_table = [ (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0) ]\r\n\r\n    changedValueRgb = pyqtSignal(int, int, int)\r\n\r\n    def __init__(self, parent = None):\r\n        super(MainWindow, self).__init__(parent)\r\n\r\n        r, g, b = self.color_base\r\n\r\n        self.rsld = QSlider(Qt.Horizontal, self)\r\n        self.rsld.setFocusPolicy(Qt.NoFocus)\r\n        self.rsld.setGeometry(30, 200, 500, 30)\r\n        self.rsld.setMaximum(255)\r\n        self.rsld.setValue(r)\r\n        self.rsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(x, self.color_base[1], self.color_base[2]))\r\n\r\n        self.gsld = QSlider(Qt.Horizontal, self)\r\n        self.gsld.setFocusPolicy(Qt.NoFocus)\r\n        self.gsld.setGeometry(30, 250, 500, 30)\r\n        self.gsld.setMaximum(255)\r\n        self.gsld.setValue(g)\r\n        self.gsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], x, self.color_base[2]))\r\n\r\n        self.bsld = QSlider(Qt.Horizontal, self)\r\n        self.bsld.setFocusPolicy(Qt.NoFocus)\r\n        self.bsld.setGeometry(30, 300, 500, 30)\r\n        self.bsld.setMaximum(255)\r\n        self.bsld.setValue(b)\r\n        self.bsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], self.color_base[1], x))\r\n\r\n        self.changedValueRgb.connect(self.refresh)\r\n        self.setWindowTitle(\"Color selector!\")\r\n        self.make_color()\r\n\r\n    def emitChangedValueRgb(self, r, g, b):\r\n        self.changedValueRgb.emit(r, g, b)\r\n\r\n    def refresh(self, r, g, b):\r\n        print('r:{0} g:{1} b:{2}'.format(r, g, b))\r\n        self.color_base = (r, g, b)\r\n        self.make_color()\r\n        self.repaint()\r\n\r\n    def paintEvent(self, event):\r\n        painter = QPainter(self)\r\n        size = 100\r\n        xpos = 30\r\n        ypos = 30\r\n        for i in range(5):\r\n            painter.setPen(QColor(*self.color_table[i]))\r\n            painter.setBrush(QColor(*self.color_table[i]))\r\n            painter.drawRect(xpos, ypos, size, size)\r\n            xpos += size\r\n\r\n    def make_color(self):\r\n        base_hsv = rgb_to_hsv(*self.color_base)\r\n        self.color_table[2] = self.color_base\r\n        spam = ((0, 16), (1, 8), (3, -8), (4, -16))\r\n        for item in spam:\r\n            self.make_color2(item[0], item[1], base_hsv)\r\n\r\n    def make_color2(self, index, def_val, base_hsv):\r\n        h, s, v = base_hsv\r\n        h += def_val\r\n        if h < 0:\r\n            h += 180\r\n        self.color_table[index] = hsv_to_rgb(h, s, v)\r\n\r\nif __name__ == '__main__':\r\n    app = QApplication(sys.argv)\r\n    main_window = MainWindow()\r\n    main_window.show()\r\n    sys.exit(app.exec_())\r\n```",
+    "pub_date": "2016-06-12T10:56:53.752Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
 }
 ]

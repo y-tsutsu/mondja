@@ -378,6 +378,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 51,
+  "fields": {
+    "name": "\u30de\u30cd\u30b8\u30e1\u30f3\u30c8",
+    "pub_date": "2016-06-13T05:55:27.193Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -1622,9 +1631,9 @@
     "pub_date": "2016-06-09T13:53:23.238Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -1651,9 +1660,9 @@
     "pub_date": "2016-06-11T09:47:51.885Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -1689,8 +1698,62 @@
   "pk": 108,
   "fields": {
     "title": "\u30ab\u30e9\u30fc\u30bb\u30ec\u30af\u30bf\u306e\u30b5\u30f3\u30d7\u30eb",
-    "content": "# PyQt5\u3067\u30b5\u30f3\u30d7\u30eb\u30d7\u30ed\u30b0\u30e9\u30e0\r\n\r\n```\r\nimport sys\r\nimport numpy as np\r\nimport cv2\r\n\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\n\r\ndef hsv_to_rgb(h, s, v):\r\n    bgr = cv2.cvtColor(np.array([[[h, s, v]]], dtype=np.uint8), cv2.COLOR_HSV2BGR)[0][0]\r\n    return (bgr[2], bgr[1], bgr[0])\r\n\r\ndef rgb_to_hsv(r, g, b):\r\n    hsv = cv2.cvtColor(np.array([[[b, g, r]]], dtype=np.uint8), cv2.COLOR_BGR2HSV)[0][0]\r\n    return (hsv[0], hsv[1], hsv[2])\r\n\r\nclass MainWindow(QWidget):\r\n    color_base = (0, 0, 255)\r\n    color_table = [ (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0) ]\r\n\r\n    changedValueRgb = pyqtSignal(int, int, int)\r\n\r\n    def __init__(self, parent = None):\r\n        super(MainWindow, self).__init__(parent)\r\n\r\n        r, g, b = self.color_base\r\n\r\n        self.rsld = QSlider(Qt.Horizontal, self)\r\n        self.rsld.setFocusPolicy(Qt.NoFocus)\r\n        self.rsld.setGeometry(30, 200, 500, 30)\r\n        self.rsld.setMaximum(255)\r\n        self.rsld.setValue(r)\r\n        self.rsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(x, self.color_base[1], self.color_base[2]))\r\n\r\n        self.gsld = QSlider(Qt.Horizontal, self)\r\n        self.gsld.setFocusPolicy(Qt.NoFocus)\r\n        self.gsld.setGeometry(30, 250, 500, 30)\r\n        self.gsld.setMaximum(255)\r\n        self.gsld.setValue(g)\r\n        self.gsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], x, self.color_base[2]))\r\n\r\n        self.bsld = QSlider(Qt.Horizontal, self)\r\n        self.bsld.setFocusPolicy(Qt.NoFocus)\r\n        self.bsld.setGeometry(30, 300, 500, 30)\r\n        self.bsld.setMaximum(255)\r\n        self.bsld.setValue(b)\r\n        self.bsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], self.color_base[1], x))\r\n\r\n        self.changedValueRgb.connect(self.refresh)\r\n        self.setWindowTitle(\"Color selector!\")\r\n        self.make_color()\r\n\r\n    def emitChangedValueRgb(self, r, g, b):\r\n        self.changedValueRgb.emit(r, g, b)\r\n\r\n    def refresh(self, r, g, b):\r\n        print('r:{0} g:{1} b:{2}'.format(r, g, b))\r\n        self.color_base = (r, g, b)\r\n        self.make_color()\r\n        self.repaint()\r\n\r\n    def paintEvent(self, event):\r\n        painter = QPainter(self)\r\n        size = 100\r\n        xpos = 30\r\n        ypos = 30\r\n        for i in range(5):\r\n            painter.setPen(QColor(*self.color_table[i]))\r\n            painter.setBrush(QColor(*self.color_table[i]))\r\n            painter.drawRect(xpos, ypos, size, size)\r\n            xpos += size\r\n\r\n    def make_color(self):\r\n        base_hsv = rgb_to_hsv(*self.color_base)\r\n        self.color_table[2] = self.color_base\r\n        spam = ((0, 16), (1, 8), (3, -8), (4, -16))\r\n        for item in spam:\r\n            self.make_color2(item[0], item[1], base_hsv)\r\n\r\n    def make_color2(self, index, def_val, base_hsv):\r\n        h, s, v = base_hsv\r\n        h += def_val\r\n        if h < 0:\r\n            h += 180\r\n        self.color_table[index] = hsv_to_rgb(h, s, v)\r\n\r\nif __name__ == '__main__':\r\n    app = QApplication(sys.argv)\r\n    main_window = MainWindow()\r\n    main_window.show()\r\n    sys.exit(app.exec_())\r\n```",
+    "content": "# PyQt5\u3067\u30b5\u30f3\u30d7\u30eb\u30d7\u30ed\u30b0\u30e9\u30e0\r\n\r\n## \u30e9\u30a4\u30d6\u30e9\u30ea\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ pip install pyqt5 numpy matplotlib opencv_python\r\n```\r\n\r\n## \u30b3\u30fc\u30c9\r\n\r\n```\r\nimport sys\r\nimport numpy as np\r\nimport cv2\r\n\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\n\r\ndef hsv_to_rgb(h, s, v):\r\n    bgr = cv2.cvtColor(np.array([[[h, s, v]]], dtype=np.uint8), cv2.COLOR_HSV2BGR)[0][0]\r\n    return (bgr[2], bgr[1], bgr[0])\r\n\r\ndef rgb_to_hsv(r, g, b):\r\n    hsv = cv2.cvtColor(np.array([[[b, g, r]]], dtype=np.uint8), cv2.COLOR_BGR2HSV)[0][0]\r\n    return (hsv[0], hsv[1], hsv[2])\r\n\r\nclass MainWindow(QWidget):\r\n    color_base = (0, 0, 255)\r\n    color_table = [(0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]\r\n\r\n    changedValueRgb = pyqtSignal(int, int, int)\r\n\r\n    def __init__(self, parent = None):\r\n        super(MainWindow, self).__init__(parent)\r\n\r\n        r, g, b = self.color_base\r\n\r\n        self.rsld = QSlider(Qt.Horizontal, self)\r\n        self.rsld.setFocusPolicy(Qt.NoFocus)\r\n        self.rsld.setGeometry(30, 200, 500, 30)\r\n        self.rsld.setMaximum(255)\r\n        self.rsld.setValue(r)\r\n        self.rsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(x, self.color_base[1], self.color_base[2]))\r\n\r\n        self.gsld = QSlider(Qt.Horizontal, self)\r\n        self.gsld.setFocusPolicy(Qt.NoFocus)\r\n        self.gsld.setGeometry(30, 250, 500, 30)\r\n        self.gsld.setMaximum(255)\r\n        self.gsld.setValue(g)\r\n        self.gsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], x, self.color_base[2]))\r\n\r\n        self.bsld = QSlider(Qt.Horizontal, self)\r\n        self.bsld.setFocusPolicy(Qt.NoFocus)\r\n        self.bsld.setGeometry(30, 300, 500, 30)\r\n        self.bsld.setMaximum(255)\r\n        self.bsld.setValue(b)\r\n        self.bsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], self.color_base[1], x))\r\n\r\n        self.changedValueRgb.connect(self.refresh)\r\n        self.setWindowTitle(\"Color selector!\")\r\n        self.make_color()\r\n\r\n    def emitChangedValueRgb(self, r, g, b):\r\n        self.changedValueRgb.emit(r, g, b)\r\n\r\n    def refresh(self, r, g, b):\r\n        print('r:{0} g:{1} b:{2}'.format(r, g, b))\r\n        self.color_base = (r, g, b)\r\n        self.make_color()\r\n        self.repaint()\r\n\r\n    def paintEvent(self, event):\r\n        painter = QPainter(self)\r\n        size = 100\r\n        xpos = 30\r\n        ypos = 30\r\n        for i in range(5):\r\n            painter.setPen(QColor(*self.color_table[i]))\r\n            painter.setBrush(QColor(*self.color_table[i]))\r\n            painter.drawRect(xpos, ypos, size, size)\r\n            xpos += size\r\n\r\n    def make_color(self):\r\n        base_hsv = rgb_to_hsv(*self.color_base)\r\n        self.color_table[2] = self.color_base\r\n        spam = ((0, 16), (1, 8), (3, -8), (4, -16))\r\n        for item in spam:\r\n            self.make_color2(item[0], item[1], base_hsv)\r\n\r\n    def make_color2(self, index, def_val, base_hsv):\r\n        h, s, v = base_hsv\r\n        h += def_val\r\n        if h < 0:\r\n            h += 180\r\n        self.color_table[index] = hsv_to_rgb(h, s, v)\r\n\r\nif __name__ == '__main__':\r\n    app = QApplication(sys.argv)\r\n    main_window = MainWindow()\r\n    main_window.show()\r\n    sys.exit(app.exec_())\r\n```",
     "pub_date": "2016-06-12T10:56:53.752Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 109,
+  "fields": {
+    "title": "Python\u3067\u5947\u9e97\u306a\u30b0\u30e9\u30d5\u8868\u793a",
+    "content": "# Seaborn\u3067\u5947\u9e97\u306a\u30b0\u30e9\u30d5\u63cf\u753b\r\n\r\n![image](https://web.stanford.edu/~mwaskom/software/seaborn/_images/distributions_8_0.png)\r\n\r\n## requirements.txt\r\n\r\n```\r\ncycler==0.10.0\r\nmatplotlib==1.5.1\r\nnumpy==1.11.0\r\npandas==0.18.1\r\npyparsing==2.1.4\r\npython-dateutil==2.5.3\r\npytz==2016.4\r\nscipy==0.17.1\r\nseaborn==0.7.1\r\nsix==1.10.0\r\n```\r\n\r\n\u203bnumpy\u306f `numpy+mkl` \u304c\u5fc5\u8981\r\n\r\n## \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n```\r\nimport numpy as np\r\nimport matplotlib.pyplot as plt\r\nimport seaborn as sns\r\nimport pandas as pd\r\n\r\nflip=1\r\nx = np.linspace(0, 14, 100)\r\nfor i in range(1, 7):\r\n    plt.plot(x, np.sin(x + i * .5) * (7 - i) * flip)\r\nplt.show()\r\n\r\n# \u5404\u7a2e\u30b9\u30bf\u30a4\u30eb\u306e\u5909\u66f4\r\n# \u4e00\u6b21\u5143\u5206\u5e03\u30c7\u30fc\u30bf\u306e\u63cf\u753b\r\nsns.set_style(\"whitegrid\")\r\nx = np.random.normal(size=100)\r\nsns.distplot(x)\r\nplt.show()\r\n\r\nsns.set_style(\"dark\")\r\nsns.distplot(x)\r\nplt.show()\r\n\r\nsns.set_style(\"white\")\r\nsns.distplot(x)\r\nplt.show()\r\n\r\nsns.set_style(\"ticks\")\r\nsns.distplot(x)\r\nplt.show()\r\n\r\nsns.set_style(\"ticks\")\r\nsns.distplot(x)\r\nsns.despine()\r\nplt.show()\r\n\r\nsns.set_style(\"darkgrid\")\r\nsns.distplot(x, kde=False, rug=True)\r\nplt.show()\r\n\r\nsns.set_style(\"darkgrid\")\r\nsns.distplot(x, kde=False, rug=True, bins=5)\r\nplt.show()\r\n\r\n# \u6298\u308c\u7dda\u30b0\u30e9\u30d5\r\ntitanic = sns.load_dataset(\"titanic\")\r\nsns.pointplot(x=\"class\", y=\"survived\", hue=\"sex\", data=titanic,\r\n              palette={\"male\": \"g\", \"female\": \"m\"},\r\n              markers=[\"^\", \"o\"], linestyles=[\"-\", \"--\"]);\r\nsns.plt.show()\r\n\r\n# \u68d2\u30b0\u30e9\u30d5\r\ntitanic = sns.load_dataset(\"titanic\")\r\nsns.barplot(x=\"sex\", y=\"survived\", hue=\"class\", data=titanic);\r\nsns.plt.show()\r\n\r\n# \u4e8c\u6b21\u5143\u306e\u5206\u5e03\u30c7\u30fc\u30bf\u306e\u63cf\u753b\r\nmean, cov = [0, 1], [(1, .5), (.5, 1)]\r\ndata = np.random.multivariate_normal(mean, cov, 200)\r\ndf = pd.DataFrame(data, columns=[\"x\", \"y\"])\r\nsns.jointplot(x=\"x\", y=\"y\", data=df);\r\nsns.plt.show()\r\n\r\nsns.jointplot(x=\"x\", y=\"y\", kind=\"hex\", data=df);\r\nsns.plt.show()\r\n\r\nsns.jointplot(x=\"x\", y=\"y\", kind=\"kde\", data=df);\r\nsns.plt.show()\r\n\r\n# \u30c7\u30fc\u30bf\u30bb\u30c3\u30c8\u306e\u76f8\u95a2\u5206\u6790\r\niris = sns.load_dataset(\"iris\")\r\nsns.pairplot(iris);\r\nsns.plt.show()\r\n\r\nsns.pairplot(iris, hue=\"species\");\r\nsns.plt.show()\r\n```",
+    "pub_date": "2016-06-13T05:05:17.896Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 110,
+  "fields": {
+    "title": "\u30d1\u30fc\u30ad\u30f3\u30bd\u30f3\u306e\u6cd5\u5247",
+    "content": "\u5e74\u672b\u306b\u5de5\u4e8b\u304c\u591a\u304f\u306a\u308b\u3042\u308c\uff0e\u4eba\u9593\u306f\u4e88\u7b97\u3068\u6642\u9593\u306f\u3042\u308b\u3060\u3051\u4f7f\u3044\u304d\u3063\u3066\u3057\u307e\u3046\u751f\u304d\u7269\uff0e\r\n\r\n# \u7b2c1\u6cd5\u5247\r\n\r\n\u4ed5\u4e8b\u306e\u91cf\u306f\uff0c\u5b8c\u6210\u306e\u305f\u3081\u306b\u4e0e\u3048\u3089\u308c\u305f\u6642\u9593\u3092\u3059\u3079\u3066\u6e80\u305f\u3059\u307e\u3067\u81a8\u5f35\u3059\u308b\r\n\r\n# \u7b2c2\u6cd5\u5247\r\n\r\n\u652f\u51fa\u306e\u984d\u306f\uff0c\u53ce\u5165\u306e\u984d\u306b\u9054\u3059\u308b\u307e\u3067\u81a8\u5f35\u3059\u308b",
+    "pub_date": "2016-06-13T05:55:27.169Z",
+    "user": 2,
+    "tags": [
+      51
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 111,
+  "fields": {
+    "title": "\u8a18\u9332\u306e\u53d6\u308a\u65b9",
+    "content": "# \u8a00\u308f\u308c\u305f\u3053\u3068\u3092\u305d\u306e\u307e\u307e\u66f8\u304f\r\n\r\n> \u7279\u306b\u82e5\u624b\u306e\u610f\u898b\u3092\u9032\u884c\u5f79\u304c\u8981\u7d04\u3057\u3066\u8b70\u4e8b\u9332\u306b\u66f8\u3044\u3066\u3057\u307e\u3046\u3068\uff0c\u767a\u8a00\u8005\u306e\u610f\u898b\u3058\u3083\u306a\u304f\u306a\u3063\u3066\u3057\u307e\u3063\u305f\u3088\u3046\u3067\uff0c\u30e2\u30c1\u30d9\u30fc\u30b7\u30e7\u30f3\u306e\u4f4e\u4e0b\u306b\u3064\u306a\u304c\u3063\u3066\u3057\u307e\u3046\uff0e\r\n\r\n\u306a\u308b\u307b\u3069\uff0e\uff0e\uff0e\uff01",
+    "pub_date": "2016-06-13T07:30:34.060Z",
+    "user": 2,
+    "tags": [
+      51
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 112,
+  "fields": {
+    "title": "\u30ab\u30e9\u30fc\u30bb\u30ec\u30af\u30bf\u306e\u30b5\u30f3\u30d7\u30eb\uff08OpenCV\u672a\u4f7f\u7528\u7248\uff09",
+    "content": "# PyQt5\u3067\u30b5\u30f3\u30d7\u30eb\u30d7\u30ed\u30b0\u30e9\u30e0\r\n\r\n## \u30e9\u30a4\u30d6\u30e9\u30ea\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ pip install pyqt5\r\n```\r\n\r\n## \u30b3\u30fc\u30c9\r\n\r\n```\r\nimport sys, math\r\n\r\nfrom PyQt5.QtCore import *\r\nfrom PyQt5.QtGui import *\r\nfrom PyQt5.QtWidgets import *\r\n\r\ndef hsv_to_rgb(h, s, v):\r\n    i = int(math.floor(h / 60)) % 6\r\n    f = float(h / 60) - float(math.floor(h / 60))\r\n    p = int(round(v * (1.0 - (s / 255))))\r\n    q = int(round(v * (1.0 - (s / 255) * f)))\r\n    t = int(round(v * (1.0 - (s / 255) * (1.0 - f))))\r\n\r\n    r, g, b = 0, 0, 0\r\n    if i == 0:\r\n        r = v; g = t; b = p\r\n    elif i == 1:\r\n        r = q; g = v; b = p\r\n    elif i == 2:\r\n        r = p; g = v; b = t\r\n    elif i == 3:\r\n        r = p; g = q; b = v\r\n    elif i == 4:\r\n        r = t; g = p; b = v\r\n    else:\r\n        r = v; g = p; b = q\r\n\r\n    return (r, g, b);\r\n\r\ndef rgb_to_hsv(r, g, b):\r\n    mx = max((r, g, b))\r\n    mn = min((r, g, b))\r\n    \r\n    if mx == mn:\r\n        h = 0\r\n    elif mx == r:\r\n        h = (60 * (g - b) / (mx - mn) + 360) % 360\r\n    elif mx == g:\r\n        h = (60 * (b - r) / (mx - mn)) + 120\r\n    else:\r\n        h = (60 * (r - g) / (mx - mn)) + 240;   \r\n\r\n    if mx == 0:\r\n        s = 0\r\n    else:\r\n        s = 255 * ((mx - mn) / mx)\r\n\r\n    v = mx\r\n\r\n    return (h, s, v)\r\n\r\nclass MainWindow(QWidget):\r\n    color_base = (0, 0, 255)\r\n    color_table = [(0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]\r\n\r\n    changedValueRgb = pyqtSignal(int, int, int)\r\n\r\n    def __init__(self, parent = None):\r\n        super(MainWindow, self).__init__(parent)\r\n\r\n        r, g, b = self.color_base\r\n\r\n        self.rsld = QSlider(Qt.Horizontal, self)\r\n        self.rsld.setFocusPolicy(Qt.NoFocus)\r\n        self.rsld.setGeometry(30, 200, 500, 30)\r\n        self.rsld.setMaximum(255)\r\n        self.rsld.setValue(r)\r\n        self.rsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(x, self.color_base[1], self.color_base[2]))\r\n\r\n        self.gsld = QSlider(Qt.Horizontal, self)\r\n        self.gsld.setFocusPolicy(Qt.NoFocus)\r\n        self.gsld.setGeometry(30, 250, 500, 30)\r\n        self.gsld.setMaximum(255)\r\n        self.gsld.setValue(g)\r\n        self.gsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], x, self.color_base[2]))\r\n\r\n        self.bsld = QSlider(Qt.Horizontal, self)\r\n        self.bsld.setFocusPolicy(Qt.NoFocus)\r\n        self.bsld.setGeometry(30, 300, 500, 30)\r\n        self.bsld.setMaximum(255)\r\n        self.bsld.setValue(b)\r\n        self.bsld.valueChanged[int].connect(\r\n            lambda x: self.emitChangedValueRgb(self.color_base[0], self.color_base[1], x))\r\n\r\n        self.changedValueRgb.connect(self.refresh)\r\n        self.setWindowTitle(\"Color selector!\")\r\n        self.make_color()\r\n\r\n    def emitChangedValueRgb(self, r, g, b):\r\n        self.changedValueRgb.emit(r, g, b)\r\n\r\n    def refresh(self, r, g, b):\r\n        print('r:{0} g:{1} b:{2}'.format(r, g, b))\r\n        self.color_base = (r, g, b)\r\n        self.make_color()\r\n        self.repaint()\r\n\r\n    def paintEvent(self, event):\r\n        painter = QPainter(self)\r\n        size = 100\r\n        xpos = 30\r\n        ypos = 30\r\n        for i in range(5):\r\n            painter.setPen(QColor(*self.color_table[i]))\r\n            painter.setBrush(QColor(*self.color_table[i]))\r\n            painter.drawRect(xpos, ypos, size, size)\r\n            xpos += size\r\n\r\n    def make_color(self):\r\n        base_hsv = rgb_to_hsv(*self.color_base)\r\n        self.color_table[2] = self.color_base\r\n        spam = ((0, 30), (1, 15), (3, -15), (4, -30))\r\n        for item in spam:\r\n            self.make_color2(item[0], item[1], base_hsv)\r\n\r\n    def make_color2(self, index, def_val, base_hsv):\r\n        h, s, v = base_hsv\r\n        h += def_val\r\n        if h < 0:\r\n            h += 360\r\n        self.color_table[index] = hsv_to_rgb(h, s, v)\r\n\r\nif __name__ == '__main__':\r\n    app = QApplication(sys.argv)\r\n    main_window = MainWindow()\r\n    main_window.show()\r\n    sys.exit(app.exec_())\r\n```",
+    "pub_date": "2016-06-15T10:12:15.032Z",
     "user": 2,
     "tags": [
       1,

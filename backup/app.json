@@ -1195,12 +1195,13 @@
   "pk": 68,
   "fields": {
     "title": "mondja\u958b\u767a\u6642\u306e\u53c2\u8003\u30da\u30fc\u30b8",
-    "content": "# Markdown\u5909\u63db\r\n\r\nMarkdown\u304b\u3089html\u3078\u306e\u5909\u63db\u3068\uff0c\u305d\u306e\u95a2\u6570\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u81ea\u4f5c\u30d5\u30a3\u30eb\u30bf\u5316\uff0e\u3042\u3068\u30b7\u30f3\u30bf\u30c3\u30af\u30b9\u30cf\u30a4\u30e9\u30a4\u30c8\uff0e\r\n\r\n`markdown2`\r\n\r\n[http://inner2.hatenablog.com/entry/2015/12/02/224831](http://inner2.hatenablog.com/entry/2015/12/02/224831)  \r\n[http://papaeye.tumblr.com/post/27705803009/markdown-\u51e6\u7406\u7cfb\u306e\u6bd4\u8f03](http://papaeye.tumblr.com/post/27705803009/markdown-\u51e6\u7406\u7cfb\u306e\u6bd4\u8f03)  \r\n[http://pistatium.appspot.com/blog/show/103008](http://pistatium.appspot.com/blog/show/103008)  \r\n[https://syncer.jp/how-to-use-highlightjs](https://syncer.jp/how-to-use-highlightjs)\r\n\r\n# \u30bd\u30fc\u30b7\u30e3\u30eb\u30ed\u30b0\u30a4\u30f3\r\n\r\nTwitter\u3084Facebook\u3067\u306e\u8a8d\u8a3c\r\n\r\n`python-social-auth`\r\n\r\n[http://nwpct1.hatenablog.com/entry/django-oauth-twitter-facebook-github](http://nwpct1.hatenablog.com/entry/django-oauth-twitter-facebook-github)  \r\n[http://techbooster.org/android/mashup/4525/](http://techbooster.org/android/mashup/4525/)  \r\n[http://blog.unfindable.net/archives/1891](http://blog.unfindable.net/archives/1891)\r\n\r\n# \u3059\u3079\u3066\u306e\u30ea\u30af\u30a8\u30b9\u30c8\u3092\u30d5\u30c3\u30af\r\n\r\nDjango\u306e\u30df\u30c9\u30eb\u30a6\u30a7\u30a2\r\n\r\n[http://hateda.hatenadiary.jp/entry/2014/01/27/151615](http://hateda.hatenadiary.jp/entry/2014/01/27/151615)  \r\n[http://docs.djangoproject.jp/en/latest/topics/http/middleware.html](http://docs.djangoproject.jp/en/latest/topics/http/middleware.html)\r\n",
+    "content": "# Markdown\u5909\u63db\r\n\r\nMarkdown\u304b\u3089html\u3078\u306e\u5909\u63db\u3068\uff0c\u305d\u306e\u95a2\u6570\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u81ea\u4f5c\u30d5\u30a3\u30eb\u30bf\u5316\uff0e\u3042\u3068\u30b7\u30f3\u30bf\u30c3\u30af\u30b9\u30cf\u30a4\u30e9\u30a4\u30c8\uff0e\r\n\r\n`markdown2`\r\n\r\n[http://inner2.hatenablog.com/entry/2015/12/02/224831](http://inner2.hatenablog.com/entry/2015/12/02/224831)  \r\n[http://papaeye.tumblr.com/post/27705803009/markdown-\u51e6\u7406\u7cfb\u306e\u6bd4\u8f03](http://papaeye.tumblr.com/post/27705803009/markdown-\u51e6\u7406\u7cfb\u306e\u6bd4\u8f03)  \r\n[http://pistatium.appspot.com/blog/show/103008](http://pistatium.appspot.com/blog/show/103008)  \r\n[https://syncer.jp/how-to-use-highlightjs](https://syncer.jp/how-to-use-highlightjs)\r\n\r\n# \u30bd\u30fc\u30b7\u30e3\u30eb\u30ed\u30b0\u30a4\u30f3\r\n\r\nTwitter\u3084Facebook\u3067\u306e\u8a8d\u8a3c\r\n\r\n`python-social-auth`\r\n\r\n[http://nwpct1.hatenablog.com/entry/django-oauth-twitter-facebook-github](http://nwpct1.hatenablog.com/entry/django-oauth-twitter-facebook-github)  \r\n[http://techbooster.org/android/mashup/4525/](http://techbooster.org/android/mashup/4525/)  \r\n[http://blog.unfindable.net/archives/1891](http://blog.unfindable.net/archives/1891)\r\n\r\n# \u3059\u3079\u3066\u306e\u30ea\u30af\u30a8\u30b9\u30c8\u3092\u30d5\u30c3\u30af\r\n\r\nDjango\u306e\u30df\u30c9\u30eb\u30a6\u30a7\u30a2\r\n\r\n[http://hateda.hatenadiary.jp/entry/2014/01/27/151615](http://hateda.hatenadiary.jp/entry/2014/01/27/151615)  \r\n[http://docs.djangoproject.jp/en/latest/topics/http/middleware.html](http://docs.djangoproject.jp/en/latest/topics/http/middleware.html)",
     "pub_date": "2015-12-29T00:50:15.489Z",
     "user": 2,
     "tags": [
       1,
-      2
+      2,
+      48
     ]
   }
 },
@@ -1488,7 +1489,7 @@
   "pk": 93,
   "fields": {
     "title": "Atom\u306e\u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8",
-    "content": "# \u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u89a7\r\n\r\n```\r\natom-dark-ui-slim\r\natom-runner\r\nautocomplete-paths\r\nautocomplete-python\r\nautocomplete-sass\r\ncolor-picker\r\nfile-icons\r\nhighlight-selected\r\njapanese-menu\r\njumpy\r\nmaximize-panes\r\nmerge-conflicts\r\nminimap\r\nminimap-autohide\r\nminimap-bookmarks\r\nminimap-git-diff\r\nminimap-highlight-selected\r\nminimap-pigments\r\npigments\r\nproject-manager\r\nrailscast-theme\r\nslim-language\r\nsort-lines\r\ntabs-to-spaces\r\n```\r\n\r\n# \u4e00\u62ec\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# packages.txt\u306e\u51fa\u529b\u65b9\u6cd5\r\n\r\n```\r\n$ apm list --installed --bare > packages.txt\r\n```",
+    "content": "# \u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u89a7\r\n\r\n```\r\natom-dark-ui-slim\r\natom-runner\r\nauto-encoding\r\nautocomplete-paths\r\nautocomplete-python\r\nautocomplete-sass\r\ncolor-picker\r\nfile-icons\r\nhighlight-selected\r\njapanese-menu\r\njumpy\r\nmaximize-panes\r\nmerge-conflicts\r\nminimap\r\nminimap-autohide\r\nminimap-bookmarks\r\nminimap-git-diff\r\nminimap-highlight-selected\r\nminimap-pigments\r\npigments\r\nproject-manager\r\nrailscast-theme\r\nslim-language\r\nsort-lines\r\ntabs-to-spaces\r\n```\r\n\r\n# \u4e00\u62ec\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# packages.txt\u306e\u51fa\u529b\u65b9\u6cd5\r\n\r\n```\r\n$ apm list --installed --bare > packages.txt\r\n```",
     "pub_date": "2016-05-03T16:08:03.412Z",
     "user": 2,
     "tags": [
@@ -1758,6 +1759,35 @@
     "tags": [
       1,
       2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 113,
+  "fields": {
+    "title": "Win32\u30a2\u30d7\u30ea\u3067\u306e\u30ea\u30e0\u30fc\u30d0\u30d6\u30eb\u30c7\u30a3\u30b9\u30af\u306e\u53d6\u5f97\u65b9\u6cd5",
+    "content": "# \u30c9\u30e9\u30a4\u30d6\u540d\u3068\u7a2e\u985e\u306e\u53d6\u5f97\r\n\r\n```\r\n#include <stdio.h>\r\n#include <windows.h>\r\n\r\nint _tmain(int argc, _TCHAR* argv[])\r\n{\r\n    WCHAR buff[1024] = { '\\0' };\r\n    DWORD buffSize = ::GetLogicalDriveStrings(sizeof(buff), static_cast<LPWSTR>(buff));\r\n\r\n    DWORD index = 0;\r\n    while (index < buffSize)\r\n    {\r\n        const DWORD type = ::GetDriveType(&buff[index]);\r\n        if (type == DRIVE_REMOVABLE)\r\n        {\r\n            ::wprintf(L\"%s\\n\", &buff[index]);\r\n        }\r\n\r\n        index += ::wcslen(&buff[index]) + 1;\r\n    }\r\n\r\n    return 0;\r\n}\r\n```",
+    "pub_date": "2016-06-27T02:40:29.368Z",
+    "user": 2,
+    "tags": [
+      1,
+      16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 114,
+  "fields": {
+    "title": "Visual C++\u3067Debug\u30d7\u30ea\u30f3\u30c8",
+    "content": "# Visual Studio\u306e\u51fa\u529b\u30a6\u30a3\u30f3\u30c9\u30a6\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u8868\u793a\r\n\r\nOutputDebugString API\u3092\u4f7f\u7528\u3059\u308b\u3068\u8868\u793a\u3055\u308c\u308b\uff0e\r\n\r\nprintf\u306e\u3088\u3046\u306b\u66f8\u5f0f\u4ed8\u304d\u6587\u5b57\u5217\u3067\u8868\u793a\u3059\u308b\u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\uff0e\r\n\r\n```\r\n#include \"stdafx.h\"\r\n#include <windows.h>\r\n\r\nvoid PrintDebugLine(LPCTSTR format, ...)\r\n{\r\n    va_list argp;\r\n    wchar_t buff[1024];\r\n    va_start(argp, format);\r\n    _vstprintf(buff, sizeof(buff), format, argp);\r\n    va_end(argp);\r\n    ::OutputDebugString(buff);\r\n    ::OutputDebugString(_T(\"\\n\"));\r\n}\r\n\r\nint _tmain(int argc, _TCHAR* argv[])\r\n{\r\n    PrintDebugLine(_T(\"Hello, world!\"));\r\n    PrintDebugLine(_T(\"%3d %3d\"), 23, 42);\r\n    PrintDebugLine(_T(\"-- %s --\"), _T(\"\u306b\u3083\u3093\u3071\u3059\u30fc\"));\r\n    return 0;\r\n}\r\n```",
+    "pub_date": "2016-07-27T07:04:04.169Z",
+    "user": 2,
+    "tags": [
+      1,
+      16,
+      37
     ]
   }
 }

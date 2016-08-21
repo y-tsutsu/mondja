@@ -387,6 +387,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 52,
+  "fields": {
+    "name": "Debian",
+    "pub_date": "2016-08-11T08:11:30.756Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -1199,9 +1208,9 @@
     "pub_date": "2015-12-29T00:50:15.489Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -1489,7 +1498,7 @@
   "pk": 93,
   "fields": {
     "title": "Atom\u306e\u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8",
-    "content": "# \u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u89a7\r\n\r\n```\r\natom-dark-ui-slim\r\natom-runner\r\nauto-encoding\r\nautocomplete-paths\r\nautocomplete-python\r\nautocomplete-sass\r\ncolor-picker\r\nfile-icons\r\nhighlight-selected\r\njapanese-menu\r\njumpy\r\nmaximize-panes\r\nmerge-conflicts\r\nminimap\r\nminimap-autohide\r\nminimap-bookmarks\r\nminimap-git-diff\r\nminimap-highlight-selected\r\nminimap-pigments\r\npigments\r\nproject-manager\r\nrailscast-theme\r\nslim-language\r\nsort-lines\r\ntabs-to-spaces\r\n```\r\n\r\n# \u4e00\u62ec\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# packages.txt\u306e\u51fa\u529b\u65b9\u6cd5\r\n\r\n```\r\n$ apm list --installed --bare > packages.txt\r\n```",
+    "content": "# \u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u89a7\r\n\r\n```\r\natom-dark-ui-slim\r\natom-monokai\r\natom-runner\r\nauto-encoding\r\nautocomplete-clang\r\nautocomplete-paths\r\nautocomplete-python\r\nautocomplete-sass\r\ncolor-picker\r\nfile-icons\r\ngit-control\r\ngit-diff-details\r\ngit-history\r\ngit-log\r\ngit-plus\r\ngit-time-machine\r\nhighlight-line\r\nhighlight-selected\r\njapanese-menu\r\njumpy\r\nlinter\r\nlinter-gcc\r\nlinter-python\r\nmaximize-panes\r\nmerge-conflicts\r\nminimap\r\nminimap-autohide\r\nminimap-bookmarks\r\nminimap-git-diff\r\nminimap-highlight-selected\r\nminimap-pigments\r\npigments\r\nproject-manager\r\nrailscast-theme\r\nslim-language\r\nsort-lines\r\nsymbols-tree-view\r\ntabs-to-spaces\r\ntree-view-git-status\r\n```\r\n\r\n# \u4e00\u62ec\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# packages.txt\u306e\u51fa\u529b\u65b9\u6cd5\r\n\r\n```\r\n$ apm list --installed --bare > packages.txt\r\n```",
     "pub_date": "2016-05-03T16:08:03.412Z",
     "user": 2,
     "tags": [
@@ -1516,7 +1525,7 @@
   "pk": 95,
   "fields": {
     "title": "Electron\u306e\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0",
-    "content": "# electron-packager\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0\r\n\r\n```\r\n$ npm i electron-packager -g\r\n$ electron-packager ./sample sample --platform=win32 --arch=x64 --version=0.37.2\r\n```\r\n\r\n* platform \u30fb\u30fb\u30fb all\uff0clinux\uff0cwin32\uff0cdarwin\u3092\u30ab\u30f3\u30de\u533a\u5207\u308a\u3067\uff0e\r\n* arch \u30fb\u30fb\u30fb all\uff0cia32\uff0cx64\u306e\u3044\u305a\u308c\u304b\u3092\u9078\u629e\uff0e\r\n* version \u30fb\u30fb\u30fb Electron\u306e\u30d0\u30fc\u30b8\u30e7\u30f3\u3092\u6307\u5b9a\uff0e\r\n\r\n![image](http://codezine.jp/static/images/article/8782/8782_t.gif)",
+    "content": "# electron-packager\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u30f3\u30b0\r\n\r\n```\r\n$ npm i electron-packager -g\r\n$ electron-packager ./sample sample --platform=win32 --arch=x64 --version=1.3.2\r\n```\r\n\r\n* platform \u30fb\u30fb\u30fb all\uff0clinux\uff0cwin32\uff0cdarwin\u3092\u30ab\u30f3\u30de\u533a\u5207\u308a\u3067\uff0e\r\n* arch \u30fb\u30fb\u30fb all\uff0cia32\uff0cx64\u306e\u3044\u305a\u308c\u304b\u3092\u9078\u629e\uff0e\r\n* version \u30fb\u30fb\u30fb Electron\u306e\u30d0\u30fc\u30b8\u30e7\u30f3\u3092\u6307\u5b9a\uff0e\r\n\r\n![image](http://codezine.jp/static/images/article/8782/8782_t.gif)",
     "pub_date": "2016-05-08T00:34:42.151Z",
     "user": 2,
     "tags": [
@@ -1530,7 +1539,7 @@
   "pk": 96,
   "fields": {
     "title": "Atom\u306eproxy\u8a2d\u5b9a",
-    "content": "proxy\u4e0b\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u306a\u3069\u3092\u3059\u308b\u5834\u5408\r\n\r\n```\r\napm config set http-proxy http://proxy-server.example.com:8080\r\napm config set https-proxy http://proxy-server.example.com:8080\r\n```\r\n\r\n\u30e6\u30fc\u30b6\uff08\u30d1\u30b9\u30ef\u30fc\u30c9\uff09\u304c\u5fc5\u8981\u306a\u5834\u5408\r\n\r\n```\r\napm config set http-proxy http://username:password@proxy-server.example.com:8080\r\napm config set https-proxy http://username:password@proxy-server.example.com:8080\r\n```\r\n\r\n\u307e\u305f\u305d\u308c\u3067\u3082\u30c0\u30e1\u306a\u5834\u5408\u306f\u4ee5\u4e0b\u3067\u89e3\u6c7a\u3059\u308b\u304b\u3082\r\n\r\n```\r\nsetx ATOM_NODE_URL http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist\r\n```",
+    "content": "proxy\u4e0b\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u306a\u3069\u3092\u3059\u308b\u5834\u5408\r\n\r\n```\r\napm config set http-proxy http://proxy-server.example.com:8080\r\napm config set https-proxy http://proxy-server.example.com:8080\r\n```\r\n\r\n\u30e6\u30fc\u30b6\uff08\u30d1\u30b9\u30ef\u30fc\u30c9\uff09\u304c\u5fc5\u8981\u306a\u5834\u5408\r\n\r\n```\r\napm config set http-proxy http://username:password@proxy-server.example.com:8080\r\napm config set https-proxy http://username:password@proxy-server.example.com:8080\r\n```\r\n\r\nLinux\u306e\u3068\u304d\u306f\u4ee5\u4e0b\u306e\u74b0\u5883\u5909\u6570\u3092\u8a2d\u5b9a\uff0e`~/.bash_profile`\u3068\u304b`~/.zshenv`\r\n\r\n```\r\nexport ATOM_NODE_URL=http://gh-contractor-zcbenz.s3.amazonaws.com/atom-shell/dist\r\n```",
     "pub_date": "2016-05-10T04:08:17.785Z",
     "user": 2,
     "tags": [
@@ -1771,8 +1780,8 @@
     "pub_date": "2016-06-27T02:40:29.368Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -1785,9 +1794,67 @@
     "pub_date": "2016-07-27T07:04:04.169Z",
     "user": 2,
     "tags": [
-      1,
       16,
+      1,
       37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 115,
+  "fields": {
+    "title": "pyvenv\u306e\u4f7f\u3044\u65b9",
+    "content": "# Windows\u3067\u306epyvenv\u306e\u4f7f\u3044\u65b9\r\n\r\n\u4eee\u60f3\u74b0\u5883\u3092\u4f5c\u308b\u306b\u306f\u4e0b\u8a18\u3067\r\n\r\n```\r\n> C:\\Users\\username\\AppData\\Local\\Programs\\Python\\Python35\\Tools\\scripts\\pyvenv.py envname\r\n```\r\n\r\n\u3067\u3082\u3053\u308c\u3060\u3068\u9762\u5012\u306a\u306e\u3067\uff0c\u4e0b\u8a18\u3067\u3082\u540c\u3058\r\n\r\n```\r\n> python -m venv envname\r\n```\r\n\r\n\u3042\u3068\u306f\u4eee\u60f3\u74b0\u5883\u306b\u5165\u308b\u3060\u3051\r\n\r\n```\r\n> envname\\Scripts\\activate.bat\r\n```\r\n\r\n\u4eee\u60f3\u74b0\u5883\u304b\u3089\u629c\u3051\u308b\u306e\u306f\u3053\u308c\r\n\r\n```\r\n> deactivate.bat\r\n```",
+    "pub_date": "2016-08-06T12:14:44.463Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 116,
+  "fields": {
+    "title": "Python\u3067\u30d0\u30a4\u30ca\u30ea\u30d5\u30a1\u30a4\u30eb\u306e\u5165\u51fa\u529b",
+    "content": "# \u30d0\u30a4\u30ca\u30ea\u30e2\u30fc\u30c9\u306e\u30d5\u30a1\u30a4\u30eb\u306eRead/Write\r\n\r\n`bytearray`\u3092\u4f7f\u3046\u3068\u7c21\u5358\uff0e\r\n\r\n```\r\nimport random\r\n\r\ndef create_file(filename):\r\n    with open(filename, 'wb') as f:\r\n        f.write(bytearray(range(42)))\r\n        f.write(bytearray([0xAA if random.randint(0, 32) == 32 else 0x00 for _ in range(1000)]))\r\n\r\ndef convert_file(infile, outfile):\r\n    with open(infile, 'rb') as f:\r\n        idata = f.read()\r\n\r\n    odata = [x for x in idata[:42]] + [0x55 if x == 0xAA else x for x in idata[42:]]\r\n\r\n    with open(outfile, 'wb') as f:\r\n        f.write(bytearray(odata))\r\n\r\nif __name__ == '__main__':\r\n    create_file('spam.dat')\r\n    convert_file('spam.dat', 'ham.dat')\r\n```\r\n\r\nbytearray\u3092\u4f7f\u308f\u306a\u3044\u306a\u3089\uff0c`0x31.to_bytes(1, 'big')`\u3067bytes\u306b\u5909\u63db\uff0e",
+    "pub_date": "2016-08-09T16:01:25.425Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 117,
+  "fields": {
+    "title": "Debian\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\uff08VMware\uff09",
+    "content": "# sudo\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n`sudo`\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3068\u6a29\u9650\u306e\u8ffd\u52a0\r\n\r\n```\r\n$ su -\r\n$ aptitude update\r\n$ aptitude install sudo\r\n$ visudo\r\n---\r\nroot      ALL=(ALL:ALL) ALL\r\nusername  ALL=(ALL:ALL) ALL\r\n---\r\n```\r\n\r\n# build-essential\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n`open-vm-tools`\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u524d\u306b\u5165\u308c\u3066\u304a\u304f\u3068\u3044\u3044\u3063\u307d\u3044\r\n\r\n```\r\n$ sudo aptitude install build-essential\r\n```\r\n\r\n# open-vm-tools\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\nVMware\u3067\u30d5\u30eb\u30b9\u30af\u30ea\u30fc\u30f3\u8868\u793a\u3059\u308b\u305f\u3081\u306b\r\n\r\n```\r\n$ sudo aptitude install open-vm-tools\r\n$ sudo aptitude install open-vm-tools-desktop\r\n```\r\n\r\n# Terminator\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n\u534a\u900f\u660e\u306b\u3067\u304d\u308b\u30bf\u30fc\u30df\u30ca\u30eb\r\n\r\n```\r\n$ sudo aptitude install terminator\r\n```\r\n\r\n# Git\u3068Subversion\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo aptitude install git\r\n$ git config --global alias.mylog 'log --graph --name-status --pretty=format:\"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset\"'\r\n$ sudo aptitude install subversion subversion-tools\r\n```\r\n\r\n# Zsh\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n`Zsh`\u3068`oh-my-zsh`\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\uff0ealias\u306e\u8a2d\u5b9a\u3082\uff0e  \r\n[https://github.com/robbyrussell/oh-my-zsh/wiki/Themes](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)\r\n\r\n```\r\n$ sudo aptitude install zsh\r\n$ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh\r\n$ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc\r\n---\r\nZSH_THEME=\"candy\"\r\n---\r\n```\r\n\r\n# tmux\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n\u4f7f\u7528\u3059\u308b\u30b7\u30a7\u30eb\u3092Zsh\u306b\r\n\r\n```\r\n$ sudo aptitude install tmux\r\n$ sudo aptitude install xsel\r\n---\r\n# .tmux.conf\r\nset-option -g default-shell /bin/zsh\r\n---\r\n```\r\n\r\n# Python\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n\u307e\u305a\u95a2\u9023\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo aptitude install libsqlite3-dev\r\n$ sudo aptitude install libreadline6-dev\r\n$ sudo aptitude install libgdbm-dev\r\n$ sudo aptitude install zlib1g-dev\r\n$ sudo aptitude install libbz2-dev\r\n$ sudo aptitude install sqlite3\r\n$ sudo aptitude install tk-dev\r\n$ sudo aptitude install zip\r\n$ sudo aptitude install libssl-dev\r\n```\r\n\r\n`pyenv`\u3067python\u74b0\u5883\u3092\u7ba1\u7406\u3059\u308b\r\n\r\n```\r\n$ git clone https://github.com/yyuu/pyenv.git ~/.pyenv\r\n---\r\n# .zshenv\r\nexport PYENV_ROOT=$HOME/.pyenv\r\nexport PATH=$PYENV_ROOT/bin:$PATH\r\neval \"$(pyenv init -)\"\r\n---\r\n$ pyenv install 3.5.2\r\n$ pyenv install 2.7.9\r\n$ pyenv global 3.5.2\r\n```\r\n\r\n# Emacs\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://github.com/clear-code/emacs.d](https://github.com/clear-code/emacs.d)\r\n\r\n```\r\n$ sudo aptitude install emacs\r\n$ git clone https://github.com/clear-code/emacs.d.git ~/.emacs.d\r\n---\r\n;; .emacs,d/init.el\r\n;; shut up, emacs!\r\n(setq display-warning-minimum-level :error))\r\n---\r\n---\r\n;; .emacs.d/config/builtins/local.el\r\n(custom-set-faces\r\n(hl-line ((t (:background \"color-236\"))))\r\n)\r\n---\r\n```\r\n\r\n# Atom\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://atom.io](https://atom.io)\u304b\u3089deb\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\r\n\r\n```\r\n$ sudo aptitude install git gvfs-bin\r\n$ sudo aptitude -f install\r\n$ sudo dpkg -i atom-amd64.deb\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# Rtags\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n\u95a2\u9023\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo aptitude install clang libclang-dev cmake\r\n```\r\n\r\nRtags\u306e\u30d3\u30eb\u30c9\r\n\r\n```\r\n$ git clone https://github.com/Andersbakken/rtags\r\n$ cd rtags\r\n$ git submodule init\r\n$ git submodule update\r\n$ mkdir build\r\n$ cd build\r\n$ cmake ..\r\n$ make\r\n$ sudo make install\r\n```\r\n\r\nRtags\u306e\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7\r\n\r\n```\r\n$ git clone https://github.com/rizsotto/Bear\r\n$ cd Bear\r\n$ mkdir build && cd build\r\n$ cmake ..\r\n$ make && sudo make install\r\n```\r\n\r\n\u4f7f\u3044\u65b9\r\n\r\n```\r\n$ bear make\r\n$ rdm --daemon\r\n$ rc -J .\r\n```\r\n\r\n# \u305d\u306e\u4ed6\r\n\r\n* pyonpyon\r\n\r\n [https://github.com/sgymtic/sl](https://github.com/sgymtic/sl)\r\n\r\n```\r\n$ sudo aptitude install libncurses5-dev\r\n$ git clone git@github.com:sgymtic/sl.git\r\n$ git checkout pyonpyon\r\n$ make\r\n```\r\n\r\n* vim\r\n* nodejs\r\n* npm\r\n* tig\r\n* git-cola",
+    "pub_date": "2016-08-11T08:11:30.693Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 118,
+  "fields": {
+    "title": "C# + OpenCV",
+    "content": "# \u524d\u6e96\u5099\r\n\r\nNuGet\u3067`OpenCvSharp3`\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\uff0e\r\n\r\n# \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n\u753b\u50cf\u3092\u8aad\u307f\u8fbc\u3093\u3067\u30a8\u30c3\u30b8\u691c\u51fa\u3057\u3066\u8868\u793a\uff0e\r\n\r\n```\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing OpenCvSharp;\r\n\r\nnamespace opencv\r\n{\r\n    class Program\r\n    {\r\n        static void Main(string[] args)\r\n        {\r\n            using (var gray = new Mat(\"sample.png\", ImreadModes.GrayScale))\r\n            using (var edge = new Mat())\r\n            {\r\n                Cv2.Canny(gray, edge, 100, 200);\r\n                using (new Window(\"Show Image\", edge))\r\n                {\r\n                    Cv2.WaitKey();\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n```",
+    "pub_date": "2016-08-16T00:42:41.838Z",
+    "user": 2,
+    "tags": [
+      1,
+      10,
+      18
     ]
   }
 }

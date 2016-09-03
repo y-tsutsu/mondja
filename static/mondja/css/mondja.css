@@ -148,13 +148,16 @@ textarea.mydialog {
 }
 
 /*○ボタン*/
-#social-icon a {
-    margin: 0 5px 5px 0;
+#circle-button {
+    text-align: center;
+}
+
+#circle-button a {
     padding: 0;
     color: #fff;
 }
 
-#social-icon i {
+#circle-button i {
     margin: 0;
     border-radius: 50%;
     background: #7986cb;
@@ -164,12 +167,12 @@ textarea.mydialog {
     line-height: 1.5em;
 }
 
-#social-icon i:before {
+#circle-button i:before {
     padding: 0;
     line-height: 1.5em;
 }
 
-#social-icon a:hover i {
+#circle-button a:hover i {
     background: #c5cae9;
 }
 
@@ -217,14 +220,6 @@ textarea.mydialog {
 
     .mysociallogin {
         font-size: medium;
-    }
-
-    /*○ボタン*/
-    #social-icon {
-        text-align: center;
-        margin-top: -89px;
-        margin-left: 0;
-        margin-right: -6px;
     }
 }
 
@@ -302,14 +297,6 @@ textarea.mydialog {
 
     .mysociallogin {
         font-size: small;
-    }
-
-    /*○ボタン*/
-    #social-icon {
-        text-align: center;
-        margin-top: -22px;
-        margin-left: 0;
-        margin-right: -5px;
     }
 }
 

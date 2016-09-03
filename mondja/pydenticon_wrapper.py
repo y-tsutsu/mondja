@@ -1,4 +1,4 @@
-﻿from django.conf import settings
+from django.conf import settings
 import pydenticon
 import os.path
 

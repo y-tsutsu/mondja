@@ -1,4 +1,4 @@
-﻿from django.shortcuts import *
+from django.shortcuts import *
 from django.http import HttpRequest
 from django.conf import settings
 from django.contrib.auth.decorators import user_passes_test

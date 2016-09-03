@@ -1,4 +1,4 @@
-﻿from mondja.pydenticon_wrapper import create_identicon
+from mondja.pydenticon_wrapper import create_identicon
 
 class MondjaMiddleware:
 

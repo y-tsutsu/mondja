@@ -101,7 +101,7 @@ def home(request):
 
     all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
     all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
-    top48_tags = all_tags[:48]
+    top_tags = all_tags[:72]
     now_str = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())
 
     return render(

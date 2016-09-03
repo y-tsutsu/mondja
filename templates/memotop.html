@@ -174,7 +174,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            {% for item in top48_tags %}
+                            {% for item in top_tags %}
                                 <div class="col-md-2 col-xs-6 mydialogtag">
                                     <input type="checkbox" data-toggle="toggle" data-on={{ item.name }} data-off={{ item.name }} data-onstyle={{ item.get_toggle_onstyle }} data-size="mini" data-width="100%" name="select_tag" value={{ item.id }}>
                                 </div>

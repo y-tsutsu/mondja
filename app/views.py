@@ -4,7 +4,6 @@ Definition of views.
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest
-from django.template import RequestContext
 from django.contrib import messages
 from django.contrib.auth import models as usermodels
 from django.contrib.auth.decorators import login_required, user_passes_test

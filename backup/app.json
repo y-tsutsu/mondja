@@ -12,7 +12,7 @@
   "model": "app.tag",
   "pk": 2,
   "fields": {
-    "name": "python",
+    "name": "Python",
     "pub_date": "2015-08-09T14:38:01.133Z",
     "user": 2
   }
@@ -392,6 +392,15 @@
   "fields": {
     "name": "Debian",
     "pub_date": "2016-08-11T08:11:30.756Z",
+    "user": 2
+  }
+},
+{
+  "model": "app.tag",
+  "pk": 53,
+  "fields": {
+    "name": "\u6a5f\u68b0\u5b66\u7fd2",
+    "pub_date": "2016-09-19T02:19:41.558Z",
     "user": 2
   }
 },
@@ -1694,7 +1703,7 @@
   "pk": 107,
   "fields": {
     "title": "python\u3067\u753b\u50cf\u691c\u7d22",
-    "content": "# python\u3067\u753b\u50cf\u306e\u691c\u7d22&\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\r\n\r\nGoogle Image API\u304c\u4f7f\u3048\u306a\u304f\u306a\u3063\u305f\u306e\u3067\u305d\u306e\u4ee3\u7528\uff0e\r\n\r\n## \u30e9\u30a4\u30d6\u30e9\u30ea\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ pip install beautifulsoup4\r\n```\r\n\r\n## \u30b3\u30fc\u30c9\r\n\r\n```\r\nimport os, sys, time, shutil\r\nimport bs4, urllib.request\r\n\r\ndef download_image(keyword, num, dirname):\r\n    if os.path.exists(dirname):\r\n        shutil.rmtree(dirname)\r\n        time.sleep(1)\r\n    os.mkdir(dirname)\r\n\r\n    extensions = ['.jpg', '.jpeg', '.gif', '.png']\r\n    count = 0\r\n    download_num = 0\r\n    while download_num < num:\r\n        url = 'http://image.search.yahoo.co.jp/search?p={0}&ktot=30&dtot=0&ei=UTF-8&xargs={1}&b={2}'.format(urllib.request.quote(keyword), count + 1, 20 * count + 1)\r\n        count += 1\r\n        download_num += crawring(url, extensions, dirname, num - download_num)\r\n\r\ndef crawring(url, extensions, dirname, download_num):\r\n    # \u6307\u5b9a\u3057\u305fURL\u306eHTML\u3092\u53d6\u5f97\r\n    html = get_html_string(url)\r\n    if len(html) < 1:\r\n        print('damepo!!')\r\n        sys.exit(1)\r\n\r\n    # \u30ea\u30bd\u30fc\u30b9\u53d6\u5f97\r\n    return get_resource(html, extensions, dirname, download_num)\r\n\r\ndef get_html_string(url):\r\n    decoded_html = ''\r\n\r\n    # HTML\u3092\u53d6\u5f97\r\n    try:\r\n        request = urllib.request.urlopen(url)\r\n        html = request.read()\r\n    except:\r\n        return decoded_html\r\n\r\n    # HTML\u3092\u30c7\u30b3\u30fc\u30c9\r\n    decoded_html = html.decode('utf_8')\r\n\r\n    return decoded_html\r\n\r\ndef get_resource(html, extensions, dirname, download_num):\r\n    resource_list = []\r\n\r\n    soup = bs4.BeautifulSoup(html)\r\n    for a_tag in soup.find_all('a'):\r\n        href_str = a_tag.get('href')\r\n        try:\r\n            (path, ext) = os.path.splitext(href_str)\r\n            if ext in extensions:\r\n                resource_list.append(href_str)\r\n        except:\r\n            pass\r\n\r\n    resource_list = sorted(set(resource_list), key = resource_list.index)\r\n    count = 0\r\n    for resource in resource_list:\r\n        try:\r\n            filename = os.path.basename(resource)\r\n            savename = '{0}\\\\{1}'.format(dirname, filename)\r\n            if os.path.exists(savename):\r\n                continue\r\n            print('download ---> [{0}]'.format(filename))\r\n            request = urllib.request.urlopen(resource)\r\n            with open(savename, 'wb') as f:\r\n                f.write(request.read())\r\n            count += 1\r\n            if download_num <= count:\r\n                break\r\n        except Exception as e:\r\n            print(e)\r\n            print('download failed ... [{0}]'.format(filename))\r\n\r\n    return count\r\n\r\nif __name__ == '__main__':\r\n    keyword = '\u4f50\u3005\u6728\u5e0c'\r\n    dirname  = 'image'\r\n    download_image(keyword, 100, dirname)\r\n```",
+    "content": "# python\u3067\u753b\u50cf\u306e\u691c\u7d22&\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\r\n\r\nGoogle Image API\u304c\u4f7f\u3048\u306a\u304f\u306a\u3063\u305f\u306e\u3067\u305d\u306e\u4ee3\u7528\uff0e\r\n\r\n## \u30e9\u30a4\u30d6\u30e9\u30ea\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ pip install beautifulsoup4\r\n```\r\n\r\n## \u30b3\u30fc\u30c9\r\n\r\n```\r\nimport os, sys, time, shutil\r\nimport bs4, urllib.request\r\n\r\ndef download_image(keyword, download_num, dirname):\r\n    if os.path.exists(dirname):\r\n        shutil.rmtree(dirname)\r\n        time.sleep(1)\r\n    os.mkdir(dirname)\r\n\r\n    extensions = ['.jpg', '.jpeg', '.gif', '.png']\r\n    count = 0\r\n    num = 0\r\n    ONE_PAGE_NUM = 20\r\n    while num < download_num:\r\n        count += 1\r\n        url = 'http://image.search.yahoo.co.jp/search?p={0}&ktot=30&dtot=0&ei=UTF-8&xargs={1}&b={2}'.format(urllib.request.quote(keyword), count, ONE_PAGE_NUM * count + 1)\r\n        num += crawring(url, extensions, dirname, download_num - num)\r\n        if download_num * 2 < count * ONE_PAGE_NUM:\r\n            break\r\n\r\ndef crawring(url, extensions, dirname, download_num):\r\n    # \u6307\u5b9a\u3057\u305fURL\u306eHTML\u3092\u53d6\u5f97\r\n    html = get_html_string(url)\r\n    if len(html) < 1:\r\n        print('damepo!!')\r\n        sys.exit(1)\r\n\r\n    # \u30ea\u30bd\u30fc\u30b9\u53d6\u5f97\r\n    return get_resource(html, extensions, dirname, download_num)\r\n\r\ndef get_html_string(url):\r\n    decoded_html = ''\r\n\r\n    # HTML\u3092\u53d6\u5f97\r\n    try:\r\n        request = urllib.request.urlopen(url)\r\n        html = request.read()\r\n    except:\r\n        return decoded_html\r\n\r\n    # HTML\u3092\u30c7\u30b3\u30fc\u30c9\r\n    decoded_html = html.decode('utf_8')\r\n\r\n    return decoded_html\r\n\r\ndef get_resource(html, extensions, dirname, download_num):\r\n    resource_list = []\r\n\r\n    soup = bs4.BeautifulSoup(html)\r\n    for a_tag in soup.find_all('a'):\r\n        href_str = a_tag.get('href')\r\n        try:\r\n            (path, ext) = os.path.splitext(href_str)\r\n            if ext in extensions:\r\n                resource_list.append(href_str)\r\n        except:\r\n            pass\r\n\r\n    resource_list = sorted(set(resource_list), key = resource_list.index)\r\n    count = 0\r\n    for resource in resource_list:\r\n        try:\r\n            filename = os.path.basename(resource)\r\n            savename = '{0}\\\\{1}'.format(dirname, filename)\r\n            if os.path.exists(savename):\r\n                continue\r\n            print('download ---> [{0}]'.format(filename))\r\n            request = urllib.request.urlopen(resource)\r\n            with open(savename, 'wb') as f:\r\n                f.write(request.read())\r\n            count += 1\r\n            if download_num <= count:\r\n                break\r\n        except Exception as e:\r\n            print(e)\r\n            print('download failed ... [{0}]'.format(filename))\r\n\r\n    return count\r\n\r\nif __name__ == '__main__':\r\n    keyword = '\u4f50\u3005\u6728\u5e0c'\r\n    dirname  = 'image'\r\n    download_image(keyword, 100, dirname)\r\n```",
     "pub_date": "2016-06-12T10:00:43.912Z",
     "user": 2,
     "tags": [
@@ -1855,6 +1864,34 @@
       1,
       10,
       18
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 119,
+  "fields": {
+    "title": "Python\u3067\u30b3\u30de\u30f3\u30c9\u30e9\u30a4\u30f3\u5f15\u6570\u89e3\u6790",
+    "content": "# \u4e3b\u306a\u9078\u629e\u80a2\r\n\r\n* sys.argv\r\n* argparser\r\n* docopt\r\n\r\n`argparser`\u304c\u6a19\u6e96\u30e9\u30a4\u30d6\u30e9\u30ea\u3067\u7d50\u69cb\u4f7f\u3048\u305d\u3046\uff0e\r\n\r\n# argparser\u306e\u57fa\u672c\u7684\u306a\u4f7f\u3044\u65b9\r\n\r\n## \u6e96\u5099\r\n\r\n```\r\nimport argparse\r\nparser = argparse.ArgumentParser(description = 'spam')\r\n```\r\n\r\n## \u4f4d\u7f6e\u5f15\u6570\r\n\r\n```\r\nparser.add_argument('foo', help = 'foo...')\r\nargs = parser.parse_args()\r\nfoo = args.foo\r\n```\r\n\r\n## \u4f4d\u7f6e\u5f15\u6570\u3092\u7701\u7565\u53ef\u306b\r\n\r\n```\r\nparser.add_argument('foo', nargs = '?', default = '', help = 'foo...')\r\n```\r\n\r\n## \u30aa\u30d7\u30b7\u30e7\u30f3\u5f15\u6570\r\n\r\n```\r\nparser.add_argument('-f', help = 'foo...')\r\nparser.add_argument('-b', '--bar', default = 42, type = int, help = 'bar...')\r\nargs = parser.parse_args()\r\nfoo = args.f\r\nbar = args.bar\r\n```\r\n\r\n## \u30aa\u30d7\u30b7\u30e7\u30f3\u5f15\u6570\u3092\u30d5\u30e9\u30b0\u3068\u3057\u3066\r\n\r\n```\r\nparser.add_argument('-f', '--foo', action = 'store_true', help = 'foo...')\r\n```\r\n\r\n## \u30aa\u30d7\u30b7\u30e7\u30f3\u5f15\u6570\u3092\u30d5\u30e9\u30b0\u3068\u3057\u3066\r\n\r\n```\r\nparser.add_argument('-f', '--foo', action = 'store_true', help = 'foo...')\r\n```",
+    "pub_date": "2016-09-19T02:04:45.953Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 120,
+  "fields": {
+    "title": "3\u884c\u3067\u6a5f\u68b0\u5b66\u7fd2",
+    "content": "# 3\u884c\u306e\u30bd\u30fc\u30b9\u30b3\u30fc\u30c9\u3060\u3051\u3067\u3067\u304d\u308b\u300cindico\u300d\r\n\r\nPython\uff0cRuby\uff0cJava\uff0cPHP\uff0cnode.js\uff0cR\u8a00\u8a9e\u306b\u5bfe\u5fdc\uff0e\r\n\r\n![image](https://cdn.liginc.co.jp/wp-content/uploads/2016/05/23.18.png)\r\n\r\n```\r\nimport indicoio\r\nindicoio.config.api_key = 'YOUR_API_KEY'\r\nprint(indicoio.sentiment_hq('indico is so easy to use!'))\r\n```",
+    "pub_date": "2016-09-19T02:19:41.537Z",
+    "user": 2,
+    "tags": [
+      1,
+      53
     ]
   }
 }

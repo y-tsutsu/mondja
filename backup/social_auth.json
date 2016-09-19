@@ -1,0 +1,22 @@
+[
+{
+  "model": "social_auth.usersocialauth",
+  "pk": 1,
+  "fields": {
+    "user": 6,
+    "provider": "facebook",
+    "uid": "739475012824881",
+    "extra_data": "{\"token_type\": null, \"access_token\": \"EAAVbZABrjtAIBACv45t1OEdZAc6XvO5mkrJSaw8ICOxLce92m3Yl439ugU3xW0dsyiVvq8c1bVnuSJq5CenKMbRTadz2CWSKXSG49VtBQNuSPEvpTGrZCUvbv5Gqms5L9SM5b5VltZAMqpxhdSjijSabS5VDoa4Qyr7VzMRYMgZDZD\", \"expires\": null, \"id\": \"739475012824881\"}"
+  }
+},
+{
+  "model": "social_auth.usersocialauth",
+  "pk": 2,
+  "fields": {
+    "user": 7,
+    "provider": "twitter",
+    "uid": "3277361576",
+    "extra_data": "{\"id\": 3277361576, \"access_token\": {\"oauth_token_secret\": \"a1I9xYuF0zXlHo0nLJRAYkaOVA1B1KWbIV5E3V3D9BTS8\", \"user_id\": \"3277361576\", \"screen_name\": \"tsutsu09282\", \"oauth_token\": \"3277361576-SK6PuqzzZ7NzAMjKQy7pO76TpzNTwFDQ4u9Yf0J\", \"x_auth_expires\": \"0\"}}"
+  }
+}
+]

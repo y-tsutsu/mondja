@@ -104,11 +104,7 @@ def home(request):
     top_tags = all_tags[:72]
     now_str = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())
 
-    return render(
-        request,
-        'index.html',
-        context_instance = RequestContext(request, locals())
-    )
+    return render(request, 'index.html', locals())
 
 @user_passes_test(lambda u: u.is_superuser)
 def add_memo(request):

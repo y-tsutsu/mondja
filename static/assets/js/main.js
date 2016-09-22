@@ -1,6 +1,6 @@
 /*
 	Astral by HTML5 UP
-	html5up.net | @n33co
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
@@ -127,6 +127,11 @@
 									// Set new active.
 										activePanelId = id;
 
+										// Force scroll to top.
+											$hbw.animate({
+												scrollTop: 0
+											}, settings.resizeSpeed, 'swing');
+
 										// Reposition.
 											$body._reposition();
 
@@ -135,21 +140,14 @@
 												height: panels[activePanelId].outerHeight()
 											}, instant ? 0 : settings.resizeSpeed, 'swing', function() {
 
-												// Force scroll to top.
-													$hbw.animate({
-														scrollTop: 0
-													}, settings.resizeSpeed, 'swing', function() {
+												// Fade in new active panel.
+													$footer.fadeTo(instant ? 0 : settings.fadeSpeed, 1.0);
+													panels[activePanelId].fadeIn(instant ? 0 : settings.fadeSpeed, function() {
 
-														// Fade in new active panel.
-															$footer.fadeTo(instant ? 0 : settings.fadeSpeed, 1.0);
-															panels[activePanelId].fadeIn(instant ? 0 : settings.fadeSpeed, function() {
+														// Unlock.
+															isLocked = false;
 
-																// Unlock.
-																	isLocked = false;
-
-															});
 													});
-
 											});
 
 								});

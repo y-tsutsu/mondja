@@ -1814,7 +1814,7 @@
   "pk": 115,
   "fields": {
     "title": "pyvenv\u306e\u4f7f\u3044\u65b9",
-    "content": "# Windows\u3067\u306epyvenv\u306e\u4f7f\u3044\u65b9\r\n\r\n\u4eee\u60f3\u74b0\u5883\u3092\u4f5c\u308b\u306b\u306f\u4e0b\u8a18\u3067\r\n\r\n```\r\n> C:\\Users\\username\\AppData\\Local\\Programs\\Python\\Python35\\Tools\\scripts\\pyvenv.py envname\r\n```\r\n\r\n\u3067\u3082\u3053\u308c\u3060\u3068\u9762\u5012\u306a\u306e\u3067\uff0c\u4e0b\u8a18\u3067\u3082\u540c\u3058\r\n\r\n```\r\n> python -m venv envname\r\n```\r\n\r\n\u3042\u3068\u306f\u4eee\u60f3\u74b0\u5883\u306b\u5165\u308b\u3060\u3051\r\n\r\n```\r\n> envname\\Scripts\\activate.bat\r\n```\r\n\r\n\u4eee\u60f3\u74b0\u5883\u304b\u3089\u629c\u3051\u308b\u306e\u306f\u3053\u308c\r\n\r\n```\r\n> deactivate.bat\r\n```",
+    "content": "# Windows\u3067\u306epyvenv\u306e\u4f7f\u3044\u65b9\r\n\r\n\u4eee\u60f3\u74b0\u5883\u3092\u4f5c\u308b\u306b\u306f\u4e0b\u8a18\u3067\r\n\r\n```\r\nC:\\> C:\\Users\\username\\AppData\\Local\\Programs\\Python\\Python35\\Tools\\scripts\\pyvenv.py envname\r\n```\r\n\r\n\u3067\u3082\u3053\u308c\u3060\u3068\u9762\u5012\u306a\u306e\u3067\uff0c\u4e0b\u8a18\u3067\u3082\u540c\u3058\r\n\r\n```\r\nC:\\> python -m venv envname\r\n```\r\n\r\n\u3042\u3068\u306f\u4eee\u60f3\u74b0\u5883\u306b\u5165\u308b\u3060\u3051\r\n\r\n```\r\nC:\\> envname\\Scripts\\activate.bat\r\n```\r\n\r\n\u4eee\u60f3\u74b0\u5883\u304b\u3089\u629c\u3051\u308b\u306e\u306f\u3053\u308c\r\n\r\n```\r\nC:\\> deactivate.bat\r\n```",
     "pub_date": "2016-08-06T12:14:44.463Z",
     "user": 2,
     "tags": [

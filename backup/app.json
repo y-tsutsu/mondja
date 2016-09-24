@@ -1198,7 +1198,7 @@
   "pk": 67,
   "fields": {
     "title": "Python + OpenCV",
-    "content": "# \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n\u753b\u50cf\u3092\u8aad\u307f\u8fbc\u3093\u3067\u30a8\u30c3\u30b8\u691c\u51fa\u3057\u3066\u8868\u793a\uff0e\r\n\r\n```\r\nimport cv2\r\n\r\ndef main():\r\n    gray = cv2.imread(\"spam.png\", 0)    # \u5165\u529b\u753b\u50cf\u3092\u30b0\u30ec\u30fc\u30b9\u30b1\u30fc\u30eb\u3067\u53d6\u5f97\r\n    edge = cv2.Canny(gray, 100, 200)    # Canny\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3067\u30a8\u30c3\u30b8\u691c\u51fa\r\n    cv2.imshow(\"Show Image\", edge)      # \u30a8\u30c3\u30b8\u753b\u50cf\u3092\u8868\u793a\r\n    cv2.waitKey(0)                      # \u30ad\u30fc\u5165\u529b\u5f85\u6a5f\r\n    cv2.destroyAllWindows()             # \u30a6\u30a3\u30f3\u30c9\u30a6\u7834\u68c4\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```\r\n",
+    "content": "# \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n\u753b\u50cf\u3092\u8aad\u307f\u8fbc\u3093\u3067\u30a8\u30c3\u30b8\u691c\u51fa\u3057\u3066\u8868\u793a\uff0e\r\n\r\n```\r\nimport cv2\r\n\r\ndef main():\r\n    gray = cv2.imread('spam.png', 0)    # \u5165\u529b\u753b\u50cf\u3092\u30b0\u30ec\u30fc\u30b9\u30b1\u30fc\u30eb\u3067\u53d6\u5f97\r\n    edge = cv2.Canny(gray, 100, 200)    # Canny\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3067\u30a8\u30c3\u30b8\u691c\u51fa\r\n    cv2.imshow('Show Image', edge)      # \u30a8\u30c3\u30b8\u753b\u50cf\u3092\u8868\u793a\r\n    cv2.waitKey(0)                      # \u30ad\u30fc\u5165\u529b\u5f85\u6a5f\r\n    cv2.destroyAllWindows()             # \u30a6\u30a3\u30f3\u30c9\u30a6\u7834\u68c4\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
     "pub_date": "2015-12-26T12:07:32.526Z",
     "user": 2,
     "tags": [
@@ -1892,6 +1892,21 @@
     "tags": [
       1,
       53
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 121,
+  "fields": {
+    "title": "OpenCV\u3067\u30e2\u30b6\u30a4\u30af\u51e6\u7406",
+    "content": "# OpenCV\uff08Python\uff09\u3067\u306e\u30e2\u30b6\u30a4\u30af\u51e6\u7406\r\n\r\n\u3044\u3063\u305f\u3093\u753b\u50cf\u3092\u5c0f\u3055\u304f\u30ea\u30b5\u30a4\u30ba\u3057\u3066\u304b\u3089\u5143\u306e\u30b5\u30a4\u30ba\u306b\u623b\u3059\u3060\u3051\uff0e\r\n\r\n```\r\nimport numpy as np\r\nimport cv2\r\n\r\nimg = cv2.imread('spam.png')\r\n\r\nfor x, y, w, h in [(12, 99, 244, 162), (343, 17, 168, 244), (598, 17, 244, 244)]:\r\n    cut_img = img[y:y + h, x:x + w]\r\n    cut_size = cut_img.shape[:2][::-1]\r\n    cut_img = cv2.resize(cut_img, (cut_size[0] // 10, cut_size[0] // 10))\r\n    cut_img = cv2.resize(cut_img,cut_size, interpolation = cv2.INTER_NEAREST)\r\n    img[y:y + h, x:x + w] = cut_img\r\n\r\ncv2.imshow('mosaic', img)\r\ncv2.imwrite('ham.png', img)\r\ncv2.waitKey(0)\r\ncv2.destroyAllWindows()\r\n```",
+    "pub_date": "2016-09-22T07:07:08.275Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      18
     ]
   }
 }

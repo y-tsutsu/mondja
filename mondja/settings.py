@@ -31,18 +31,16 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'app.apps.AppConfig',
-    # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gunicorn',
     'social.apps.django_app.default',
+    'app.apps.AppConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -122,8 +120,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-SITE_ID = 1
 
 
 MEDIA_URL = '/media/'

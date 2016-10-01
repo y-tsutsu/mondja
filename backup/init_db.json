@@ -324,33 +324,6 @@
   }
 },
 {
-  "model": "auth.permission",
-  "pk": 37,
-  "fields": {
-    "content_type": 13,
-    "name": "Can add code",
-    "codename": "add_code"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 38,
-  "fields": {
-    "content_type": 13,
-    "name": "Can change code",
-    "codename": "change_code"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 39,
-  "fields": {
-    "content_type": 13,
-    "name": "Can delete code",
-    "codename": "delete_code"
-  }
-},
-{
   "model": "auth.user",
   "pk": 1,
   "fields": {

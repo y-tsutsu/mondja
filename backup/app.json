@@ -1684,7 +1684,7 @@
   "pk": 105,
   "fields": {
     "title": "Django\u3067\u30ea\u30c0\u30a4\u30ec\u30af\u30c8",
-    "content": "urls.py\u306b\u8a18\u8ff0\u3059\u308b\u65b9\u6cd5\r\n\r\n```\r\nfrom django.views.generic.base import RedirectView\r\n\r\nurlpatterns = [\r\n    url(r'^spam/', RedirectView.as_view(url = '/ham/'), name='spam'),\r\n]\r\n```\r\n\r\nviews.py\u306b\u8a18\u8ff0\u3059\u308b\u65b9\u6cd5\r\n\r\n```\r\nfrom django.shortcuts import redirect\r\n\r\ndef spam(request):\r\n    return redirect('/ham/')\r\n```",
+    "content": "urls.py\u306b\u8a18\u8ff0\u3059\u308b\u65b9\u6cd5\r\n\r\n```\r\nfrom django.views.generic import RedirectView\r\n\r\nurlpatterns = [\r\n    url(r'^spam/', RedirectView.as_view(url = '/ham/')),\r\n]\r\n```\r\n\r\nviews.py\u306b\u8a18\u8ff0\u3059\u308b\u65b9\u6cd5\r\n\r\n```\r\nfrom django.shortcuts import redirect\r\n\r\ndef spam(request):\r\n    return redirect('/ham/')\r\n```",
     "pub_date": "2016-06-11T09:47:51.885Z",
     "user": 2,
     "tags": [

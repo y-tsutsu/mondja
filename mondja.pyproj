@@ -37,6 +37,7 @@
     <Compile Include="app\templatetags\myfilter.py" />
     <Compile Include="app\templatetags\__init__.py" />
     <Compile Include="app\tests.py" />
+    <Compile Include="app\urls.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />

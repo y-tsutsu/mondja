@@ -1516,7 +1516,7 @@
   "pk": 93,
   "fields": {
     "title": "Atom\u306e\u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8",
-    "content": "# \u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u89a7\r\n\r\n```\r\natom-dark-ui-slim\r\natom-monokai\r\natom-runner\r\nauto-encoding\r\nautocomplete-clang\r\nautocomplete-paths\r\nautocomplete-python\r\nautocomplete-sass\r\ncolor-picker\r\nfile-icons\r\ngit-control\r\ngit-diff-details\r\ngit-history\r\ngit-log\r\ngit-plus\r\ngit-time-machine\r\nhighlight-line\r\nhighlight-selected\r\njapanese-menu\r\njumpy\r\nlinter\r\nlinter-gcc\r\nlinter-python\r\nmaximize-panes\r\nmerge-conflicts\r\nminimap\r\nminimap-autohide\r\nminimap-bookmarks\r\nminimap-git-diff\r\nminimap-highlight-selected\r\nminimap-pigments\r\npigments\r\nproject-manager\r\nrailscast-theme\r\nslim-language\r\nsort-lines\r\nsymbols-tree-view\r\ntabs-to-spaces\r\ntree-view-git-status\r\n```\r\n\r\n# \u4e00\u62ec\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# packages.txt\u306e\u51fa\u529b\u65b9\u6cd5\r\n\r\n```\r\n$ apm list --installed --bare > packages.txt\r\n```",
+    "content": "# \u304a\u3059\u3059\u3081\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u89a7\r\n\r\n```\r\natom-dark-ui-slim\r\natom-monokai\r\natom-runner\r\nauto-encoding\r\nautocomplete-clang\r\nautocomplete-paths\r\nautocomplete-python\r\ncolor-picker\r\nfile-icons\r\ngit-control\r\ngit-diff-details\r\ngit-history\r\ngit-log\r\ngit-plus\r\ngit-time-machine\r\nhighlight-line\r\nhighlight-selected\r\njapanese-menu\r\njumpy\r\nlinter\r\nlinter-gcc\r\nlinter-python\r\nmaximize-panes\r\nmerge-conflicts\r\nminimap\r\nminimap-autohide\r\nminimap-bookmarks\r\nminimap-git-diff\r\nminimap-highlight-selected\r\nminimap-pigments\r\npigments\r\nproject-manager\r\nrailscast-theme\r\nslim-language\r\nsort-lines\r\nsymbols-tree-view\r\ntabs-to-spaces\r\ntree-view-git-status\r\n```\r\n\r\n# \u4e00\u62ec\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ apm install --packages-file packages.txt\r\n```\r\n\r\n# packages.txt\u306e\u51fa\u529b\u65b9\u6cd5\r\n\r\n```\r\n$ apm list --installed --bare > packages.txt\r\n```",
     "pub_date": "2016-05-03T16:08:03.412Z",
     "user": 2,
     "tags": [
@@ -1924,11 +1924,25 @@
   "pk": 122,
   "fields": {
     "title": "Vivaldi\u3067\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u4fdd\u5b58\u3057\u306a\u3044\uff0c\u306b\u8a2d\u5b9a\u3057\u305f\u30da\u30fc\u30b8\u3067\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u4fdd\u5b58\u3059\u308b\u3088\u3046\u306b\u5909\u66f4\u3059\u308b",
-    "content": "\u30a2\u30c9\u30ec\u30b9\u30d0\u30fc\u306b `chrome://settings/search#a` \u3092\u5165\u529b\r\n\r\n\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u7ba1\u7406\u304b\u3089\u8a72\u5f53\u7b87\u6240\u3092\u524a\u9664\r\n\r\n![image](http://mkb.salchu.net/wp/wp-content/uploads/2016/05/icon-vivaldi-1-650x320.png)",
+    "content": "\u30a2\u30c9\u30ec\u30b9\u30d0\u30fc\u306b `chrome://settings/search#a` \u3092\u5165\u529b\r\n\r\n\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u7ba1\u7406\u304b\u3089\u8a72\u5f53\u7b87\u6240\u3092\u524a\u9664\r\n\r\n![image](http://mkb.salchu.net/wp/wp-content/uploads/2016/05/icon-vivaldi-1-650x320.png)\r\n\r\n\u203b\u30c6\u30ad\u30b9\u30c8\u306e\u5c65\u6b74\u306e\u524a\u9664\u306f\u9078\u629e\u3057\u3066shift\uff0bdelete",
     "pub_date": "2016-09-30T14:05:25.008Z",
     "user": 2,
     "tags": [
       54
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 123,
+  "fields": {
+    "title": "electron-packager\u3067\u306ecannot find module\u89e3\u6c7a",
+    "content": "# package.json\u306e\u4e2d\u306bdependencies\u5fc5\u8981\r\n\r\nnpm\u3067\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u3068\u304d\u306b\uff0c`npm install <module_name> --save`\u3068\u3059\u308c\u3070OK\uff01\r\n\r\n![image](http://codezine.jp/static/images/article/8782/8782_t.gif)",
+    "pub_date": "2016-10-09T04:31:41.339Z",
+    "user": 2,
+    "tags": [
+      1,
+      47
     ]
   }
 }

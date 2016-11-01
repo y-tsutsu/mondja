@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'social.apps.django_app.context_processors.backends',
                 'social.apps.django_app.context_processors.login_redirect',
+                'mondja.context_processors.enabled_social_auth',
             ],
         },
     },
@@ -162,10 +163,12 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1507860389540866'
-SOCIAL_AUTH_FACEBOOK_SECRET = '37c5826d4cf783d3a2bf5bbda51566a4'
-SOCIAL_AUTH_TWITTER_KEY = 'JpxyJFh5PXh4ovXi7MmFSkOCY'
-SOCIAL_AUTH_TWITTER_SECRET = '97eflkkQMt7MUCPAm6SgI9fRLFFFtLWkj7iFJ1Vh6wvIteL6zo'
+ENABLED_SOCIAL_AUTH = os.environ.get('ENABLED_SOCIAL_AUTH') == '1'
+
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get('SOCIAL_AUTH_TWITTER_KEY')
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('SOCIAL_AUTH_TWITTER_SECRET')
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',

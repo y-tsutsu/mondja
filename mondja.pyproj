@@ -57,6 +57,7 @@
   <ItemGroup>
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
+    <Folder Include="app\templates\" />
     <Folder Include="app\templatetags\" />
     <Folder Include="app\templatetags\__pycache__\" />
     <Folder Include="media\" />
@@ -94,6 +95,9 @@
   <ItemGroup>
     <Content Include=".env" />
     <Content Include="app.json" />
+    <Content Include="app\templates\index.html" />
+    <Content Include="app\templates\memo.html" />
+    <Content Include="app\templates\memotop.html" />
     <Content Include="app\templatetags\__pycache__\myfilter.cpython-34.pyc" />
     <Content Include="app\templatetags\__pycache__\myfilter.cpython-35.pyc" />
     <Content Include="app\templatetags\__pycache__\__init__.cpython-34.pyc" />
@@ -274,11 +278,8 @@
     <Content Include="templates\403.html" />
     <Content Include="templates\404.html" />
     <Content Include="templates\500.html" />
-    <Content Include="templates\index.html" />
     <Content Include="templates\layout.html" />
     <Content Include="templates\login.html" />
-    <Content Include="templates\memo.html" />
-    <Content Include="templates\memotop.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">

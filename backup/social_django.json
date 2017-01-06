@@ -1,6 +1,6 @@
 [
 {
-  "model": "social_auth.usersocialauth",
+  "model": "social_django.usersocialauth",
   "pk": 1,
   "fields": {
     "user": 4,
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "social_auth.usersocialauth",
+  "model": "social_django.usersocialauth",
   "pk": 2,
   "fields": {
     "user": 5,

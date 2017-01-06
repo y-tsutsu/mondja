@@ -21,7 +21,7 @@ from django.views.generic import RedirectView
 from mondja import settings
 from mondja import dumpdata
 from app import urls as appurls
-from social.apps.django_app import urls as sclurls
+from social_django import urls as sclurls
 
 admin.autodiscover()
 

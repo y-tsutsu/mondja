@@ -105,8 +105,8 @@
     <Content Include="media\identicon\sample.png" />
     <Content Include="Procfile" />
     <Content Include="README.md" />
-    <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
+    <Content Include="requirements.txt" />
     <Content Include="runtime.txt" />
     <Content Include="static\assets\css\font-awesome.min.css" />
     <Content Include="static\assets\css\ie8.css" />

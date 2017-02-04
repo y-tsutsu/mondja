@@ -432,6 +432,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 57,
+  "fields": {
+    "name": "Qt",
+    "pub_date": "2017-02-04T12:04:09.735Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -1749,7 +1758,8 @@
     "user": 2,
     "tags": [
       1,
-      2
+      2,
+      57
     ]
   }
 },
@@ -1803,7 +1813,8 @@
     "user": 2,
     "tags": [
       1,
-      2
+      2,
+      57
     ]
   }
 },
@@ -2113,8 +2124,8 @@
     "user": 2,
     "tags": [
       1,
-      55,
-      37
+      37,
+      55
     ]
   }
 },
@@ -2142,8 +2153,24 @@
     "user": 2,
     "tags": [
       1,
-      55,
-      52
+      52,
+      55
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 137,
+  "fields": {
+    "title": "Qt5\u30a2\u30d7\u30ea\u306e\u30b3\u30f3\u30d1\u30a4\u30eb",
+    "content": "# Qt\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo apttitude install qt5-default\r\n```\r\n\r\n# \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n```\r\n#include <QApplication>\r\n#include <QHBoxLayout>\r\n#include <QSlider>\r\n#include <QSpinBox>\r\n#include <stdio.h>\r\n\r\nstatic void prtage(int age)\r\n{\r\n    printf(\"Age = %d\\n\", age);\r\n}\r\n\r\nint main(int argc, char **argv)\r\n{\r\n    QApplication app(argc, argv);\r\n    QWidget window;\r\n    window.setWindowTitle(\"Enter Your Age\");\r\n\r\n    QSpinBox spinBox;\r\n    QSlider slider(Qt::Horizontal);\r\n    spinBox.setRange(0, 130);\r\n    slider.setRange(0, 130);\r\n\r\n    QObject::connect(&spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), &slider, &QSlider::setValue);\r\n    QObject::connect(&slider, &QSlider::valueChanged, &spinBox, &QSpinBox::setValue);\r\n    QObject::connect(&slider, &QSlider::valueChanged, &prtage);\r\n\r\n    spinBox.setValue(35);\r\n\r\n    QHBoxLayout layout;\r\n    layout.addWidget(&spinBox);\r\n    layout.addWidget(&slider);\r\n    window.setLayout(&layout);\r\n    window.show();\r\n    return app.exec();\r\n}\r\n```\r\n\r\n# \u30d3\u30eb\u30c9\r\n\r\n```\r\n$ qmake -project -o qtsample.pro\r\n$ echo \"QT += widgets\" >> qtsample.pro\r\n$ qmake\r\n$ make\r\n```",
+    "pub_date": "2017-02-04T12:02:22.523Z",
+    "user": 2,
+    "tags": [
+      1,
+      16,
+      52,
+      57
     ]
   }
 }

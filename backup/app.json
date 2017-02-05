@@ -588,7 +588,7 @@
   "pk": 11,
   "fields": {
     "title": "Python\u30e1\u30e2( ..)\u03c6",
-    "content": "# \u306a\u3093\u304b\u4f7f\u3044\u305d\u3046\u306a\u306e\u3092\u8f09\u305b\u3066\u304a\u304f\r\n\r\n### \u30ea\u30b9\u30c8\u64cd\u4f5c\r\n[http://qiita.com/clarinet758/items/e181fcfe8ed6f99cbeb5](http://qiita.com/clarinet758/items/e181fcfe8ed6f99cbeb5)\r\n  \r\n### \u4fbf\u5229\u306a\u6a19\u6e96\u30e9\u30a4\u30d6\u30e9\u30ea\r\n[http://qiita.com/pika_shi/items/bf3b449a354cc7609ab9](http://qiita.com/pika_shi/items/bf3b449a354cc7609ab9)\r\n  \r\n### \u30d5\u30a1\u30a4\u30eb\u306e\u4e00\u89a7\uff08\u30b5\u30d6\u30d5\u30a9\u30eb\u30c0\u3082\u518d\u5e30\u7684\u306b\uff09\r\n[http://www.gesource.jp/programming/python/code/0001.html](http://www.gesource.jp/programming/python/code/0001.html)\r\n\r\n![image](http://westmarch.sjsoft.com/wp-content/uploads/2012/11/zen-of-python-poster-a3-1024x724.png)\r\n",
+    "content": "# \u306a\u3093\u304b\u4f7f\u3044\u305d\u3046\u306a\u306e\u3092\u8f09\u305b\u3066\u304a\u304f\r\n\r\n### \u30ea\u30b9\u30c8\u64cd\u4f5c\r\n[http://qiita.com/clarinet758/items/e181fcfe8ed6f99cbeb5](http://qiita.com/clarinet758/items/e181fcfe8ed6f99cbeb5)\r\n  \r\n### \u4fbf\u5229\u306a\u6a19\u6e96\u30e9\u30a4\u30d6\u30e9\u30ea\r\n[http://qiita.com/pika_shi/items/bf3b449a354cc7609ab9](http://qiita.com/pika_shi/items/bf3b449a354cc7609ab9)\r\n  \r\n### \u30d5\u30a1\u30a4\u30eb\u306e\u4e00\u89a7\uff08\u30b5\u30d6\u30d5\u30a9\u30eb\u30c0\u3082\u518d\u5e30\u7684\u306b\uff09\r\n[http://www.gesource.jp/programming/python/code/0001.html](http://www.gesource.jp/programming/python/code/0001.html)\r\n\r\n![image](https://www.skyarch.net/blog/wp-content/uploads/2015/11/python-logo-master-v3-TM.png)",
     "pub_date": "2015-08-09T14:56:27.365Z",
     "user": 2,
     "tags": [
@@ -2167,10 +2167,56 @@
     "pub_date": "2017-02-04T12:02:22.523Z",
     "user": 2,
     "tags": [
-      1,
       16,
+      1,
       52,
       57
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 138,
+  "fields": {
+    "title": "Visual Studio C/C++\u3067\u30e1\u30e2\u30ea\u30ea\u30fc\u30af\u691c\u51fa",
+    "content": "# \u8abf\u67fb\u7528\u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n`crtdbg.h`\u306einclude\u3068`_CrtSetDbgFlag`\u3092\u5148\u982d\u3067\u547c\u3073\u51fa\u3057\r\n\r\n```\r\n#include <stdio.h>\r\n#include <stdlib.h>\r\n#include <crtdbg.h>\r\n#define malloc(X) _malloc_dbg(X, _NORMAL_BLOCK, __FILE__, __LINE__)\r\n#define new ::new(_NORMAL_BLOCK, __FILE__, __LINE__)\r\n\r\nint main()\r\n{\r\n    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_DELAY_FREE_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF);\r\n\r\n    int* hoge = reinterpret_cast<int*>(malloc(sizeof(int) * 16));\r\n    //free(hoge);\r\n\r\n    int* piyo = new int[32];\r\n    //delete[] piyo;\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# \u51fa\u529b\u7d50\u679c\r\n```\r\nDetected memory leaks!\r\nDumping objects ->\r\nc:\\users\\tsutsu\\desktop\\sample\\sample\\sample.cpp(14) : {70} normal block at 0x00E7E238, 128 bytes long.\r\n Data: <                > CD CD CD CD CD CD CD CD CD CD CD CD CD CD CD CD \r\nc:\\users\\tsutsu\\desktop\\sample\\sample\\sample.cpp(11) : {69} normal block at 0x00E74EE8, 64 bytes long.\r\n Data: <                > CD CD CD CD CD CD CD CD CD CD CD CD CD CD CD CD \r\nObject dump complete.\r\n```",
+    "pub_date": "2017-02-05T04:51:11.175Z",
+    "user": 2,
+    "tags": [
+      1,
+      8,
+      16,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 139,
+  "fields": {
+    "title": "valgrind\u3067C/C++\u306e\u30e1\u30e2\u30ea\u30ea\u30fc\u30af\u691c\u51fa",
+    "content": "# \u8abf\u67fb\u7528\u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n```\r\n#include <stdio.h>\r\n#include <stdlib.h>\r\n\r\nint main()\r\n{\r\n    int* hoge = reinterpret_cast<int*>(malloc(sizeof(int) * 16));\r\n    //free(hoge);\r\n\r\n    int* piyo = new int[32];\r\n    //delete[] piyo;\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# \u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo aptitude valgrind\r\n```\r\n\r\n# \u5b9f\u884c\r\n\r\n```\r\n$ valgrind --leak-check=full ./sample\r\n```\r\n\r\n# \u51fa\u529b\u7d50\u679c\r\n\r\n```\r\n==7234== HEAP SUMMARY:\r\n==7234==     in use at exit: 192 bytes in 2 blocks\r\n==7234==   total heap usage: 2 allocs, 0 frees, 192 bytes allocated\r\n==7234==\r\n==7234== 64 bytes in 1 blocks are definitely lost in loss record 1 of 2\r\n==7234==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)\r\n==7234==    by 0x40081A: main (sample.cpp:6)\r\n==7234==\r\n==7234== 128 bytes in 1 blocks are definitely lost in loss record 2 of 2\r\n==7234==    at 0x4C298A0: operator new[](unsigned long) (vg_replace_malloc.c:389)\r\n==7234==    by 0x400828: main (sample.cpp:9)\r\n==7234==\r\n==7234== LEAK SUMMARY:\r\n==7234==    definitely lost: 192 bytes in 2 blocks\r\n==7234==    indirectly lost: 0 bytes in 0 blocks\r\n==7234==      possibly lost: 0 bytes in 0 blocks\r\n==7234==    still reachable: 0 bytes in 0 blocks\r\n==7234==         suppressed: 0 bytes in 0 blocks\r\n==7234==\r\n==7234== For counts of detected and suppressed errors, rerun with: -v\r\n==7234== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)\r\n```",
+    "pub_date": "2017-02-05T08:04:13.558Z",
+    "user": 2,
+    "tags": [
+      1,
+      8,
+      16,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 140,
+  "fields": {
+    "title": "C++11\u306e\u30b9\u30de\u30fc\u30c8\u30dd\u30a4\u30f3\u30bf",
+    "content": "# std::unique_ptr\r\n\r\n```\r\n#include <iostream>\r\n#include <memory>\r\n\r\nclass MyClass\r\n{\r\nprivate:\r\n    int val_;\r\npublic:\r\n    MyClass() : val_(42) {}\r\n    void Print() { std::cout << this->val_ << std::endl; }\r\n};\r\n\r\nint main()\r\n{\r\n    // \u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u306e\u5f15\u6570\u3068\u3057\u3066\uff0c\u52d5\u7684\u78ba\u4fdd\u3057\u305f\u30e1\u30e2\u30ea\u306e\u30a2\u30c9\u30ec\u30b9\u3092\u6307\u5b9a\r\n    std::unique_ptr<MyClass> ptr(new MyClass());\r\n    ptr->Print();\r\n\r\n    // reset\u95a2\u6570\u3092\u4f7f\u3063\u3066\uff0c\u5f8c\u304b\u3089\u4ee3\u5165\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u308b\r\n    std::unique_ptr<MyClass> ptr2;\r\n    ptr2.reset(new MyClass());\r\n\r\n    // ptr2\u306e\u6240\u6709\u6a29\u304cptr3\u306b\u79fb\u52d5\u3059\u308b\r\n    std::unique_ptr<MyClass> ptr3(std::move(ptr2));\r\n    if (!ptr2)\r\n    {\r\n        std::cout << \"prt2 NG\" << std::endl;\r\n    }\r\n    if (ptr3)\r\n    {\r\n        std::cout << \"prt3 OK\" << std::endl;\r\n    }\r\n\r\n    // \u751f\u30dd\u30a4\u30f3\u30bf\u306e\u53d6\u5f97\uff08\u6240\u6709\u6a29\u306f\u305d\u306e\u307e\u307e\uff09\r\n    auto p = ptr3.get();\r\n    p->Print();\r\n    // \u751f\u30dd\u30a4\u30f3\u30bf\u306e\u53d6\u5f97\uff08\u6240\u6709\u6a29\u3092\u7834\u68c4\uff09\r\n    auto p2 = ptr3.release();\r\n    p2->Print();\r\n\r\n    // reset\u95a2\u6570\u3092\u4f7f\u3063\u3066\uff0cptr2\u3067\u7ba1\u7406\r\n    ptr2.reset(p2);\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# std::shared_ptr\r\n\r\n```\r\n#include <iostream>\r\n#include <memory>\r\n\r\nclass MyClass\r\n{\r\nprivate:\r\n    int val_;\r\npublic:\r\n    MyClass() : val_(42) {}\r\n    void Print() { std::cout << this->val_ << std::endl; }\r\n};\r\n\r\nint main()\r\n{\r\n    // \u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3084\uff0creset\u95a2\u6570\u3092\u4f7f\u3063\u3066\u306e\u30e1\u30e2\u30ea\u5272\u308a\u5f53\u3066\u304c\u53ef\u80fd\r\n    std::shared_ptr<MyClass> ptr(new MyClass());\r\n    std::shared_ptr<MyClass> ptr2;\r\n    ptr2.reset(new MyClass());\r\n\r\n    // make_shared\u95a2\u6570\u3092\u4f7f\u3046\u3068\uff0c\u52b9\u7387\u3088\u304f\u30e1\u30e2\u30ea\u3092\u78ba\u4fdd\u3067\u304d\u308b\uff08C++11\u304b\u3089\u4f7f\u3048\u308b\uff09\r\n    auto ptr3 = std::make_shared<MyClass>();\r\n\r\n    auto ptr4 = ptr3;\r\n    ptr4->Print();\r\n\r\n    // \u3042\u3068\u306fstd::unique_ptr\u3068\u540c\u3058\u3088\u3046\u306a\u611f\u3058\r\n\r\n    return 0;\r\n}\r\n```",
+    "pub_date": "2017-02-05T10:54:59.568Z",
+    "user": 2,
+    "tags": [
+      1,
+      16
     ]
   }
 }

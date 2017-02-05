@@ -270,9 +270,8 @@
     <Content Include="static\images\favicon.ico" />
     <Content Include="static\images\me.jpg" />
     <Content Include="static\images\profile.png" />
-    <Content Include="static\jquery\js\jquery-1.11.3.js" />
-    <Content Include="static\jquery\js\jquery-1.11.3.min.js" />
-    <Content Include="static\jquery\js\jquery-1.11.3.min.map" />
+    <Content Include="static\jquery\js\jquery-3.1.0.js" />
+    <Content Include="static\jquery\js\jquery-3.1.0.min.js" />
     <Content Include="static\mondja\css\mondja.css" />
     <Content Include="static\mondja\js\mondja.js" />
     <Content Include="templates\403.html" />

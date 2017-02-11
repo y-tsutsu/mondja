@@ -4,11 +4,11 @@
 [![Heroku Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/y-tsutsu/mondja)
 
 # Note
-Simple web memo application.
+Simple memo web application.
 
 # Requirements
 * Python: 3.5.2
-* Django: 1.10.1
+* Django: 1.10.5
 
 # Run
 ```

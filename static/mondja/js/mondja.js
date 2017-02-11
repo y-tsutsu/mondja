@@ -10,3 +10,6 @@ $('form').submit(function () {
 $('.modal').on('shown.bs.modal', function () {
     $(this).find('[autofocus]').focus();
 });
+
+// highlight.js initialize
+hljs.initHighlightingOnLoad();

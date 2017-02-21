@@ -327,7 +327,7 @@
   "model": "app.tag",
   "pk": 44,
   "fields": {
-    "name": "\u30bd\u30b1\u30c3\u30c8",
+    "name": "Socket",
     "pub_date": "2016-01-30T12:52:54.854Z",
     "user": 2
   }
@@ -437,6 +437,15 @@
   "fields": {
     "name": "Qt",
     "pub_date": "2017-02-04T12:04:09.735Z",
+    "user": 2
+  }
+},
+{
+  "model": "app.tag",
+  "pk": 58,
+  "fields": {
+    "name": "Elixir",
+    "pub_date": "2017-02-11T05:16:19.586Z",
     "user": 2
   }
 },
@@ -1686,8 +1695,8 @@
     "pub_date": "2016-06-09T13:53:23.238Z",
     "user": 2,
     "tags": [
-      48,
       1,
+      48,
       2
     ]
   }
@@ -1715,8 +1724,8 @@
     "pub_date": "2016-06-11T09:47:51.885Z",
     "user": 2,
     "tags": [
-      48,
       1,
+      48,
       2
     ]
   }
@@ -1827,8 +1836,8 @@
     "pub_date": "2016-06-27T02:40:29.368Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -1841,8 +1850,8 @@
     "pub_date": "2016-07-27T07:04:04.169Z",
     "user": 2,
     "tags": [
-      16,
       1,
+      16,
       37
     ]
   }
@@ -2008,12 +2017,12 @@
   "pk": 126,
   "fields": {
     "title": "CMakeLists.txt\u306e\u6700\u4f4e\u9650\u306e\u8a18\u8ff0",
-    "content": "# CMakeLists.txt\u306e\u5185\u5bb9\r\n\r\n```\r\ncmake_minimum_required(VERSION 2.8)\r\nadd_definitions(\"-Wall -std=c++11\")\r\nset(CMAKE_BUILD_TYPE Debug)\r\nadd_executable(project_name\r\n    main.cpp\r\n    hoge.cpp\r\n    piyo.cpp\r\n)\r\n```\r\n\r\n# \u5b9f\u884c\r\n\r\n```\r\n\u03bb cmake . -G \"MSYS Makefiles\"\r\n```",
+    "content": "# CMakeLists.txt\u306e\u5185\u5bb9\r\n\r\n```\r\ncmake_minimum_required(VERSION 2.8)\r\nadd_definitions(\"-Wall -std=c++11\")\r\nset(CMAKE_BUILD_TYPE Debug)\r\nadd_executable(project_name\r\n    main.cpp\r\n    hoge.cpp\r\n    piyo.cpp\r\n)\r\n```\r\n\r\n# \u5b9f\u884c\uff08Windows MSYS\uff09\r\n\r\n```\r\n> cmake . -G \"MSYS Makefiles\"\r\n```\r\n\r\n# \u5b9f\u884c\uff08Linux\uff09\r\n\r\n```\r\n$ cmake\r\n```",
     "pub_date": "2016-11-25T07:19:26.922Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -2037,7 +2046,7 @@
   "pk": 128,
   "fields": {
     "title": "EditorConfig\u306e\u30b5\u30f3\u30d7\u30eb",
-    "content": "# \u3069\u3093\u306a\u30a8\u30c7\u30a3\u30bf\u3067\u3082\u30b3\u30fc\u30c9\u306e\u7d71\u4e00\u6027\u3092\u9ad8\u3081\u308b\r\n\r\n[http://editorconfig.org/](http://editorconfig.org/)\r\n\r\n![image](http://editorconfig.org/logo.png)\r\n\r\n```\r\n# EditorConfig helps developers define and maintain consistent\r\n# coding styles between different editors and IDEs\r\n# editorconfig.org\r\n\r\nroot = true\r\n\r\n[*]\r\n\r\n# Change these settings to your own preference\r\nindent_style = space    # tab or space\r\nindent_size = 4\r\n\r\n# We recommend you to keep these unchanged\r\nend_of_line = lf        # lf or cr or crls\r\ncharset = utf-8\r\ntrim_trailing_whitespace = true\r\ninsert_final_newline = true\r\n\r\n[*.md]\r\ntrim_trailing_whitespace = false\r\n```",
+    "content": "# \u3069\u3093\u306a\u30a8\u30c7\u30a3\u30bf\u3067\u3082\u30b3\u30fc\u30c9\u306e\u7d71\u4e00\u6027\u3092\u9ad8\u3081\u308b\r\n\r\n[http://editorconfig.org/](http://editorconfig.org/)\r\n\r\n![image](http://editorconfig.org/logo.png)\r\n\r\n## .editorconfig\r\n\r\n```\r\n# EditorConfig helps developers define and maintain consistent\r\n# coding styles between different editors and IDEs\r\n# editorconfig.org\r\n\r\nroot = true\r\n\r\n[*]\r\n\r\n# Change these settings to your own preference\r\nindent_style = space    # tab or space\r\nindent_size = 4\r\n\r\n# We recommend you to keep these unchanged\r\nend_of_line = lf        # lf or cr or crls\r\ncharset = utf-8\r\ntrim_trailing_whitespace = true\r\ninsert_final_newline = true\r\n\r\n[*.md]\r\ntrim_trailing_whitespace = false\r\n```",
     "pub_date": "2016-12-01T06:02:40.343Z",
     "user": 2,
     "tags": [
@@ -2068,8 +2077,8 @@
     "pub_date": "2016-12-18T09:49:44.228Z",
     "user": 2,
     "tags": [
-      56,
       1,
+      56,
       47
     ]
   }
@@ -2163,14 +2172,14 @@
   "pk": 137,
   "fields": {
     "title": "Qt5\u30a2\u30d7\u30ea\u306e\u30b3\u30f3\u30d1\u30a4\u30eb",
-    "content": "# Qt\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo apttitude install qt5-default\r\n```\r\n\r\n# \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n```\r\n#include <QApplication>\r\n#include <QHBoxLayout>\r\n#include <QSlider>\r\n#include <QSpinBox>\r\n#include <stdio.h>\r\n\r\nstatic void prtage(int age)\r\n{\r\n    printf(\"Age = %d\\n\", age);\r\n}\r\n\r\nint main(int argc, char **argv)\r\n{\r\n    QApplication app(argc, argv);\r\n    QWidget window;\r\n    window.setWindowTitle(\"Enter Your Age\");\r\n\r\n    QSpinBox spinBox;\r\n    QSlider slider(Qt::Horizontal);\r\n    spinBox.setRange(0, 130);\r\n    slider.setRange(0, 130);\r\n\r\n    QObject::connect(&spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), &slider, &QSlider::setValue);\r\n    QObject::connect(&slider, &QSlider::valueChanged, &spinBox, &QSpinBox::setValue);\r\n    QObject::connect(&slider, &QSlider::valueChanged, &prtage);\r\n\r\n    spinBox.setValue(35);\r\n\r\n    QHBoxLayout layout;\r\n    layout.addWidget(&spinBox);\r\n    layout.addWidget(&slider);\r\n    window.setLayout(&layout);\r\n    window.show();\r\n    return app.exec();\r\n}\r\n```\r\n\r\n# \u30d3\u30eb\u30c9\r\n\r\n```\r\n$ qmake -project -o qtsample.pro\r\n$ echo \"QT += widgets\" >> qtsample.pro\r\n$ qmake\r\n$ make\r\n```",
+    "content": "# Qt\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo aptitude install qt5-default\r\n```\r\n\r\n# \u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n```\r\n#include <QApplication>\r\n#include <QHBoxLayout>\r\n#include <QSlider>\r\n#include <QSpinBox>\r\n#include <stdio.h>\r\n\r\nstatic void prtage(int age)\r\n{\r\n    printf(\"Age = %d\\n\", age);\r\n}\r\n\r\nint main(int argc, char **argv)\r\n{\r\n    QApplication app(argc, argv);\r\n    QWidget window;\r\n    window.setWindowTitle(\"Enter Your Age\");\r\n\r\n    QSpinBox spinBox;\r\n    QSlider slider(Qt::Horizontal);\r\n    spinBox.setRange(0, 130);\r\n    slider.setRange(0, 130);\r\n\r\n    QObject::connect(&spinBox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), &slider, &QSlider::setValue);\r\n    QObject::connect(&slider, &QSlider::valueChanged, &spinBox, &QSpinBox::setValue);\r\n    QObject::connect(&slider, &QSlider::valueChanged, &prtage);\r\n\r\n    spinBox.setValue(35);\r\n\r\n    QHBoxLayout layout;\r\n    layout.addWidget(&spinBox);\r\n    layout.addWidget(&slider);\r\n    window.setLayout(&layout);\r\n    window.show();\r\n    return app.exec();\r\n}\r\n```\r\n\r\n# \u30d3\u30eb\u30c9\r\n\r\n```\r\n$ qmake -project -o qtsample.pro\r\n$ echo \"QT += widgets\" >> qtsample.pro\r\n$ qmake\r\n$ make\r\n```",
     "pub_date": "2017-02-04T12:02:22.523Z",
     "user": 2,
     "tags": [
-      16,
       1,
-      52,
-      57
+      16,
+      57,
+      52
     ]
   }
 },
@@ -2217,6 +2226,108 @@
     "tags": [
       1,
       16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 141,
+  "fields": {
+    "title": "VSCode\u306eExtension\u4e00\u89a7",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* C++ Intellisense\r\n* CMake\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* Go\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* Runner\r\n* sushi-vscode\r\n\r\n![image](https://cdn-ak.f.st-hatena.com/images/fotolife/k/kondoumh/20160903/20160903121217.png)",
+    "pub_date": "2017-02-08T16:18:28.917Z",
+    "user": 2,
+    "tags": [
+      1,
+      55
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 142,
+  "fields": {
+    "title": "CMakeLists.txt\uff08\u30e9\u30a4\u30d6\u30e9\u30ea\u306e\u8ffd\u52a0\uff09",
+    "content": "# OpenGl ES\u306e\u30b5\u30f3\u30d7\u30eb\u3092\u30d3\u30eb\u30c9\u3057\u305f\u3068\u304d\u306eCMakeLists.txt\r\n\r\n```\r\ncmake_minimum_required(VERSION 2.8)\r\nadd_definitions(\"-Wall -std=c++11\")\r\nset(CMAKE_BUILD_TYPE Debug)\r\nadd_executable(eglsample\r\n    eglsample.cpp\r\n    myegl.cpp\r\n    mygles.cpp\r\n)\r\nfind_package(X11 REQUIRED)\r\nfind_library(EGL_LIBRARY NAMES EGL)\r\nfind_library(GLES2_LIBRARY NAMES GLESv2)\r\ntarget_link_libraries(eglsample\r\n    ${X11_LIBRARIES}\r\n    ${EGL_LIBRARY}\r\n    ${GLES2_LIBRARY}\r\n)\r\n```\r\n\r\ntarget_link_libraries\u3067\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u6307\u5b9a\u3059\u308b\uff0e\u4f7f\u7528\u53ef\u80fd\u306a\u30d1\u30c3\u30b1\u30fc\u30b8\u306f`find_package`\u3092\u4f7f\u3046\uff0e\u30d1\u30c3\u30b1\u30fc\u30b8\u306b\u306a\u3044\u30e9\u30a4\u30d6\u30e9\u30ea\u306f`find_library`\u3092\u4f7f\u3046\uff0e\r\n\r\n# \u4f7f\u7528\u53ef\u80fd\u306a\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u4e00\u89a7\r\n\r\n```\r\n$ cmake --help-module-list | grep -e '^Find'\r\n```\r\n\r\n# \u30e2\u30b8\u30e5\u30fc\u30eb\u306e\u8a73\u7d30\r\n\r\n```\r\n$ cmake --help-module FindX11\r\n```",
+    "pub_date": "2017-02-10T04:03:34.364Z",
+    "user": 2,
+    "tags": [
+      1,
+      8,
+      16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 143,
+  "fields": {
+    "title": "Elixir\u306e\u74b0\u5883\u69cb\u7bc9",
+    "content": "# Erlang\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://packages.erlang-solutions.com/erlang/](https://packages.erlang-solutions.com/erlang/)\r\n\r\n```\r\n$ sudo aptitude install libwxbase3.0-0\r\n$ sudo aptitude install libwxgtk3.0-0\r\n$ sudo dpkg -i esl-erlang_19.2.3-1-ubuntu-precise_amd64.deb\r\n```\r\n\r\n# Elixir\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ git clone https://github.com/mururu/exenv.git $HOME/.exenv\r\n\r\n$ exec $SHELL -l\r\n$ git clone https://github.com/mururu/elixir-build.git ~/.exenv/plugins/elixir-build\r\n$ echo 'export PATH=\"$HOME/.exenv/bin:$PATH\"' >> ~/.bash_profile\r\n$ echo 'eval \"$(exenv init -)\"' >> ~/.bash_profile\r\n$ exec $SHELL -l\r\n\r\n$ exenv install -list\r\n$ exenv install 1.4.1\r\n$ exenv global 1.4.1\r\n```\r\n\r\n# \u78ba\u8a8d\r\n\r\n```\r\n$ elixir -v\r\n$ iex\r\n```",
+    "pub_date": "2017-02-11T05:16:19.528Z",
+    "user": 2,
+    "tags": [
+      1,
+      58
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 144,
+  "fields": {
+    "title": "C++\u306e\u30ad\u30e3\u30b9\u30c8",
+    "content": "# C++\u306e\u65b0\u3057\u3044\u30ad\u30e3\u30b9\u30c8\u6f14\u7b97\u5b50\r\n\r\n```\r\nint hgoe = static_cast<int>(piyo);               // \u4e00\u822c\u7684\u306a\u30ad\u30e3\u30b9\u30c8\r\nint* hoge = const_cast<int*>(piyo);              // const\u3092\u9664\u53bb\u3059\u308b\u30ad\u30e3\u30b9\u30c8\r\nint* hoge = reinterpret_cast<int*>(piyo);        // \u5185\u5bb9\u7121\u8996\u306e\u5f37\u5236\u30ad\u30e3\u30b9\u30c8\r\nMyClass* hoge = dynamic_cast<MyClass*>(piyo);    // \u5b9f\u884c\u6642\u306b\u5224\u65ad\u3059\u308b\u30c0\u30a6\u30f3\u30ad\u30e3\u30b9\u30c8\r\n```\r\n\r\n`reinterpret_cast`\u3092\u3044\u3064\u3082\u5fd8\u308c\u3066\u3057\u307e\u3046\uff0e",
+    "pub_date": "2017-02-19T09:14:14.430Z",
+    "user": 2,
+    "tags": [
+      1,
+      16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 145,
+  "fields": {
+    "title": "Google Test\u306e\u4f7f\u3044\u65b9",
+    "content": "# Google Test\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ git clone https://github.com/google/googletest.git\r\n$ cd googletest\r\n$ git checkout release-1.8.0\r\n$ cd googletest\r\n$ mkdir build && cd build\r\n$ cmake ..\r\n$ make\r\n$ sudo make install\r\n```\r\n\r\n### Windows\uff08MinGW64 + msys\uff09\u3067\u30d3\u30eb\u30c9\u3059\u308b\u5834\u5408\r\n\r\n\u203bpthread\u95a2\u9023\u3067\u30b3\u30f3\u30d1\u30a4\u30eb\u30a8\u30e9\u30fc\u3068\u306a\u3063\u305f\u306e\u3067\u7121\u52b9\u5316\u3059\u308b\uff0e\r\n\r\n```\r\n> cmake -G \"MSYS Makefiles\" ..\r\n> make CXX_FLAGS=\"-DGTEST_HAS_PTHREAD=0\"\r\n```\r\n\r\n# \u30c6\u30b9\u30c8\u306e\u30d3\u30eb\u30c9\r\n\r\nWindows\u306e\u5834\u5408\u306fgtest\u306einclude\u30d1\u30b9\u3084lib\u30d1\u30b9\u306f\u4e0b\u8a18\u306e\u3088\u3046\u306b\u8a2d\u5b9a\uff0e\r\n\r\n```\r\n> g++ test.cpp test_target.cpp -I../googletest/googletest/include -I../target -L../googletest/googletest/build -lgtest_main -lgtest -o test\r\n```",
+    "pub_date": "2017-02-19T09:46:13.410Z",
+    "user": 2,
+    "tags": [
+      1,
+      16,
+      52,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 146,
+  "fields": {
+    "title": "\u30d0\u30c3\u30c1\u30d5\u30a1\u30a4\u30eb\u3067\u9577\u30441\u884c\u306e\u51e6\u7406\u3092\u6539\u884c",
+    "content": "# C\u8a00\u8a9e\u306e\u30de\u30af\u30ed\u3067\u306e\u300c\\\u300d\u307f\u305f\u3044\u306a\u3053\u3068\r\n\r\n\u6539\u884c\u3092\u5165\u308c\u3066\u8907\u6570\u306e\u884c\u306b\u5206\u3051\u308b\u306b\u306f`^`\u3092\u6700\u5f8c\u306b\u4ed8\u3051\u308b\uff0e\r\n\r\n### 1\u884c\u306e\u5834\u5408\r\n\r\n```\r\ncall g++ %test_file% %target_file% -I..\\googletest\\googletest\\include -I..\\target -L..\\googletest\\googletest\\build -lgtest_main -lgtest -otest.exe\r\n```\r\n\r\n### \u8907\u6570\u884c\u306e\u5834\u5408\r\n\r\n```\r\ncall g++ %test_file% %target_file% ^\r\n-I..\\googletest\\googletest\\include ^\r\n-I..\\target ^\r\n-L..\\googletest\\googletest\\build ^\r\n-lgtest_main ^\r\n-lgtest ^\r\n-otest.exe\r\n```",
+    "pub_date": "2017-02-20T14:52:19.006Z",
+    "user": 2,
+    "tags": [
+      1,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 147,
+  "fields": {
+    "title": "CMake\u3067pkg-config\u3092\u4f7f\u3046",
+    "content": "# CMake\u3067pkg-config\u3092\u4f7f\u3063\u3066\u5171\u6709\u30e9\u30a4\u30d6\u30e9\u30ea\u307e\u308f\u308a\u3092\u8a18\u8ff0\r\n\r\n```\r\nfind_package(PkgConfig)\r\n\r\npkg_check_modules(LIBSAMPLE REQUIRED libsample)\r\n\r\ninclude_directories(${LIBSAMPLE_INCLUDE_DIRS})\r\nlink_directories(${LIBSAMPLE_LIBRARY_DIRS})\r\n\r\nadd_executable(sample sample.cpp)\r\ntarget_link_libraries(sample ${LIBSAMPLE_LIBRARIES} -lev)\r\n```\r\n\r\n# pkg-config\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u4e00\u89a7\u8868\u793a\r\n\r\n```\r\n$ pkg-config --list-all\r\n```",
+    "pub_date": "2017-02-21T01:33:41.963Z",
+    "user": 2,
+    "tags": [
+      1,
+      16,
+      8
     ]
   }
 }

@@ -20,7 +20,7 @@ urlpatterns = [
     # Home:
     url(r'^$', views.home, name='home'),
 
-     # Add:
+    # Add:
     url(r'^add/$', views.add_memo, name = 'add_memo'),
 
     # Edit:

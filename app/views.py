@@ -5,7 +5,7 @@ Definition of views.
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest
 from django.contrib import messages
-from django.contrib.auth import models as usermodels
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
@@ -13,7 +13,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from app.models import Memo, Tag
 from app.forms import MemoForm, TagForm
-from mondja.pydenticon_wrapper import create_identicon
 from datetime import datetime
 
 @login_required
@@ -31,7 +30,7 @@ def home(request):
 
         sort_user_id = request.GET.get('sort_user_id')
         if sort_user_id is not '':
-            all_memo = all_memo.filter(user = usermodels.User.objects.get(id = sort_user_id))
+            all_memo = all_memo.filter(user = User.objects.get(id = sort_user_id))
 
         if sort_item is '':
             all_memo = all_memo.order_by('-pub_date')
@@ -54,7 +53,7 @@ def home(request):
 
         if search_user_id is not '':
             try:
-                user = usermodels.User.objects.get(id = search_user_id)
+                user = User.objects.get(id = search_user_id)
                 all_memo = all_memo.filter(user = user)
             except ObjectDoesNotExist:
                 all_memo = Memo.objects.filter(title = '')
@@ -95,10 +94,7 @@ def home(request):
     except EmptyPage:
         all_memo = paginator.page(paginator.num_pages)
 
-    for item in all_memo:
-        create_identicon(item.user.username)
-
-    all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
+    all_users = User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
     all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
     top_tags = all_tags[:72]
     now_str = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())

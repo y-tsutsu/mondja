@@ -17,6 +17,9 @@ class MondjaMiddleware:
             if item.username != '':
                 create_identicon(item.username)
 
+        # ログインしている状態でloginページがリクエストされた場合はHomeにredirectする
+        if request.path == reverse(login) and request.user.is_authenticated():
+            return redirect('/')
 
         response = self.get_response(request)
 

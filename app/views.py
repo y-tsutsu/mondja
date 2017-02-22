@@ -43,20 +43,11 @@ def home(request):
         search_tag_id = request.GET.get('search_tag_id')
         search_user_id = request.GET.get('search_user_id')
 
-        if search_tag_id is '':
-            all_memo = Memo.objects.all()
-        else:
-            try:
-                all_memo = Tag.objects.get(id = search_tag_id).memo_set.all()
-            except ObjectDoesNotExist:
-                all_memo = Memo.objects.filter(title = '')
+        all_memo = Memo.objects.all() if search_tag_id is '' else Tag.objects.get(id = search_tag_id).memo_set.all()
 
         if search_user_id is not '':
-            try:
-                user = User.objects.get(id = search_user_id)
-                all_memo = all_memo.filter(user = user)
-            except ObjectDoesNotExist:
-                all_memo = Memo.objects.filter(title = '')
+            user = User.objects.get(id = search_user_id)
+            all_memo = all_memo.filter(user = user)
 
         if search_title is not '' and search_content is not '':
             all_memo = all_memo.filter(title__icontains = search_title, content__icontains = search_content)

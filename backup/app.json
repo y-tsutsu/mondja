@@ -1861,7 +1861,7 @@
   "pk": 115,
   "fields": {
     "title": "pyvenv\u306e\u4f7f\u3044\u65b9",
-    "content": "# Windows\u3067\u306epyvenv\u306e\u4f7f\u3044\u65b9\r\n\r\n\u4eee\u60f3\u74b0\u5883\u3092\u4f5c\u308b\u306b\u306f\u4e0b\u8a18\u3067\r\n\r\n```\r\nC:\\> C:\\Users\\username\\AppData\\Local\\Programs\\Python\\Python35\\Tools\\scripts\\pyvenv.py envname\r\n```\r\n\r\n\u3067\u3082\u3053\u308c\u3060\u3068\u9762\u5012\u306a\u306e\u3067\uff0c\u4e0b\u8a18\u3067\u3082\u540c\u3058\r\n\r\n```\r\nC:\\> python -m venv envname\r\n```\r\n\r\n\u3042\u3068\u306f\u4eee\u60f3\u74b0\u5883\u306b\u5165\u308b\u3060\u3051\r\n\r\n```\r\nC:\\> envname\\Scripts\\activate.bat\r\n```\r\n\r\n\u4eee\u60f3\u74b0\u5883\u304b\u3089\u629c\u3051\u308b\u306e\u306f\u3053\u308c\r\n\r\n```\r\nC:\\> deactivate.bat\r\n```",
+    "content": "# Windows\u3067\u306epyvenv\u306e\u4f7f\u3044\u65b9\r\n\r\n\u4eee\u60f3\u74b0\u5883\u3092\u4f5c\u308b\u306b\u306f\u4e0b\u8a18\u3067\r\n\r\n```\r\n> C:\\Users\\username\\AppData\\Local\\Programs\\Python\\Python35\\Tools\\scripts\\pyvenv.py envname\r\n```\r\n\r\n\u3067\u3082\u3053\u308c\u3060\u3068\u9762\u5012\u306a\u306e\u3067\uff0c\u4e0b\u8a18\u3067\u3082\u540c\u3058\r\n\r\n```\r\n> python -m venv envname\r\n```\r\n\r\n\u3042\u3068\u306f\u4eee\u60f3\u74b0\u5883\u306b\u5165\u308b\u3060\u3051\r\n\r\n```\r\n> envname\\Scripts\\activate.bat\r\n```\r\n\r\n\u4eee\u60f3\u74b0\u5883\u304b\u3089\u629c\u3051\u308b\u306e\u306f\u3053\u308c\r\n\r\n```\r\n> deactivate.bat\r\n```",
     "pub_date": "2016-08-06T12:14:44.463Z",
     "user": 2,
     "tags": [
@@ -2017,7 +2017,7 @@
   "pk": 126,
   "fields": {
     "title": "CMakeLists.txt\u306e\u6700\u4f4e\u9650\u306e\u8a18\u8ff0",
-    "content": "# CMakeLists.txt\u306e\u5185\u5bb9\r\n\r\n```\r\ncmake_minimum_required(VERSION 2.8)\r\nadd_definitions(\"-Wall -std=c++11\")\r\nset(CMAKE_BUILD_TYPE Debug)\r\nadd_executable(project_name\r\n    main.cpp\r\n    hoge.cpp\r\n    piyo.cpp\r\n)\r\n```\r\n\r\n# \u5b9f\u884c\uff08Windows MSYS\uff09\r\n\r\n```\r\n> cmake . -G \"MSYS Makefiles\"\r\n```\r\n\r\n# \u5b9f\u884c\uff08Linux\uff09\r\n\r\n```\r\n$ cmake\r\n```",
+    "content": "# CMakeLists.txt\u306e\u5185\u5bb9\r\n\r\n```\r\ncmake_minimum_required(VERSION 2.8)\r\nadd_definitions(\"-Wall -std=c++11\")\r\nset(CMAKE_BUILD_TYPE Debug)\r\nadd_executable(project_name\r\n    main.cpp\r\n    hoge.cpp\r\n    piyo.cpp\r\n)\r\n```\r\n\r\n# \u5b9f\u884c\uff08Windows MSYS\uff09\r\n\r\n```\r\n> cmake . -G \"MSYS Makefiles\"\r\n```\r\n\r\n# \u5b9f\u884c\uff08Linux\uff09\r\n\r\n```\r\n$ cmake .\r\n```",
     "pub_date": "2016-11-25T07:19:26.922Z",
     "user": 2,
     "tags": [
@@ -2220,7 +2220,7 @@
   "pk": 140,
   "fields": {
     "title": "C++11\u306e\u30b9\u30de\u30fc\u30c8\u30dd\u30a4\u30f3\u30bf",
-    "content": "# std::unique_ptr\r\n\r\n```\r\n#include <iostream>\r\n#include <memory>\r\n\r\nclass MyClass\r\n{\r\nprivate:\r\n    int val_;\r\npublic:\r\n    MyClass() : val_(42) {}\r\n    void Print() { std::cout << this->val_ << std::endl; }\r\n};\r\n\r\nint main()\r\n{\r\n    // \u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u306e\u5f15\u6570\u3068\u3057\u3066\uff0c\u52d5\u7684\u78ba\u4fdd\u3057\u305f\u30e1\u30e2\u30ea\u306e\u30a2\u30c9\u30ec\u30b9\u3092\u6307\u5b9a\r\n    std::unique_ptr<MyClass> ptr(new MyClass());\r\n    ptr->Print();\r\n\r\n    // reset\u95a2\u6570\u3092\u4f7f\u3063\u3066\uff0c\u5f8c\u304b\u3089\u4ee3\u5165\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u308b\r\n    std::unique_ptr<MyClass> ptr2;\r\n    ptr2.reset(new MyClass());\r\n\r\n    // ptr2\u306e\u6240\u6709\u6a29\u304cptr3\u306b\u79fb\u52d5\u3059\u308b\r\n    std::unique_ptr<MyClass> ptr3(std::move(ptr2));\r\n    if (!ptr2)\r\n    {\r\n        std::cout << \"prt2 NG\" << std::endl;\r\n    }\r\n    if (ptr3)\r\n    {\r\n        std::cout << \"prt3 OK\" << std::endl;\r\n    }\r\n\r\n    // \u751f\u30dd\u30a4\u30f3\u30bf\u306e\u53d6\u5f97\uff08\u6240\u6709\u6a29\u306f\u305d\u306e\u307e\u307e\uff09\r\n    auto p = ptr3.get();\r\n    p->Print();\r\n    // \u751f\u30dd\u30a4\u30f3\u30bf\u306e\u53d6\u5f97\uff08\u6240\u6709\u6a29\u3092\u7834\u68c4\uff09\r\n    auto p2 = ptr3.release();\r\n    p2->Print();\r\n\r\n    // reset\u95a2\u6570\u3092\u4f7f\u3063\u3066\uff0cptr2\u3067\u7ba1\u7406\r\n    ptr2.reset(p2);\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# std::shared_ptr\r\n\r\n```\r\n#include <iostream>\r\n#include <memory>\r\n\r\nclass MyClass\r\n{\r\nprivate:\r\n    int val_;\r\npublic:\r\n    MyClass() : val_(42) {}\r\n    void Print() { std::cout << this->val_ << std::endl; }\r\n};\r\n\r\nint main()\r\n{\r\n    // \u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3084\uff0creset\u95a2\u6570\u3092\u4f7f\u3063\u3066\u306e\u30e1\u30e2\u30ea\u5272\u308a\u5f53\u3066\u304c\u53ef\u80fd\r\n    std::shared_ptr<MyClass> ptr(new MyClass());\r\n    std::shared_ptr<MyClass> ptr2;\r\n    ptr2.reset(new MyClass());\r\n\r\n    // make_shared\u95a2\u6570\u3092\u4f7f\u3046\u3068\uff0c\u52b9\u7387\u3088\u304f\u30e1\u30e2\u30ea\u3092\u78ba\u4fdd\u3067\u304d\u308b\uff08C++11\u304b\u3089\u4f7f\u3048\u308b\uff09\r\n    auto ptr3 = std::make_shared<MyClass>();\r\n\r\n    auto ptr4 = ptr3;\r\n    ptr4->Print();\r\n\r\n    // \u3042\u3068\u306fstd::unique_ptr\u3068\u540c\u3058\u3088\u3046\u306a\u611f\u3058\r\n\r\n    return 0;\r\n}\r\n```",
+    "content": "# std::unique_ptr\r\n\r\n```\r\n#include <iostream>\r\n#include <memory>\r\n\r\nclass MyClass\r\n{\r\nprivate:\r\n    int val_;\r\npublic:\r\n    MyClass() : val_(42) {}\r\n    void Print() { std::cout << this->val_ << std::endl; }\r\n};\r\n\r\nint main()\r\n{\r\n    // \u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u306e\u5f15\u6570\u3068\u3057\u3066\uff0c\u52d5\u7684\u78ba\u4fdd\u3057\u305f\u30e1\u30e2\u30ea\u306e\u30a2\u30c9\u30ec\u30b9\u3092\u6307\u5b9a\r\n    std::unique_ptr<MyClass> ptr(new MyClass());\r\n    ptr->Print();\r\n\r\n    // reset\u95a2\u6570\u3092\u4f7f\u3063\u3066\uff0c\u5f8c\u304b\u3089\u4ee3\u5165\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u308b\r\n    std::unique_ptr<MyClass> ptr2;\r\n    ptr2.reset(new MyClass());\r\n\r\n    // C++14\u4ee5\u964d\u3067\u3042\u308c\u3070\uff0cmake_unique\u95a2\u6570\u3092\u4f7f\u3046\u3053\u3068\u3082\u3067\u304d\u308b\r\n    std::unique_ptr<MyClass> ptr3 = std::make_unique<MyClass>();\r\n\r\n    // ptr3\u306e\u6240\u6709\u6a29\u304cptr4\u306b\u79fb\u52d5\u3059\u308b\r\n    std::unique_ptr<MyClass> ptr4(std::move(ptr3));\r\n    if (!ptr3)\r\n    {\r\n        std::cout << \"prt3 NG\" << std::endl;\r\n    }\r\n    if (ptr4)\r\n    {\r\n        std::cout << \"prt4 OK\" << std::endl;\r\n    }\r\n\r\n    // \u751f\u30dd\u30a4\u30f3\u30bf\u306e\u53d6\u5f97\uff08\u6240\u6709\u6a29\u306f\u305d\u306e\u307e\u307e\uff09\r\n    auto p = ptr4.get();\r\n    p->Print();\r\n    // \u751f\u30dd\u30a4\u30f3\u30bf\u306e\u53d6\u5f97\uff08\u6240\u6709\u6a29\u3092\u7834\u68c4\uff09\r\n    auto p2 = ptr4.release();\r\n    p2->Print();\r\n\r\n    // reset\u95a2\u6570\u3092\u4f7f\u3063\u3066\uff0cptr3\u3067\u7ba1\u7406\r\n    ptr3.reset(p2);\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# std::shared_ptr\r\n\r\n```\r\n#include <iostream>\r\n#include <memory>\r\n\r\nclass MyClass\r\n{\r\nprivate:\r\n    int val_;\r\npublic:\r\n    MyClass() : val_(42) {}\r\n    void Print() { std::cout << this->val_ << std::endl; }\r\n};\r\n\r\nint main()\r\n{\r\n    // \u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3084\uff0creset\u95a2\u6570\u3092\u4f7f\u3063\u3066\u306e\u30e1\u30e2\u30ea\u5272\u308a\u5f53\u3066\u304c\u53ef\u80fd\r\n    std::shared_ptr<MyClass> ptr(new MyClass());\r\n    std::shared_ptr<MyClass> ptr2;\r\n    ptr2.reset(new MyClass());\r\n\r\n    // make_shared\u95a2\u6570\u3092\u4f7f\u3046\u3068\uff0c\u52b9\u7387\u3088\u304f\u30e1\u30e2\u30ea\u3092\u78ba\u4fdd\u3067\u304d\u308b\uff08C++11\u304b\u3089\u4f7f\u3048\u308b\uff09\r\n    auto ptr3 = std::make_shared<MyClass>();\r\n\r\n    auto ptr4 = ptr3;\r\n    ptr4->Print();\r\n\r\n    // \u3042\u3068\u306fstd::unique_ptr\u3068\u540c\u3058\u3088\u3046\u306a\u611f\u3058\r\n\r\n    return 0;\r\n}\r\n```",
     "pub_date": "2017-02-05T10:54:59.568Z",
     "user": 2,
     "tags": [
@@ -2321,13 +2321,123 @@
   "pk": 147,
   "fields": {
     "title": "CMake\u3067pkg-config\u3092\u4f7f\u3046",
-    "content": "# CMake\u3067pkg-config\u3092\u4f7f\u3063\u3066\u5171\u6709\u30e9\u30a4\u30d6\u30e9\u30ea\u307e\u308f\u308a\u3092\u8a18\u8ff0\r\n\r\n```\r\nfind_package(PkgConfig)\r\n\r\npkg_check_modules(LIBSAMPLE REQUIRED libsample)\r\n\r\ninclude_directories(${LIBSAMPLE_INCLUDE_DIRS})\r\nlink_directories(${LIBSAMPLE_LIBRARY_DIRS})\r\n\r\nadd_executable(sample sample.cpp)\r\ntarget_link_libraries(sample ${LIBSAMPLE_LIBRARIES} -lev)\r\n```\r\n\r\n# pkg-config\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u4e00\u89a7\u8868\u793a\r\n\r\n```\r\n$ pkg-config --list-all\r\n```",
+    "content": "# CMake\u3067pkg-config\u3092\u4f7f\u3063\u3066\u5171\u6709\u30e9\u30a4\u30d6\u30e9\u30ea\u307e\u308f\u308a\u3092\u8a18\u8ff0\r\n\r\n```\r\nfind_package(PkgConfig)\r\n\r\npkg_check_modules(LIBSAMPLE REQUIRED libsample)\r\n\r\ninclude_directories(${LIBSAMPLE_INCLUDE_DIRS})\r\nlink_directories(${LIBSAMPLE_LIBRARY_DIRS})\r\n\r\nadd_executable(sample sample.cpp)\r\ntarget_link_libraries(sample ${LIBSAMPLE_LIBRARIES})\r\n```\r\n\r\n# pkg-config\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u4e00\u89a7\u8868\u793a\r\n\r\n```\r\n$ pkg-config --list-all\r\n```",
     "pub_date": "2017-02-21T01:33:41.963Z",
     "user": 2,
     "tags": [
       16,
       1,
       8
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 148,
+  "fields": {
+    "title": "Linux\u306e\u30d5\u30a1\u30a4\u30eb\u5727\u7e2e / \u89e3\u51cd",
+    "content": "# tar.gz\r\n\u5727\u7e2e / \u89e3\u51cd\r\n```\r\n$ tar -zcvf xxxx.tar.gz directory\r\n$ tar -zxvf xxxx.tar.gz\r\n```\r\n\r\n# tar.bz2\r\n\u5727\u7e2e / \u89e3\u51cd\r\n```\r\n$ tar -jcvf xxxx.tar.bz2 directory\r\n$ tar -jxvf xxxx.tar.bz2\r\n```\r\n\r\n# tar.xz\r\n\u5727\u7e2e / \u89e3\u51cd\r\n```\r\n$ tar -Jcvf xxxx.tar.xz directory\r\n$ tar -Jxvf xxxx.tar.xz\r\n```\r\n\r\n# tar\r\n\u5727\u7e2e / \u89e3\u51cd\r\n```\r\n$ tar -cvf xxxx.tar directory\r\n$ tar -xvf xxxx.tar\r\n```\r\n\r\n# zip\r\n\u5727\u7e2e / \u89e3\u51cd\r\n```\r\n$ zip -r xxxx.zip directory\r\n$ unzip xxxx.zip\r\n```",
+    "pub_date": "2017-02-25T14:55:55.167Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 149,
+  "fields": {
+    "title": "Git\u306e\u30d1\u30c3\u30c1\u30d5\u30a1\u30a4\u30eb\u306e\u4f5c\u6210\u3068\u9069\u7528",
+    "content": "# \u30d1\u30c3\u30c1\u306e\u4f5c\u6210\r\n\r\n```\r\n$ git format-patch -o patches fec09ab        # fec09ab \u304b\u3089\u306e HEAD \u307e\u3067\u306e\u30b3\u30df\u30c3\u30c8\r\n$ git format-patch -o patches fec09ab..      # \u540c\u4e0a\r\n$ git format-patch -o patches fec09ab..HEAD  # \u540c\u4e0a\r\n```\r\n\r\n# \u30d1\u30c3\u30c1\u306e\u9069\u7528\r\n\r\n```\r\n$ git am patches/*\r\n```\r\n\r\n# \u30a8\u30e9\u30fc\u304c\u51fa\u305f\u6642\u306e\u53d6\u308a\u6d88\u3057\r\n\r\n```\r\n$ git am --abort\r\n```",
+    "pub_date": "2017-02-26T16:09:45.752Z",
+    "user": 2,
+    "tags": [
+      32,
+      1
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 150,
+  "fields": {
+    "title": "OneDrive\u306e\u30c1\u30a7\u30c3\u30af\u30a2\u30a4\u30b3\u30f3",
+    "content": "# \u30a2\u30a4\u30b3\u30f3\u30aa\u30fc\u30d0\u30fc\u30ec\u30a4\u306e\u8a2d\u5b9a\r\n\r\nWindows\u306e\u30a2\u30a4\u30b3\u30f3\u30aa\u30fc\u30d0\u30fc\u30ec\u30a4\u306f\u300e15\u300f\u304c\u4e0a\u9650\u3089\u3057\u3044\uff0e\u4e0b\u8a18\u306e\u30ec\u30b8\u30b9\u30c8\u30ea\u3092\u78ba\u8a8d / \u4fee\u6b63\uff0e\r\n\r\n```\r\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ShellIconOverlayIdentifiers\r\n```\r\n\r\n\u203b \u4e26\u3073\u9806\u306b\u512a\u5148\u3055\u308c\u308b\u3088\u3046\u306a\u306e\u3067\uff0c\u512a\u5148\u3055\u305b\u305f\u3044\u30ad\u30fc\u306e\u540d\u524d\u306e\u5148\u982d\u306b\u30b9\u30da\u30fc\u30b9\u3092\u5165\u308c\u308b\u3068\u6b21\u56de\u8d77\u52d5\u6642\u306b\u30bd\u30fc\u30c8\u3055\u308c\u3066\u512a\u5148\u3055\u308c\u308b\uff0e",
+    "pub_date": "2017-02-27T00:42:57.354Z",
+    "user": 2,
+    "tags": [
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 151,
+  "fields": {
+    "title": "\u30b3\u30e1\u30f3\u30c8\u306e\u30d5\u30a9\u30fc\u30de\u30c3\u30c8",
+    "content": "# \u30b3\u30e1\u30f3\u30c8\u306e\u30d5\u30a9\u30fc\u30de\u30c3\u30c8\u306e\u610f\u5473\r\n\r\n* XXX: \u305d\u306e\u90e8\u5206\u306e\u30b3\u30fc\u30c9\u304c\u6b63\u3057\u304f\u306a\u3044\u304c\u591a\u304f\u306e\u5834\u5408\u52d5\u3044\u3066\u3057\u307e\u3046\r\n* FIXME: \u30b3\u30fc\u30c9\u304c\u9593\u9055\u3063\u3066\u3044\u3066\u4fee\u6b63\u3092\u8981\u3059\u308b\r\n* TODO: \u5c06\u6765\u5f37\u5316\u3059\u3079\u304d\u7b87\u6240\u306e\u8868\u793a",
+    "pub_date": "2017-03-03T03:58:54.731Z",
+    "user": 2,
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 152,
+  "fields": {
+    "title": "C++11\u306e\u751f\u6587\u5b57\u30ea\u30c6\u30e9\u30eb",
+    "content": "# \u57fa\u672c\u7684\u306a\u4f7f\u3044\u65b9\r\n\r\n`R`\u30d7\u30ec\u30d5\u30a3\u30c3\u30af\u30b9\u3092\u4ed8\u3051\u305f\u6587\u5b57\u5217\u30ea\u30c6\u30e9\u30eb\u5185\u3067\u4e38\u30ab\u30c3\u30b3( )\u3067\u56f2\u3080\uff0e\r\n\r\n```\r\n// \u901a\u5e38\r\nstd::string json = \"{\\\"user_id\\\": 123, \\\"name\\\": \\\"Alice\\\"}\";\r\n// \u751f\u6587\u5b57\u30ea\u30c6\u30e9\u30eb\r\nstd::string json = R\"({\"user_id\": 123, \"name\": \"Alice\"})\";\r\n```\r\n\r\n# \u6539\u884c\u3082OK\r\n\r\n```\r\nstd::string text = R\"(begin\r\na,\r\nb,\r\nc\r\nend)\";\r\n```\r\n\r\n# \u7bc4\u56f2\u3092\u6307\u5b9a\u3059\u308b\u4e38\u30ab\u30c3\u30b3( )\u3092\u30e6\u30fc\u30b6\u6307\u5b9a\u5f62\u5f0f\u306b\r\n\r\n\u6587\u5b57\u306e\u4e2d\u306b\u4e38\u30ab\u30c3\u30b3( )\u304c\u4f7f\u3048\u308b\uff0e\r\n\r\n```\r\nstd::string text = R\"***\"(\u6587\u5b57\u5217\u4e2d\u306b\u751f\u6587\u5b57\u5217\u30ea\u30c6\u30e9\u30eb\u306e\u9589\u3058\u30ab\u30c3\u30b3\u3068\u9589\u3058\u30c0\u30d6\u30eb\u30af\u30a9\u30fc\u30c6\u30fc\u30b7\u30e7\u30f3\u3092\u66f8\u304f)\")***\";\r\n```",
+    "pub_date": "2017-03-03T04:07:51.323Z",
+    "user": 2,
+    "tags": [
+      1,
+      16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 153,
+  "fields": {
+    "title": "C++\u306e\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf",
+    "content": "# C++\u306e\u5404\u7a2e\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\r\n\r\n```\r\nclass X\r\n{\r\npublic:\r\n    X() {}\r\n    ~X() = default;\r\n\r\nprivate:\r\n    X(const X&) = delete;\r\n    X(X&&) = delete;\r\n    X& operator=(const X&) = delete;\r\n    X& operator=(X&&) = delete;\r\n};\r\n```",
+    "pub_date": "2017-03-03T09:37:06.599Z",
+    "user": 2,
+    "tags": [
+      1,
+      16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 154,
+  "fields": {
+    "title": "Python\u306e\u30c7\u30b3\u30ec\u30fc\u30bf\u3067functools.wraps()\u3092\u4f7f\u3046\u7406\u7531",
+    "content": "# \u4f7f\u308f\u306a\u304b\u3063\u305f\u5834\u5408\r\n\r\n```\r\ndef my_decorator(f):\r\n    def wrapper(*args, **kwds):\r\n        print('deco!!')\r\n        return f(*args, **kwds)\r\n    return wrapper\r\n\r\n@my_decorator\r\ndef spam():\r\n    '''spam doc.'''\r\n    print('spam!!')\r\n\r\nif __name__ == '__main__':\r\n    spam()\r\n    print(spam.__name__)\r\n    print(spam.__doc__)\r\n```\r\n\r\n\u7d50\u679c\uff0cspam\u306e\u60c5\u5831\u304c\u5931\u308f\u308c\u3066\u3044\u308b\uff0e\r\n\r\n```\r\ndeco!!\r\nspam!!\r\nwrapper\r\nNone\r\n```\r\n\r\n# functools.wraps()\u3092\u4f7f\u3063\u305f\u5834\u5408\r\n\r\n```\r\ndef my_decorator(f):\r\n    import functools\r\n    @functools.wraps(f)\r\n    def wrapper(*args, **kwds):\r\n        print('deco!!')\r\n        return f(*args, **kwds)\r\n    return wrapper\r\n\r\n@my_decorator\r\ndef spam():\r\n    '''spam doc.'''\r\n    print('spam!!')\r\n\r\nif __name__ == '__main__':\r\n    spam()\r\n    print(spam.__name__)\r\n    print(spam.__doc__)\r\n```\r\n\r\n\u7d50\u679c\uff0c\u671f\u5f85\u901a\u308a\u306b\u52d5\u304f\uff0e\r\n\r\n```\r\ndeco!!\r\nspam!!\r\nspam\r\nspam doc.\r\n```\r\n\r\n\u5b9f\u969b\u7684\u306b\u306f\uff0c`help()`\u3068\u304b`doctest`\u3068\u304b\u3067\u554f\u984c\u306b\u308a\u305d\u3046\uff0e",
+    "pub_date": "2017-03-05T00:47:10.075Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 155,
+  "fields": {
+    "title": "Python\u306edoctest\u306e\u4f7f\u3044\u65b9",
+    "content": "# docstring\u306b\u30c6\u30b9\u30c8\u30b1\u30fc\u30b9\u3092\u66f8\u3044\u3066\u5b9f\u884c\r\n\r\n\u5bfe\u8a71\u74b0\u5883\u3067\u5b9f\u884c\u3057\u305f\u3068\u304d\u306e\u30d5\u30a9\u30fc\u30de\u30c3\u30c8\u3067\u30c6\u30b9\u30c8\u30b1\u30fc\u30b9\u3092\u8a18\u8ff0\u3059\u308b\uff0e\r\n\r\n```\r\ndef fizz_buzz(n):\r\n    '''\r\n    FizzBuzz\u3067\u3059\r\n\r\n    >>> from spam import fizz_buzz\r\n    >>> fizz_buzz(1)\r\n    1\r\n    >>> fizz_buzz(3)\r\n    Fizz\r\n    >>> fizz_buzz(5)\r\n    Buzz\r\n    >>> fizz_buzz(15)\r\n    FizzBuzz\r\n    '''\r\n\r\n    if n % 3 == 0 and n % 5 == 0:\r\n        print('FizzBuzz')\r\n    elif n % 3 == 0:\r\n        print('Fizz')\r\n    elif n % 5 == 0:\r\n        print('Buzz')\r\n    else:\r\n        print(n)\r\n\r\nif __name__ == '__main__':\r\n    import doctest\r\n    doctest.testmod()\r\n```\r\n\r\n\u5b9f\u884c\u3057\u3059\u308b\u3068\u554f\u984c\u306a\u3044\u5834\u5408\u306f\u4f55\u3082\u51fa\u529b\u3055\u308c\u306a\u3044\uff0eFail\u304c\u3042\u308b\u3068\u4ee5\u4e0b\u306e\u3088\u3046\u306b\u51fa\u529b\uff0e\r\n\r\n```\r\n**********************************************************************\r\nFile \"spam.py\", line 8, in __main__.fizz_buzz\r\nFailed example:\r\n    fizz_buzz(3)\r\nExpected:\r\n    Fizz\r\nGot:\r\n    Fiz\r\n**********************************************************************\r\n1 items had failures:\r\n   1 of   5 in __main__.fizz_buzz\r\n***Test Failed*** 1 failures.\r\n```\r\n\r\nPass\u3057\u3066\u3044\u3066\u3082\u51fa\u529b\u3059\u308b\u5834\u5408\u306f`-v`\u30aa\u30d7\u30b7\u30e7\u30f3\u3067\u5b9f\u884c\uff0e\r\n\r\n```\r\n> python spam.py -v\r\n```\r\n\r\n\u51fa\u529b\u5185\u5bb9\r\n\r\n```\r\nTrying:\r\n    from spam import fizz_buzz\r\nExpecting nothing\r\nok\r\nTrying:\r\n    fizz_buzz(1)\r\nExpecting:\r\n    1\r\nok\r\nTrying:\r\n    fizz_buzz(3)\r\nExpecting:\r\n    Fizz\r\nok\r\nTrying:\r\n    fizz_buzz(5)\r\nExpecting:\r\n    Buzz\r\nok\r\nTrying:\r\n    fizz_buzz(15)\r\nExpecting:\r\n    FizzBuzz\r\nok\r\n1 items had no tests:\r\n    __main__\r\n1 items passed all tests:\r\n   5 tests in __main__.fizz_buzz\r\n5 tests in 2 items.\r\n5 passed and 0 failed.\r\nTest passed.\r\n```",
+    "pub_date": "2017-03-05T01:07:08.868Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
     ]
   }
 }

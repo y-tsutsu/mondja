@@ -31,3 +31,4 @@ env
 __pycache__
 web.debug.config
 media/identicon/
+.vscode/

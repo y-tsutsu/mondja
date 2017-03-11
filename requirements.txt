@@ -1,7 +1,7 @@
 defusedxml==0.5.0
+dj-database-url==0.4.2
 Django==1.10.6
 django-dotenv==1.4.1
-dj-database-url==0.4.2
 docutils==0.13.1
 gunicorn==19.7.0
 markdown2==2.3.3
@@ -11,8 +11,8 @@ Pillow==4.0.0
 psycopg2==2.7
 pydenticon==0.3
 PyJWT==1.4.2
-python3-openid==3.1.0
 python-social-auth==0.3.6
+python3-openid==3.1.0
 requests==2.13.0
 requests-oauthlib==0.8.0
 six==1.10.0

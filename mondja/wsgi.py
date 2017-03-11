@@ -1,5 +1,5 @@
 """
-WSGI config for nyanpasu_svr project.
+WSGI config for mondja project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

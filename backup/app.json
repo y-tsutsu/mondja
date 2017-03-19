@@ -2325,9 +2325,9 @@
     "pub_date": "2017-02-21T01:33:41.963Z",
     "user": 2,
     "tags": [
-      16,
+      8,
       1,
-      8
+      16
     ]
   }
 },
@@ -2394,8 +2394,8 @@
     "pub_date": "2017-03-03T04:07:51.323Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -2408,8 +2408,8 @@
     "pub_date": "2017-03-03T09:37:06.599Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -2438,6 +2438,62 @@
     "tags": [
       1,
       2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 156,
+  "fields": {
+    "title": "\u30ed\u30b0\u306e\u8868\u793a\u3092\u6d88\u3059\u65b9\u6cd5",
+    "content": "# \u30ed\u30b0\u306e\u8868\u793a\u3092\u6d88\u3059\u65b9\u6cd5\r\n\r\n```\r\n$ ./sample > /dev/null 2>&1\r\n```\r\n`2>&1`\u3067\u30a8\u30e9\u30fc\u51fa\u529b\u3092\u6a19\u6e96\u51fa\u529b\u306b\u30ea\u30c0\u30a4\u30ec\u30af\u30c8\u3057\u3066\u3044\u308b\uff0e\u3053\u308c\u3067\u30a8\u30e9\u30fc\u30ed\u30b0\u3082\u8868\u793a\u3055\u308c\u306a\u304f\u306a\u308b\uff0e\uff08\u53f3\u5074\u306b\u66f8\u304f\u306e\u304c\u30dd\u30a4\u30f3\u30c8\uff09",
+    "pub_date": "2017-03-06T09:07:19.386Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 157,
+  "fields": {
+    "title": "Python\u306e\u30d7\u30ed\u30d1\u30c6\u30a3",
+    "content": "# \u30c7\u30b3\u30ec\u30fc\u30bf\u3092\u4f7f\u7528\u3057\u305f\u4e00\u822c\u7684\u306a\u66f8\u304d\u65b9\r\n\r\n`@property`\u3067getter\u3092\u4f5c\u3063\u3066\uff0c\u8ffd\u52a0\u3067setter\u3068deleter\u3092\u5b9a\u7fa9\u3067\u304d\u308b\uff0e\r\n\r\n```\r\nclass Spam:\r\n    def __init__(self, x):\r\n        self.__x = x\r\n\r\n    @property\r\n    def x(self):\r\n        return self.__x\r\n\r\n    @x.setter\r\n    def x(self, value):\r\n        self.__x = value\r\n\r\n    @x.deleter\r\n    def x(self):\r\n        del self.__x\r\n\r\ndef main():\r\n    spam = Spam(42)\r\n    print(spam.x)\r\n\r\n    spam.x = 23\r\n    print(spam.x)\r\n\r\n    del spam.x\r\n    print(spam.x)   # AttributeError: 'Spam' object has no attribute '_Spam__x'\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2017-03-11T08:09:57.308Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 158,
+  "fields": {
+    "title": "Python\u3067\u30e1\u30e2\u5316",
+    "content": "# \u30c7\u30b3\u30ec\u30fc\u30bflru_cache\u306b\u3088\u308b\u30e1\u30e2\u5316\u518d\u5e30\r\n\r\nmaxsize\u306b\u306f\u76f4\u8fd1\u306e\u4f55\u56de\u5206\u3092\u8a18\u61b6\u3057\u3066\u304a\u304f\u304b\u3092\u6307\u5b9a\u3059\u308b\r\n\r\n```\r\nfrom functools import lru_cache\r\n\r\n@lru_cache(maxsize = None)\r\ndef fibo(n):\r\n    if n <= 0:\r\n        return 0\r\n    elif n == 1:\r\n        return 1\r\n    else:\r\n        return fibo(n - 1) + fibo(n - 2)\r\n\r\nif __name__== '__main__':\r\n    from datetime import datetime as dt\r\n    start = dt.now()\r\n    print('*** {0} : {1} ***'.format(fibo(35), dt.now() - start))\r\n```\r\n\r\n\u7d50\u679c\r\n\r\n```\r\n*** 9227465 : 0:00:00 ***           # \u30e1\u30e2\u5316\u6709\u52b9\u6642\r\n*** 9227465 : 0:00:03.859904 ***    # \u30e1\u30e2\u5316\u7121\u52b9\u6642\r\n```\r\n\r\n\u203b\u526f\u4f5c\u7528\u306e\u3042\u308b\u95a2\u6570\u3092\u8003\u616e\u305b\u305a\u306b\u30ad\u30e3\u30c3\u30b7\u30e5\u3059\u308b\u306e\u3067\u6ce8\u610f",
+    "pub_date": "2017-03-11T13:32:16.785Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 159,
+  "fields": {
+    "title": "MinGW (64bit) + MSYS \u74b0\u5883\u306e\u69cb\u7bc9",
+    "content": "# MinGW-w64 - for 32 and 64 bit Windows\r\n\r\n[https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/)\r\n\r\n# MSYS\r\n\r\n[https://sourceforge.net/projects/mingwbuilds/files/external-binary-packages/](https://sourceforge.net/projects/mingwbuilds/files/external-binary-packages/)",
+    "pub_date": "2017-03-18T18:53:40.065Z",
+    "user": 2,
+    "tags": [
+      1,
+      37
     ]
   }
 }

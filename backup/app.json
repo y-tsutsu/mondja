@@ -2073,7 +2073,7 @@
   "pk": 130,
   "fields": {
     "title": "TypeScript\u3067Electron",
-    "content": "# TypeScript\u3092\u4f7f\u3063\u3066Electron\u30a2\u30d7\u30ea\u3092\u4f5c\u6210\r\n\r\nTypeScript\u3068\u578b\u5b9a\u7fa9\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\uff08\u3053\u3053\u3067\u306f\u30ed\u30fc\u30ab\u30eb\u306b\uff09\r\n\r\n```\r\n$ npm init\r\n$ npm install --save-dev typescript\r\n$ npm install --save-dev @types/electron\r\n```\r\n\r\nTypeScript\u306e\u8a2d\u5b9a\uff08tsconfig.json\uff09\r\n\r\n```\r\n{\r\n    \"compilerOptions\": {\r\n        \"target\": \"es6\",\r\n        \"module\": \"commonjs\",\r\n        \"sourceMap\": false\r\n    },\r\n    \"exclude\": [\r\n        \"node_modules\"\r\n    ]\r\n}\r\n```\r\n\r\npackage.json\u3092\u4f7f\u3063\u3066\u8d77\u52d5\uff0e `npm run build` \u3067\u30d3\u30eb\u30c9\uff0c `npm start` \u3067\u30d3\u30eb\u30c9\u3092\u3057\u3066\u304b\u3089Electron\u3067\u8d77\u52d5\uff0e\r\n\r\n```\r\n  \"scripts\": {\r\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\r\n    \"build\": \"node_modules\\\\.bin\\\\tsc\",\r\n    \"prestart\": \"npm run build\",\r\n    \"start\": \"electron .\"\r\n  },\r\n```\r\n\r\nmain.js\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\r\n\r\n```\r\nconst electron = require('electron');\r\nconst app = electron.app;\r\nconst BrowserWindow = electron.BrowserWindow;\r\nclass MyApplication {\r\n    constructor() {\r\n        this.mainWindow = null;\r\n        app.on('window-all-closed', this.onWindowAllClosed);\r\n        app.on('ready', this.onReady);\r\n    }\r\n    onWindowAllClosed() {\r\n        if (process.platform != 'darwin') {\r\n            app.quit();\r\n        }\r\n    }\r\n    onReady() {\r\n        this.mainWindow = new BrowserWindow({\r\n            width: 800,\r\n            height: 400,\r\n            minWidth: 500,\r\n            minHeight: 200,\r\n            acceptFirstMouse: true,\r\n            titleBarStyle: 'hidden'\r\n        });\r\n        this.mainWindow.loadURL('file://' + __dirname + `/index.html`);\r\n        this.mainWindow.on('closed', () => {\r\n            this.mainWindow = null;\r\n        });\r\n    }\r\n}\r\nconst myapp = new MyApplication();\r\n```",
+    "content": "# TypeScript\u3092\u4f7f\u3063\u3066Electron\u30a2\u30d7\u30ea\u3092\u4f5c\u6210\r\n\r\nTypeScript\u3068\u578b\u5b9a\u7fa9\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\uff08\u3053\u3053\u3067\u306f\u30ed\u30fc\u30ab\u30eb\u306b\uff09\r\n\r\n```\r\n$ npm init\r\n$ npm install typescript --save-dev\r\n$ npm install @types/electron --save-dev\r\n$ npm install @types/node --save-dev\r\n```\r\n\r\nTypeScript\u306e\u8a2d\u5b9a\uff08tsconfig.json\uff09\r\n\r\n```\r\n{\r\n    \"compilerOptions\": {\r\n        \"target\": \"es6\",\r\n        \"module\": \"commonjs\",\r\n        \"sourceMap\": false\r\n    },\r\n    \"exclude\": [\r\n        \"node_modules\"\r\n    ]\r\n}\r\n```\r\n\r\npackage.json\u3092\u4f7f\u3063\u3066\u8d77\u52d5\uff0e `npm run build` \u3067\u30d3\u30eb\u30c9\uff0c `npm start` \u3067\u30d3\u30eb\u30c9\u3092\u3057\u3066\u304b\u3089Electron\u3067\u8d77\u52d5\uff0e\r\n\r\n```\r\n  \"scripts\": {\r\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\r\n    \"build\": \"node_modules\\\\.bin\\\\tsc\",\r\n    \"prestart\": \"npm run build\",\r\n    \"start\": \"electron .\"\r\n  },\r\n```\r\n\r\nmain.js\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\r\n\r\n```\r\nconst electron = require('electron');\r\nconst app = electron.app;\r\nconst BrowserWindow = electron.BrowserWindow;\r\nclass MyApplication {\r\n    constructor() {\r\n        this.mainWindow = null;\r\n        app.on('window-all-closed', this.onWindowAllClosed);\r\n        app.on('ready', this.onReady);\r\n    }\r\n    onWindowAllClosed() {\r\n        if (process.platform != 'darwin') {\r\n            app.quit();\r\n        }\r\n    }\r\n    onReady() {\r\n        this.mainWindow = new BrowserWindow({\r\n            width: 800,\r\n            height: 400,\r\n            minWidth: 500,\r\n            minHeight: 200,\r\n            acceptFirstMouse: true,\r\n            titleBarStyle: 'hidden'\r\n        });\r\n        this.mainWindow.loadURL('file://' + __dirname + `/index.html`);\r\n        this.mainWindow.on('closed', () => {\r\n            this.mainWindow = null;\r\n        });\r\n    }\r\n}\r\nconst myapp = new MyApplication();\r\n```",
     "pub_date": "2016-12-18T09:49:44.228Z",
     "user": 2,
     "tags": [
@@ -2263,7 +2263,7 @@
   "pk": 143,
   "fields": {
     "title": "Elixir\u306e\u74b0\u5883\u69cb\u7bc9",
-    "content": "# Erlang\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://packages.erlang-solutions.com/erlang/](https://packages.erlang-solutions.com/erlang/)\r\n\r\n```\r\n$ sudo aptitude install libwxbase3.0-0\r\n$ sudo aptitude install libwxgtk3.0-0\r\n$ sudo dpkg -i esl-erlang_19.2.3-1-ubuntu-precise_amd64.deb\r\n```\r\n\r\n# Elixir\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ git clone https://github.com/mururu/exenv.git $HOME/.exenv\r\n\r\n$ exec $SHELL -l\r\n$ git clone https://github.com/mururu/elixir-build.git ~/.exenv/plugins/elixir-build\r\n$ echo 'export PATH=\"$HOME/.exenv/bin:$PATH\"' >> ~/.bash_profile\r\n$ echo 'eval \"$(exenv init -)\"' >> ~/.bash_profile\r\n$ exec $SHELL -l\r\n\r\n$ exenv install -list\r\n$ exenv install 1.4.1\r\n$ exenv global 1.4.1\r\n```\r\n\r\n# \u78ba\u8a8d\r\n\r\n```\r\n$ elixir -v\r\n$ iex\r\n```",
+    "content": "# Erlang\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://packages.erlang-solutions.com/erlang/](https://packages.erlang-solutions.com/erlang/)\r\n\r\n```\r\n$ sudo aptitude install libwxbase3.0-0\r\n$ sudo aptitude install libwxgtk3.0-0\r\n$ sudo dpkg -i esl-erlang_19.3-1-debian-jessie_amd64.deb\r\n```\r\n\r\n# Elixir\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ git clone https://github.com/mururu/exenv.git $HOME/.exenv\r\n\r\n$ exec $SHELL -l\r\n$ git clone https://github.com/mururu/elixir-build.git ~/.exenv/plugins/elixir-build\r\n$ echo 'export PATH=\"$HOME/.exenv/bin:$PATH\"' >> ~/.bash_profile\r\n$ echo 'eval \"$(exenv init -)\"' >> ~/.bash_profile\r\n$ exec $SHELL -l\r\n\r\n$ exenv install -list\r\n$ exenv install 1.4.1\r\n$ exenv global 1.4.1\r\n```\r\n\r\n# \u78ba\u8a8d\r\n\r\n```\r\n$ elixir -v\r\n$ iex\r\n```",
     "pub_date": "2017-02-11T05:16:19.528Z",
     "user": 2,
     "tags": [
@@ -2494,6 +2494,49 @@
     "tags": [
       1,
       37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 160,
+  "fields": {
+    "title": "Linux\u3067\u30b7\u30ea\u30a2\u30eb\u901a\u4fe1",
+    "content": "# screen\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ sudo aptitude install screen\r\n```\r\n\r\n# screen\u306e\u4f7f\u7528\u65b9\u6cd5\r\n\r\n* parenb/-parenb  \r\n\u30d1\u30ea\u30c6\u30a3\u30d3\u30c3\u30c8\u3042\u308a/\u306a\u3057\r\n* parodd/-parodd  \r\n\u30d1\u30ea\u30c6\u30a3\u30d3\u30c3\u30c8ODD/EVEN\r\n* cs<\u6570\u5b57>  \r\n\u6587\u5b57\u30b5\u30a4\u30ba\r\n* cstopb/-cstopb  \r\n\u30b9\u30c8\u30c3\u30d7\u30d3\u30c3\u30c82\u30d3\u30c3\u30c8/1\u30d3\u30c3\u30c8\r\n\r\n```\r\n$ screen /dev/ttyS1 115200,cs8,-parenb,-cstopb\r\n```",
+    "pub_date": "2017-03-23T02:49:31.883Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 161,
+  "fields": {
+    "title": "GNOME 3\u306e\u304a\u3059\u3059\u3081\u30c6\u30fc\u30de",
+    "content": "# Arc Theme\r\n\r\n[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme)\r\n\r\n![image](https://camo.githubusercontent.com/ec3edb8af6e682676cef3ae8f71da60f70a72819/687474703a2f2f692e696d6775722e636f6d2f4e43366471796c2e706e67)\r\n\r\n\u4f9d\u5b58\u30d1\u30c3\u30b1\u30fc\u30b8`gtk2-engines-murrine`\u3092\u3042\u3089\u304b\u3058\u3081\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3057\u3066\u304a\u304f\uff0e\r\n\r\n```\r\n$ sudo aptitude install gtk2-engines-murrine\r\n$ sudo sudo dpkg -i arc-theme_1488477732.766ae1a-0_all.deb\r\n```",
+    "pub_date": "2017-03-27T00:23:07.747Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 162,
+  "fields": {
+    "title": "settings.py\u306e\u5b9a\u6570\u3092\u4f7f\u7528\u3059\u308b\u65b9\u6cd5",
+    "content": "# settings.py\u306b\u5b9a\u6570\u3092\u5b9a\u7fa9\u3059\u308b\r\n\r\n```\r\nSPAM_TEXT = 'spam text'\r\n```\r\n\r\n# python\u306e\u4e2d\u3067\u4f7f\u7528\u3059\u308b\r\n\r\n```\r\nfrom django.conf import settings\r\nspam = settings.SPAM_TEXT\r\n```\r\n\r\n# settings.py\u306e\u5b9a\u6570\u3092\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3067\u4f7f\u7528\u3059\u308b\r\n\r\ncontext_processors.py\u3092\u4f5c\u6210\r\n\r\n```\r\nfrom django.conf import settings\r\n\r\ndef enabled_social_auth(request):\r\n    return {'SPAM_TEXT': settings.SPAM_TEXT}\r\n```\r\n\r\nsettings.py\u306bcontext_processors\u3092\u8a18\u8ff0\r\n\r\n```\r\nTEMPLATES = [\r\n    {\r\n        \uff1a\r\n        'OPTIONS': {\r\n            'context_processors': [\r\n                \uff1a\r\n                'mondja.context_processors.enabled_social_auth',\r\n                \uff1a\r\n            ],\r\n        },\r\n    },\r\n]\r\n```",
+    "pub_date": "2017-04-02T03:20:50.213Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      48
     ]
   }
 }

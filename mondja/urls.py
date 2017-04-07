@@ -30,13 +30,14 @@ urlpatterns = [
     url(r'', include(appurls)),
 
     # Dumpdata:
-    url(r'^dumpdata/(?P<app_name>.*)/$', dumpdata.dumpdata_app, name = 'dumpdata_app'),
+    url(r'^dumpdata/(?P<app_name>.*)/$',
+        dumpdata.dumpdata_app, name='dumpdata_app'),
 
     # Log-in:
-    url(r'^login/$', login, { 'template_name': 'login.html' }, name = 'login'),
+    url(r'^login/$', login, {'template_name': 'login.html'}, name='login'),
 
     # Log-out:
-    url(r'^logout/$', logout, { 'next_page': '/' }, name = 'logout'),
+    url(r'^logout/$', logout, {'next_page': '/'}, name='logout'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -45,10 +46,12 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     # MEDIA_ROOT
-    url(r'media/(?P<path>.*)$', static.serve, { 'document_root': settings.MEDIA_ROOT }),
+    url(r'media/(?P<path>.*)$', static.serve,
+        {'document_root': settings.MEDIA_ROOT}),
 
     # favicon
-    url(r'^favicon\.ico$', RedirectView.as_view(url = '/static/images/favicon.ico')),
+    url(r'^favicon\.ico$', RedirectView.as_view(
+        url='/static/images/favicon.ico')),
 
     # python social auth
     url(r'', include(sclurls, namespace='social')),

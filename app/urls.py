@@ -21,14 +21,14 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
 
     # Add:
-    url(r'^add/$', views.add_memo, name = 'add_memo'),
+    url(r'^add/$', views.add_memo, name='add_memo'),
 
     # Edit:
-    url(r'^edit/(?P<id>.*)/$', views.edit_memo, name = 'edit_memo'),
+    url(r'^edit/(?P<id>.*)/$', views.edit_memo, name='edit_memo'),
 
     # Delete:
-    url(r'^delete/(?P<id>.*)/$', views.delete_memo, name = 'delete_memo'),
+    url(r'^delete/(?P<id>.*)/$', views.delete_memo, name='delete_memo'),
 
     # Refresh:
-    url(r'^refresh/$', views.refresh_memo, name = 'refresh_memo'),
+    url(r'^refresh/$', views.refresh_memo, name='refresh_memo'),
 ]

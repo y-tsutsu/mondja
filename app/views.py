@@ -11,6 +11,7 @@ from app.models import Memo, Tag
 from app.forms import MemoForm, TagForm
 from datetime import datetime
 
+
 @login_required
 def home(request):
     ''' Homeページを表示する． '''
@@ -22,11 +23,12 @@ def home(request):
             sort_item = '-' + sort_item
 
         sort_tag_id = request.GET.get('sort_tag_id')
-        all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(id = sort_tag_id).memo_set.all()
+        all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(
+            id=sort_tag_id).memo_set.all()
 
         sort_user_id = request.GET.get('sort_user_id')
         if sort_user_id is not '':
-            all_memo = all_memo.filter(user = User.objects.get(id = sort_user_id))
+            all_memo = all_memo.filter(user=User.objects.get(id=sort_user_id))
 
         if sort_item is '':
             all_memo = all_memo.order_by('-pub_date')
@@ -39,18 +41,20 @@ def home(request):
         search_tag_id = request.GET.get('search_tag_id')
         search_user_id = request.GET.get('search_user_id')
 
-        all_memo = Memo.objects.all() if search_tag_id is '' else Tag.objects.get(id = search_tag_id).memo_set.all()
+        all_memo = Memo.objects.all() if search_tag_id is '' else Tag.objects.get(
+            id=search_tag_id).memo_set.all()
 
         if search_user_id is not '':
-            user = User.objects.get(id = search_user_id)
-            all_memo = all_memo.filter(user = user)
+            user = User.objects.get(id=search_user_id)
+            all_memo = all_memo.filter(user=user)
 
         if search_title is not '' and search_content is not '':
-            all_memo = all_memo.filter(title__icontains = search_title, content__icontains = search_content)
+            all_memo = all_memo.filter(
+                title__icontains=search_title, content__icontains=search_content)
         elif search_title is not '':
-            all_memo = all_memo.filter(title__icontains = search_title)
+            all_memo = all_memo.filter(title__icontains=search_title)
         elif search_content is not '':
-            all_memo = all_memo.filter(content__icontains = search_content)
+            all_memo = all_memo.filter(content__icontains=search_content)
         else:
             pass
 
@@ -59,14 +63,14 @@ def home(request):
     elif types == 'tags':
         tids = request.GET.getlist('select_tag')
         if tids == []:
-            all_memo = Memo.objects.all().filter(tags__isnull = True).order_by('-pub_date')
+            all_memo = Memo.objects.all().filter(tags__isnull=True).order_by('-pub_date')
         else:
             memos = set()
             for tid in tids:
-                tag = Tag.objects.get(id = tid)
+                tag = Tag.objects.get(id=tid)
                 for memo in tag.memo_set.all():
                     memos.add(memo)
-            all_memo = sorted(memos, key = lambda x: x.pub_date, reverse = True)
+            all_memo = sorted(memos, key=lambda x: x.pub_date, reverse=True)
 
     else:
          all_memo = Memo.objects.all().order_by('-pub_date')
@@ -81,12 +85,15 @@ def home(request):
     except EmptyPage:
         all_memo = paginator.page(paginator.num_pages)
 
-    all_users = User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
-    all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
+    all_users = User.objects.annotate(
+        count_memos=Count('memo')).order_by('-count_memos')
+    all_tags = Tag.objects.annotate(count_memos=Count(
+        'memo')).order_by('-count_memos', '-pub_date')
     top_tags = all_tags[:72]
     now_str = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())
 
     return render(request, 'index.html', locals())
+
 
 @user_passes_test(lambda u: u.is_superuser)
 def add_memo(request):
@@ -97,24 +104,26 @@ def add_memo(request):
 
     return redirect(request.META['HTTP_REFERER'] + '#memo')
 
+
 @user_passes_test(lambda u: u.is_superuser)
 def edit_memo(request, id):
     ''' 既存のメモを編集する． '''
-    memo = get_object_or_404(Memo, pk = id)
+    memo = get_object_or_404(Memo, pk=id)
 
     if request.method == 'POST':
         if memo.user != request.user:
             raise PermissionDenied
 
-        memo_form = MemoForm(request.POST or None, instance = memo)
+        memo_form = MemoForm(request.POST or None, instance=memo)
         add_or_edit_memo(request, memo_form, True)
 
     return redirect(request.META['HTTP_REFERER'] + '#memo')
 
+
 def add_or_edit_memo(request, memo_form, is_edit):
     ''' メモを新規に追加，または既存のメモを編集する． '''
     if memo_form.is_valid():
-        new_memo = memo_form.save(commit = False)
+        new_memo = memo_form.save(commit=False)
         new_memo.save()
         if is_edit:
             new_memo.tags.clear()
@@ -124,19 +133,20 @@ def add_or_edit_memo(request, memo_form, is_edit):
 
         for stag in [s.rstrip() for s in tags.split()]:
 
-            if len(Tag.objects.filter(name = stag)) == 0:
-                tag = Tag(name = stag, user = request.user)
-                tag_form = TagForm(instance = tag)
+            if len(Tag.objects.filter(name=stag)) == 0:
+                tag = Tag(name=stag, user=request.user)
+                tag_form = TagForm(instance=tag)
 
                 if is_valid_tag(stag):
-                    new_tag = tag_form.save(commit = False)
+                    new_tag = tag_form.save(commit=False)
                     new_tag.save()
                     new_memo.tags.add(new_tag)
                     new_memo.save()
                 else:
-                    messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
+                    messages.error(
+                        request, 'Incorrect tag name. ({0})'.format(stag))
             else:
-                tag = Tag.objects.get(name = stag)
+                tag = Tag.objects.get(name=stag)
                 new_memo.tags.add(tag)
                 new_memo.save()
 
@@ -145,10 +155,11 @@ def add_or_edit_memo(request, memo_form, is_edit):
     else:
         messages.error(request, 'Incorrect title or content.')
 
+
 @user_passes_test(lambda u: u.is_superuser)
 def delete_memo(request, id):
     ''' メモを削除する． '''
-    memo = Memo.objects.get(id = id)
+    memo = Memo.objects.get(id=id)
 
     if request.method == 'POST':
         if memo.user != request.user:
@@ -159,14 +170,17 @@ def delete_memo(request, id):
 
     return redirect(request.META['HTTP_REFERER'] + '#memo')
 
+
 @user_passes_test(lambda u: u.is_superuser)
 def refresh_memo(request):
     ''' メモの表示をリフレッシュする． '''
     return redirect('/#memo')
 
+
 def is_valid_tag(tag):
     ''' tagの文字長チェック '''
     return len(tag) <= 10
+
 
 def clear_notused_tag():
     ''' 不要なtagを削除 '''

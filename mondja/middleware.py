@@ -4,6 +4,7 @@ from django.contrib.auth.views import login
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse
 
+
 class MondjaMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response

@@ -529,8 +529,8 @@
     "pub_date": "2015-08-09T14:46:01.320Z",
     "user": 2,
     "tags": [
-      1,
       8,
+      1,
       9
     ]
   }
@@ -560,8 +560,8 @@
     "user": 2,
     "tags": [
       1,
-      9,
-      10
+      10,
+      9
     ]
   }
 },
@@ -685,8 +685,8 @@
     "pub_date": "2015-08-09T15:04:41.670Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -699,8 +699,8 @@
     "pub_date": "2015-08-09T15:05:41.685Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -713,8 +713,8 @@
     "pub_date": "2015-08-09T15:06:25.467Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -727,9 +727,9 @@
     "pub_date": "2015-08-09T15:07:11.293Z",
     "user": 2,
     "tags": [
+      40,
       1,
-      2,
-      40
+      2
     ]
   }
 },
@@ -756,8 +756,8 @@
     "pub_date": "2015-08-09T15:09:42.595Z",
     "user": 2,
     "tags": [
-      1,
       16,
+      1,
       17
     ]
   }
@@ -914,8 +914,8 @@
     "pub_date": "2015-08-17T01:26:18.201Z",
     "user": 2,
     "tags": [
-      1,
-      40
+      40,
+      1
     ]
   }
 },
@@ -928,8 +928,8 @@
     "pub_date": "2015-08-17T02:44:35.314Z",
     "user": 2,
     "tags": [
-      1,
-      8
+      8,
+      1
     ]
   }
 },
@@ -1023,8 +1023,8 @@
     "pub_date": "2015-08-27T02:29:32.312Z",
     "user": 2,
     "tags": [
-      1,
-      32
+      32,
+      1
     ]
   }
 },
@@ -1051,10 +1051,10 @@
     "pub_date": "2015-09-13T18:07:34.030Z",
     "user": 2,
     "tags": [
+      48,
       1,
       2,
-      33,
-      48
+      33
     ]
   }
 },
@@ -1067,10 +1067,10 @@
     "pub_date": "2015-09-14T13:44:19.214Z",
     "user": 2,
     "tags": [
+      48,
       1,
       2,
-      33,
-      48
+      33
     ]
   }
 },
@@ -1083,8 +1083,8 @@
     "pub_date": "2015-10-05T13:36:13.866Z",
     "user": 2,
     "tags": [
-      13,
-      34
+      34,
+      13
     ]
   }
 },
@@ -1262,9 +1262,9 @@
     "pub_date": "2015-12-29T00:50:15.489Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -1443,10 +1443,10 @@
     "pub_date": "2016-02-13T13:09:07.591Z",
     "user": 2,
     "tags": [
+      48,
       1,
       2,
-      33,
-      48
+      33
     ]
   }
 },
@@ -1459,8 +1459,8 @@
     "pub_date": "2016-03-21T06:29:30.084Z",
     "user": 2,
     "tags": [
-      1,
-      32
+      32,
+      1
     ]
   }
 },
@@ -1611,10 +1611,10 @@
     "pub_date": "2016-05-10T12:01:36.621Z",
     "user": 2,
     "tags": [
+      48,
       1,
       2,
-      33,
-      48
+      33
     ]
   }
 },
@@ -1654,8 +1654,8 @@
     "pub_date": "2016-05-22T11:38:32.556Z",
     "user": 2,
     "tags": [
-      13,
-      49
+      49,
+      13
     ]
   }
 },
@@ -1695,9 +1695,9 @@
     "pub_date": "2016-06-09T13:53:23.238Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -1724,9 +1724,9 @@
     "pub_date": "2016-06-11T09:47:51.885Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -1836,8 +1836,8 @@
     "pub_date": "2016-06-27T02:40:29.368Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -1850,8 +1850,8 @@
     "pub_date": "2016-07-27T07:04:04.169Z",
     "user": 2,
     "tags": [
-      1,
       16,
+      1,
       37
     ]
   }
@@ -2021,8 +2021,8 @@
     "pub_date": "2016-11-25T07:19:26.922Z",
     "user": 2,
     "tags": [
-      1,
       8,
+      1,
       16
     ]
   }
@@ -2077,9 +2077,9 @@
     "pub_date": "2016-12-18T09:49:44.228Z",
     "user": 2,
     "tags": [
+      56,
       1,
-      47,
-      56
+      47
     ]
   }
 },
@@ -2176,8 +2176,8 @@
     "pub_date": "2017-02-04T12:02:22.523Z",
     "user": 2,
     "tags": [
-      1,
       16,
+      1,
       52,
       57
     ]
@@ -2192,10 +2192,10 @@
     "pub_date": "2017-02-05T04:51:11.175Z",
     "user": 2,
     "tags": [
-      1,
       8,
-      16,
-      37
+      1,
+      37,
+      16
     ]
   }
 },
@@ -2208,10 +2208,10 @@
     "pub_date": "2017-02-05T08:04:13.558Z",
     "user": 2,
     "tags": [
-      1,
       8,
-      16,
-      52
+      1,
+      52,
+      16
     ]
   }
 },
@@ -2224,8 +2224,8 @@
     "pub_date": "2017-02-05T10:54:59.568Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -2252,8 +2252,8 @@
     "pub_date": "2017-02-10T04:03:34.364Z",
     "user": 2,
     "tags": [
-      1,
       8,
+      1,
       16
     ]
   }
@@ -2281,8 +2281,8 @@
     "pub_date": "2017-02-19T09:14:14.430Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -2295,10 +2295,10 @@
     "pub_date": "2017-02-19T09:46:13.410Z",
     "user": 2,
     "tags": [
-      1,
       16,
-      37,
-      52
+      1,
+      52,
+      37
     ]
   }
 },
@@ -2325,8 +2325,8 @@
     "pub_date": "2017-02-21T01:33:41.963Z",
     "user": 2,
     "tags": [
-      1,
       8,
+      1,
       16
     ]
   }
@@ -2354,8 +2354,8 @@
     "pub_date": "2017-02-26T16:09:45.752Z",
     "user": 2,
     "tags": [
-      1,
-      32
+      32,
+      1
     ]
   }
 },
@@ -2394,8 +2394,8 @@
     "pub_date": "2017-03-03T04:07:51.323Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -2408,8 +2408,8 @@
     "pub_date": "2017-03-03T09:37:06.599Z",
     "user": 2,
     "tags": [
-      1,
-      16
+      16,
+      1
     ]
   }
 },
@@ -2534,9 +2534,54 @@
     "pub_date": "2017-04-02T03:20:50.213Z",
     "user": 2,
     "tags": [
+      48,
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 163,
+  "fields": {
+    "title": "Deep\u30b3\u30d4\u30fc\u3059\u308b\u62e1\u5f35\u30e1\u30bd\u30c3\u30c9",
+    "content": "# Deep\u30b3\u30d4\u30fc\u3059\u308b\u62e1\u5f35\u30e1\u30bd\u30c3\u30c9\uff08\u30b8\u30a7\u30cd\u30ea\u30c3\u30af\uff09\r\n\r\n\u30b8\u30a7\u30cd\u30ea\u30c3\u30af\u30b9\u3067\u62e1\u5f35\u30e1\u30bd\u30c3\u30c9\u304c\u66f8\u3051\u308b\u306e\u3067\u3001\u660e\u793a\u7684\u306b\u7d99\u627f\u3057\u306a\u304f\u3066\u3082\u81ea\u52d5\u3067Mix-in\u7684\u306a\u3053\u3068\u304c\u3067\u304d\u308b\u3002\r\n\r\n```\r\nstatic class MyExtension\r\n{\r\n    public static Type DeepClone<Type>(this Type self)\r\n    {\r\n        using (var ms = new System.IO.MemoryStream())\r\n        {\r\n            var bf = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();\r\n            bf.Serialize(ms, self);\r\n            ms.Seek(0, System.IO.SeekOrigin.Begin);\r\n            return (Type)bf.Deserialize(ms);\r\n        }\r\n    }\r\n}\r\n```",
+    "pub_date": "2017-05-25T07:01:08.559Z",
+    "user": 2,
+    "tags": [
+      1,
+      10
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 164,
+  "fields": {
+    "title": "Django\u3067\u30bb\u30c3\u30b7\u30e7\u30f3\u30bf\u30a4\u30e0\u30a2\u30a6\u30c8",
+    "content": "`settings.py`\u3067`SESSION_COOKIE_AGE`\u3092\u6307\u5b9a\u3059\u308b\u3060\u3051\uff0e\r\n\r\n[https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-SESSION_COOKIE_AGE](https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-SESSION_COOKIE_AGE)\r\n\r\n```\r\nSESSION_COOKIE_AGE = 3600  # on hour in seconds\r\n```\r\n\r\n\u30c7\u30d5\u30a9\u30eb\u30c8\u5024: 1209600 (2 \u9031\u9593\u306e\u79d2\u8868\u8a18)",
+    "pub_date": "2017-05-27T00:39:44.915Z",
+    "user": 2,
+    "tags": [
       1,
       2,
       48
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 165,
+  "fields": {
+    "title": "VSCode\u3067\u306eC++\u306e\u30b3\u30f3\u30d1\u30a4\u30eb\u65b9\u6cd5",
+    "content": "# tasks.json\u306e\u8a2d\u5b9a\u5185\u5bb9\r\n\r\n\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u30eb\u30fc\u30c8\u306b`build`\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u7528\u610f\u3057\u3066\uff0c\u305d\u3053\u306b`Makefile`\u3092\u914d\u7f6e\u3057\u3066\u3044\u308b\u5834\u5408\uff0e\r\n\r\n```\r\n{\r\n    // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n    // for the documentation about the tasks.json format\r\n    \"version\": \"0.1.0\",\r\n    \"command\": \"make\",\r\n    \"isShellCommand\": true,\r\n    \"args\": [\r\n        \"-C./build\",\r\n        \"-j4\"\r\n    ],\r\n    \"showOutput\": \"always\",\r\n    \"problemMatcher\": {\r\n        \"owner\": \"cpp\",\r\n        \"fileLocation\": [\r\n            \"absolute\"\r\n        ],\r\n        \"pattern\": {\r\n            \"regexp\": \"^(.*):(\\\\d+):(\\\\d+):\\\\s+(warning|error):\\\\s+(.*)$\",\r\n            \"file\": 1,\r\n            \"line\": 2,\r\n            \"column\": 3,\r\n            \"severity\": 4,\r\n            \"message\": 5\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n# \u8907\u6570\u306e\u30bf\u30b9\u30af\u3092\u8a2d\u5b9a\u3059\u308b\u5834\u5408\r\n\r\n`tasks`\u306e\u4e2d\u306b`taskName`\u3092\u6307\u5b9a\u3057\u3066\u5b9a\u7fa9\u3059\u308b\uff0e\r\n\r\n```\r\n{\r\n    // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n    // for the documentation about the tasks.json format\r\n    \"version\": \"0.1.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"taskName\": \"build\",\r\n            \"command\": \"make\",\r\n            \"isShellCommand\": true,\r\n            \"args\": [\r\n                \"-C./build\",\r\n                \"-j4\"\r\n            ],\r\n            \"showOutput\": \"always\",\r\n            \"problemMatcher\": {\r\n                \"owner\": \"cpp\",\r\n                \"fileLocation\": [\r\n                    \"absolute\"\r\n                ],\r\n                \"pattern\": {\r\n                    \"regexp\": \"^(.*):(\\\\d+):(\\\\d+):\\\\s+(warning|error):\\\\s+(.*)$\",\r\n                    \"file\": 1,\r\n                    \"line\": 2,\r\n                    \"column\": 3,\r\n                    \"severity\": 4,\r\n                    \"message\": 5\r\n                }\r\n            }\r\n        },\r\n        {\r\n            \"taskName\": \"clean\",\r\n            \"command\": \"make\",\r\n            \"isShellCommand\": true,\r\n            \"args\": [\r\n                \"clean\",\r\n                \"-C./build\"\r\n            ],\r\n            \"showOutput\": \"always\"\r\n        }\r\n    ]\r\n}\r\n```",
+    "pub_date": "2017-05-27T03:00:54.324Z",
+    "user": 2,
+    "tags": [
+      1,
+      55,
+      16,
+      8
     ]
   }
 }

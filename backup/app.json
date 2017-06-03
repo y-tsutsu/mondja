@@ -2263,7 +2263,7 @@
   "pk": 143,
   "fields": {
     "title": "Elixir\u306e\u74b0\u5883\u69cb\u7bc9",
-    "content": "# Erlang\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://packages.erlang-solutions.com/erlang/](https://packages.erlang-solutions.com/erlang/)\r\n\r\n```\r\n$ sudo aptitude install libwxbase3.0-0\r\n$ sudo aptitude install libwxgtk3.0-0\r\n$ sudo dpkg -i esl-erlang_19.3-1-debian-jessie_amd64.deb\r\n```\r\n\r\n# Elixir\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ git clone https://github.com/mururu/exenv.git $HOME/.exenv\r\n\r\n$ exec $SHELL -l\r\n$ git clone https://github.com/mururu/elixir-build.git ~/.exenv/plugins/elixir-build\r\n$ echo 'export PATH=\"$HOME/.exenv/bin:$PATH\"' >> ~/.bash_profile\r\n$ echo 'eval \"$(exenv init -)\"' >> ~/.bash_profile\r\n$ exec $SHELL -l\r\n\r\n$ exenv install -list\r\n$ exenv install 1.4.1\r\n$ exenv global 1.4.1\r\n```\r\n\r\n# \u78ba\u8a8d\r\n\r\n```\r\n$ elixir -v\r\n$ iex\r\n```",
+    "content": "# Erlang\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n[https://packages.erlang-solutions.com/erlang/](https://packages.erlang-solutions.com/erlang/)\r\n\r\n```\r\n$ sudo aptitude install libwxbase3.0-0\r\n$ sudo aptitude install libwxgtk3.0-0\r\n$ sudo dpkg -i esl-erlang_19.3-1-debian-jessie_amd64.deb\r\n```\r\n\r\n# Elixir\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```\r\n$ git clone https://github.com/mururu/exenv.git $HOME/.exenv\r\n\r\n$ exec $SHELL -l\r\n$ git clone https://github.com/mururu/elixir-build.git ~/.exenv/plugins/elixir-build\r\n$ echo 'export PATH=\"$HOME/.exenv/bin:$PATH\"' >> ~/.bash_profile\r\n$ echo 'eval \"$(exenv init -)\"' >> ~/.bash_profile\r\n$ exec $SHELL -l\r\n\r\n$ exenv install -list\r\n$ exenv install 1.4.4\r\n$ exenv global 1.4.4\r\n```\r\n\r\n# \u78ba\u8a8d\r\n\r\n```\r\n$ elixir -v\r\n$ iex\r\n```",
     "pub_date": "2017-02-11T05:16:19.528Z",
     "user": 2,
     "tags": [
@@ -2563,9 +2563,9 @@
     "pub_date": "2017-05-27T00:39:44.915Z",
     "user": 2,
     "tags": [
+      48,
       1,
-      2,
-      48
+      2
     ]
   }
 },
@@ -2574,14 +2574,14 @@
   "pk": 165,
   "fields": {
     "title": "VSCode\u3067\u306eC++\u306e\u30b3\u30f3\u30d1\u30a4\u30eb\u65b9\u6cd5",
-    "content": "# tasks.json\u306e\u8a2d\u5b9a\u5185\u5bb9\r\n\r\n\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u30eb\u30fc\u30c8\u306b`build`\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u7528\u610f\u3057\u3066\uff0c\u305d\u3053\u306b`Makefile`\u3092\u914d\u7f6e\u3057\u3066\u3044\u308b\u5834\u5408\uff0e\r\n\r\n```\r\n{\r\n    // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n    // for the documentation about the tasks.json format\r\n    \"version\": \"0.1.0\",\r\n    \"command\": \"make\",\r\n    \"isShellCommand\": true,\r\n    \"args\": [\r\n        \"-C./build\",\r\n        \"-j4\"\r\n    ],\r\n    \"showOutput\": \"always\",\r\n    \"problemMatcher\": {\r\n        \"owner\": \"cpp\",\r\n        \"fileLocation\": [\r\n            \"absolute\"\r\n        ],\r\n        \"pattern\": {\r\n            \"regexp\": \"^(.*):(\\\\d+):(\\\\d+):\\\\s+(warning|error):\\\\s+(.*)$\",\r\n            \"file\": 1,\r\n            \"line\": 2,\r\n            \"column\": 3,\r\n            \"severity\": 4,\r\n            \"message\": 5\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n# \u8907\u6570\u306e\u30bf\u30b9\u30af\u3092\u8a2d\u5b9a\u3059\u308b\u5834\u5408\r\n\r\n`tasks`\u306e\u4e2d\u306b`taskName`\u3092\u6307\u5b9a\u3057\u3066\u5b9a\u7fa9\u3059\u308b\uff0e\r\n\r\n```\r\n{\r\n    // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n    // for the documentation about the tasks.json format\r\n    \"version\": \"0.1.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"taskName\": \"build\",\r\n            \"command\": \"make\",\r\n            \"isShellCommand\": true,\r\n            \"args\": [\r\n                \"-C./build\",\r\n                \"-j4\"\r\n            ],\r\n            \"showOutput\": \"always\",\r\n            \"problemMatcher\": {\r\n                \"owner\": \"cpp\",\r\n                \"fileLocation\": [\r\n                    \"absolute\"\r\n                ],\r\n                \"pattern\": {\r\n                    \"regexp\": \"^(.*):(\\\\d+):(\\\\d+):\\\\s+(warning|error):\\\\s+(.*)$\",\r\n                    \"file\": 1,\r\n                    \"line\": 2,\r\n                    \"column\": 3,\r\n                    \"severity\": 4,\r\n                    \"message\": 5\r\n                }\r\n            }\r\n        },\r\n        {\r\n            \"taskName\": \"clean\",\r\n            \"command\": \"make\",\r\n            \"isShellCommand\": true,\r\n            \"args\": [\r\n                \"clean\",\r\n                \"-C./build\"\r\n            ],\r\n            \"showOutput\": \"always\"\r\n        }\r\n    ]\r\n}\r\n```",
+    "content": "# tasks.json\u306e\u8a2d\u5b9a\u5185\u5bb9\r\n\r\n\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u30eb\u30fc\u30c8\u306b`build`\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u7528\u610f\u3057\u3066\uff0c\u305d\u3053\u306b`Makefile`\u3092\u914d\u7f6e\u3057\u3066\u3044\u308b\u5834\u5408\uff0e\r\n\r\n```\r\n{\r\n    // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n    // for the documentation about the tasks.json format\r\n    \"version\": \"0.1.0\",\r\n    \"command\": \"make\",\r\n    \"isShellCommand\": true,\r\n    \"args\": [\r\n        \"-C./build\",\r\n        \"-j4\"\r\n    ],\r\n    \"showOutput\": \"always\",\r\n    \"problemMatcher\": {\r\n        \"owner\": \"cpp\",\r\n        \"fileLocation\": [\r\n            \"absolute\"\r\n        ],\r\n        \"pattern\": {\r\n            \"regexp\": \"^(.*):(\\\\d+):(\\\\d+):\\\\s+(warning|error):\\\\s+(.*)$\",\r\n            \"file\": 1,\r\n            \"line\": 2,\r\n            \"column\": 3,\r\n            \"severity\": 4,\r\n            \"message\": 5\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n# \u8907\u6570\u306e\u30bf\u30b9\u30af\u3092\u8a2d\u5b9a\u3059\u308b\u5834\u5408\r\n\r\n`tasks`\u306e\u4e2d\u306b`taskName`\u3092\u6307\u5b9a\u3057\u3066\u5b9a\u7fa9\u3059\u308b\uff0e\r\n\r\n```\r\n{\r\n    // See https://go.microsoft.com/fwlink/?LinkId=733558\r\n    // for the documentation about the tasks.json format\r\n    \"version\": \"0.1.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"taskName\": \"build\",\r\n            \"command\": \"make\",\r\n            \"isShellCommand\": true,\r\n            \"args\": [\r\n                \"-C./build\",\r\n                \"-j4\"\r\n            ],\r\n            \"showOutput\": \"always\",\r\n            \"problemMatcher\": {\r\n                \"owner\": \"cpp\",\r\n                \"fileLocation\": [\r\n                    \"absolute\"\r\n                ],\r\n                \"pattern\": {\r\n                    \"regexp\": \"^(.*):(\\\\d+):(\\\\d+):\\\\s+(warning|error):\\\\s+(.*)$\",\r\n                    \"file\": 1,\r\n                    \"line\": 2,\r\n                    \"column\": 3,\r\n                    \"severity\": 4,\r\n                    \"message\": 5\r\n                }\r\n            }\r\n        },\r\n        {\r\n            \"taskName\": \"clean\",\r\n            \"command\": \"make\",\r\n            \"isShellCommand\": true,\r\n            \"args\": [\r\n                \"clean\",\r\n                \"-C./build\"\r\n            ],\r\n            \"showOutput\": \"always\"\r\n        }\r\n    ]\r\n}\r\n```\r\n\r\n# \u30d3\u30eb\u30c9\u51fa\u529b\u304c\u76f8\u5bfe\u30d1\u30b9\u306e\u5834\u5408\r\n\r\n`fileLocation`\u3092\u76f8\u5bfe\u30d1\u30b9\u3067\u8a2d\u5b9a\u3059\u308b\uff0e\r\n\r\n```\r\n\"fileLocation\": [\r\n    \"relative\",\r\n    \"${workspaceRoot}\"\r\n],\r\n```",
     "pub_date": "2017-05-27T03:00:54.324Z",
     "user": 2,
     "tags": [
-      1,
-      55,
       16,
-      8
+      1,
+      8,
+      55
     ]
   }
 }

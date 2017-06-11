@@ -2234,7 +2234,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* Go\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* Runner\r\n* sushi-vscode\r\n\r\n![image](https://cdn-ak.f.st-hatena.com/images/fotolife/k/kondoumh/20160903/20160903121217.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* Go\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* sushi-vscode\r\n\r\n![image](https://cdn-ak.f.st-hatena.com/images/fotolife/k/kondoumh/20160903/20160903121217.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -2582,6 +2582,20 @@
       1,
       8,
       55
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 166,
+  "fields": {
+    "title": "Python \u3067\u4e26\u884c\u51e6\u7406\uff08\u30de\u30eb\u30c1\u30b9\u30ec\u30c3\u30c9 / \u30de\u30eb\u30c1\u30b3\u30a2\uff09",
+    "content": "# \u30de\u30eb\u30c1\u30b9\u30ec\u30c3\u30c9\r\n\r\nPython\u306ethread\u306f\u30b7\u30f3\u30b0\u30eb\u30b3\u30a2\u3067\u3057\u304b\u52d5\u304b\u306a\u3044\u306e\u3067CPU\u8ca0\u8377\u306f\u4e0a\u304c\u3089\u306a\u3044\r\n\r\n```\r\nimport threading\r\n\r\ndef foo():\r\n    while True:\r\n        pass\r\n\r\ndef main():\r\n    threads = []\r\n    for _ in range(4):\r\n        th = threading.Thread(target=foo, daemon=True)\r\n        th.start()\r\n        threads += [th]\r\n    for th in threads:\r\n        th.join()\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```\r\n\r\n# \u30de\u30eb\u30c1\u30b3\u30a2\r\n\r\nPool\u3092\u4f7f\u3046\u3068\u8907\u6570\u30d7\u30ed\u30bb\u30b9\u3092\u7acb\u3061\u4e0a\u3052\u30de\u30eb\u30c1\u30b3\u30a2\u3067\u52d5\u304f\uff0epool.Pool\u306e\u5f15\u6570\u304c\u6700\u5927\u30d7\u30ed\u30bb\u30b9\u6570\u306e\u6307\u5b9a\r\n\r\n```\r\nfrom multiprocessing import pool\r\n\r\ndef foo(_):\r\n    while True:\r\n        pass\r\n\r\ndef main():\r\n    p = pool.Pool(4)\r\n    p.map(foo, range(4))\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2017-06-11T13:33:47.440Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
     ]
   }
 }

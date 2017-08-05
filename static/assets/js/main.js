@@ -9,10 +9,10 @@
 	var settings = {
 
 		// Speed to resize panel.
-			resizeSpeed: 0,
+			resizeSpeed: 600,
 
 		// Speed to fade in/out.
-			fadeSpeed: 0,
+			fadeSpeed: 300,
 
 		// Size factor.
 			sizeFactor: 11.5,
@@ -59,6 +59,14 @@
 					isLocked = false,
 					hash = window.location.hash.substring(1);
 
+				if (skel.vars.mobile) {
+
+					settings.fadeSpeed = 0;
+					settings.resizeSpeed = 0;
+					$nav_links.find('span').remove();
+
+				}
+
 				// Body.
 					$body._resize = function() {
 						var factor = ($window.width() * $window.height()) / (1440 * 900);
@@ -68,7 +76,7 @@
 					};
 
 					$body._reposition = function() {
-						if (skel.vars.touch && (window.orientation == 0 || window.orientation == 180))
+						if (skel.vars.mobile && (window.orientation == 0 || window.orientation == 180))
 							$wrapper.css('padding-top', Math.max((($window.height() - (panels[activePanelId].outerHeight() + $footer.outerHeight())) / 2) - $nav.height(), 30) + 'px');
 						else
 							$wrapper.css('padding-top', ((($window.height() - panels[firstPanelId].height()) / 2) - $nav.height()) + 'px');

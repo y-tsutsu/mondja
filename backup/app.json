@@ -2234,7 +2234,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* Go\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* sushi-vscode\r\n\r\n![image](https://cdn-ak.f.st-hatena.com/images/fotolife/k/kondoumh/20160903/20160903121217.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* Go\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* sushi-vscode\r\n\r\n```\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\ndonjayamanne.githistory\r\ndonjayamanne.python\r\nEditorConfig.EditorConfig\r\nespresso3389.sushi-vscode\r\nformulahendry.code-runner\r\nhars.CppSnippets\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://cdn-ak.f.st-hatena.com/images/fotolife/k/kondoumh/20160903/20160903121217.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -2530,7 +2530,7 @@
   "pk": 162,
   "fields": {
     "title": "settings.py\u306e\u5b9a\u6570\u3092\u4f7f\u7528\u3059\u308b\u65b9\u6cd5",
-    "content": "# settings.py\u306b\u5b9a\u6570\u3092\u5b9a\u7fa9\u3059\u308b\r\n\r\n```\r\nSPAM_TEXT = 'spam text'\r\n```\r\n\r\n# python\u306e\u4e2d\u3067\u4f7f\u7528\u3059\u308b\r\n\r\n```\r\nfrom django.conf import settings\r\nspam = settings.SPAM_TEXT\r\n```\r\n\r\n# settings.py\u306e\u5b9a\u6570\u3092\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3067\u4f7f\u7528\u3059\u308b\r\n\r\ncontext_processors.py\u3092\u4f5c\u6210\r\n\r\n```\r\nfrom django.conf import settings\r\n\r\ndef enabled_social_auth(request):\r\n    return {'SPAM_TEXT': settings.SPAM_TEXT}\r\n```\r\n\r\nsettings.py\u306bcontext_processors\u3092\u8a18\u8ff0\r\n\r\n```\r\nTEMPLATES = [\r\n    {\r\n        \uff1a\r\n        'OPTIONS': {\r\n            'context_processors': [\r\n                \uff1a\r\n                'mondja.context_processors.enabled_social_auth',\r\n                \uff1a\r\n            ],\r\n        },\r\n    },\r\n]\r\n```",
+    "content": "# settings.py\u306b\u5b9a\u6570\u3092\u5b9a\u7fa9\u3059\u308b\r\n\r\n```\r\nSPAM_TEXT = 'spam text'\r\n```\r\n\r\n# python\u306e\u4e2d\u3067\u4f7f\u7528\u3059\u308b\r\n\r\n```\r\nfrom django.conf import settings\r\nspam = settings.SPAM_TEXT\r\n```\r\n\r\n# settings.py\u306e\u5b9a\u6570\u3092\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3067\u4f7f\u7528\u3059\u308b\r\n\r\ncontext_processors.py\u3092\u4f5c\u6210\r\n\r\n```\r\nfrom django.conf import settings\r\n\r\ndef enabled_social_auth(request):\r\n    return {'SPAM_TEXT': settings.SPAM_TEXT}\r\n```\r\n\r\nsettings.py\u306bcontext_processors\u3092\u8a18\u8ff0\r\n\r\n```\r\nTEMPLATES = [\r\n    {\r\n        \uff1a\r\n        'OPTIONS': {\r\n            'context_processors': [\r\n                \uff1a\r\n                'mondja.context_processors.enabled_social_auth',\r\n                \uff1a\r\n            ],\r\n        },\r\n    },\r\n]\r\n```\r\n\r\n\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u5185\u3067\u4f7f\u7528\r\n\r\n```\r\n{% if ENABLED_SOCIAL_AUTH %}\r\n    \uff1a\r\n{% endif %}\r\n```",
     "pub_date": "2017-04-02T03:20:50.213Z",
     "user": 2,
     "tags": [

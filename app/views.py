@@ -73,7 +73,7 @@ def home(request):
             all_memo = sorted(memos, key=lambda x: x.pub_date, reverse=True)
 
     else:
-         all_memo = Memo.objects.all().order_by('-pub_date')
+        all_memo = Memo.objects.all().order_by('-pub_date')
 
     paginator = Paginator(all_memo, 50)
     page = request.GET.get('page')

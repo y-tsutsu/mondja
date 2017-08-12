@@ -2598,5 +2598,19 @@
       2
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 167,
+  "fields": {
+    "title": ".NET Core\u3067C#\u3092\u30d3\u30eb\u30c9",
+    "content": "# 1. Install .NET SDK\r\n\r\n[https://www.microsoft.com/net/core#windowscmd](https://www.microsoft.com/net/core#windowscmd)\r\n\r\n# 2. Initialize some code\r\n\r\n```\r\n> dotnet new console -o samplecs\r\n> cd samplecs\r\n```\r\n\r\n```\r\nusing System;\r\n\r\nnamespace samplecs\r\n{\r\n    class Program\r\n    {\r\n        static void Main(string[] args)\r\n        {\r\n            Console.WriteLine(\"Hello World!\");\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n# 3. Run the app\r\n\r\n```\r\n> dotnet restore\r\n> dotnet run\r\n> dotnet run --configuration Release    # \u30ea\u30ea\u30fc\u30b9\u30d3\u30eb\u30c9\r\n```",
+    "pub_date": "2017-08-11T16:35:06.403Z",
+    "user": 2,
+    "tags": [
+      1,
+      10
+    ]
+  }
 }
 ]

@@ -9,7 +9,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from app.models import Memo, Tag
 from app.forms import MemoForm, TagForm
-from datetime import datetime
 
 
 @login_required

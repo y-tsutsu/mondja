@@ -1,18 +1,33 @@
 import os
 import sys
 
-def create_demo_user(username, email, password):
+
+def create_user(username, email, password):
     from django.contrib.auth.models import User
     user = User.objects.create_user(username, email, password)
     user.is_superuser = True
     user.is_staff = True
     user.save()
 
-if __name__ == '__main__':
-    sys.path.append(os.path.abspath(os.path.dirname(__file__)).strip('mondja'))
+
+def create_demo_user(use_dotenv=False):
+    root = os.path.abspath(os.path.dirname(__file__)).strip('mondja')
+    sys.path.append(root)
+
+    if use_dotenv:
+        import dotenv
+        dotenv.read_dotenv(os.path.join(root, '.env'))
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mondja.settings')
-    import dotenv
-    dotenv.read_dotenv()
+
     import django
     django.setup()
-    create_demo_user('admin', 'admin@example.com', 'admin')
+    create_user('admin', 'admin@example.com', 'admin')
+
+
+def main():
+    create_demo_user()
+
+
+if __name__ == '__main__':
+    main()

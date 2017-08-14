@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from datetime import datetime
+from django.utils import timezone
 from app.models import Memo, Tag
 from app.forms import MemoForm, TagForm
 
@@ -89,7 +89,8 @@ def home(request):
     all_tags = Tag.objects.annotate(count_memos=Count(
         'memo')).order_by('-count_memos', '-pub_date')
     top_tags = all_tags[:72]
-    now_str = "{0:%Y-%m-%d %H:%M:%S}".format(datetime.now())
+    now_str = "{0:%Y-%m-%d %H:%M:%S}".format(
+        timezone.now().astimezone(timezone.get_default_timezone()))
 
     return render(request, 'index.html', locals())
 

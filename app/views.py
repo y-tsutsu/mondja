@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -95,7 +96,7 @@ def home(request):
     return render(request, 'index.html', locals())
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
 def add_memo(request):
     ''' メモを新規に追加する． '''
     if request.method == 'POST':
@@ -105,7 +106,7 @@ def add_memo(request):
     return redirect(request.META['HTTP_REFERER'] + '#memo')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
 def edit_memo(request, id):
     ''' 既存のメモを編集する． '''
     memo = get_object_or_404(Memo, pk=id)
@@ -156,7 +157,7 @@ def add_or_edit_memo(request, memo_form, is_edit):
         messages.error(request, 'Incorrect title or content.')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
 def delete_memo(request, id):
     ''' メモを削除する． '''
     memo = Memo.objects.get(id=id)
@@ -171,7 +172,7 @@ def delete_memo(request, id):
     return redirect(request.META['HTTP_REFERER'] + '#memo')
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
 def refresh_memo(request):
     ''' メモの表示をリフレッシュする． '''
     return redirect('/#memo')

@@ -67,9 +67,12 @@ def home(request):
         else:
             memos = set()
             for tid in tids:
-                tag = Tag.objects.get(id=tid)
-                for memo in tag.memo_set.all():
-                    memos.add(memo)
+                try:
+                    tag = Tag.objects.get(id=tid)
+                    for memo in tag.memo_set.all():
+                        memos.add(memo)
+                except ObjectDoesNotExist:
+                    pass    # タグ検索している状態でdeleteしたあとのredirectでこのpathをとおる可能性あり
             all_memo = sorted(memos, key=lambda x: x.pub_date, reverse=True)
 
     else:
@@ -103,7 +106,9 @@ def add_memo(request):
         memo_form = MemoForm(request.POST or None)
         add_or_edit_memo(request, memo_form, False)
 
-    return redirect(request.META['HTTP_REFERER'] + '#memo')
+    if 'HTTP_REFERER' in request.META:
+        return redirect(request.META['HTTP_REFERER'] + '#memo')
+    return redirect('/#memo')
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
@@ -118,7 +123,9 @@ def edit_memo(request, id):
         memo_form = MemoForm(request.POST or None, instance=memo)
         add_or_edit_memo(request, memo_form, True)
 
-    return redirect(request.META['HTTP_REFERER'] + '#memo')
+    if 'HTTP_REFERER' in request.META:
+        return redirect(request.META['HTTP_REFERER'] + '#memo')
+    return redirect('/#memo')
 
 
 def add_or_edit_memo(request, memo_form, is_edit):
@@ -169,7 +176,9 @@ def delete_memo(request, id):
         memo.delete()
         clear_notused_tag()
 
-    return redirect(request.META['HTTP_REFERER'] + '#memo')
+    if 'HTTP_REFERER' in request.META:
+        return redirect(request.META['HTTP_REFERER'] + '#memo')
+    return redirect('/#memo')
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')

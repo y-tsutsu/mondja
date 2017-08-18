@@ -2003,7 +2003,7 @@
   "pk": 125,
   "fields": {
     "title": "Heroku\u306e\u74b0\u5883\u5909\u6570\u306e\u64cd\u4f5c",
-    "content": "# \u57fa\u672c\u7684\u306a\u4f7f\u3044\u65b9\r\n\r\n```\r\n# \u74b0\u5883\u5909\u6570\u4e00\u89a7\r\n$ heroku config\r\n\r\n# \u74b0\u5883\u5909\u6570\u540d\u3092\u6307\u5b9a\u3057\u3066\u53c2\u7167\r\n$ heroku config:get ENV_VAR_NAME\r\n\r\n# \u8ffd\u52a0 (\u4e00\u5fdcadd\u3082\u4f7f\u3048\u307e\u3059)\r\n$ heroku config:set ENV_VAR_NAME=\"value\"\r\n\r\n# \u524a\u9664 (\u4e00\u5fdcremove\u3082\u4f7f\u3048\u307e\u3059)\r\n$ heroku config:unset ENV_VAR_NAME\r\n```",
+    "content": "# \u57fa\u672c\u7684\u306a\u4f7f\u3044\u65b9\r\n\r\n```\r\n# \u74b0\u5883\u5909\u6570\u4e00\u89a7\r\n$ heroku config\r\n\r\n# \u74b0\u5883\u5909\u6570\u540d\u3092\u6307\u5b9a\u3057\u3066\u53c2\u7167\r\n$ heroku config:get ENV_VAR_NAME\r\n\r\n# \u8ffd\u52a0 (\u4e00\u5fdcadd\u3082\u4f7f\u3048\u307e\u3059)\r\n$ heroku config:set ENV_VAR_NAME=\"value\"\r\n\r\n# \u524a\u9664 (\u4e00\u5fdcremove\u3082\u4f7f\u3048\u307e\u3059)\r\n$ heroku config:unset ENV_VAR_NAME\r\n\r\n# \u30a2\u30d7\u30ea\u304c\u8907\u6570\u3042\u308b\u5834\u5408\r\n$ heroku config --app \u30a2\u30d7\u30ea\u540d\r\n```",
     "pub_date": "2016-11-01T13:59:41.933Z",
     "user": 2,
     "tags": [
@@ -2307,7 +2307,7 @@
   "pk": 146,
   "fields": {
     "title": "\u30d0\u30c3\u30c1\u30d5\u30a1\u30a4\u30eb\u3067\u9577\u30441\u884c\u306e\u51e6\u7406\u3092\u6539\u884c",
-    "content": "# C\u8a00\u8a9e\u306e\u30de\u30af\u30ed\u3067\u306e\u300c\\\u300d\u307f\u305f\u3044\u306a\u3053\u3068\r\n\r\n\u6539\u884c\u3092\u5165\u308c\u3066\u8907\u6570\u306e\u884c\u306b\u5206\u3051\u308b\u306b\u306f`^`\u3092\u6700\u5f8c\u306b\u4ed8\u3051\u308b\uff0e\r\n\r\n### 1\u884c\u306e\u5834\u5408\r\n\r\n```\r\ncall g++ %test_file% %target_file% -I..\\googletest\\googletest\\include -I..\\target -L..\\googletest\\googletest\\build -lgtest_main -lgtest -otest.exe\r\n```\r\n\r\n### \u8907\u6570\u884c\u306e\u5834\u5408\r\n\r\n```\r\ncall g++ %test_file% %target_file% ^\r\n-I..\\googletest\\googletest\\include ^\r\n-I..\\target ^\r\n-L..\\googletest\\googletest\\build ^\r\n-lgtest_main ^\r\n-lgtest ^\r\n-otest.exe\r\n```",
+    "content": "# C\u8a00\u8a9e\u306e\u30de\u30af\u30ed\u3067\u306e\u300c\\\u300d\u307f\u305f\u3044\u306a\u3053\u3068\r\n\r\n\u6539\u884c\u3092\u5165\u308c\u3066\u8907\u6570\u306e\u884c\u306b\u5206\u3051\u308b\u306b\u306f`^`\u3092\u6700\u5f8c\u306b\u4ed8\u3051\u308b\uff0e\r\n\r\n## 1\u884c\u306e\u5834\u5408\r\n\r\n```\r\ncall g++ %test_file% %target_file% -I..\\googletest\\googletest\\include -I..\\target -L..\\googletest\\googletest\\build -lgtest_main -lgtest -otest.exe\r\n```\r\n\r\n## \u8907\u6570\u884c\u306e\u5834\u5408\r\n\r\n```\r\ncall g++ %test_file% %target_file% ^\r\n-I..\\googletest\\googletest\\include ^\r\n-I..\\target ^\r\n-L..\\googletest\\googletest\\build ^\r\n-lgtest_main ^\r\n-lgtest ^\r\n-otest.exe\r\n```",
     "pub_date": "2017-02-20T14:52:19.006Z",
     "user": 2,
     "tags": [
@@ -2610,6 +2610,35 @@
     "tags": [
       1,
       10
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 168,
+  "fields": {
+    "title": "Heroku\u306e\u30a2\u30d7\u30ea\u3092\u5e38\u6642\u8d77\u52d5",
+    "content": "# Heroku\u3067\u306e\u5e38\u6642\u8d77\u52d5\u65b9\u6cd5\r\n\r\n\u901a\u5e38\u306fHeroku\u306e\u30a2\u30c9\u30aa\u30f3\u306eHeroku Scheduler\u3067\u5bfe\u5fdc\u53ef\u80fd\u3060\u304c\uff0c\u30af\u30ec\u30b8\u30c3\u30c8\u30ab\u30fc\u30c9\u306e\u767b\u9332\u304c\u5fc5\u8981\u306a\u306e\u3067\u5225\u65b9\u6cd5\u3067\u5b9f\u73fe\uff0e\r\n\r\n\u4ee3\u66ff\u306e\u624b\u6bb5\u3068\u3057\u3066APScheduler\u3092\u4f7f\u3063\u3066\u5bfe\u5fdc\u3059\u308b\uff0e\r\n\r\n[https://devcenter.heroku.com/articles/clock-processes-python](https://devcenter.heroku.com/articles/clock-processes-python)\r\n\r\n# HTTP\u3067\u30a2\u30af\u30bb\u30b9\u3059\u308b\u30b5\u30f3\u30d7\u30eb\r\n\r\nPython\u3067\u30a2\u30af\u30bb\u30b9\u3059\u308b\u30b5\u30f3\u30d7\u30eb\u30b3\u30fc\u30c9\r\n\r\n```\r\nimport urllib.request\r\nurllib.request.urlopen('https://mondja.herokuapp.com')\r\n```\r\n\r\n# Heroku\u306e\u8d77\u52d5\u6642\u9593\r\n\r\nHeroku\u306e\u6b8b\u308a\u7121\u6599\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u6642\u9593\u306f\u3053\u3061\u3089\u3067\u78ba\u8a8d\u53ef\u80fd\uff0e\r\n\r\n[https://dashboard.heroku.com/account/billing](https://dashboard.heroku.com/account/billing)",
+    "pub_date": "2017-08-16T05:50:01.814Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      33
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 169,
+  "fields": {
+    "title": "Python\u306e\u4f8b\u5916\u3067stack trace\u3092\u8868\u793a\u3059\u308b",
+    "content": "# traceback\u3092\u4f7f\u3063\u3066\u8868\u793a\r\n\r\n```\r\ntry:\r\n    x = 1 / 0\r\nexcept:\r\n    import traceback\r\n    traceback.print_exc()\r\n```\r\n\r\n## \u51fa\u529b\u7d50\u679c\r\n\r\n```\r\nTraceback (most recent call last):\r\n  File \"Main.py\", line 2, in <module>\r\n    x = 1 / 0\r\nZeroDivisionError: division by zero\r\n```",
+    "pub_date": "2017-08-18T11:47:44.303Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
     ]
   }
 }

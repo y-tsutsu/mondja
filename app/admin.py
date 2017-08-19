@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.models import Memo, Tag
+from .models import Memo, Tag
 
 
 class MemoAdmin(admin.ModelAdmin):

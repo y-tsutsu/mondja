@@ -8,8 +8,8 @@ from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
-from app.models import Memo, Tag
-from app.forms import MemoForm, TagForm
+from .models import Memo, Tag
+from .forms import MemoForm, TagForm
 
 
 @login_required

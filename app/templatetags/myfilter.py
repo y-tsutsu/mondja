@@ -1,13 +1,15 @@
 from django import template
 from django.template.defaultfilters import stringfilter
-import markdown2
+import markdown
 
 register = template.Library()
 
+
 @register.filter
 @stringfilter
-def mark2html(value):
-    return markdown2.markdown(value, extras = { 'code-friendly': 1, 'fenced-code-blocks': { 'cssclass': 'highlight' } })
+def markdown2html(value):
+    return markdown.markdown(value, ['fenced_code', 'tables'])
+
 
 @register.simple_tag
 def url_replace(request, field, value):

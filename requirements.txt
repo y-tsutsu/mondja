@@ -8,10 +8,10 @@ docutils==0.14
 gunicorn==19.7.1
 idna==2.6
 Markdown==2.6.9
-oauthlib==2.0.3
+oauthlib==2.0.4
 olefile==0.44
 Pillow==4.2.1
-psycopg2==2.7.3
+psycopg2==2.7.3.1
 pydenticon==0.3.1
 PyJWT==1.5.3
 python-social-auth==0.3.6
@@ -19,8 +19,8 @@ python3-openid==3.1.0
 pytz==2017.2
 requests==2.18.4
 requests-oauthlib==0.8.0
-six==1.10.0
+six==1.11.0
 social-auth-app-django==1.2.0
 social-auth-core==1.4.0
 urllib3==1.22
-whitenoise==3.3.0
+whitenoise==3.3.1

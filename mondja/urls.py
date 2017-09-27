@@ -18,10 +18,10 @@ from django.contrib import admin
 from django.contrib.auth.views import login, logout
 from django.views import static
 from django.views.generic import RedirectView
-from mondja import settings
-from mondja import dumpdata
-from app import urls as appurls
 from social_django import urls as sclurls
+from app import urls as appurls
+from . import settings
+from . import dumpdata
 
 admin.autodiscover()
 

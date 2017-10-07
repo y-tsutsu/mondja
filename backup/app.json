@@ -2810,5 +2810,32 @@
       1
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 180,
+  "fields": {
+    "title": "\u30e9\u30f3\u30c1\u30e3\u30fc Keypirinha",
+    "content": "# Alfred\u30e9\u30a4\u30af\u3067\u9ad8\u901f\u306a\u30e9\u30f3\u30c1\u30e3\u30fc Keypirinha\r\n\r\n[http://keypirinha.com](http://keypirinha.com)\r\n\r\n![image](http://keypirinha.com/_images/wndrun-jumbo.png)\r\n\r\n```\r\n# Keypirinha.ini\r\n\r\n[app]\r\nlaunch_at_startup = yes\r\nhotkey_run = Ctrl+Alt+Space\r\n\r\n[gui]\r\nshow_on_taskbar = no\r\n```",
+    "pub_date": "2017-09-29T04:11:11.416Z",
+    "user": 2,
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 181,
+  "fields": {
+    "title": "Git\u3067\u7a7a\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u7ba1\u7406\u3059\u308b\u624b\u9806",
+    "content": "# 1 .gitkeep\u3068\u3044\u3046\u7a7a\u30d5\u30a1\u30a4\u30eb\u3092\u914d\u7f6e\r\n\r\n\u7ba1\u7406\u3057\u305f\u3044\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u306b`.gitkeep`\u3068\u3044\u3046\u7a7a\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u4f5c\u6210\u3059\u308b\uff0e\uff08tmp/.gitkeep\uff09\r\n\r\n# 2 .gitignore\u3092\u66f4\u65b0\r\n\r\n`.gitignore`\u3067.gitkeep\u306e\u9664\u5916\u3092\u30ad\u30e3\u30f3\u30bb\u30eb\u3059\u308b\uff0e\r\n\r\n```\r\ntmp/*  \r\n!.gitkeep\r\n```",
+    "pub_date": "2017-10-06T05:38:28.014Z",
+    "user": 2,
+    "tags": [
+      1,
+      32
+    ]
+  }
 }
 ]

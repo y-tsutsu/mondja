@@ -20,10 +20,10 @@ class MondjaMiddleware:
 
         # ログインしている状態でloginページがリクエストされた場合はHomeにredirectする
         if request.path == reverse(login) and request.method == 'GET' and request.user.is_authenticated():
-            # 例外としてuser_passes_test（is_staff）でredirectされた場合はHomeにredirectしない
+            # 例外としてuser_passes_test(is_staff)でredirectされた場合はHomeにredirectしない
             if request.GET.get('need_staff') and not request.user.is_staff:
                 pass
-            # 例外としてuser_passes_test（is_superuser）でredirectされた場合はHomeにredirectしない
+            # 例外としてuser_passes_test(is_superuser)でredirectされた場合はHomeにredirectしない
             elif request.GET.get('need_superuser') and not request.user.is_superuser:
                 pass
             # そのほかの場合はHomeにredirectする

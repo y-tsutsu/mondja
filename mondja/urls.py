@@ -1,58 +1,54 @@
 """mondja URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
 Class-based views
     1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
-from django.views import static
+from django.conf import settings
+from django.conf.urls import url, static
 from django.views.generic import RedirectView
+from django.urls import include, path
 from social_django import urls as sclurls
-from app import urls as appurls
 from . import settings
 from . import dumpdata
 
-admin.autodiscover()
-
 urlpatterns = [
     # app
-    url(r'', include(appurls)),
+    path('', include('app.urls')),
 
     # Dumpdata:
-    url(r'^dumpdata/(?P<app_name>.*)/$',
-        dumpdata.dumpdata_app, name='dumpdata_app'),
+    path('dumpdata/<str:app_name>/', dumpdata.dumpdata_app, name='dumpdata_app'),
 
     # Log-in:
-    url(r'^login/$', login, {'template_name': 'login.html'}, name='login'),
+    path('login/', login, {'template_name': 'login.html'}, name='login'),
 
     # Log-out:
-    url(r'^logout/$', logout, {'next_page': '/'}, name='logout'),
+    path('logout/', logout, {'next_page': '/'}, name='logout'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # Admin Doc
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+    # Admin
+    path('admin/', admin.site.urls),
 
     # MEDIA_ROOT
-    url(r'media/(?P<path>.*)$', static.serve,
-        {'document_root': settings.MEDIA_ROOT}),
+    url(r'media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
 
     # favicon
-    url(r'^favicon\.ico$', RedirectView.as_view(
-        url='/static/images/favicon.ico')),
+    path('favicon.ico', RedirectView.as_view(
+        url='/static/images/favicon.ico', permanent=True)),
 
     # python social auth
-    url(r'', include(sclurls, namespace='social')),
+    path('', include('social_django.urls', namespace='social')),
 ]

@@ -2,16 +2,15 @@ from mondja.pydenticon_wrapper import create_identicon
 from django.contrib.auth.models import User
 from django.contrib.auth.views import login
 from django.shortcuts import redirect
-from django.core.urlresolvers import reverse
+from django.urls import reverse
+from django.utils.deprecation import MiddlewareMixin
 
 
-class MondjaMiddleware:
-    def __init__(self, get_response):
+class MondjaMiddleware(MiddlewareMixin):
+    def __init__(self, get_response=None):
         self.get_response = get_response
 
-    def __call__(self, request):
-        # Code to be executed for each request before
-
+    def process_request(self, request):
         # Heroku用にidenticonを生成
         users = User.objects.all()
         for item in users:
@@ -19,7 +18,7 @@ class MondjaMiddleware:
                 create_identicon(item.username)
 
         # ログインしている状態でloginページがリクエストされた場合はHomeにredirectする
-        if request.path == reverse(login) and request.method == 'GET' and request.user.is_authenticated():
+        if request.path == reverse(login) and request.method == 'GET' and request.user.is_authenticated:
             # 例外としてuser_passes_test(is_staff)でredirectされた場合はHomeにredirectしない
             if request.GET.get('need_staff') and not request.user.is_staff:
                 pass
@@ -29,9 +28,3 @@ class MondjaMiddleware:
             # そのほかの場合はHomeにredirectする
             else:
                 return redirect('/')
-
-        response = self.get_response(request)
-
-        # Code to be executed for each request/response after
-
-        return response

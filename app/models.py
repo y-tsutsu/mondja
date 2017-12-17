@@ -1,13 +1,14 @@
-import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import models as usermodels
+
+import datetime
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=10, unique=True)
     pub_date = models.DateTimeField('date published', auto_now_add=True)
-    user = models.ForeignKey(usermodels.User)
+    user = models.ForeignKey(usermodels.User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -42,7 +43,7 @@ class Memo(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField(max_length=10000)
     pub_date = models.DateTimeField('date published', auto_now_add=True)
-    user = models.ForeignKey(usermodels.User)
+    user = models.ForeignKey(usermodels.User, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, blank=True)
 
     def __str__(self):

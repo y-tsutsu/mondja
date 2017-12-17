@@ -140,7 +140,6 @@ def add_or_edit_memo(request, memo_form, is_edit):
         tags = request.POST['tags-text']
 
         for stag in [s.rstrip() for s in tags.split()]:
-
             if len(Tag.objects.filter(name=stag)) == 0:
                 tag = Tag(name=stag, user=request.user)
                 tag_form = TagForm(instance=tag)
@@ -154,7 +153,7 @@ def add_or_edit_memo(request, memo_form, is_edit):
                     messages.error(
                         request, 'Incorrect tag name. ({0})'.format(stag))
             else:
-                tag = Tag.objects.get(name=stag)
+                tag = get_object_or_404(Tag, name=stag)
                 new_memo.tags.add(tag)
                 new_memo.save()
 
@@ -167,7 +166,7 @@ def add_or_edit_memo(request, memo_form, is_edit):
 @user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
 def delete_memo(request, id):
     ''' メモを削除する． '''
-    memo = Memo.objects.get(id=id)
+    memo = get_object_or_404(Memo, pk=id)
 
     if request.method == 'POST':
         if memo.user != request.user:

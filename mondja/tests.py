@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.core.urlresolvers import resolve
+from django.urls import resolve
 from django.shortcuts import resolve_url
 from django.contrib.auth.views import login, logout
 from django.core.management import call_command
@@ -8,7 +8,7 @@ from . import dumpdata
 
 class UrlResolveTests(TestCase):
     def test_url_dumpdata(self):
-        found = resolve('/dumpdata/42/')
+        found = resolve('/dumpdata/app/')
         self.assertEqual(found.func, dumpdata.dumpdata_app)
 
     def test_url_login(self):
@@ -22,7 +22,7 @@ class UrlResolveTests(TestCase):
 
 class ViewTests(TestCase):
     def test_view_dumpdata(self):
-        response = self.client.get(resolve_url('/dumpdata/42/'))
+        response = self.client.get(resolve_url('/dumpdata/app/'))
         self.assertEqual(302, response.status_code)
 
     def test_view_login(self):

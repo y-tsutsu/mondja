@@ -1,9 +1,10 @@
-from mondja.pydenticon_wrapper import create_identicon
 from django.contrib.auth.models import User
 from django.contrib.auth.views import login
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.deprecation import MiddlewareMixin
+
+from mondja.pydenticon_wrapper import create_identicon
 
 
 class MondjaMiddleware(MiddlewareMixin):

@@ -1,6 +1,7 @@
-from django.conf import settings
-import pydenticon
 import os.path
+
+import pydenticon
+from django.conf import settings
 
 dir = settings.MEDIA_ROOT + '/identicon/'
 

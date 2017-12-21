@@ -1,8 +1,8 @@
+import datetime
+
+from django.contrib.auth import models as usermodels
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth import models as usermodels
-
-import datetime
 
 
 class Tag(models.Model):

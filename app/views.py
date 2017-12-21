@@ -1,15 +1,16 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpRequest
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.db.models import Count
+from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Count
+from django.http import HttpRequest
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from .models import Memo, Tag
+
 from .forms import MemoForm, TagForm
+from .models import Memo, Tag
 
 
 @login_required

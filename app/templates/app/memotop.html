@@ -5,11 +5,11 @@
         <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalSort"><i class="fa fa-sort fa-lg"></i></a></div>
         <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalSearch"><i class="fa fa-search fa-lg" ></i></a></div>
         <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-lg"></i></a></div>
-        <div class="col-md-1-5 col-xs-1-5"><a href="{% url 'refresh_memo' %}"><i class="fa fa-refresh fa-lg"></i></a></div>
+        <div class="col-md-1-5 col-xs-1-5"><a href="{% url 'app:refresh_memo' %}"><i class="fa fa-refresh fa-lg"></i></a></div>
     </div>
 
     <!-- 追加ダイアログ -->
-    <form method="post" action="{% url 'add_memo' %}">
+    <form method="post" action="{% url 'app:add_memo' %}">
         {% csrf_token %}
         <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -43,7 +43,7 @@
     </form>
 
     <!-- ソートダイアログ -->
-    <form method="get" action="{% url 'home' %}#memo">
+    <form method="get" action="{% url 'app:home' %}#memo">
         <div class="modal fade" id="myModalSort" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -109,7 +109,7 @@
     </form>
 
     <!-- 検索ダイアログ -->
-    <form method="get" action="{% url 'home' %}#memo">
+    <form method="get" action="{% url 'app:home' %}#memo">
         <div class="modal fade" id="myModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -164,7 +164,7 @@
     </form>
 
     <!-- タグ一覧ダイアログ -->
-    <form method="get" action="{% url 'home' %}#memo">
+    <form method="get" action="{% url 'app:home' %}#memo">
         <div class="modal fade" id="myModalTags" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">

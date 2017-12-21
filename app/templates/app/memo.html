@@ -60,7 +60,7 @@
         </div>
 
         <!-- 編集ダイアログ -->
-        <form method="post" action="{% url 'edit_memo' item.id %}">
+        <form method="post" action="{% url 'app:edit_memo' item.id %}">
             {% csrf_token %}
             <div class="modal fade" id="myModalEdit{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -94,7 +94,7 @@
         </form>
 
         <!-- 削除確認ダイアログ -->
-        <form method="post" action="{% url 'delete_memo' item.id %}">
+        <form method="post" action="{% url 'app:delete_memo' item.id %}">
             {% csrf_token %}
             <div class="modal fade" id="myModalDelete{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

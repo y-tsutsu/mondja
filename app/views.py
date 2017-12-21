@@ -97,7 +97,7 @@ def home(request):
     now_str = "{0:%Y-%m-%d %H:%M:%S}".format(
         timezone.now().astimezone(timezone.get_default_timezone()))
 
-    return render(request, 'index.html', locals())
+    return render(request, 'app/index.html', locals())
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')

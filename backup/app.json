@@ -2959,5 +2959,32 @@
       52
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 190,
+  "fields": {
+    "title": "pip-tools\u3067\u30d1\u30c3\u30b1\u30fc\u30b8\u7ba1\u7406",
+    "content": "# pip-tools\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```shell\r\n$ pip install pip-tools\r\n```\r\n\r\n# requirements.txt\u306e\u66f4\u65b0\r\n\r\n\u3042\u3089\u304b\u3058\u3081`requirements.in`\u3092\u4f5c\u6210\u3057\u3066\u304a\u304f\uff0e\r\n\r\n```\r\ndj-database-url\r\ndjango\r\ndjango-dotenv\r\n```\r\n\r\n`pip-compile`\u30b3\u30de\u30f3\u30c9\u3067\u6700\u65b0\u30d0\u30fc\u30b8\u30e7\u30f3\u306e\u5185\u5bb9\u3067requirements.txt\u3092\u66f4\u65b0\uff0e\r\n\r\n```shell\r\n$ pip-compile requirements.in\r\n```\r\n\r\n# \u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u66f4\u65b0\r\n\r\nrequirements.txt\u306e\u5185\u5bb9\u306b\u5408\u308f\u305b\u3066\u30d1\u30c3\u30b1\u30fc\u30b8\u4e00\u5f0f\u3092\u66f4\u65b0\uff0e\u4e0d\u8981\u306b\u306a\u3063\u305f\u30d1\u30c3\u30b1\u30fc\u30b8\u306e\u30a2\u30f3\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3082\u884c\u3063\u3066\u304f\u308c\u308b\uff0e\r\n\r\n```shell\r\n$ pip-sync\r\n```",
+    "pub_date": "2018-01-04T07:52:04.318Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 191,
+  "fields": {
+    "title": "\u30b3\u30de\u30f3\u30c9\u30d7\u30ed\u30f3\u30d7\u30c8\u3067UTF-8\u3092\u8868\u793a",
+    "content": "# UTF-8\r\n\r\n```cmd\r\n> chcp 65001\r\n```\r\n\r\n# Shift_JIS\r\n\r\n```cmd\r\n> chcp 932\r\n```",
+    "pub_date": "2018-01-05T05:42:37.604Z",
+    "user": 2,
+    "tags": [
+      1
+    ]
+  }
 }
 ]

@@ -13,7 +13,7 @@ django==2.0.1
 docutils==0.14
 gunicorn==19.7.1
 idna==2.6                 # via requests
-markdown==2.6.10
+markdown==2.6.11
 oauthlib==2.0.6           # via requests-oauthlib, social-auth-core
 pillow==5.0.0             # via pydenticon
 psycopg2==2.7.3.2

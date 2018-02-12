@@ -3001,5 +3001,32 @@
       57
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 193,
+  "fields": {
+    "title": "cmder\u3067\u306els\u30b3\u30de\u30f3\u30c9\u306e\u6587\u5b57\u5316\u3051\u5bfe\u7b56",
+    "content": "# Monospace\u306e\u89e3\u9664\r\n\r\n\u300cMain\u300d\u306e`Monospace`\u306e\u30c1\u30a7\u30c3\u30af\u3092\u5916\u3059\uff0e\r\n\r\n# \u30a8\u30f3\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u8a2d\u7f6e\r\n\r\n\u300cStartup\u300d-\u300cEnvironment\u300d\u306b\u4e0b\u8a18\u74b0\u5883\u5909\u6570\u3092\u8a2d\u5b9a\uff0e\r\n\r\n```\r\nset LANG=ja_JP.UTF-8\r\n```\r\n\r\n# msys\u306e\u30b3\u30de\u30f3\u30c9\u306b\u3064\u3044\u3066\r\n\r\n`ls`\u3068`git`\u306f\u6319\u52d5\u304c\u4e0d\u5b89\u5b9a\uff0c\u30d0\u30fc\u30b8\u30e7\u30f3\u304c\u53e4\u3044\u306a\u3069\u8abf\u5b50\u304c\u60aa\u3044\u305f\u3081\uff0c\u30ea\u30cd\u30fc\u30e0\u306a\u3069\u3057\u3066\u5916\u3057\u3066\u304a\u304f\uff0ecmder\u5185\u5305\u306e`ls`\u30b3\u30de\u30f3\u30c9\u306f\u6587\u5b57\u5316\u3051\u3057\u3066\u3057\u307e\u3046\u305f\u3081\uff0c\u4e0a\u8a18\u306e\u5bfe\u7b56\u304c\u5fc5\u8981\uff0e",
+    "pub_date": "2018-02-04T10:25:02.526Z",
+    "user": 2,
+    "tags": [
+      1
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 194,
+  "fields": {
+    "title": "Weston\u306e\u30d3\u30eb\u30c9\u624b\u9806",
+    "content": "# \u74b0\u5883\u5909\u6570\r\n\r\n\u9069\u5f53\u306a\u540d\u524d\uff08wlenv\uff09\u3067\u4fdd\u5b58\uff0e\r\n\r\n*wlenv*\r\n\r\n```sh\r\nexport USRFS=$HOME/usrfs\r\nexport WLD=$USRFS\r\nexport LD_LIBRARY_PATH=$USRFS/lib\r\nexport PKG_CONFIG_PATH=$USRFS/lib/pkgconfig:$USRFS/share/pkgconfig\r\nexport ACLOCAL=\"aclocal -I $USRFS/share/aclocal\"\r\nexport PATH=$HOME/usrfs/bin:$PATH\r\n```\r\n\r\n# \u30d3\u30eb\u30c9&\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n\u4e0a\u8a18\u306e\u74b0\u5883\u5909\u6570\u3092\u8aad\u307f\u8fbc\u3093\u3067\uff0c`~/usrfs`\u306b\u30d3\u30eb\u30c9&\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\uff0e\r\n\r\n*install.sh*\r\n\r\n```sh\r\n#!/bin/bash\r\n\r\nWORK_DIR=$(cd $(dirname $0) && pwd)\r\n\r\nmkdir -p ~/usrfs\r\nsudo apt install -y libxml++2.6-dev bison flex libmtdev-dev libudev-dev libevdev-dev libgtk-3-dev check libunwind-dev libwacom-dev libxcb-composite0-dev libpam0g-dev\r\n\r\ncd $WORK_DIR\r\nsource ./wlenv\r\n\r\ngit clone http://anongit.freedesktop.org/git/wayland/wayland.git\r\ncd wayland\r\ngit checkout 1.14.0\r\n./autogen.sh --prefix=$WLD --disable-documentation\r\n./autogen.sh --prefix=$WLD --disable-documentation\r\nmake -j2\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone http://anongit.freedesktop.org/git/mesa/mesa.git\r\ncd mesa\r\ngit checkout mesa-17.0.7\r\npyenv local 2.7.14\r\npip install mako\r\n./autogen.sh --prefix=$WLD --with-gallium-drivers=svga --with-dri-drivers= --enable-gles1 --enable-gles2 --enable-gallium-egl --enable-gbm --enable-shared-glapi --with-egl-platforms=x11,wayland\r\nmake -j2\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone http://anongit.freedesktop.org/git/cairo\r\ncd cairo\r\ngit checkout 1.15.8\r\n./autogen.sh --prefix=$WLD --enable-gl --enable-xcb\r\nmake -j2\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone git://anongit.freedesktop.org/wayland/libinput\r\ncd libinput\r\ngit checkout 1.8.4\r\n./autogen.sh --prefix=$WLD\r\nmake -j2\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone http://anongit.freedesktop.org/git/wayland/weston.git\r\ncd weston\r\ngit checkout 2.0.0\r\n./autogen.sh --prefix=$WLD\r\nmake -j2\r\nsudo make install\r\ncp ivi-shell/weston.ini ~/.config/.\r\ncd $WORK_DIR\r\n```",
+    "pub_date": "2018-02-12T11:39:08.662Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
 }
 ]

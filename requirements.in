@@ -4,7 +4,7 @@ django-dotenv
 docutils
 gunicorn
 markdown
-psycopg2
+psycopg2-binary
 pydenticon
 python-social-auth
 social-auth-app-django

@@ -8,7 +8,7 @@
         <!-- Login -->
         <article id="login" class="panel">
             <header>
-                <h2>Log-in to mondja</h2>
+                <h1>Log-in to mondja</h1>
                 {% if form.errors %}
                     <p id="error">Incorrect username or password.</p>
                 {% else %}
@@ -20,17 +20,17 @@
             {% csrf_token %}
                 <div>
                     <div class="row">
-                        <div class="12u$">
+                        <div class="12u$ mycontrol">
                             <input id="id_username" maxlength="254" name="username" type="text" class="form-control" placeholder="User ID" aria-describedby="sizing-addon1" autofocus required />
                         </div>
-                        <div class="12u$">
+                        <div class="12u$ mycontrol">
                             <input id="id_password" maxlength="256" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" required />
                         </div>
-                        <div class="12u$">
+                        <div class="12u$ mycontrol">
                             <input type="submit" value="Log-in" />
                         </div>
                         {% if ENABLED_SOCIAL_AUTH %}
-                            <div class="12u$">
+                            <div class="12u$ mycontrol">
                                 <div class="row">
                                     <div class="col-md-6 col-xs-6">
                                         <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fa fa-facebook fa-lg fa-fw"></i>Facebook</button>

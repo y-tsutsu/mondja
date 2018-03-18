@@ -1,4 +1,14 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
 body {
+    font-size: 1.4em;
     background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bg.jpg");
     background-repeat: repeat, repeat;
     background-size: auto, 100% 100%;
@@ -17,7 +27,15 @@ pre {
     text-decoration: none;
 }
 
-#me .pic > img {
+#me h1 {
+    font-size: 2.3rem;
+}
+
+#me header>p {
+    font-size: 1.3rem;
+}
+
+#me .pic>img {
     margin-top: -1px;
     height: 101%;
 }
@@ -33,15 +51,94 @@ pre {
 
 #memo hr {
     border-top-color: darkblue;
+    margin: 1.2rem 0;
+    padding: 0;
 }
 
 #memo .well {
     background-color: ghostwhite;
     border-color: darkblue;
+    padding: 1.2rem;
 }
 
-#memo .modal-footer button {
-    width: 90px;
+#memo .modal-title {
+    font-size: 1.8rem;
+}
+
+#memo .modal-content {
+    background-color: whitesmoke;
+}
+
+#memo .modal-body p {
+    font-size: 1.3rem;
+}
+
+#memo-top .sort-btn {
+    margin: 0;
+}
+
+#memo-title {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    font-size: 2.2rem;
+    color: midnightblue;
+    margin-top: initial;
+}
+
+#memo-title img {
+    width: 3.0rem;
+    height: auto;
+    vertical-align: middle;
+}
+
+#memo-date {
+    font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+}
+
+#memo-body h1,
+#memo-body h2,
+#memo-body h3,
+#memo-body h4,
+#memo-body h5,
+#memo-body h6 {
+    margin: 1.0rem 0;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+}
+
+#memo-body p,
+#memo-body li {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+}
+
+#memo-body h1 {
+    font-size: 2.0rem;
+}
+
+#memo-body h2 {
+    font-size: 1.8rem;
+}
+
+#memo-body h3 {
+    font-size: 1.6rem;
+}
+
+#memo-body h4 {
+    font-size: 1.6rem;
+}
+
+#memo-body h5 {
+    font-size: 1.6rem;
+}
+
+#memo-body h6 {
+    font-size: 1.6rem;
+}
+
+#memo-body p {
+    font-size: 1.3rem;
+}
+
+#memo-body li {
+    font-size: 1.3rem;
 }
 
 #memo-body img {
@@ -55,63 +152,23 @@ pre {
     word-break: break-all;
 }
 
-.modal-title {
-    font-size: 1.0em;
-}
-
-#memo-title {
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-    font-size: 1.5em;
-    color: midnightblue;
-    margin-top: initial;
-}
-
-#memo-date {
-    font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-}
-
-#memo-body h1, #memo-body h2, #memo-body h3, #memo-body h4, #memo-body h5, #memo-body h6, #memo-body p, #memo-body li {
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
-}
-
-#memo-body h1 {
-    font-size: 1.3em;
-}
-
-#memo-body h2 {
-    font-size: 1.1em;
-}
-
-#memo-body h3 {
-    font-size: 1.0em;
-}
-
-#memo-body h4 {
-    font-size: 1.0em;
-}
-
-#memo-body h5 {
-    font-size: 1.0em;
-}
-
-#memo-body h6 {
-    font-size: 1.0em;
+#memo-body blockquote {
+    margin: 0;
+    padding: 0.5rem;
 }
 
 #memo-body p {
-    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
 }
 
-#memo-body li {
-    font-size: 0.9em;
+#about h1 {
+    font-size: 2.0rem;
 }
 
-#memo-body pre {
-    margin-right: 0;
-}
-
-.modal-content {
-    background-color: whitesmoke;
+div>#myabout {
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
 }
 
 textarea.mydialog {
@@ -126,20 +183,32 @@ textarea.mydialog {
     color: crimson;
 }
 
-.my404 .panel .alert {
-    font-size: 38px;
+.mylogin h1,
+.my403 h1,
+.my404 h1,
+.my500 h1 {
+    font-size: 2.0rem;
 }
 
-.my404 .panel h2 {
-    margin-bottom: 13px;
+.mylogin p {
+    font-size: 1.5rem;
 }
 
-.my500 .panel .alert {
-    font-size: 38px;
+.my403 p,
+.my404 p,
+.my500 p {
+    font-size: 1.3rem;
 }
 
-.my500 .panel h2 {
-    margin-bottom: 13px;
+.my403 .alert,
+.my404 .alert,
+.my500 .alert {
+    font-size: 2.3rem;
+}
+
+.mylogin .mycontrol {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
 }
 
 .mysociallogin {
@@ -147,7 +216,13 @@ textarea.mydialog {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+ul.copyright {
+    padding: 0;
+}
+
+
 /*○ボタン*/
+
 #circle-button {
     text-align: center;
 }
@@ -162,145 +237,23 @@ textarea.mydialog {
     border-radius: 50%;
     background: #7986cb;
     text-align: center;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
+    width: 3.3rem;
+    height: 3.3rem;
+    line-height: 3.3rem;
 }
 
 #circle-button i:before {
     padding: 0;
-    line-height: 1.5em;
+    line-height: 3.3rem;
 }
 
 #circle-button a:hover i {
     background: #c5cae9;
 }
 
-/* Desktop */
-@media screen and (min-width: 737px) {
-    #me header > p {
-        position: absolute;
-        left: 0;
-        top: 52.5%;
-        font-size: 0.82em;
-        letter-spacing: -0.015em;
-        margin-top: 0;
-    }
-
-    div .mylogin, div .my404, div .my500 {
-        margin-top: -95px;
-    }
-
-    #login form {
-        margin-left: -10px;
-        margin-right: 15px;
-    }
-
-    #myabout p, #myabout pre {
-        margin-right: 24px;
-    }
-
-    #memo hr {
-        margin-bottom: -16px;
-    }
-
-    #memo-title img {
-        width: 1.5em;
-        height: auto;
-        vertical-align: middle;
-    }
-
-    #memo-body {
-        margin-top: -23px;
-    }
-
-    #about header {
-        margin-left: 12px;
-    }
-
-    .mysociallogin {
-        font-size: medium;
-    }
-}
-
-/* Mobile */
-@media screen and (max-width: 736px) {
-    #footer ul {
-        padding-left: initial;
-    }
-
-    #me header > p {
-        font-size: 1.0em;
-    }
-
-    #me .pic img {
-        display: block;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    div .my404, div .my500 {
-        margin-top: 82px;
-    }
-
-    div .mylogin {
-        margin-top: 64px;
-    }
-
-    #login form {
-        margin-right: 15px;
-    }
-
-    #myabout p, #myabout pre {
-        margin-right: 15px;
-    }
-
-    .modal-header button {
-        display: initial;
-        width: initial;
-        padding: initial;
-        text-align: initial;
-    }
-
-    .modal-body button {
-        width: initial;
-        text-align: initial;
-    }
-
-    #memo hr {
-        margin-bottom: -10px;
-    }
-
-    #memo-title img {
-        width: 1.5em;
-        height: auto;
-        vertical-align: middle;
-    }
-
-    #memo-button button {
-        width: initial;
-        padding: initial;
-    }
-
-    #memo-body {
-        margin-top: -13px;
-    }
-
-    #memo-body blockquote p {
-        font-size: 0.7em;
-    }
-
-    #about header {
-        margin-left: 2px;
-    }
-
-    .mysociallogin {
-        font-size: small;
-    }
-}
 
 /* define bootstrap 5 columns */
+
 .col-xs-1-5,
 .col-sm-1-5,
 .col-md-1-5,
@@ -310,27 +263,87 @@ textarea.mydialog {
     padding-right: 10px;
     padding-left: 10px;
 }
- 
+
 .col-xs-1-5 {
     width: 20%;
     float: left;
 }
- 
+
 @media (min-width: 768px) {
-.col-sm-1-5 {
+    .col-sm-1-5 {
         width: 20%;
         float: left;
     }
 }
+
 @media (min-width: 992px) {
     .col-md-1-5 {
         width: 20%;
         float: left;
     }
 }
+
 @media (min-width: 1200px) {
     .col-lg-1-5 {
         width: 20%;
         float: left;
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 737px) {
+    html {
+        font-size: 100%;
+    }
+    pre>code {
+        font-size: 0.9rem;
+    }
+    .mylogin,
+    .my403,
+    .my404,
+    .my500 {
+        margin-top: -6.5rem;
+    }
+    #memo .modal-footer button {
+        width: 6.0rem;
+    }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 736px) {
+    html {
+        font-size: 60%;
+    }
+    pre>code {
+        font-size: 1.1rem;
+    }
+    .mylogin,
+    .my403,
+    .my404,
+    .my500 {
+        margin-top: 6.0rem;
+    }
+    #memo .modal-footer button {
+        width: 8.5rem;
+    }
+    #memo .modal-header button {
+        display: initial;
+        width: initial;
+        padding: initial;
+        text-align: initial;
+    }
+    #memo #memo-button button {
+        width: initial;
+        padding: initial;
+    }
+    #me .pic img {
+        display: block;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

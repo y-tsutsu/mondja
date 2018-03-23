@@ -94,7 +94,7 @@ def home(request):
     all_tags = Tag.objects.annotate(count_memos=Count(
         'memo')).order_by('-count_memos', '-pub_date')
     top_tags = all_tags[:72]
-    now_str = "{0:%Y-%m-%d %H:%M:%S}".format(
+    now_str = '{0:%Y-%m-%d %H:%M:%S}'.format(
         timezone.now().astimezone(timezone.get_default_timezone()))
 
     return render(request, 'app/index.html', locals())

@@ -77,6 +77,22 @@ pre {
     margin: 0;
 }
 
+#memo #totop {
+    position: fixed;
+    bottom: 0.4rem;
+    right: 0.4rem;
+    z-index: 999;
+}
+
+#memo #totop a {
+    color: #5a79ba;
+    text-decoration: none;
+}
+
+#memo #totop a:hover {
+    color: #8491c3;
+}
+
 #memo-title {
     font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
     font-size: 2.2rem;

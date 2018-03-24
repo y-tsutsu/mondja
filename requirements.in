@@ -1,6 +1,7 @@
 dj-database-url
 django
 django-dotenv
+django-pure-pagination
 docutils
 gunicorn
 markdown

@@ -9,16 +9,17 @@ chardet==3.0.4            # via requests
 defusedxml==0.5.0         # via python3-openid, social-auth-core
 dj-database-url==0.5.0
 django-dotenv==1.4.2
+django-pure-pagination==0.3.0
 django==2.0.3
 docutils==0.14
 gunicorn==19.7.1
 idna==2.6                 # via requests
 markdown==2.6.11
-oauthlib==2.0.6           # via requests-oauthlib, social-auth-core
+oauthlib==2.0.7           # via requests-oauthlib, social-auth-core
 pillow==5.0.0             # via pydenticon
 psycopg2-binary==2.7.4
 pydenticon==0.3.1
-pyjwt==1.6.0              # via social-auth-core
+pyjwt==1.6.1              # via social-auth-core
 python-social-auth==0.3.6
 python3-openid==3.1.0     # via social-auth-core
 pytz==2018.3              # via django

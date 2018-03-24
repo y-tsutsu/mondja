@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gunicorn',
     'social_django',
+    'pure_pagination',
     'app.apps.AppConfig',
 ]
 
@@ -172,3 +173,9 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details'
 )
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 2,
+    'MARGIN_PAGES_DISPLAYED': 2,
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}

@@ -9,10 +9,3 @@ register = template.Library()
 @stringfilter
 def markdown2html(value):
     return markdown.markdown(value, ['fenced_code', 'tables'])
-
-
-@register.simple_tag
-def url_replace(request, field, value):
-    gets = request.GET.copy()
-    gets[field] = value
-    return gets.urlencode()

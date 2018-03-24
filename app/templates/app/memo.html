@@ -23,7 +23,7 @@
         {% endfor %}
     {% endif %}
 
-    {% for item in all_memo %}
+    {% for item in all_memo.object_list %}
 
         <!-- メモ本文 -->
         <div class="well">
@@ -118,23 +118,7 @@
     {% endfor%}
 
     <!-- Pager -->
-    {% ifnotequal all_memo.paginator.num_pages 1 %}
-        <ul class="pager" id="memo-pager">
-            {% if all_memo.has_previous %}
-                <li><a href="?{% url_replace request 'page' all_memo.previous_page_number %}#memo"><i class="fas fa-arrow-left fa-fw"></i></a></li>
-            {% else %}
-                <li class="disabled"><a><i class="fas fa-arrow-left fa-fw"></i></a></li>
-            {% endif %}
-
-            <li class="current">Page {{ all_memo.number }} of {{ all_memo.paginator.num_pages }}.</li>
-
-            {% if all_memo.has_next %}
-                <li><a href="?{% url_replace request 'page' all_memo.next_page_number %}#memo"><i class="fas fa-arrow-right fa-fw"></i></a></li>
-            {% else %}
-                <li class="disabled"><a><i class="fas fa-arrow-right fa-fw"></i></a></li>
-            {% endif %}
-        </ul>
-    {% endifnotequal %}
+    {% include 'app/pagination.html' %}
 
     <div id="totop">
         <a href="#" class="fas fa-chevron-circle-up fa-lg"></a>

@@ -28,11 +28,11 @@ pre {
 }
 
 #me h1 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
 }
 
 #me header>p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 #me .pic>img {
@@ -164,6 +164,10 @@ pre {
 
 #about h1 {
     font-size: 2.0rem;
+}
+
+#about p {
+    font-size: 1.3rem;
 }
 
 div>#myabout {

@@ -486,6 +486,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 63,
+  "fields": {
+    "name": "reveal.js",
+    "pub_date": "2018-04-05T06:59:24.008Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -3007,7 +3016,7 @@
   "pk": 193,
   "fields": {
     "title": "cmder\u3067\u306els\u30b3\u30de\u30f3\u30c9\u306e\u6587\u5b57\u5316\u3051\u5bfe\u7b56",
-    "content": "# Monospace\u306e\u89e3\u9664\r\n\r\n\u300cMain\u300d\u306e`Monospace`\u306e\u30c1\u30a7\u30c3\u30af\u3092\u5916\u3059\uff0e\r\n\r\n# \u30a8\u30f3\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u8a2d\u7f6e\r\n\r\n\u300cStartup\u300d-\u300cEnvironment\u300d\u306b\u4e0b\u8a18\u74b0\u5883\u5909\u6570\u3092\u8a2d\u5b9a\uff0e\r\n\r\n```\r\nset LANG=ja_JP.UTF-8\r\n```\r\n\r\n# msys\u306e\u30b3\u30de\u30f3\u30c9\u306b\u3064\u3044\u3066\r\n\r\n`ls`\u3068`git`\u306f\u6319\u52d5\u304c\u4e0d\u5b89\u5b9a\uff0c\u30d0\u30fc\u30b8\u30e7\u30f3\u304c\u53e4\u3044\u306a\u3069\u8abf\u5b50\u304c\u60aa\u3044\u305f\u3081\uff0c\u30ea\u30cd\u30fc\u30e0\u306a\u3069\u3057\u3066\u5916\u3057\u3066\u304a\u304f\uff0ecmder\u5185\u5305\u306e`ls`\u30b3\u30de\u30f3\u30c9\u306f\u6587\u5b57\u5316\u3051\u3057\u3066\u3057\u307e\u3046\u305f\u3081\uff0c\u4e0a\u8a18\u306e\u5bfe\u7b56\u304c\u5fc5\u8981\uff0e",
+    "content": "# Monospace\u306e\u89e3\u9664\r\n\r\n\u300cMain\u300d\u306e`Monospace`\u306e\u30c1\u30a7\u30c3\u30af\u3092\u5916\u3059\uff0e\r\n\r\n# \u30a8\u30f3\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u8a2d\u7f6e\r\n\r\n\u300cStartup\u300d-\u300cEnvironment\u300d\u306b\u4e0b\u8a18\u74b0\u5883\u5909\u6570\u3092\u8a2d\u5b9a\uff0e\r\n\r\n```cmd\r\nset PATH=C:\\Program Files (x86)\\Git\\usr\\bin;%ConEmuBaseDir%\\Scripts;%PATH%\r\nset LANG=ja_JP.UTF-8\r\n```\r\n\r\n# msys\u306e\u30b3\u30de\u30f3\u30c9\u306b\u3064\u3044\u3066\r\n\r\n`ls`\u3068`git`\u306f\u6319\u52d5\u304c\u4e0d\u5b89\u5b9a\uff0c\u30d0\u30fc\u30b8\u30e7\u30f3\u304c\u53e4\u3044\u306a\u3069\u8abf\u5b50\u304c\u60aa\u3044\u305f\u3081\uff0c\u74b0\u5883\u5909\u6570\u306ePATH\u306bGit for Windows\u306e\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u8ffd\u52a0\u3057\u3066\u3001\u305d\u3061\u3089\u304c\u512a\u5148\u7684\u306b\u8aad\u307f\u8fbc\u307e\u308c\u308b\u3088\u3046\u306b\u3059\u308b\uff0eGit for Windows\u306e`ls`\u30b3\u30de\u30f3\u30c9\u7b49\u306f\u6587\u5b57\u5316\u3051\u3057\u3066\u3057\u307e\u3046\u305f\u3081\uff0c\u6587\u5b57\u30b3\u30fc\u30c9\u306e\u5bfe\u7b56\u304c\u5fc5\u8981\uff0e",
     "pub_date": "2018-02-04T10:25:02.526Z",
     "user": 2,
     "tags": [
@@ -3039,6 +3048,62 @@
     "user": 2,
     "tags": [
       37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 196,
+  "fields": {
+    "title": "pip install\u3067UnicodeDecodeError\u304c\u51fa\u308b\u5bfe\u7b56",
+    "content": "# pip\\compat\\\\_\\_init\\_\\_.py\u306e\u4fee\u6b63\r\n\r\n`locale`\u306eimport\u3092\u8ffd\u52a0\u3057\u3066`console_to_str`\u3092\u4fee\u6b63\uff0e\r\n\r\n```diff\r\nimport os\r\nimport sys\r\n+import locale\r\n\uff1a\r\nif sys.version_info >= (3,):\r\n    def console_to_str(s):\r\n-       try:\r\n-           return s.decode(sys.__stdout__.encoding)\r\n-       except UnicodeDecodeError:\r\n-           return s.decode('utf_8')\r\n+       return s.decode(locale.getpreferredencoding() or 'utf-8', 'replace')\r\n```",
+    "pub_date": "2018-03-31T19:17:48.217Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 197,
+  "fields": {
+    "title": "Git\u3067\u5dee\u5206\u884c\u6570\u3092\u30ab\u30a6\u30f3\u30c8\u3059\u308b\u65b9\u6cd5",
+    "content": "# \u30b7\u30f3\u30d7\u30eb\u306b\u5168\u4f53\u306e\u5dee\u5206\u884c\u6570\u3092\u8868\u793a\u3059\u308b\r\n\r\n`git diff`\u306b`--shortstat`\u30aa\u30d7\u30b7\u30e7\u30f3\u3092\u3064\u3051\u308b\u3068\uff0c\u5168\u4f53\u306e\u5909\u66f4\u30d5\u30a3\u30eb\u6570\u3068\u8ffd\u52a0/\u524a\u9664\u306e\u884c\u6570\u304c\u51fa\u529b\u3055\u308c\u308b\uff0e\r\n\r\n```shell\r\n$ git diff --shortstat dc2b1199f4..master\r\n 362 files changed, 52423 insertions(+), 24979 deletions(-)\r\n```\r\n\r\n# \u5404\u30d5\u30a1\u30a4\u30eb\u3054\u3068\u306e\u5dee\u5206\u884c\u6570\u3092\u8868\u793a\u3059\u308b\r\n\r\n`--numstat`\u30aa\u30d7\u30b7\u30e7\u30f3\u3092\u4f7f\u7528\u3059\u308b\uff0e\r\n\r\n```shell\r\n$ git diff --numstat dc2b1199f4..master\r\n0       3       app/__init__.py\r\n11      0       app/admin.py\r\n5       0       app/apps.py\r\n13      16      app/forms.py\r\n57      4       app/models.py\r\n42      27      app/tests.py\r\n36      0       app/urls.py\r\n194     46      app/views.py\r\n```\r\n\r\n# \u3082\u3046\u5c11\u3057\u30b0\u30e9\u30d5\u30a3\u30ab\u30eb\u306b\u8868\u793a\u3059\u308b\r\n\r\n`--stat`\u30aa\u30d7\u30b7\u30e7\u30f3\u3092\u4f7f\u7528\u3059\u308b\uff0e\r\n\r\n```shell\r\n$ git diff --stat dc2b1199f4..master\r\n app/__init__.py                                    |     3 -\r\n app/admin.py                                       |    11 +\r\n app/apps.py                                        |     5 +\r\n app/forms.py                                       |    29 +-\r\n app/models.py                                      |    61 +-\r\n app/tests.py                                       |    69 +-\r\n app/urls.py                                        |    36 +\r\n app/views.py                                       |   240 +-\r\n```",
+    "pub_date": "2018-04-05T06:53:16.759Z",
+    "user": 2,
+    "tags": [
+      1,
+      32
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 198,
+  "fields": {
+    "title": "reveal.js\u3092PDF\u306b\u5370\u5237",
+    "content": "# reveal.js\u306e\u30b9\u30e9\u30a4\u30c9\u3092PDF\u306b\u5370\u5237\u3059\u308b\r\n\r\n1. URL\u306b`?print-pdf`\u3092\u8ffd\u52a0\u3059\u308b\uff0e\r\n1. \u30b9\u30e9\u30a4\u30c9\u304c\u7e26\u306b\u4e26\u3093\u3067\u8868\u793a\u3055\u308c\u308b\uff0e\r\n1. \u30d6\u30e9\u30a6\u30b6\u304b\u3089PDF\u306b\u5370\u5237\u3059\u308b\uff0e\r\n\r\n## \u53c2\u8003\u4f8b\r\n\r\n* \u901a\u5e38\u7248  \r\n[https://y-tsutsu.github.io/reveal.js-lt-wintools/](https://y-tsutsu.github.io/reveal.js-lt-wintools/)\r\n* PDF\u5370\u5237\u7248  \r\n[https://y-tsutsu.github.io/reveal.js-lt-wintools/?print-pdf](https://y-tsutsu.github.io/reveal.js-lt-wintools/?print-pdf)",
+    "pub_date": "2018-04-05T06:59:24Z",
+    "user": 2,
+    "tags": [
+      63
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 199,
+  "fields": {
+    "title": "Docker\u3092sudo\u306a\u3057\u3067\u4f7f\u3046\u65b9\u6cd5",
+    "content": "# docker\u30b0\u30eb\u30fc\u30d7\u306b\u8ffd\u52a0\u3059\u308b\r\n\r\n\u30e6\u30fc\u30b6\u3092docker\u30b0\u30eb\u30fc\u30d7\u306b\u8ffd\u52a0\u3059\u308b\u3068sudo\u306a\u3057\u3067\u5b9f\u884c\u53ef\u80fd\uff0e\r\n\r\n```shell\r\n$ groups\r\ntsutsu cdrom floppy audio dip video plugdev netdev bluetooth lpadmin scanner docker\r\n$ sudo groupadd docker            # docker\u30b0\u30eb\u30fc\u30d7\u304c\u306a\u3051\u308c\u3070\u4f5c\u6210\u3059\u308b\r\n$ sudo gpasswd -a $USER docker    # \u30e6\u30fc\u30b6\u3092docker\u30b0\u30eb\u30fc\u30d7\u306b\u6240\u5c5e\u3055\u305b\u308b\r\n$ sudo systemctl restart docker\r\n$ exit\r\n```",
+    "pub_date": "2018-04-06T04:16:43.004Z",
+    "user": 2,
+    "tags": [
+      1,
+      62
     ]
   }
 }

@@ -3106,5 +3106,18 @@
       62
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 200,
+  "fields": {
+    "title": "reveal.js\u306e\u4fbf\u5229\u306a\u8a2d\u5b9a\u5909\u66f4",
+    "content": "# reveal.js\u3078\u306e\u8a2d\u5b9a\r\n\r\n* \u5c65\u6b74\u6a5f\u80fd\u306e\u6709\u52b9\u5316\uff08F5\u3092\u62bc\u3057\u3066\u3082\u30da\u30fc\u30b8\u304c\u623b\u3089\u306a\u3044\uff09\r\n* \u30b9\u30e9\u30a4\u30c9\u306e\u30a2\u30cb\u30e1\u30fc\u30b7\u30e7\u30f3\u306e\u5909\u66f4\r\n\r\n```diff\r\n<script>\r\n    Reveal.initialize({\r\n        dependencies: [\r\n            { src: 'plugin/markdown/marked.js' },\r\n            { src: 'plugin/markdown/markdown.js' },\r\n            { src: 'plugin/notes/notes.js', async: true },\r\n            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }\r\n        ],\r\n+\t\thistory: true,\r\n+\t\ttransition: 'convex', // none/fade/slide/convex/concave/zoom\r\n    });\r\n</script>\r\n```\r\n\r\n# Markdown\u3067\u306e\u8a18\u8ff0\u8a2d\u5b9a\r\n\r\n* Markdown\u306e\u6709\u52b9\u5316\r\n* \u30bb\u30d1\u30ec\u30fc\u30bf\u306e\u8a2d\u5b9a\r\n\r\n```diff\r\n<div class=\"reveal\">\r\n    <div class=\"slides\">\r\n+       <section data-markdown data-separator=\"\\n---\\n\" data-separator-vertical=\"\\n--\\n\">\r\n+           <textarea data-template>\r\n+               # XXX\r\n+               ---\r\n+               ## YYY\r\n+               --\r\n+               ### ZZZ\r\n+           </textarea>\r\n+       </section>\r\n    </div>\r\n</div>\r\n```",
+    "pub_date": "2018-05-01T07:46:00.095Z",
+    "user": 2,
+    "tags": [
+      63
+    ]
+  }
 }
 ]

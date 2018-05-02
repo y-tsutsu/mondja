@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.2
+      - image: circleci/python:3
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -23,28 +23,27 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - cache-{{ checksum "Pipfile.lock" }}
+            - cache-
 
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
+            python3 -m pip install --user --upgrade pip
+            python3 -m pip install --user pipenv
+            python3 -m pipenv install --dev
 
       - save_cache:
+          key: cache-{{ checksum "Pipfile.lock" }}
           paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+            - ~/.local
+            - ~/.cache
 
       # run tests!
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
-            python manage.py test
+            python3 -m pipenv run test
 
       - store_artifacts:
           path: test-reports

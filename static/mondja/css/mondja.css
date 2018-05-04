@@ -93,7 +93,7 @@ pre {
 }
 
 #memo-title {
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Arial, sans-serif;
     font-size: 2.2rem;
     color: midnightblue;
     margin-top: initial;
@@ -106,7 +106,7 @@ pre {
 }
 
 #memo-date {
-    font-family: Georgia, "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    font-family: Georgia, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Arial, sans-serif;
 }
 
 #memo-body h1,
@@ -116,12 +116,12 @@ pre {
 #memo-body h5,
 #memo-body h6 {
     margin: 1.0rem 0;
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Arial, sans-serif;
 }
 
 #memo-body p,
 #memo-body li {
-    font-family: "游ゴシック体", "Yu Gothic", YuGothic, Arial, sans-serif;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Arial, sans-serif;
 }
 
 #memo-body h1 {

@@ -2279,7 +2279,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Annotator\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GlassIt-VSC\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\ndonjayamanne.githistory\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nhars.CppSnippets\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nmichelemelluso.code-beautifier\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\npmiossec.vscode-gitextensions\r\nryu1kn.annotator\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Annotator\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GlassIt-VSC\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* sftp\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\ndonjayamanne.githistory\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nhars.CppSnippets\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nliximomo.sftp\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\npmiossec.vscode-gitextensions\r\nryu1kn.annotator\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -3117,6 +3117,48 @@
     "user": 2,
     "tags": [
       63
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 201,
+  "fields": {
+    "title": "Python\u30672\u6b21\u5143\u914d\u5217\u3092\u8ee2\u7f6e",
+    "content": "# 2\u6b21\u5143\u914d\u5217\u306e\u884c\u3068\u5217\u3092\u5165\u308c\u66ff\u3048\u308b\r\n\r\n\u95a2\u6570\u306e\u5f15\u6570\u306b`*`\u3092\u30ea\u30b9\u30c8\u306b\u3064\u3051\u3066\u6e21\u3059\u3068\uff0c\u5206\u89e3\u3055\u308c\u3066\u5f15\u6570\u306b\u6e21\u3055\u308c\u308b\uff0e\r\n\r\n```py\r\na = [[y for y in range(1, 4)] for x in range(3)]\r\nprint(a)\r\nprint(*a, sep='\\n')\r\nb = [x for x in zip(*a)]\r\nprint(b)\r\nprint(*b, sep='\\n')\r\n```\r\n\r\n\u5b9f\u884c\u7d50\u679c\r\n\r\n```shell\r\n$ python spam.py\r\n[[1, 2, 3], [1, 2, 3], [1, 2, 3]]\r\n[1, 2, 3]\r\n[1, 2, 3]\r\n[1, 2, 3]\r\n[(1, 1, 1), (2, 2, 2), (3, 3, 3)]\r\n(1, 1, 1)\r\n(2, 2, 2)\r\n(3, 3, 3)\r\n```",
+    "pub_date": "2018-05-05T00:42:19.747Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 202,
+  "fields": {
+    "title": "Python\u3067\u968e\u4e57\uff0c\u9806\u5217\uff0c\u7d44\u307f\u5408\u308f\u305b",
+    "content": "# \u968e\u4e57\uff0c\u9806\u5217\uff0c\u7d44\u307f\u5408\u308f\u305b\u306e\u7dcf\u6570\u7b97\u51fa\r\n\r\n`math.factorial()`\u3092\u4f7f\u3063\u3066\u305d\u308c\u305e\u308c\u7b97\u51fa\uff0e\r\n\r\n```py\r\nimport math\r\n\r\ndef factorial(n):\r\n    ''' \u968e\u4e57 '''\r\n    return math.factorial(n)\r\n\r\ndef permutations_count(n, r):\r\n    ''' \u9806\u5217 '''\r\n    return math.factorial(n) // math.factorial(n - r)\r\n\r\ndef combinations_count(n, r):\r\n    ''' \u7d44\u307f\u5408\u308f\u305b '''\r\n    return math.factorial(n) // (math.factorial(n - r) * math.factorial(r))\r\n\r\ndef main():\r\n    print(factorial(5))\r\n    print(permutations_count(5, 2))\r\n    print(combinations_count(5, 2))\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```\r\n\r\n\u5b9f\u884c\u7d50\u679c\r\n\r\n```shell\r\n$ python spam.py\r\n120\r\n20\r\n10\r\n```",
+    "pub_date": "2018-05-05T01:00:54.869Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 203,
+  "fields": {
+    "title": "\u7d20\u6570\u5217\u6319\u3068\u7d20\u6570\u5224\u5b9a",
+    "content": "# Python\u3067\u7d20\u6570\u5217\u6319\u3068\u7d20\u6570\u5224\u5b9a\r\n\r\n\u300c\u30a8\u30e9\u30c8\u30b9\u30c6\u30cd\u30b9\u306e\u3075\u308b\u3044\u300d\u3068\u300c\u305f\u3081\u3057\u5272\u308a\u300d\r\n\r\n```py\r\ndef primes(n):\r\n    if n < 2:\r\n        return []\r\n\r\n    primes = [i for i in range(n)]\r\n    primes[1] = 0\r\n\r\n    for i in primes:\r\n        if i > n ** (1 / 2):\r\n            break\r\n        if i == 0:\r\n            continue\r\n        for j in range(i * 2, n, i):\r\n            primes[j] = 0\r\n\r\n    return [x for x in primes if x != 0]\r\n\r\ndef is_prime(n):\r\n    if n < 2:\r\n        return False\r\n    if n == 2 or n == 3 or n == 5:\r\n        return True\r\n    if n % 2 == 0 or n % 3 == 0 or n % 5 == 0:\r\n        return False\r\n\r\n    prime = 7\r\n    step = 4\r\n    while prime <= n ** (1 / 2):\r\n        if n % prime == 0:\r\n            return False\r\n        prime += step\r\n        step = 6 - step\r\n\r\n    return True\r\n\r\ndef main():\r\n    pri = primes(10000)\r\n    print(len(pri))\r\n    print(len([x for x in pri if is_prime(x)]))\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n    '''\r\n    $ python spam.py\r\n    1229\r\n    1229\r\n    '''\r\n```",
+    "pub_date": "2018-05-06T15:56:59.755Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
     ]
   }
 }

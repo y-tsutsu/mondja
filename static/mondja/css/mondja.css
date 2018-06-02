@@ -373,10 +373,10 @@ ul.copyright {
     }
     #memo #totop {
         bottom: 0.5rem;
-        right: 0.18rem;
+        right: 0.3rem;
     }
     #memo #totop>a {
-        font-size: 2.2rem;
+        font-size: 3.2rem;
     }
     #me .pic img {
         display: block;

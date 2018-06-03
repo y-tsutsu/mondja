@@ -239,7 +239,6 @@ ul.copyright {
     padding: 0;
 }
 
-
 /*○ボタン*/
 
 #circle-button {
@@ -255,9 +254,6 @@ ul.copyright {
     background: #c5cae9;
 }
 
-
-/*○ボタン*/
-
 #circle-button i {
     margin: 0;
     border-radius: 50%;
@@ -268,7 +264,6 @@ ul.copyright {
 #circle-button i:before {
     padding: 0;
 }
-
 
 /* define bootstrap 5 columns */
 
@@ -308,7 +303,6 @@ ul.copyright {
     }
 }
 
-
 /* Desktop */
 
 @media screen and (min-width: 737px) {
@@ -341,7 +335,6 @@ ul.copyright {
         line-height: 3.5rem;
     }
 }
-
 
 /* Mobile */
 

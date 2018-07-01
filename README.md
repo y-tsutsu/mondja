@@ -7,8 +7,8 @@
 Simple memo web application.
 
 # Requirements
-* Python: 3.6.5
-* Django: 2.0.6
+* Python: 3.6.6
+* Django: 2.0.7
 
 # Run
 ```
@@ -19,8 +19,8 @@ python manage.py runserver
 Access to http://127.0.0.1:8000/
 
 # Demo
-https://mondja-demo.herokuapp.com  
-* User: admin  
+https://mondja-demo.herokuapp.com
+* User: admin
 * Pass: admin
 
 # Link

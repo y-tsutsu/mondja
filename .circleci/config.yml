@@ -32,6 +32,7 @@ jobs:
             python3 -m pip install --user --upgrade pip
             python3 -m pip install --user pipenv
             python3 -m pipenv install --dev
+            python3 -m pipenv run python manage.py collectstatic
 
       - save_cache:
           key: cache-{{ checksum "Pipfile.lock" }}

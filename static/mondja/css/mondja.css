@@ -8,7 +8,7 @@ h6 {
 }
 
 body {
-    font-size: 1.4em;
+    font-size: 1.6em;
     background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bg.jpg");
     background-repeat: repeat, repeat;
     background-size: auto, 100% 100%;
@@ -27,16 +27,18 @@ pre {
     text-decoration: none;
 }
 
-#me h1 {
+#home h1 {
     font-size: 2.5rem;
 }
 
-#me header>p {
-    font-size: 1.1rem;
+#home.panel.intro header p {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
 }
 
-#me .pic>img {
-    margin-top: -1px;
+#home.panel.intro .pic img {
+    margin: -1px;
+    width: 101%;
     height: 101%;
 }
 
@@ -70,11 +72,7 @@ pre {
 }
 
 #memo .modal-body p {
-    font-size: 1.3rem;
-}
-
-#memo-top .sort-btn {
-    margin: 0;
+    font-size: 1.25rem;
 }
 
 #memo #totop {
@@ -90,6 +88,10 @@ pre {
 
 #memo #totop>a:hover {
     color: #7986CB;
+}
+
+#memo-top .sort-btn {
+    margin: 0;
 }
 
 #memo-title {
@@ -160,7 +162,7 @@ pre {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0.5rem auto;
 }
 
 #memo-body a {
@@ -183,11 +185,6 @@ pre {
 
 #about p {
     font-size: 1.3rem;
-}
-
-div>#myabout {
-    padding-left: 1.0rem;
-    padding-right: 1.0rem;
 }
 
 textarea.mydialog {
@@ -213,6 +210,15 @@ textarea.mydialog {
     font-size: 1.5rem;
 }
 
+.mylogin .mycontrol {
+    padding-bottom: 1.5rem;
+}
+
+.mylogin .mysociallogin {
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 .my403 p,
 .my404 p,
 .my500 p {
@@ -223,20 +229,6 @@ textarea.mydialog {
 .my404 .alert,
 .my500 .alert {
     font-size: 2.3rem;
-}
-
-.mylogin .mycontrol {
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-}
-
-.mysociallogin {
-    width: 100%;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-ul.copyright {
-    padding: 0;
 }
 
 /*○ボタン*/
@@ -259,10 +251,14 @@ ul.copyright {
     border-radius: 50%;
     background: #7986cb;
     text-align: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.5rem;
 }
 
 #circle-button i:before {
     padding: 0;
+    line-height: 3.5rem;
 }
 
 /* define bootstrap 5 columns */
@@ -312,27 +308,12 @@ ul.copyright {
     pre>code {
         font-size: 0.9rem;
     }
-    .mylogin,
-    .my403,
-    .my404,
-    .my500 {
-        margin-top: -6.5rem;
-    }
     #memo .modal-footer button {
         width: 6.0rem;
     }
     #memo #totop {
         bottom: 0.5rem;
         right: 0.5rem;
-    }
-    /*○ボタン*/
-    #circle-button i {
-        width: 3.5rem;
-        height: 3.5rem;
-        line-height: 3.5rem;
-    }
-    #circle-button i:before {
-        line-height: 3.5rem;
     }
 }
 
@@ -344,12 +325,6 @@ ul.copyright {
     }
     pre>code {
         font-size: 1.1rem;
-    }
-    .mylogin,
-    .my403,
-    .my404,
-    .my500 {
-        margin-top: 6.0rem;
     }
     #memo .modal-footer button {
         width: 8.5rem;
@@ -370,20 +345,5 @@ ul.copyright {
     }
     #memo #totop>a {
         font-size: 3.2rem;
-    }
-    #me .pic img {
-        display: block;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /*○ボタン*/
-    #circle-button i {
-        width: 3.8rem;
-        height: 3.8rem;
-        line-height: 3.8rem;
-    }
-    #circle-button i:before {
-        line-height: 3.8rem;
     }
 }

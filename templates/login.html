@@ -1,52 +1,53 @@
-{% extends "layout.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
 
-{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>_mondja_py_( ..)φ</title>
 
-    <!-- Main -->
-    <div id="main" class="mylogin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'mondja/css/mondja.css' %}" />
+</head>
 
-        <!-- Login -->
-        <article id="login" class="panel">
-            <header>
-                <h1>Log-in to mondja</h1>
-                {% if form.errors %}
-                    <p id="error">Incorrect username or password.</p>
-                {% else %}
-                    <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
-                {% endif %}
-            </header>
-
-            <form method="post" action="{% url 'login' %}" role="form">
-            {% csrf_token %}
-                <div>
+<body>
+    <div class="container" id="mylogin">
+        <div class="card z-depth-5">
+            <div class="card-content">
+                <span class="card-title">Log-in to mondja</span>
+                <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
+                <form method="post" action="{% url 'login' %}" role="form">
+                    {% csrf_token %}
+                    <div class="input-field col s6">
+                        <input id="username" name="username" type="text" class="validate" maxlength="254" required>
+                        <label for="username">User Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="password" name="password" type="password" class="validate" maxlength="256" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <button class="btn waves-effect waves-light black" type="submit" name="action">Log-in</button>
+                </form>
+            </div>
+            {% if ENABLED_SOCIAL_AUTH %}
+                <div class="card-action">
                     <div class="row">
-                        <div class="12u$ mycontrol">
-                            <input id="id_username" maxlength="254" name="username" type="text" class="form-control" placeholder="User ID" aria-describedby="sizing-addon1" autofocus required />
+                        <div class="col s6" style="text-align: center;">
+                            <a href="{% url 'social:begin' 'facebook' %}">Facebook</a>
                         </div>
-                        <div class="12u$ mycontrol">
-                            <input id="id_password" maxlength="256" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" required />
+                        <div class="col s6" style="text-align: center;">
+                            <a href="{% url 'social:begin' 'twitter' %}">Twitter</a>
                         </div>
-                        <div class="12u$ mycontrol">
-                            <input type="submit" value="Log-in" />
-                        </div>
-                        {% if ENABLED_SOCIAL_AUTH %}
-                            <div class="12u$ mycontrol">
-                                <div class="row">
-                                    <div class="col-md-6 col-xs-6">
-                                        <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fab fa-facebook fa-lg fa-fw"></i>Facebook</button>
-                                    </div>
-                                    <div class="col-md-6 col-xs-6">
-                                        <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fab fa-twitter fa-lg fa-fw"></i>Twitter</button>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
-                <input type="hidden" name="next" value="{{ next }}" />
-            </form>
-        </article>
-
+            {% endif %}
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- <script src="{% static 'mondja/js/mondja.js' %}"></script> -->
+</body>
 
-{% endblock %}
+</html>

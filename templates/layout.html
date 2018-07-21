@@ -8,8 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>_mondja_py_( ..)φ</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'material-design-icons/iconfont/material-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'highlight/css/dracula.css' %}" />
     <link rel="stylesheet" href="{% static 'mondja/css/mondja.css' %}" />
 </head>
 
@@ -21,7 +22,9 @@
 
     <!-- Scripts -->
     <script src="{% static 'mondja/js/social-auth.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="{% static 'jquery/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'materialize/js/materialize.min.js' %}"></script>
+    <script src="{% static 'highlight/js/highlight.pack.js' %}"></script>
     <script src="{% static 'mondja/js/mondja.js' %}"></script>
 </body>
 

@@ -41,6 +41,38 @@ body {
     height: auto;
     vertical-align: middle;
 }
+
+/* Chromeの入力補完の黄色背景を無効化 */
+/* to get ride of the yellow color in chrome */
+input[type]:-webkit-autofill,
+input[type]:-webkit-autofill:hover,
+input[type]:-webkit-autofill:focus,
+input[type]:-webkit-autofill:active {
+    transition: background-color 5500s ease-in-out 0s;
+    -webkit-box-shadow: inset 0 0 0 500px transparent;
+}
+
+/* Materialize fix labels overlapping */
+input[type]:-webkit-autofill + label{
+    -webkit-transform: translateY(-140%);
+    transform: translateY(-140%);
+}
+
+/* fix clicking label does not activate text input */
+.input-field label {
+    pointer-events: all;
+}
+
+.col-1-5,
+.col-1-5,
+.col-1-5,
+.col-1-5 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 20%;
+    float: left;
 }
 
 /* Desktop */

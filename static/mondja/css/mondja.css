@@ -35,6 +35,12 @@ body {
 .my-navbar {
     margin-bottom: 2.0rem;
 }
+
+.memo-title img {
+    width: 3.0rem;
+    height: auto;
+    vertical-align: middle;
+}
 }
 
 /* Desktop */

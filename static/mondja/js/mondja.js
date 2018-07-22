@@ -36,7 +36,4 @@ $('.modal').on('shown.bs.modal', function () {
 hljs.initHighlightingOnLoad();
 
 // Sidenav
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems, 'edge');
-});
+M.AutoInit();

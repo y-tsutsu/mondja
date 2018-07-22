@@ -8,9 +8,7 @@ h6 {
 }
 
 body {
-    background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bg.jpg");
-    background-repeat: repeat, repeat;
-    background-size: auto, 100% 100%;
+    background-color: #efebe9;
 }
 
 .my-oneview {
@@ -25,13 +23,18 @@ body {
     padding-bottom: 0.5rem;
 }
 
+.my-login .card .my-social-link {
+    text-align: center;
+}
+
 .my-footer {
     text-align: center;
     padding-top: 1.0rem;
 }
 
 .my-navbar {
-    height: 10rem;
+    height: 15rem;
+}
 }
 
 /* Desktop */

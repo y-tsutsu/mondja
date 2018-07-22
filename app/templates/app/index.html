@@ -1,55 +1,118 @@
 {% extends "layout.html" %}
-
 {% block content %}
-
-<!-- Nav -->
-    <nav id="nav">
-        <a href="#me" class="fas fa-home active"><span>Home</span></a>
-        <a href="#memo" class="far fa-sticky-note"><span>Memo</span></a>
-        <a href="#about" class="far fa-smile"><span>About</span></a>
-        <a href="https://github.com/y-tsutsu/mondja" class="fab fa-github" target="_blank"><span>GitHub</span></a>
-        <a href="/logout/" class="fas fa-sign-out-alt"><span>Log-out</span></a>
-    </nav>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- Me -->
-        <article id="me" class="panel">
-            <header>
-                <h1>_mondja_py_( ..)φ</h1>
-                <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
-            </header>
-            <a href="#memo" class="jumplink pic">
-                <span class="arrow icon fa-chevron-right"><span>See my memo</span></span>
-                <img src="{{ STATIC_URL }}images/me.jpg" alt="" />
-            </a>
-        </article>
-
-        <!-- Memo -->
-        {% include 'app/memo.html' %}
-
-        <!-- About -->
-        <article id="about" class="panel">
-            <header>
-                <h1>_mondja_py_( ..)φ</h1>
-            </header>
-            <div class="row">
-                <div class="12u 12u$(mobile)" id="myabout">
-                    <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes or shou'd I?</p>
-                    <pre><code class="python"># Python3: Fibonacci series up to n
-In [1]: def fib(n):
-   ...:     a, b  = 0, 1
-   ...:     while a < n:
-   ...:         print(a, end=' ')
-   ...:         a, b = b, a+b
-   ...:     print()
-   ...: fib(1000)
-0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</code></pre>
+{% include 'app/navbar.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
                 </div>
             </div>
-        </article>
-
+        </div>
     </div>
 
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
 {% endblock %}

@@ -1,37 +1,41 @@
-{% extends "layout.html" %}
-{% block content %}
-{% load myfilter %}
-{% include 'app/navbar.html' %}
+{% extends "layout.html" %} {% block content %} {% load myfilter %} {% include 'app/navbar.html' %}
 <div class="container">
     {% for item in all_memo.object_list %}
-    <div class="card indigo lighten-5 z-depth-3">
+    <div class="card my-memo-card indigo lighten-5 z-depth-3">
         <div class="card-content black-text">
-            <span class="card-title memo-title">
+            <span class="card-title my-memo-title">
                 <img src="{{ MEDIA_URL }}identicon/{{ item.user.username }}.png" /> {{ item.title }}
             </span>
             <div class="row">
-                <div class="col s8">
+                <div class="col s9 my-memo-date">
                     <i class="far fa-calendar-alt fa-lg fa-fw"></i>{{ item.pub_date }}
                 </div>
                 {% ifequal user item.user %}
-                <div class="col s4" style="text-align: right">
-                    <button class="btn waves-effect waves-light btn-small" data-target="#myModalEdit{{ item.id }}">
-                        <i class="material-icons">add</i>
+                <div class="col s3" style="text-align: right">
+                    <button class="dropdown-trigger btn waves-effect waves-light indigo" href="#" data-target="dropdown-memo">
+                        <i class="material-icons">note</i>
                     </button>
-                    <button class="btn waves-effect waves-light btn-small" data-target="#myModalDelete{{ item.id }}">
-                        <i class="material-icons">add</i>
-                    </button>
+                    <ul id='dropdown-memo' class='dropdown-content'>
+                        <li>
+                            <a href="#!" data-target="#my-memo-modal-edit-{{ item.id }}">
+                                <i class="material-icons left">edit</i>EDIT</a>
+                        </li>
+                        <li>
+                            <a href="#!" data-target="#my-memo-modal-delete-{{ item.id }}">
+                                <i class="material-icons left">delete</i>DELETE</a>
+                        </li>
+                    </ul>
                 </div>
                 {% endifequal %}
             </div>
             <hr>
-            <div>
+            <div class="my-memo-body">
                 {{ item.content | markdown2html | safe }}
             </div>
             <hr>
             <div>
                 {% for tag in item.tags.all %}
-                <div class="chip {{ tag.get_label_classname }} white-text">
+                <div class="chip {{ tag.get_color }} white-text">
                     {{ tag }}
                 </div>
                 {% endfor %}
@@ -40,5 +44,4 @@
     </div>
     {% endfor%}
 </div>
-{% include 'footer.html' %}
-{% endblock %}
+{% include 'footer.html' %} {% endblock %}

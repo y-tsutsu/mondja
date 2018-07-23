@@ -16,23 +16,22 @@ class Tag(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-    def get_label_classname(self):
-        return 'label label-' + self.get_toggle_onstyle()
-
-    def get_toggle_onstyle(self):
+    def get_color(self):
         n = hash(self)
-        if n % 6 == 0:
-            return 'default'
-        elif n % 6 == 1:
-            return 'primary'
-        elif n % 6 == 2:
-            return 'success'
-        elif n % 6 == 3:
-            return 'info'
-        elif n % 6 == 4:
-            return 'warning'
+        if n % 7 == 0:
+            return 'red'
+        elif n % 7 == 1:
+            return 'purple'
+        elif n % 7 == 2:
+            return 'blue'
+        elif n % 7 == 3:
+            return 'cyan'
+        elif n % 7 == 4:
+            return 'green'
+        elif n % 7 == 5:
+            return 'yellow'
         else:
-            return 'danger'
+            return 'orange'
 
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True

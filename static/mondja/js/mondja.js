@@ -27,13 +27,8 @@ $(function () {
     });
 });
 
-// Every time a modal is shown, if it has an autofocus element, focus on it.
-$('.modal').on('shown.bs.modal', function () {
-    $(this).find('[autofocus]').focus();
-});
-
 // highlight.js initialize
 hljs.initHighlightingOnLoad();
 
-// Sidenav
+// Materialize
 M.AutoInit();

@@ -36,14 +36,28 @@ body {
     margin-bottom: 2.0rem;
 }
 
-.memo-title img {
+.my-memo-title img {
     width: 3.0rem;
     height: auto;
     vertical-align: middle;
 }
 
+.my-memo-date {
+    font-family: Georgia, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+.my-memo-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Chromeの入力補完の黄色背景を無効化 */
+
 /* to get ride of the yellow color in chrome */
+
 input[type]:-webkit-autofill,
 input[type]:-webkit-autofill:hover,
 input[type]:-webkit-autofill:focus,
@@ -53,12 +67,14 @@ input[type]:-webkit-autofill:active {
 }
 
 /* Materialize fix labels overlapping */
-input[type]:-webkit-autofill + label{
+
+input[type]:-webkit-autofill+label {
     -webkit-transform: translateY(-140%);
     transform: translateY(-140%);
 }
 
 /* fix clicking label does not activate text input */
+
 .input-field label {
     pointer-events: all;
 }
@@ -78,8 +94,16 @@ input[type]:-webkit-autofill + label{
 /* Desktop */
 
 @media screen and (min-width: 737px) {
+    html {
+        font-size: 100%;
+    }
     .my-oneview-body {
         width: 70%;
+    }
+    .my-memo-card {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
     }
 }
 

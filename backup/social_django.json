@@ -6,7 +6,7 @@
     "user": 4,
     "provider": "facebook",
     "uid": "1522838797821828",
-    "extra_data": "{\"auth_time\": 1531679815, \"id\": \"1522838797821828\", \"expires\": 5179002, \"granted_scopes\": [\"public_profile\"], \"denied_scopes\": null, \"access_token\": \"EAAFjtbFKVwQBAJH7gI3IwBWS14JG5oZABbrP6STyOQ4IbpSCpwlSHJWWpmFJspgLMIrRWS2ceoxFe2mKfF2taiwF9SJQbvCnFSOZCZAXDikxJ4rawawgBaL0YezP5twZBAHuONFeXZC4eIFZBBmd2rzClckUYfoa0AnpgYHzC1NQZDZD\", \"token_type\": null}"
+    "extra_data": "{\"auth_time\": 1541130556, \"id\": \"1522838797821828\", \"expires\": 5183999, \"granted_scopes\": [\"public_profile\"], \"denied_scopes\": null, \"access_token\": \"EAAFjtbFKVwQBAEB2dxuWZCA8MRWb5xXkUn0D04YpUZBtoqVD7TjQN65ZCZAdUPldGU2aJSBrZCDqVFZAXMovaZBb1IKAMOsR8kd4lFfredtvqBU2JC6LyZBmIaDjRIs9nUl3ivbRLt0a9sFXT9QcKeth5M8tNsHtZC5k8cmNQwuN3wAZDZD\", \"token_type\": null}"
   }
 },
 {
@@ -16,7 +16,7 @@
     "user": 5,
     "provider": "twitter",
     "uid": "3277361576",
-    "extra_data": "{\"auth_time\": 1531679825, \"id\": 3277361576, \"access_token\": {\"oauth_token\": \"3277361576-smbvxNmxX6ty9c99uhEczXbL930QUQFfkXepHps\", \"oauth_token_secret\": \"QvkATsnFkrAXGUbu7p1PbQISiQPLDhOtYky6K7zccdAo2\", \"user_id\": \"3277361576\", \"screen_name\": \"tsutsu09282\"}}"
+    "extra_data": "{\"auth_time\": 1541130564, \"id\": 3277361576, \"access_token\": {\"oauth_token\": \"3277361576-smbvxNmxX6ty9c99uhEczXbL930QUQFfkXepHps\", \"oauth_token_secret\": \"QvkATsnFkrAXGUbu7p1PbQISiQPLDhOtYky6K7zccdAo2\", \"user_id\": \"3277361576\", \"screen_name\": \"tsutsu09282\"}}"
   }
 }
 ]

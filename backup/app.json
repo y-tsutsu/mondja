@@ -2279,7 +2279,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GitLens\r\n* GlassIt-VSC\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* sftp\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\ndonjayamanne.githistory\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nhars.CppSnippets\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nliximomo.sftp\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\npmiossec.vscode-gitextensions\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C/C++ Snippets\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GitLens\r\n* GlassIt-VSC\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* sftp\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\ndonjayamanne.githistory\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nhars.CppSnippets\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nliximomo.sftp\r\nmechatroner.rainbow-csv\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\npmiossec.vscode-gitextensions\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -3173,6 +3173,20 @@
     "tags": [
       1,
       2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 205,
+  "fields": {
+    "title": "DockerHub\u306e\u30a4\u30e1\u30fc\u30b8\u306e\u30bf\u30b0\u4e00\u89a7",
+    "content": "# DockerHub\u306e\u30ec\u30b8\u30b9\u30c8\u30ea\u306eAPI\u3092\u76f4\u306b\u53e9\u3044\u3066\u60c5\u5831\u3092\u53d6\u5f97\u3059\u308b\u65b9\u6cd5\r\n\r\n```console\r\n$ curl -s https://registry.hub.docker.com/v1/repositories/<\u30a4\u30e1\u30fc\u30b8\u540d>/tags | sed \"s/,/\\n/g\" | grep name | cut -d '\"' -f 4\r\n```",
+    "pub_date": "2018-07-20T04:13:12.163Z",
+    "user": 2,
+    "tags": [
+      1,
+      62
     ]
   }
 }

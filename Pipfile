@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "==2.0.8"
 django-heroku = "*"
 django-pure-pagination = "*"
 docutils = "*"
@@ -18,7 +19,7 @@ social-auth-app-django = "*"
 rope = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7.0"
 
 [scripts]
 start = "python manage.py runserver"

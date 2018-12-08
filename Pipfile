@@ -20,7 +20,7 @@ rope = "*"
 "flake8" = "*"
 
 [requires]
-python_version = "3.7.1"
+python_version = "3.7"
 
 [scripts]
 start = "python manage.py runserver"

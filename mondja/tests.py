@@ -1,4 +1,4 @@
-from django.contrib.auth.views import login, logout
+from django.contrib.auth.views import LoginView, LogoutView
 from django.core.management import call_command
 from django.shortcuts import resolve_url
 from django.test import TestCase
@@ -14,11 +14,11 @@ class UrlResolveTests(TestCase):
 
     def test_url_login(self):
         found = resolve('/login/')
-        self.assertEqual(found.func, login)
+        self.assertEqual(found.view_name, 'login')
 
     def test_url_logout(self):
         found = resolve('/logout/')
-        self.assertEqual(found.func, logout)
+        self.assertEqual(found.view_name, 'logout')
 
 
 class ViewTests(TestCase):

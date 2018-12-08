@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import static, url
 from django.contrib import admin
-from django.contrib.auth.views import login, logout
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import include, path
 from django.views.generic import RedirectView
 from social_django import urls as sclurls
@@ -31,10 +31,10 @@ urlpatterns = [
     path('dumpdata/<str:app_name>/', dumpdata.dumpdata_app, name='dumpdata_app'),
 
     # Log-in:
-    path('login/', login, {'template_name': 'login.html'}, name='login'),
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
 
     # Log-out:
-    path('logout/', logout, {'next_page': '/'}, name='logout'),
+    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
 
     # Admin Doc
     path('admin/doc/', include('django.contrib.admindocs.urls')),

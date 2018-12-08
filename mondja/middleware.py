@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.contrib.auth.views import login
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.deprecation import MiddlewareMixin
@@ -19,7 +18,7 @@ class MondjaMiddleware(MiddlewareMixin):
                 create_identicon(item.username)
 
         # ログインしている状態でloginページがリクエストされた場合はHomeにredirectする
-        if request.path == reverse(login) and request.method == 'GET' and request.user.is_authenticated:
+        if request.path == reverse('login') and request.method == 'GET' and request.user.is_authenticated:
             # 例外としてuser_passes_test(is_staff)でredirectされた場合はHomeにredirectしない
             if request.GET.get('need_staff') and not request.user.is_staff:
                 pass

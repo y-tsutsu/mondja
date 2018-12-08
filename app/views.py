@@ -4,10 +4,9 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.db.models import Count
-from django.http import HttpRequest
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from pure_pagination import EmptyPage, PageNotAnInteger, Paginator
+from pure_pagination import PageNotAnInteger, Paginator
 
 from .forms import MemoForm, TagForm
 from .models import Memo, Tag

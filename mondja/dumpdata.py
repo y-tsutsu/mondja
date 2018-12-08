@@ -1,8 +1,7 @@
 from django.conf import settings
 from django.contrib.auth.decorators import user_passes_test
 from django.core.management import call_command
-from django.http import HttpRequest
-from django.shortcuts import *
+from django.shortcuts import HttpResponseRedirect
 
 
 @user_passes_test(lambda u: u.is_staff, login_url=settings.LOGIN_URL + '?need_staff=True')

@@ -16,9 +16,9 @@ python-social-auth = "*"
 social-auth-app-django = "*"
 
 [dev-packages]
-"autopep8" = "*"
+autopep8 = "*"
+flake8 = "*"
 rope = "*"
-"flake8" = "*"
 
 [requires]
 python_version = "3.7"

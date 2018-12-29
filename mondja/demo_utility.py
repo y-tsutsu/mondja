@@ -10,13 +10,9 @@ def create_user(username, email, password):
     user.save()
 
 
-def create_demo_user(use_dotenv=False):
+def create_demo_user():
     root = os.path.abspath(os.path.dirname(__file__)).strip('mondja')
     sys.path.append(root)
-
-    if use_dotenv:
-        import dotenv
-        dotenv.read_dotenv(os.path.join(root, '.env'))
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mondja.settings')
 

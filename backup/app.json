@@ -583,8 +583,8 @@
     "pub_date": "2015-08-09T14:46:01.320Z",
     "user": 2,
     "tags": [
-      1,
       8,
+      1,
       9
     ]
   }
@@ -912,8 +912,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      21,
-      13
+      13,
+      21
     ]
   }
 },
@@ -3236,8 +3236,22 @@
     "pub_date": "2018-12-16T14:07:42.402Z",
     "user": 2,
     "tags": [
+      64,
+      1
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 209,
+  "fields": {
+    "title": "pip install\u3067\u30a8\u30e9\u30fc",
+    "content": "# New XPS 13\u3067pip install\u3059\u308b\u3068\u30a8\u30e9\u30fc\u304c\u51fa\u308b\r\n\r\n```console\r\n'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /simple/pip/\r\n```\r\n\r\n## \u5bfe\u51e6\u65b9\u6cd5\r\n\r\nNew XPS 13\u306b\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3055\u308c\u3066\u3044\u308b\u300cKiller Control Center\u300d\u306e\u300cAdvanced Stream Detect\u300d\u3092\u7121\u52b9\u5316\u3059\u308b\u3068\u30a8\u30e9\u30fc\u304c\u51fa\u306a\u304f\u306a\u308b\uff0e",
+    "pub_date": "2019-01-17T13:32:35.281Z",
+    "user": 2,
+    "tags": [
       1,
-      64
+      2
     ]
   }
 }

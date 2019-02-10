@@ -912,8 +912,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      13,
-      21
+      21,
+      13
     ]
   }
 },
@@ -3218,7 +3218,7 @@
   "pk": 207,
   "fields": {
     "title": "\u30d0\u30c3\u30c1\u30d5\u30a1\u30a4\u30eb\u3067\u30b3\u30de\u30f3\u30c9\u5b9f\u884c\u7d50\u679c\u3092\u5909\u6570\u306b\u53d7\u3051\u53d6\u308b",
-    "content": "# Git\u306e\u30b3\u30df\u30c3\u30c8\u30cf\u30c3\u30b7\u30e5\u5024\u3092\u53d6\u5f97\u3059\u308b\u4f8b\r\n\r\nfor\u6587\u306b\u300cusebackq\u300d\u30aa\u30d7\u30b7\u30e7\u30f3\u3092\u6307\u5b9a\u3057\u3066\uff0cIN\u3067\u6307\u5b9a\u3059\u308b\u30b3\u30de\u30f3\u30c9\u306b\u30d0\u30c3\u30af\u30af\u30a9\u30fc\u30c6\u30fc\u30b7\u30e7\u30f3\u3067\u304f\u304f\u308b\uff0e\r\n\r\n```console\r\nfor /f \"usebackq tokens=*\" %%i in (`git rev-parse HEAD`) do @set GIT_COMMIT_HASH=%%i\r\necho __version__ = '%GIT_COMMIT_HASH%' > __version__.py\r\n```",
+    "content": "# Git\u306e\u30b3\u30df\u30c3\u30c8\u30cf\u30c3\u30b7\u30e5\u5024\u3092\u53d6\u5f97\u3059\u308b\u4f8b\r\n\r\nfor\u6587\u306b\u300cusebackq\u300d\u30aa\u30d7\u30b7\u30e7\u30f3\u3092\u6307\u5b9a\u3057\u3066\uff0cIN\u3067\u6307\u5b9a\u3059\u308b\u30b3\u30de\u30f3\u30c9\u306b\u30d0\u30c3\u30af\u30af\u30a9\u30fc\u30c6\u30fc\u30b7\u30e7\u30f3\u3067\u304f\u304f\u308b\uff0e\r\n\r\n```bat\r\nfor /f \"usebackq tokens=*\" %%i in (`git rev-parse HEAD`) do @set GIT_COMMIT_HASH=%%i\r\necho __version__ = '%GIT_COMMIT_HASH%' > __version__.py\r\n```",
     "pub_date": "2018-12-14T07:41:11.501Z",
     "user": 2,
     "tags": [
@@ -3248,6 +3248,47 @@
     "title": "pip install\u3067\u30a8\u30e9\u30fc",
     "content": "# New XPS 13\u3067pip install\u3059\u308b\u3068\u30a8\u30e9\u30fc\u304c\u51fa\u308b\r\n\r\n```console\r\n'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /simple/pip/\r\n```\r\n\r\n## \u5bfe\u51e6\u65b9\u6cd5\r\n\r\nNew XPS 13\u306b\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3055\u308c\u3066\u3044\u308b\u300cKiller Control Center\u300d\u306e\u300cAdvanced Stream Detect\u300d\u3092\u7121\u52b9\u5316\u3059\u308b\u3068\u30a8\u30e9\u30fc\u304c\u51fa\u306a\u304f\u306a\u308b\uff0e",
     "pub_date": "2019-01-17T13:32:35.281Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 210,
+  "fields": {
+    "title": "WSL\u306eUbuntu\u74b0\u5883\u3092\u65e5\u672c\u8a9e\u5316",
+    "content": "# apt\u306e\u30ea\u30dd\u30b8\u30c8\u30ea\u3092\u65e5\u672c\u306b\u5909\u66f4\r\n\r\n```console\r\n$ sudo sed -i.bak -e \"s/http:\\/\\/archive\\.ubuntu\\.com/http:\\/\\/jp\\.archive\\.ubuntu\\.com/g\" /etc/apt/sources.list\r\n$ sudo apt update\r\n$ sudo apt upgrade\r\n```\r\n\r\n# \u65e5\u672c\u8a9e\u8a00\u8a9e\u30d1\u30c3\u30af\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```console\r\n$ sudo apt install language-pack-ja\r\n```\r\n\r\n# \u30ed\u30b1\u30fc\u30eb\u3092\u65e5\u672c\u8a9e\u306b\u8a2d\u5b9a\uff08\u7d42\u308f\u3063\u305f\u3089\u518d\u8d77\u52d5\uff09\r\n\r\n```console\r\n$ sudo update-locale LANG=ja_JP.UTF8\r\n```\r\n\r\n# \u30bf\u30a4\u30e0\u30be\u30fc\u30f3\u3092JST\u306b\u8a2d\u5b9a\r\n\r\n```console\r\n$ sudo dpkg-reconfigure tzdata\r\n```\r\n\r\n# \u65e5\u672c\u8a9e\u30de\u30cb\u30e5\u30a2\u30eb\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n\r\n```console\r\n$ sudo apt install manpages-ja manpages-ja-dev\r\n```",
+    "pub_date": "2019-01-20T10:29:42.009Z",
+    "user": 2,
+    "tags": [
+      1,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 211,
+  "fields": {
+    "title": "PC\u8d77\u52d5\u6642\u306b\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30c9\u30e9\u30a4\u30d6\u304c\u5207\u65ad\u3055\u308c\u308b\u554f\u984c\u306e\u89e3\u6c7a",
+    "content": "# \u30b9\u30af\u30ea\u30d7\u30c8\u304b\u3089\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30c9\u30e9\u30a4\u30d6\u306e\u63a5\u7d9a\u3092\u884c\u3046\r\n\r\n\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30c9\u30e9\u30a4\u30d6\u3078\u306e\u63a5\u7d9a\u3092\u884c\u3046vbs\u30b9\u30af\u30ea\u30d7\u30c8\u3092\u30b9\u30bf\u30fc\u30c8\u30a2\u30c3\u30d7\u304b\u3089\u5b9f\u884c\u3059\u308b\uff0ePC\u306e\u518d\u8d77\u52d5\u6642\u306a\u3069\u3059\u3067\u306b\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u30c9\u30e9\u30a4\u30d6\u306b\u63a5\u7d9a\u3067\u304d\u3066\u3044\u308b\u3068\u304d\u306f\u30a8\u30e9\u30fc\u304c\u51fa\u308b\u305f\u3081`On Error Resume Next`\u3067\u30a8\u30e9\u30fc\u3092\u7121\u8996\u3059\u308b\u3088\u3046\u306b\u3059\u308b\uff0e\r\n\r\n```vbs\r\nWScript.sleep 3000\r\nSet objNetwork = CreateObject(\"WScript.Network\")\r\nOn Error Resume Next\r\nobjNetWork.MapNetworkDrive \"X:\",\"\\\\192.168.11.2\\disk\"\r\nobjNetWork.MapNetworkDrive \"Y:\",\"\\\\192.168.11.10\\share\"\r\nobjNetWork.MapNetworkDrive \"Z:\",\"\\\\192.168.11.20\\share\"\r\n```",
+    "pub_date": "2019-02-17T09:22:14.124Z",
+    "user": 2,
+    "tags": [
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 212,
+  "fields": {
+    "title": "\u30d1\u30b9\u30ef\u30fc\u30c9\u306e\u751f\u6210\u30b9\u30af\u30ea\u30d7\u30c8",
+    "content": "# \u30e9\u30f3\u30c0\u30e0\u306a\u6587\u5b57\u5217\u3092\u751f\u6210\u3059\u308bPython\u306eOne-liner\r\n\r\n```bat\r\npython -c \"import random, string, pyperclip; pyperclip.copy(''.join([random.choice(string.ascii_letters + string.digits) for i in range(10)]))\"\r\n```",
+    "pub_date": "2019-02-18T00:56:34.103Z",
     "user": 2,
     "tags": [
       1,

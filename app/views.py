@@ -19,18 +19,18 @@ def home(request):
 
     if types == 'sort':
         sort_item = request.GET.get('sort_item')
-        if sort_item is not '' and request.GET.get('sort_op') == 'desc':
+        if sort_item != '' and request.GET.get('sort_op') == 'desc':
             sort_item = '-' + sort_item
 
         sort_tag_id = request.GET.get('sort_tag_id')
-        all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(
+        all_memo = Memo.objects.all() if sort_tag_id == '' else Tag.objects.get(
             id=sort_tag_id).memo_set.all()
 
         sort_user_id = request.GET.get('sort_user_id')
-        if sort_user_id is not '':
+        if sort_user_id != '':
             all_memo = all_memo.filter(user=User.objects.get(id=sort_user_id))
 
-        if sort_item is '':
+        if sort_item == '':
             all_memo = all_memo.order_by('-pub_date')
         else:
             all_memo = all_memo.order_by(sort_item)
@@ -41,19 +41,19 @@ def home(request):
         search_tag_id = request.GET.get('search_tag_id')
         search_user_id = request.GET.get('search_user_id')
 
-        all_memo = Memo.objects.all() if search_tag_id is '' else Tag.objects.get(
+        all_memo = Memo.objects.all() if search_tag_id == '' else Tag.objects.get(
             id=search_tag_id).memo_set.all()
 
-        if search_user_id is not '':
+        if search_user_id != '':
             user = User.objects.get(id=search_user_id)
             all_memo = all_memo.filter(user=user)
 
-        if search_title is not '' and search_content is not '':
+        if search_title != '' and search_content != '':
             all_memo = all_memo.filter(
                 title__icontains=search_title, content__icontains=search_content)
-        elif search_title is not '':
+        elif search_title != '':
             all_memo = all_memo.filter(title__icontains=search_title)
-        elif search_content is not '':
+        elif search_content != '':
             all_memo = all_memo.filter(content__icontains=search_content)
         else:
             pass

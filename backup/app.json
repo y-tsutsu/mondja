@@ -912,8 +912,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      21,
-      13
+      13,
+      21
     ]
   }
 },
@@ -3232,7 +3232,7 @@
   "pk": 208,
   "fields": {
     "title": "Go\u306e\u74b0\u5883\u8a2d\u5b9a",
-    "content": "# \u306f\u3058\u3081\u306b\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u30c4\u30fc\u30eb\r\n\r\n```console\r\n$ go get -u github.com/motemen/gore\r\n$ go get -u github.com/nsf/gocode\r\n$ go get -u github.com/k0kubun/pp\r\n$ go get -u golang.org/x/tools/cmd/godoc\r\n$ go get -u github.com/jessevdk/go-assets-builder\r\n```\r\n\r\n# vscode\u304b\u3089\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3067\u304d\u308b\u30c4\u30fc\u30eb\r\n\r\n`Go: Install/update Tools`\u304b\u3089\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3067\u304d\u308b\uff0e\r\n\r\n* github.com/mdempsky/gocode\r\n* github.com/uudashr/gopkgs/cmd/gopkgs\r\n* github.com/ramya-rao-a/go-outline\r\n* github.com/acroca/go-symbols\r\n* golang.org/x/tools/cmd/guru\r\n* golang.org/x/tools/cmd/gorename\r\n* github.com/derekparker/delve/cmd/dlv\r\n* github.com/stamblerre/gocode\r\n* github.com/rogpeppe/godef\r\n* github.com/ianthehat/godef\r\n* github.com/sqs/goreturns\r\n* golang.org/x/lint/golint\r\n* github.com/cweill/gotests/...\r\n* github.com/fatih/gomodifytags\r\n* github.com/josharian/impl\r\n* github.com/davidrjenni/reftools/cmd/fillstruct\r\n* github.com/haya14busa/goplay/cmd/goplay\r\n\r\n# \u5225\u9014\u30d0\u30a4\u30ca\u30ea\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3057\u3066\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u30c4\u30fc\u30eb\r\n\r\n* ghq  \r\n[https://github.com/motemen/ghq](https://github.com/motemen/ghq)\r\n* peco  \r\n[https://github.com/peco/peco](https://github.com/peco/peco)\r\n* glide  \r\n[https://github.com/Masterminds/glide](https://github.com/Masterminds/glide)",
+    "content": "# \u306f\u3058\u3081\u306b\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u30c4\u30fc\u30eb\r\n\r\n```console\r\n$ go get -u github.com/motemen/gore\r\n$ go get -u github.com/nsf/gocode\r\n$ go get -u github.com/k0kubun/pp\r\n$ go get -u golang.org/x/tools/cmd/godoc\r\n$ go get -u github.com/jessevdk/go-assets-builder\r\n```\r\n\r\n# vscode\u304b\u3089\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3067\u304d\u308b\u30c4\u30fc\u30eb\r\n\r\n`Go: Install/update Tools`\u304b\u3089\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3067\u304d\u308b\uff0e\r\n\r\n* github.com/mdempsky/gocode\r\n* github.com/uudashr/gopkgs/cmd/gopkgs\r\n* github.com/ramya-rao-a/go-outline\r\n* github.com/acroca/go-symbols\r\n* golang.org/x/tools/cmd/guru\r\n* golang.org/x/tools/cmd/gorename\r\n* github.com/derekparker/delve/cmd/dlv\r\n* github.com/stamblerre/gocode\r\n* github.com/rogpeppe/godef\r\n* github.com/ianthehat/godef\r\n* github.com/sqs/goreturns\r\n* golang.org/x/lint/golint\r\n* github.com/cweill/gotests/...\r\n* github.com/fatih/gomodifytags\r\n* github.com/josharian/impl\r\n* github.com/davidrjenni/reftools/cmd/fillstruct\r\n* github.com/haya14busa/goplay/cmd/goplay\r\n\r\n# \u5225\u9014\u30d0\u30a4\u30ca\u30ea\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3057\u3066\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u30c4\u30fc\u30eb\r\n\r\n* ghq  \r\n[https://github.com/motemen/ghq](https://github.com/motemen/ghq)\r\n* peco  \r\n[https://github.com/peco/peco](https://github.com/peco/peco)\r\n* dep  \r\n[https://github.com/golang/dep](https://github.com/golang/dep)",
     "pub_date": "2018-12-16T14:07:42.402Z",
     "user": 2,
     "tags": [
@@ -3322,6 +3322,36 @@
       8,
       1,
       16
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 215,
+  "fields": {
+    "title": "VSCode\u3067\u306eC++\u306e\u30d3\u30eb\u30c9\u30bf\u30b9\u30af\u8a2d\u5b9a",
+    "content": "# tasks.json\u306e\u8a2d\u5b9a\u5185\u5bb9\r\n\r\n`Makefile`\u306fbuild\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u306b\u3042\u308b\u60f3\u5b9a\uff0e\u554f\u984c\u30d3\u30e5\u30fc\u306b\u30d3\u30eb\u30c9\u306e\u30a8\u30e9\u30fc\u30ed\u30b0\u3092\u8868\u793a\u3059\u308b\u3068\u304d\u306b\uff0c`\"fileLocation\": \"absolute\"`\u3067\u30d5\u30a1\u30a4\u30eb\u30d1\u30b9\u3092\u7d76\u5bfe\u30d1\u30b9\u3068\u3057\u3066\u89e3\u6790\u3059\u308b\u3088\u3046\u306b\u8a2d\u5b9a\uff0e`\"focus\": true`\u3067\u30d3\u30eb\u30c9\u30bf\u30b9\u30af\u5b9f\u884c\u5f8c\u306b\u30bf\u30fc\u30df\u30ca\u30eb\u306b\u30d5\u30a9\u30fc\u30ab\u30b9\u304c\u5f53\u305f\u308b\u3088\u3046\u306b\u8a2d\u5b9a\uff0e\r\n\r\n`Ctrl`+`Shift`+`B`\u3067\u30d3\u30eb\u30c9\u30bf\u30b9\u30af\u3092\u5b9f\u884c\uff0e\r\n\r\n```json\r\n{\r\n    \"version\": \"2.0.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"label\": \"build\",\r\n            \"type\": \"shell\",\r\n            \"command\": \"make\",\r\n            \"args\": [\r\n                \"-C${workspaceFolder}/build\",\r\n                \"-j4\"\r\n            ],\r\n            \"group\": \"build\",\r\n            \"problemMatcher\": {\r\n                \"base\": \"$gcc\",\r\n                \"fileLocation\": \"absolute\"\r\n            },\r\n            \"presentation\": {\r\n                \"focus\": true,\r\n            }\r\n        }\r\n    ]\r\n}\r\n```",
+    "pub_date": "2019-03-16T13:04:46.027Z",
+    "user": 2,
+    "tags": [
+      8,
+      1,
+      16,
+      55
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 216,
+  "fields": {
+    "title": "VMware\u3067ssh\u304c\u3064\u306a\u304c\u3089\u306a\u3044\u3068\u304d\u306e\u5bfe\u5fdc",
+    "content": "# VMware\u4e0a\u306eLinux\u3067ssh\u304c\u3064\u306a\u304c\u3089\u306a\u3044\u3068\u304d\u306e\u5bfe\u5fdc\r\n\r\n## \u30a8\u30e9\u30fc\u5185\u5bb9\r\n\r\n\u4e0b\u8a18\u306e\u30a8\u30e9\u30fc\u3067ssh\u304c\u3064\u306a\u304c\u3089\u306a\u3044\r\n\r\n```console\r\n$ ssh git@github.com\r\npacket_write_wait: Connection to 192.30.255.112 port 22: Broken pipe\r\n```\r\n\r\n## \u56de\u907f\u7b56\r\n\r\n`~/.ssh/config`\u306b\u4e0b\u8a18\u3092\u8a2d\u5b9a\r\n\r\n```\r\nHost *\r\n    IPQoS throughput\r\n```\r\n\r\n## \u95a2\u9023issue\r\n\r\n[https://github.com/vmware/open-vm-tools/issues/287](https://github.com/vmware/open-vm-tools/issues/287)",
+    "pub_date": "2019-03-22T13:19:34.629Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
     ]
   }
 }

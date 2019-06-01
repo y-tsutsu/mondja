@@ -912,8 +912,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      21,
-      13
+      13,
+      21
     ]
   }
 },
@@ -2288,7 +2288,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* SSH FS\r\n* Text Tables\r\n* Vetur\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\ndonjayamanne.githistory\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmechatroner.rainbow-csv\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\nms-vscode.Go\r\nctref.vetur\r\npmiossec.vscode-gitextensions\r\nRomanPeshkov.vscode-text-tables\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* SSH FS\r\n* Table Formatter\r\n* Vetur\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\ndonjayamanne.githistory\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmechatroner.rainbow-csv\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\nms-vscode.Go\r\noctref.vetur\r\npmiossec.vscode-gitextensions\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [

@@ -912,8 +912,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      13,
-      21
+      21,
+      13
     ]
   }
 },
@@ -3352,6 +3352,34 @@
     "tags": [
       1,
       52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 217,
+  "fields": {
+    "title": "\u518d\u5e30\u7684\u306b\u30d1\u30fc\u30df\u30c3\u30b7\u30e7\u30f3\u3092\u5909\u66f4",
+    "content": "# \u518d\u5e30\u7684\u306b\u30d1\u30fc\u30df\u30c3\u30b7\u30e7\u30f3\u3092\u5909\u66f4\r\n\r\n## \u3059\u3079\u3066\u4e00\u62ec\r\n\r\n```console\r\n$ chmod -R a+x .\r\n```\r\n\r\n## \u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u306e\u307f\r\n\r\n```console\r\n$ find . -type d -exec chmod 755 \\{\\} \\;\r\n```\r\n\r\n## \u30d5\u30a1\u30a4\u30eb\u306e\u307f\r\n\r\n```console\r\n$ find . -type f -exec chmod 644 \\{\\} \\;\r\n$ find . -type f -name '*.sh' -exec chmod 644 \\{\\} \\;  # \u62e1\u5f35\u5b50\u6307\u5b9a\r\n```\r\n\r\n# WSL\u306e\u30c7\u30d5\u30a9\u30eb\u30c8\u306e\u30d1\u30fc\u30df\u30c3\u30b7\u30e7\u30f3\u3092\u5909\u66f4\r\n\r\n`.bashrc`\u306b\u4ee5\u4e0b\u3092\u8a18\u8ff0\u3057\u3066\u304a\u304f\r\n\r\n```console\r\numask 022\r\n```",
+    "pub_date": "2019-06-30T01:04:03.000Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 218,
+  "fields": {
+    "title": "DataGridView\u306e\u30c0\u30d6\u30eb\u30d0\u30c3\u30d5\u30a1\u30ea\u30f3\u30b0\u3092\u624b\u8efd\u306b\u6709\u52b9\u5316\u3059\u308b\u65b9\u6cd5",
+    "content": "# \u7d99\u627f\u306a\u3057\u3067\u30c0\u30d6\u30eb\u30d0\u30c3\u30d5\u30a1\u30ea\u30f3\u30b0\u3092\u6709\u52b9\u5316\r\n\r\nReflection\u3092\u4f7f\u3063\u3066protected\u306e\u30e1\u30f3\u30d0\u30fc\u3092\u66f8\u304d\u304b\u3048\u308b\uff0e\r\n\r\n```cs\r\nusing System.Reflection;\r\n\r\ngrid.GetType().InvokeMember(\r\n    \"DoubleBuffered\",\r\n    BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,\r\n    null,\r\n    grid,\r\n    new object[] { true });\r\n```",
+    "pub_date": "2019-07-03T03:32:58.604Z",
+    "user": 2,
+    "tags": [
+      1,
+      10
     ]
   }
 }

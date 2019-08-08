@@ -504,6 +504,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 65,
+  "fields": {
+    "name": "Node.js",
+    "pub_date": "2019-08-04T06:21:35.400Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -912,8 +921,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      13,
-      21
+      21,
+      13
     ]
   }
 },
@@ -3407,6 +3416,20 @@
     "user": 2,
     "tags": [
       37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 221,
+  "fields": {
+    "title": "npm\u3067\u3088\u304f\u4f7f\u3046\u30b3\u30de\u30f3\u30c9",
+    "content": "# npm\u3067\u3088\u304f\u4f7f\u3046\u30b3\u30de\u30f3\u30c9\u3092\u6574\u7406\r\n\r\n`npm ci`\u304c`pipenv sync`\u76f8\u5f53\u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u64cd\u4f5c\r\n\r\n```console\r\n$ npm install\r\n$ npm install --save <package-name>\r\n$ npm install --save-dev <package-name>\r\n$ npm update\r\n$ npm uninstall\r\n$ npm list\r\n$ npm list --depth=0\r\n$ npm ci    # package-lock.json\u306e\u56fa\u5b9a\u30d0\u30fc\u30b8\u30e7\u30f3\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\r\n```",
+    "pub_date": "2019-08-04T06:21:35.366Z",
+    "user": 2,
+    "tags": [
+      1,
+      65
     ]
   }
 }

@@ -513,6 +513,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 66,
+  "fields": {
+    "name": "VMware",
+    "pub_date": "2019-09-01T00:38:40.149Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -592,8 +601,8 @@
     "pub_date": "2015-08-09T14:46:01.320Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       9
     ]
   }
@@ -623,8 +632,8 @@
     "user": 2,
     "tags": [
       1,
-      10,
-      9
+      9,
+      10
     ]
   }
 },
@@ -748,8 +757,8 @@
     "pub_date": "2015-08-09T15:04:41.670Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -762,8 +771,8 @@
     "pub_date": "2015-08-09T15:05:41.685Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -776,8 +785,8 @@
     "pub_date": "2015-08-09T15:06:25.467Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -790,9 +799,9 @@
     "pub_date": "2015-08-09T15:07:11.293Z",
     "user": 2,
     "tags": [
-      40,
       1,
-      2
+      2,
+      40
     ]
   }
 },
@@ -819,8 +828,8 @@
     "pub_date": "2015-08-09T15:09:42.595Z",
     "user": 2,
     "tags": [
-      16,
       1,
+      16,
       17
     ]
   }
@@ -921,8 +930,8 @@
     "pub_date": "2015-08-16T03:36:44.552Z",
     "user": 2,
     "tags": [
-      21,
-      13
+      13,
+      21
     ]
   }
 },
@@ -977,8 +986,8 @@
     "pub_date": "2015-08-17T01:26:18.201Z",
     "user": 2,
     "tags": [
-      40,
-      1
+      1,
+      40
     ]
   }
 },
@@ -991,8 +1000,8 @@
     "pub_date": "2015-08-17T02:44:35.314Z",
     "user": 2,
     "tags": [
-      8,
-      1
+      1,
+      8
     ]
   }
 },
@@ -1086,8 +1095,8 @@
     "pub_date": "2015-08-27T02:29:32.312Z",
     "user": 2,
     "tags": [
-      32,
-      1
+      1,
+      32
     ]
   }
 },
@@ -1114,10 +1123,10 @@
     "pub_date": "2015-09-13T18:07:34.030Z",
     "user": 2,
     "tags": [
-      48,
       1,
       2,
-      33
+      33,
+      48
     ]
   }
 },
@@ -1130,10 +1139,10 @@
     "pub_date": "2015-09-14T13:44:19.214Z",
     "user": 2,
     "tags": [
-      48,
       1,
       2,
-      33
+      33,
+      48
     ]
   }
 },
@@ -1146,8 +1155,8 @@
     "pub_date": "2015-10-05T13:36:13.866Z",
     "user": 2,
     "tags": [
-      34,
-      13
+      13,
+      34
     ]
   }
 },
@@ -1325,9 +1334,9 @@
     "pub_date": "2015-12-29T00:50:15.489Z",
     "user": 2,
     "tags": [
-      48,
       1,
-      2
+      2,
+      48
     ]
   }
 },
@@ -1506,10 +1515,10 @@
     "pub_date": "2016-02-13T13:09:07.591Z",
     "user": 2,
     "tags": [
-      48,
       1,
       2,
-      33
+      33,
+      48
     ]
   }
 },
@@ -1522,8 +1531,8 @@
     "pub_date": "2016-03-21T06:29:30.084Z",
     "user": 2,
     "tags": [
-      32,
-      1
+      1,
+      32
     ]
   }
 },
@@ -1674,10 +1683,10 @@
     "pub_date": "2016-05-10T12:01:36.621Z",
     "user": 2,
     "tags": [
-      48,
       1,
       2,
-      33
+      33,
+      48
     ]
   }
 },
@@ -1717,8 +1726,8 @@
     "pub_date": "2016-05-22T11:38:32.556Z",
     "user": 2,
     "tags": [
-      49,
-      13
+      13,
+      49
     ]
   }
 },
@@ -1758,9 +1767,9 @@
     "pub_date": "2016-06-09T13:53:23.238Z",
     "user": 2,
     "tags": [
-      48,
       1,
-      2
+      2,
+      48
     ]
   }
 },
@@ -1787,9 +1796,9 @@
     "pub_date": "2016-06-11T09:47:51.885Z",
     "user": 2,
     "tags": [
-      48,
       1,
-      2
+      2,
+      48
     ]
   }
 },
@@ -1899,8 +1908,8 @@
     "pub_date": "2016-06-27T02:40:29.368Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -1913,8 +1922,8 @@
     "pub_date": "2016-07-27T07:04:04.169Z",
     "user": 2,
     "tags": [
-      16,
       1,
+      16,
       37
     ]
   }
@@ -2084,8 +2093,8 @@
     "pub_date": "2016-11-25T07:19:26.922Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -2140,9 +2149,9 @@
     "pub_date": "2016-12-18T09:49:44.228Z",
     "user": 2,
     "tags": [
-      56,
       1,
-      47
+      47,
+      56
     ]
   }
 },
@@ -2239,8 +2248,8 @@
     "pub_date": "2017-02-04T12:02:22.523Z",
     "user": 2,
     "tags": [
-      16,
       1,
+      16,
       52,
       57
     ]
@@ -2255,10 +2264,10 @@
     "pub_date": "2017-02-05T04:51:11.175Z",
     "user": 2,
     "tags": [
-      8,
       1,
-      37,
-      16
+      8,
+      16,
+      37
     ]
   }
 },
@@ -2271,10 +2280,10 @@
     "pub_date": "2017-02-05T08:04:13.558Z",
     "user": 2,
     "tags": [
-      8,
       1,
-      52,
-      16
+      8,
+      16,
+      52
     ]
   }
 },
@@ -2287,8 +2296,8 @@
     "pub_date": "2017-02-05T10:54:59.568Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -2297,7 +2306,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* SSH FS\r\n* Table Formatter\r\n* Vetur\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\ndonjayamanne.githistory\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmechatroner.rainbow-csv\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\nms-vscode.Go\r\noctref.vetur\r\npmiossec.vscode-gitextensions\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Better TOML\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* EditorConfig for VS Code\r\n* Git History (git log)\r\n* GitExtensions\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Autocomplete\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* Remote Development\r\n* Table Formatter\r\n* Vetur\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\nbungcip.better-toml\r\ndonjayamanne.githistory\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nionutvmi.path-autocomplete\r\njebbs.plantuml\r\nmechatroner.rainbow-csv\r\nmichelemelluso.code-beautifier\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-python.python\r\nms-vscode-remote.remote-containers\r\nms-vscode-remote.remote-ssh\r\nms-vscode-remote.remote-ssh-edit\r\nms-vscode-remote.remote-wsl\r\nms-vscode-remote.vscode-remote-extensionpack\r\nms-vscode.cpptools\r\nms-vscode.csharp\r\nms-vscode.Go\r\noctref.vetur\r\npmiossec.vscode-gitextensions\r\ns-nlf-fh.glassit\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -2315,8 +2324,8 @@
     "pub_date": "2017-02-10T04:03:34.364Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -2344,8 +2353,8 @@
     "pub_date": "2017-02-19T09:14:14.430Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -2358,10 +2367,10 @@
     "pub_date": "2017-02-19T09:46:13.410Z",
     "user": 2,
     "tags": [
-      16,
       1,
-      52,
-      37
+      16,
+      37,
+      52
     ]
   }
 },
@@ -2388,8 +2397,8 @@
     "pub_date": "2017-02-21T01:33:41.963Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -2417,8 +2426,8 @@
     "pub_date": "2017-02-26T16:09:45.752Z",
     "user": 2,
     "tags": [
-      32,
-      1
+      1,
+      32
     ]
   }
 },
@@ -2457,8 +2466,8 @@
     "pub_date": "2017-03-03T04:07:51.323Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -2471,8 +2480,8 @@
     "pub_date": "2017-03-03T09:37:06.599Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -2597,9 +2606,9 @@
     "pub_date": "2017-04-02T03:20:50.213Z",
     "user": 2,
     "tags": [
-      48,
       1,
-      2
+      2,
+      48
     ]
   }
 },
@@ -2626,9 +2635,9 @@
     "pub_date": "2017-05-27T00:39:44.915Z",
     "user": 2,
     "tags": [
-      48,
       1,
-      2
+      2,
+      48
     ]
   }
 },
@@ -2641,8 +2650,8 @@
     "pub_date": "2017-05-27T03:00:54.324Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16,
       55
     ]
@@ -2729,8 +2738,8 @@
     "pub_date": "2017-08-27T01:25:17.412Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -2758,8 +2767,8 @@
     "pub_date": "2017-08-29T00:46:20.979Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -2869,8 +2878,8 @@
     "pub_date": "2017-10-06T05:38:28.014Z",
     "user": 2,
     "tags": [
-      32,
-      1
+      1,
+      32
     ]
   }
 },
@@ -2940,8 +2949,8 @@
     "pub_date": "2017-10-22T01:50:25.231Z",
     "user": 2,
     "tags": [
-      16,
-      1
+      1,
+      16
     ]
   }
 },
@@ -3093,8 +3102,8 @@
     "pub_date": "2018-04-05T06:53:16.759Z",
     "user": 2,
     "tags": [
-      32,
-      1
+      1,
+      32
     ]
   }
 },
@@ -3245,8 +3254,8 @@
     "pub_date": "2018-12-16T14:07:42.402Z",
     "user": 2,
     "tags": [
-      64,
-      1
+      1,
+      64
     ]
   }
 },
@@ -3314,8 +3323,8 @@
     "pub_date": "2019-02-28T03:59:54.089Z",
     "user": 2,
     "tags": [
-      32,
-      1
+      1,
+      32
     ]
   }
 },
@@ -3328,8 +3337,8 @@
     "pub_date": "2019-03-03T01:34:43.208Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16
     ]
   }
@@ -3343,8 +3352,8 @@
     "pub_date": "2019-03-16T13:04:46.027Z",
     "user": 2,
     "tags": [
-      8,
       1,
+      8,
       16,
       55
     ]
@@ -3430,6 +3439,20 @@
     "tags": [
       1,
       65
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 222,
+  "fields": {
+    "title": "VMware\u3067\u30db\u30b9\u30c8\u3068\u30d5\u30a9\u30eb\u30c0\u3092\u5171\u6709",
+    "content": "# \u30db\u30b9\u30c8\u3068\u306e\u30d5\u30a9\u30eb\u30c0\u5171\u6709\r\n\r\nVMware\u306e\u30d5\u30a9\u30eb\u30c0\u5171\u6709\u3092\u884c\u3063\u305f\u5f8c\u306bDebian\u5074\u3067\u4e0b\u8a18\u30b3\u30de\u30f3\u30c9\u3092\u5b9f\u884c\r\n\r\n```console\r\n$ sudo mkdir /mnt/hgfs\r\n$ sudo vmhgfs-fuse .host:/ /mnt/hgfs\r\n```\r\n\r\n# \u6240\u6709\u6a29\u3068\u30d1\u30fc\u30df\u30c3\u30b7\u30e7\u30f3\u306e\u5909\u66f4\r\n\r\n\u5171\u6709\u30d5\u30a9\u30eb\u30c0\u5185\u306e\u30d5\u30a1\u30a4\u30eb\u306froot\u6a29\u9650\u306b\u306a\u3063\u3066\u3044\u308b\u306e\u3067\uff0c\u30d5\u30a1\u30a4\u30eb\u306e\u30b3\u30d4\u30fc\u5f8c\u306b\u6240\u6709\u6a29\u3068\u30d1\u30fc\u30df\u30c3\u30b7\u30e7\u30f3\u3092\u5909\u66f4\uff0e\r\n\r\n```console\r\n$ sudo chown user:user file_name\r\n$ chmod a-x file_name\r\n```",
+    "pub_date": "2019-09-01T00:38:40.135Z",
+    "user": 2,
+    "tags": [
+      52,
+      66
     ]
   }
 }

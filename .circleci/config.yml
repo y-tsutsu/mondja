@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.7.1-browsers`
-      - image: circleci/python:3.7
+      - image: circleci/python:3.8
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -29,6 +29,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
+            python3 --version
             python3 -m pip install --user --upgrade pip
             python3 -m pip install --user pipenv
             python3 -m pipenv install --dev

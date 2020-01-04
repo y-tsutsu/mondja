@@ -7,7 +7,7 @@
 Simple memo web application.
 
 # Requirements
-* Python: 3.8.0
+* Python: 3.8
 * Django: 3.0
 
 # Run

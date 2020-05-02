@@ -7,6 +7,7 @@ verify_ssl = true
 autopep8 = "*"
 flake8 = "*"
 rope = "*"
+coverage = "*"
 
 [packages]
 django = "*"
@@ -24,8 +25,9 @@ python_version = "3.8"
 
 [scripts]
 start = "python manage.py runserver"
-test = "python manage.py test"
-localtest = "python manage.py test --debug-mode"
+test = "coverage run --source='.' --omit='.venv/*' manage.py test"
+localtest = "coverage run --source='.' manage.py test --debug-mode"
+covhtml = "coverage html"
 static = "python manage.py collectstatic"
 format = "autopep8 -ivr ."
 lint = "flake8 --show-source ."

@@ -31,8 +31,8 @@ jobs: # 1回の実行の基本作業単位
       - run:
           command: |
             pipenv run test
+            pipenv run covhtml
       - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
-          path: test-results
+          path: htmlcov
       - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
-          path: test-results
-          destination: tr1
+          path: htmlcov

@@ -1,52 +1,38 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
-version: 2
-jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.7.1-browsers`
+version: 2 # CircleCI 2.0 を使用します
+jobs: # 1回の実行の基本作業単位
+  build: # Workflows を使用しない実行では、エントリポイントとして `build` ジョブが必要
+    # ステップが実行されるディレクトリ
+    working_directory: ~/mondja
+    docker: # Docker でステップを実行します
+      # CircleCI Python イメージは https://hub.docker.com/r/circleci/python/ で入手できます
       - image: circleci/python:3.8
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
-
-      # Download and cache dependencies
+        environment: # プライマリコンテナの環境変数
+          PIPENV_VENV_IN_PROJECT: true
+          # DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
+    steps: # `build` ジョブを構成するステップ
+      - checkout # ソースコードを作業ディレクトリにチェックアウトします
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.8/site-packages
       - restore_cache:
-          keys:
-            - cache-{{ checksum "Pipfile.lock" }}
-            - cache-
-
+      # 依存関係キャッシュについては https://circleci.com/docs/ja/2.0/caching/ をお読みください
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
-          name: Install dependencies
           command: |
-            python3 --version
-            python3 -m pip install --user --upgrade pip
-            python3 -m pip install --user pipenv
-            python3 -m pipenv install --dev
-            python3 -m pipenv run python manage.py collectstatic
-
-      - save_cache:
-          key: cache-{{ checksum "Pipfile.lock" }}
+            sudo pip install --upgrade pip
+            sudo pip install pipenv
+            pipenv install --dev
+            pipenv run python manage.py collectstatic
+      - save_cache: # Pipfile のチェックサムをキャッシュキーとして使用して、Python の依存関係をキャッシュします
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
-            - ~/.local
-            - ~/.cache
-
-      # run tests!
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.6/site-packages"
       - run:
-          name: run tests
           command: |
-            python3 -m pipenv run test
-
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+            pipenv run test
+      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
+          path: test-results
+      - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
+          path: test-results
+          destination: tr1

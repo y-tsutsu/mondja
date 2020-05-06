@@ -309,7 +309,7 @@ textarea.mydialog {
         font-size: 0.9rem;
     }
     #memo .modal-footer button {
-        width: 6.0rem;
+        width: 6.5rem;
     }
     #memo #totop {
         bottom: 0.5rem;
@@ -327,7 +327,7 @@ textarea.mydialog {
         font-size: 1.1rem;
     }
     #memo .modal-footer button {
-        width: 8.5rem;
+        width: 9.5rem;
     }
     #memo .modal-header button {
         display: initial;

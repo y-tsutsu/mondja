@@ -9,7 +9,7 @@ h6 {
 
 body {
     font-size: 1.6em;
-    background-image: url("../../assets/css/images/overlay.png"), url("../../assets/css/images/bg.jpg");
+    background-image: url("../../astral/css/images/overlay.png"), url("../../astral/css/images/bg.jpg");
     background-repeat: repeat, repeat;
     background-size: auto, 100% 100%;
 }

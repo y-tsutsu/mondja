@@ -44,8 +44,7 @@ urlpatterns = [
     url(r'media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
 
     # favicon
-    path('favicon.ico', RedirectView.as_view(
-        url='/static/images/favicon.ico', permanent=True)),
+    path('favicon.ico', RedirectView.as_view(url='/static/images/favicon.ico', permanent=True)),
 
     # python social auth
     path('', include('social_django.urls', namespace='social')),

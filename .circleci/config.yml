@@ -21,18 +21,17 @@ jobs: # 1回の実行の基本作業単位
             sudo pip install --upgrade pip
             sudo pip install pipenv
             pipenv install --dev
-            pipenv run python manage.py collectstatic
+            pipenv run static
       - save_cache: # Pipfile のチェックサムをキャッシュキーとして使用して、Python の依存関係をキャッシュします
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
             - ".venv"
             - "/usr/local/bin"
-            - "/usr/local/lib/python3.6/site-packages"
+            - "/usr/local/lib/python3.8/site-packages"
       - run:
           command: |
             pipenv run test
             pipenv run covhtml
-      - store_test_results: # テストサマリー (https://circleci.com/docs/ja/2.0/collect-test-data/) に表示するテスト結果をアップロードします
-          path: htmlcov
       - store_artifacts: # アーティファクト (https://circleci.com/docs/ja/2.0/artifacts/) に表示するテストサマリーをアップロードします
           path: htmlcov
+          destination: tr1

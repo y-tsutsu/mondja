@@ -2315,7 +2315,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCode\u306eExtension\u4e00\u89a7",
-    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Better TOML\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake\r\n* Code Runner\r\n* Docker\r\n* EditorConfig for VS Code\r\n* Git Graph\r\n* GitExtensions\r\n* gitignore\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Intellisense\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* Remote Development\r\n* SSH FS\r\n* Table Formatter\r\n* Vetur\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\nbungcip.better-toml\r\nchristian-kohler.path-intellisense\r\ncodezombiech.gitignore\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmechatroner.rainbow-csv\r\nmhutchie.git-graph\r\nmichelemelluso.code-beautifier\r\nms-azuretools.vscode-docker\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-dotnettools.csharp\r\nms-python.python\r\nms-vscode.cpptools\r\nms-vscode.Go\r\nms-vscode-remote.vscode-remote-extensionpack\r\noctref.vetur\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\nteabyii.ayu\r\ntwxs.cmake\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
+    "content": "# Extension\u4e00\u89a7\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Better TOML\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake Tools\r\n* Code Runner\r\n* Docker\r\n* EditorConfig for VS Code\r\n* Git Graph\r\n* GitExtensions\r\n* gitignore\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* Japanese Language Pack for Visual Studio Code\r\n* jumpy\r\n* Path Intellisense\r\n* PlantUML\r\n* Python\r\n* QML\r\n* Rainbow CSV\r\n* Remote Development\r\n* SSH FS\r\n* Table Formatter\r\n* Vetur\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbbenoist.QML\r\nbungcip.better-toml\r\nchristian-kohler.path-intellisense\r\ncodezombiech.gitignore\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmechatroner.rainbow-csv\r\nmhutchie.git-graph\r\nmichelemelluso.code-beautifier\r\nms-azuretools.vscode-docker\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-dotnettools.csharp\r\nms-python.python\r\nms-vscode.cmake-tools\r\nms-vscode.cpptools\r\nms-vscode.Go\r\nms-vscode-remote.vscode-remote-extensionpack\r\noctref.vetur\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\nteabyii.ayu\r\nwmaurer.vscode-jumpy\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/49339/32078127-102bbcfe-baa6-11e7-8ab9-b04dcad2035e.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -3548,6 +3548,21 @@
     "tags": [
       1,
       52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 229,
+  "fields": {
+    "title": "CMakeLists.txt\u306e\u6700\u4f4e\u9650\u306e\u8a18\u8ff0",
+    "content": "# CMakeLists.txt\u306e\u57fa\u672c\u7684\u306a\u5185\u5bb9\r\n\r\n```\r\ncmake_minimum_required(VERSION 3.0.0)\r\nproject(eglsample VERSION 0.1.0)\r\n\r\nset(CMAKE_CONFIGURATION_TYPES \"Debug;Release\" CACHE STRING \"limited configs\" FORCE)\r\n\r\nadd_executable(eglsample\r\n    eglsample.cpp\r\n)\r\n\r\ntarget_compile_features(eglsample\r\n    PRIVATE cxx_std_17\r\n)\r\n\r\nfind_package(X11 REQUIRED)\r\nfind_package(PNG REQUIRED)\r\nfind_library(EGL_LIBRARY NAMES EGL)\r\nfind_library(GLES2_LIBRARY NAMES GLESv2)\r\n\r\ntarget_link_libraries(eglsample\r\n    ${X11_LIBRARIES}\r\n    ${EGL_LIBRARY}\r\n    ${GLES2_LIBRARY}\r\n    ${PNG_LIBRARIES}\r\n)\r\n```\r\n\r\n# \u30d3\u30eb\u30c9\uff08Release/Debug\uff09\r\n\r\n```\r\n$ mkdir build && cd build\r\n$ cmake -DCMAKE_BUILD_TYPE=Release(Debug) ..\r\n$ cmake --build .\r\n```",
+    "pub_date": "2020-06-03T15:07:00.865Z",
+    "user": 2,
+    "tags": [
+      1,
+      8,
+      16
     ]
   }
 }

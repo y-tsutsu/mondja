@@ -146,9 +146,6 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 
 
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
@@ -175,11 +172,13 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.associate_by_email',
 )
 
+
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 2,
     'MARGIN_PAGES_DISPLAYED': 2,
     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
 }
+
 
 # Activate Django-Heroku.
 django_heroku.settings(locals(), test_runner=False)

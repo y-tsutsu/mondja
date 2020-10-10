@@ -3358,7 +3358,7 @@
   "pk": 215,
   "fields": {
     "title": "VSCodeでのC++のビルドタスク設定",
-    "content": "# tasks.jsonの設定内容\r\n\r\n`Makefile`はbuildディレクトリにある想定．問題ビューにビルドのエラーログを表示するときに，`\"fileLocation\": \"absolute\"`でファイルパスを絶対パスとして解析するように設定．`\"focus\": true`でビルドタスク実行後にターミナルにフォーカスが当たるように設定．\r\n\r\n`Ctrl`+`Shift`+`B`でビルドタスクを実行．\r\n\r\n```json\r\n{\r\n    \"version\": \"2.0.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"label\": \"build\",\r\n            \"type\": \"shell\",\r\n            \"command\": \"make\",\r\n            \"args\": [\r\n                \"-C${workspaceFolder}/build\",\r\n                \"-j4\"\r\n            ],\r\n            \"group\": \"build\",\r\n            \"problemMatcher\": {\r\n                \"base\": \"$gcc\",\r\n                \"fileLocation\": \"absolute\"\r\n            },\r\n            \"presentation\": {\r\n                \"focus\": true,\r\n            }\r\n        }\r\n    ]\r\n}\r\n```",
+    "content": "# tasks.jsonの設定内容\r\n\r\n`Makefile`はbuildディレクトリにある想定．問題ビューにビルドのエラーログを表示するときに，`\"fileLocation\": \"absolute\"`でファイルパスを絶対パスとして解析するように設定．`\"focus\": true`でビルドタスク実行後にターミナルにフォーカスが当たるように設定．\r\n\r\n`Ctrl`+`Shift`+`B`でビルドタスクを実行．\r\n\r\n```json\r\n{\r\n    \"version\": \"2.0.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"label\": \"build\",\r\n            \"type\": \"shell\",\r\n            \"command\": \"make\",\r\n            \"args\": [\r\n                \"-C${workspaceFolder}/build\",\r\n                \"-j4\"\r\n            ],\r\n            \"group\": \"build\",\r\n            \"presentation\": {\r\n                \"focus\": true\r\n            },\r\n            \"problemMatcher\": {\r\n                \"base\": \"$gcc\",\r\n                \"fileLocation\": \"absolute\"\r\n            }\r\n        }\r\n    ]\r\n}\r\n```",
     "pub_date": "2019-03-16T13:04:46.027Z",
     "user": 2,
     "tags": [
@@ -3388,7 +3388,7 @@
   "pk": 217,
   "fields": {
     "title": "再帰的にパーミッションを変更",
-    "content": "# 再帰的にパーミッションを変更\r\n\r\n## すべて一括\r\n\r\n```console\r\n$ chmod -R a+x .\r\n```\r\n\r\n## ディレクトリのみ\r\n\r\n```console\r\n$ find . -type d -exec chmod 755 \\{\\} \\;\r\n```\r\n\r\n## ファイルのみ\r\n\r\n```console\r\n$ find . -type f -exec chmod 644 \\{\\} \\;\r\n$ find . -type f -name '*.sh' -exec chmod 644 \\{\\} \\;  # 拡張子指定\r\n```\r\n\r\n# WSLのデフォルトのパーミッションを変更\r\n\r\n`.bashrc`に以下を記述しておく\r\n\r\n```console\r\numask 022\r\n```",
+    "content": "# 再帰的にパーミッションを変更\r\n\r\n### すべて一括\r\n\r\n```console\r\n$ chmod -R a+x .\r\n```\r\n\r\n### ディレクトリのみ\r\n\r\n```console\r\n$ find . -type d -exec chmod 755 \\{\\} \\;\r\n```\r\n\r\n### ファイルのみ\r\n\r\n```console\r\n$ find . -type f -exec chmod 644 \\{\\} \\;\r\n$ find . -type f -name '*.sh' -exec chmod 644 \\{\\} \\;  # 拡張子指定\r\n```\r\n\r\n# WSLのデフォルトのパーミッションを変更\r\n\r\n`.bashrc`に以下を記述しておく\r\n\r\n```console\r\numask 022\r\n```",
     "pub_date": "2019-06-30T01:04:03Z",
     "user": 2,
     "tags": [

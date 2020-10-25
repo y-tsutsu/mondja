@@ -390,7 +390,7 @@
   "model": "app.tag",
   "pk": 52,
   "fields": {
-    "name": "Debian",
+    "name": "Linux",
     "pub_date": "2016-08-11T08:11:30.756Z",
     "user": 2
   }
@@ -2043,7 +2043,7 @@
   "pk": 122,
   "fields": {
     "title": "Vivaldiでパスワードを保存しない，に設定したページでパスワードを保存するように変更する",
-    "content": "アドレスバーに [vivaldi://settings/search#a](vivaldi://settings/search#a) を入力\r\n\r\nパスワードを管理から該当箇所を削除\r\n\r\n![image](http://mkb.salchu.net/wp/wp-content/uploads/2016/05/icon-vivaldi-1-650x320.png)\r\n\r\n※テキストの履歴の削除は選択してshift＋delete",
+    "content": "アドレスバーに [chrome://settings](chrome://settings) を入力\r\n\r\nパスワードを管理から該当箇所を削除\r\n\r\n![image](http://mkb.salchu.net/wp/wp-content/uploads/2016/05/icon-vivaldi-1-650x320.png)\r\n\r\n※テキストの履歴の削除は選択してshift＋delete",
     "pub_date": "2016-09-30T14:05:25.008Z",
     "user": 2,
     "tags": [
@@ -2285,7 +2285,7 @@
   "pk": 139,
   "fields": {
     "title": "valgrindでC/C++のメモリリーク検出",
-    "content": "# 調査用サンプルコード\r\n\r\n```cpp\r\n#include <stdio.h>\r\n#include <stdlib.h>\r\n\r\nint main()\r\n{\r\n    int* hoge = reinterpret_cast<int*>(malloc(sizeof(int) * 16));\r\n    //free(hoge);\r\n\r\n    int* piyo = new int[32];\r\n    //delete[] piyo;\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# インストール\r\n\r\n```\r\n$ sudo aptitude valgrind\r\n```\r\n\r\n# 実行\r\n\r\n```\r\n$ valgrind --leak-check=full ./sample\r\n```\r\n\r\n# 出力結果\r\n\r\n```\r\n==7234== HEAP SUMMARY:\r\n==7234==     in use at exit: 192 bytes in 2 blocks\r\n==7234==   total heap usage: 2 allocs, 0 frees, 192 bytes allocated\r\n==7234==\r\n==7234== 64 bytes in 1 blocks are definitely lost in loss record 1 of 2\r\n==7234==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)\r\n==7234==    by 0x40081A: main (sample.cpp:6)\r\n==7234==\r\n==7234== 128 bytes in 1 blocks are definitely lost in loss record 2 of 2\r\n==7234==    at 0x4C298A0: operator new[](unsigned long) (vg_replace_malloc.c:389)\r\n==7234==    by 0x400828: main (sample.cpp:9)\r\n==7234==\r\n==7234== LEAK SUMMARY:\r\n==7234==    definitely lost: 192 bytes in 2 blocks\r\n==7234==    indirectly lost: 0 bytes in 0 blocks\r\n==7234==      possibly lost: 0 bytes in 0 blocks\r\n==7234==    still reachable: 0 bytes in 0 blocks\r\n==7234==         suppressed: 0 bytes in 0 blocks\r\n==7234==\r\n==7234== For counts of detected and suppressed errors, rerun with: -v\r\n==7234== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)\r\n```",
+    "content": "# 調査用サンプルコード\r\n\r\n```cpp\r\n#include <stdio.h>\r\n#include <stdlib.h>\r\n\r\nint main()\r\n{\r\n    int* hoge = reinterpret_cast<int*>(malloc(sizeof(int) * 16));\r\n    // free(hoge);\r\n\r\n    int* piyo = new int[32];\r\n    // delete[] piyo;\r\n\r\n    return 0;\r\n}\r\n```\r\n\r\n# インストール\r\n\r\n```\r\n$ sudo aptitude valgrind\r\n```\r\n\r\n# 実行\r\n\r\n```\r\n$ valgrind --leak-check=full ./sample\r\n```\r\n\r\n# 出力結果\r\n\r\n```\r\n==7234== HEAP SUMMARY:\r\n==7234==     in use at exit: 192 bytes in 2 blocks\r\n==7234==   total heap usage: 2 allocs, 0 frees, 192 bytes allocated\r\n==7234==\r\n==7234== 64 bytes in 1 blocks are definitely lost in loss record 1 of 2\r\n==7234==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)\r\n==7234==    by 0x40081A: main (sample.cpp:6)\r\n==7234==\r\n==7234== 128 bytes in 1 blocks are definitely lost in loss record 2 of 2\r\n==7234==    at 0x4C298A0: operator new[](unsigned long) (vg_replace_malloc.c:389)\r\n==7234==    by 0x400828: main (sample.cpp:9)\r\n==7234==\r\n==7234== LEAK SUMMARY:\r\n==7234==    definitely lost: 192 bytes in 2 blocks\r\n==7234==    indirectly lost: 0 bytes in 0 blocks\r\n==7234==      possibly lost: 0 bytes in 0 blocks\r\n==7234==    still reachable: 0 bytes in 0 blocks\r\n==7234==         suppressed: 0 bytes in 0 blocks\r\n==7234==\r\n==7234== For counts of detected and suppressed errors, rerun with: -v\r\n==7234== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)\r\n```",
     "pub_date": "2017-02-05T08:04:13.558Z",
     "user": 2,
     "tags": [
@@ -3591,6 +3591,20 @@
     "tags": [
       1,
       52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 232,
+  "fields": {
+    "title": "Gitの管理外ファイルの削除",
+    "content": "# git cleanのオプション\r\n\r\n* -n（消す予定のファイルを確認）\r\n* -f（削除の実施）\r\n* -d（追跡されていないディレクトリも削除）\r\n* -x（gitignore に設定した無視ファイルも削除）\r\n* -X（gitignore に設定した無視ファイルだけを削除）\r\n\r\n```console\r\n$ git clean -nfdx\r\nWould remove .coverage\r\nWould remove .vscode/\r\nWould remove media/identicon/YusukeTsutsumi.png\r\nWould remove media/identicon/admin.png\r\nWould remove media/identicon/guest.png\r\nWould remove media/identicon/tsutsu.png\r\nWould remove media/identicon/tsutsu09282.png\r\nWould remove staticfiles/\r\n```",
+    "pub_date": "2020-10-25T03:44:29.530Z",
+    "user": 2,
+    "tags": [
+      1,
+      32
     ]
   }
 }

@@ -3571,7 +3571,7 @@
   "pk": 230,
   "fields": {
     "title": "MSYS + MinGW (64bit) 環境の構築",
-    "content": "# MSYS2のインストール\r\n\r\n[https://www.msys2.org](https://www.msys2.org)\r\n\r\n```console\r\n$ pacman -Syu\r\n$ pacman -S base-devel msys2-devel mingw-w64-x86_64-toolchain\r\n```\r\n\r\n## 環境変数（Path）\r\n\r\n```text\r\nC:\\msys64\\mingw64\\bin\r\nC:\\msys64\\usr\\bin\r\n```",
+    "content": "# MSYS2のインストール\r\n\r\n[https://www.msys2.org](https://www.msys2.org)\r\n\r\n```console\r\n$ pacman -Syuu\r\n$ pacman -S base-devel msys2-devel mingw-w64-x86_64-toolchain\r\n```\r\n\r\n## 環境変数（Path）\r\n\r\n```text\r\nC:\\msys64\\mingw64\\bin\r\nC:\\msys64\\usr\\bin\r\n```",
     "pub_date": "2020-06-20T05:03:56.526Z",
     "user": 2,
     "tags": [
@@ -3633,6 +3633,49 @@
     "tags": [
       1,
       37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 235,
+  "fields": {
+    "title": "Windows TerminalでCmderを使う設定",
+    "content": "# guidを発行\r\n\r\nPowerShellでguidを発行\r\n\r\n```console\r\nPS > [guid]::NewGuid()\r\n```\r\n\r\n# Windows TerminalにCmderを追加\r\n\r\nCmderを追加してデフォルトのシェルに設定．ついでにGit Bashと背景透過やカラーテーマなどを設定．\r\n\r\n```json\r\n{\r\n    \"defaultProfile\": \"{30c5d884-3168-4c08-9182-1134fa529caf}\",\r\n    \"profiles\": {\r\n        \"defaults\": {\r\n          \"fontSize\": 10,\r\n          \"useAcrylic\": true,\r\n          \"acrylicOpacity\": 0.8,\r\n          \"colorScheme\": \"Tango Dark\",\r\n          \"cursorShape\":\"filledBox\"\r\n        },\r\n        \"list\": [\r\n          {\r\n            \"guid\": \"{30c5d884-3168-4c08-9182-1134fa529caf}\",\r\n            \"hidden\": false,\r\n            \"name\": \"Cmder\",\r\n            \"icon\": \"%USERPROFILE%\\\\cmder\\\\icons\\\\cmder.ico\",\r\n            \"startingDirectory\": \"%USERPROFILE%\",\r\n            \"commandline\": \"cmd.exe /k %USERPROFILE%\\\\cmder\\\\vendor\\\\init.bat\",\r\n            \"colorScheme\": \"Monokai Cmder\"\r\n          },\r\n          {\r\n            \"guid\": \"{f1b8dfad-637e-422a-a353-c06de4efdebc}\",\r\n            \"hidden\": false,\r\n            \"name\": \"Git Bash\",\r\n            \"icon\": \"C:\\\\Program Files\\\\Git\\\\mingw64\\\\share\\\\git\\\\git-for-windows.ico\",\r\n            \"startingDirectory\": \"%USERPROFILE%\",\r\n            \"commandline\": \"C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe -l\",\r\n            \"colorScheme\": \"Hybrid\"\r\n          }\r\n        ]\r\n    }\r\n}\r\n```\r\n\r\n# Windows Terminalのテーマ\r\n\r\n`Monokai Cmder`や`Hybrid`などのテーマはこちらから．\r\n\r\n[https://windowsterminalthemes.dev](https://windowsterminalthemes.dev)",
+    "pub_date": "2020-11-11T16:50:25.997Z",
+    "user": 2,
+    "tags": [
+      1,
+      37
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 236,
+  "fields": {
+    "title": "Westonのビルド手順（新リポジトリ版）",
+    "content": "# 環境変数\r\n\r\n適当な名前（wlenv）で保存．\r\n\r\n*wlenv*\r\n\r\n```bash\r\nexport USRFS=$HOME/usrfs\r\nexport WLD=$USRFS\r\nexport LD_LIBRARY_PATH=$USRFS/lib\r\nexport PKG_CONFIG_PATH=$USRFS/lib/pkgconfig:$USRFS/share/pkgconfig\r\nexport ACLOCAL=\"aclocal -I $USRFS/share/aclocal\"\r\nexport PATH=$HOME/usrfs/bin:$PATH\r\n```\r\n\r\n# ビルド&インストール\r\n\r\n上記の環境変数を読み込んで，`~/usrfs`にビルド&インストール．\r\n\r\n*install.sh*\r\n\r\n```bash\r\n#!/bin/bash\r\n\r\nWORK_DIR=$(cd $(dirname $0) && pwd)\r\n\r\nmkdir -p ~/usrfs\r\nsudo apt install -y libxml++2.6-dev bison flex libmtdev-dev libudev-dev libevdev-dev libgtk-3-dev check libunwind-dev libwacom-dev libxcb-composite0-dev libpam0g-dev libgbm-dev autoconf libtool gettext\r\n\r\ncd $WORK_DIR\r\nsource ./wlenv\r\n\r\ngit clone https://github.com/wayland-project/wayland.git\r\ncd wayland\r\ngit checkout 1.17.0\r\n./autogen.sh --prefix=$WLD --disable-documentation\r\n./autogen.sh --prefix=$WLD --disable-documentation\r\nmake -j4\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone https://gitlab.freedesktop.org/mesa/mesa.git\r\ncd mesa\r\ngit checkout mesa-18.3.6\r\npyenv local 2.7.18\r\npip install mako\r\n./autogen.sh --prefix=$WLD --with-gallium-drivers=svga --with-dri-drivers= --enable-gles1 --enable-gles2 --enable-gallium-egl --enable-gbm --enable-shared-glapi --with-egl-platforms=x11,wayland\r\nmake -j4\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone https://github.com/freedesktop/cairo.git\r\ncd cairo\r\ngit checkout 1.17.2\r\n./autogen.sh --prefix=$WLD --enable-gl --enable-xcb\r\nmake -j4\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone https://github.com/wayland-project/libinput.git\r\ncd libinput\r\ngit checkout 1.8.4\r\n./autogen.sh --prefix=$WLD\r\nmake -j4\r\nmake install\r\ncd $WORK_DIR\r\n\r\ngit clone https://github.com/wayland-project/weston.git\r\ncd weston\r\ngit checkout 2.0.0\r\necho \"diff --git a/libweston/weston-launch.c b/libweston/weston-launch.c\r\nindex 140fde1d..eecb911a 100644\r\n--- a/libweston/weston-launch.c\r\n+++ b/libweston/weston-launch.c\r\n@@ -42,6 +42,7 @@\r\n #include <sys/wait.h>\r\n #include <sys/socket.h>\r\n #include <sys/signalfd.h>\r\n+#include <sys/sysmacros.h>\r\n #include <signal.h>\r\n #include <unistd.h>\r\n #include <fcntl.h>\" > weston-launch.patch\r\npatch -p1 < weston-launch.patch\r\n./autogen.sh --prefix=$WLD\r\nmake -j4\r\nsudo make install\r\ncp ivi-shell/weston.ini ~/.config/.\r\ncd $WORK_DIR\r\n```",
+    "pub_date": "2020-11-14T05:30:47.529Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 237,
+  "fields": {
+    "title": "WSL2でaptが使えなくなったときの対処法",
+    "content": "# 問題の原因\r\n\r\nDNSの名前解決ができていない．apt以外にもgit cloneなどネットワークへの接続に失敗してしまう．\r\n\r\n# 解決方法\r\n\r\nDNSサーバの設定を変更する．例えばGoogleの`8.8.8.8`を指定すればOK．\r\n\r\nまずは`resolv.conf`の生成をオフにする．\r\n\r\n```bash\r\n# /etc/wsl.conf\r\n[network]\r\ngenerateResolvConf = false\r\n```\r\n\r\n次にWindowsからいったんWSLをシャットダウンする．\r\n\r\n```console\r\n$ wsl --shutdown\r\n```\r\n\r\nその後，再度WSLに入って`resolv.conf`を編集する．もともとシンボリックリンクがはってあるので，削除してから新規にファイルを作成する．\r\n\r\n```console\r\n$ cd /etc/\r\n$ sudo unlink resolv.conf\r\n$ sudo vim resolv.conf\r\n```\r\n\r\n```bash\r\n# /etc/resolv.conf\r\n# This file was automatically generated by WSL. To stop automatic generation of this file, add the following entry to /etc/wsl.conf:\r\n# [network]\r\n# generateResolvConf = false\r\n# nameserver 172.30.64.1\r\nnameserver 8.8.8.8\r\n```",
+    "pub_date": "2020-11-20T04:10:48.722Z",
+    "user": 2,
+    "tags": [
+      1,
+      37,
+      67
     ]
   }
 }

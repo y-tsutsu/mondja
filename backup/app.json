@@ -3259,7 +3259,7 @@
   "pk": 208,
   "fields": {
     "title": "Goの環境設定",
-    "content": "# はじめにインストールするツール\r\n\r\n```console\r\n$ go get -u github.com/motemen/gore\r\n$ go get -u github.com/nsf/gocode\r\n$ go get -u github.com/k0kubun/pp\r\n$ go get -u golang.org/x/tools/cmd/godoc\r\n$ go get -u github.com/jessevdk/go-assets-builder\r\n```\r\n\r\n# vscodeからインストールできるツール\r\n\r\n`Go: Install/update Tools`からインストールできる．\r\n\r\n* github.com/mdempsky/gocode\r\n* github.com/uudashr/gopkgs/v2/cmd/gopkgs\r\n* github.com/ramya-rao-a/go-outline\r\n* github.com/acroca/go-symbols\r\n* golang.org/x/tools/cmd/guru\r\n* golang.org/x/tools/cmd/gorename\r\n* github.com/cweill/gotests/...\r\n* github.com/fatih/gomodifytags\r\n* github.com/josharian/impl\r\n* github.com/davidrjenni/reftools/cmd/fillstruct\r\n* github.com/haya14busa/goplay/cmd/goplay\r\n* github.com/godoctor/godoctor\r\n* github.com/go-delve/delve/cmd/dlv\r\n* github.com/stamblerre/gocode\r\n* github.com/rogpeppe/godef\r\n* github.com/sqs/goreturns\r\n* golang.org/x/lint/golint\r\n\r\n# 別途バイナリをダウンロードしてインストールするツール\r\n\r\n* ghq  \r\n[https://github.com/motemen/ghq](https://github.com/motemen/ghq)\r\n* peco  \r\n[https://github.com/peco/peco](https://github.com/peco/peco)\r\n* dep  \r\n[https://github.com/golang/dep](https://github.com/golang/dep)",
+    "content": "# はじめにインストールするツール\r\n\r\n```console\r\n$ go get -u github.com/motemen/gore/cmd/gore\r\n$ go get -u github.com/nsf/gocode\r\n$ go get -u github.com/k0kubun/pp\r\n$ go get -u golang.org/x/tools/cmd/godoc\r\n$ go get -u github.com/jessevdk/go-assets-builder\r\n```\r\n\r\n# vscodeからインストールできるツール\r\n\r\n`Go: Install/update Tools`からインストールできる．\r\n\r\n* github.com/uudashr/gopkgs/v2/cmd/gopkgs\r\n* github.com/ramya-rao-a/go-outline\r\n* github.com/cweill/gotests/...\r\n* github.com/fatih/gomodifytags\r\n* github.com/josharian/impl\r\n* github.com/haya14busa/goplay/cmd/goplay\r\n* github.com/go-delve/delve/cmd/dlv\r\n* golang.org/x/lint/golint\r\n* golang.org/x/tools/gopls\r\n\r\n# 別途バイナリをダウンロードしてインストールするツール\r\n\r\n* ghq  \r\n[https://github.com/motemen/ghq](https://github.com/motemen/ghq)\r\n* peco  \r\n[https://github.com/peco/peco](https://github.com/peco/peco)\r\n* dep  \r\n[https://github.com/golang/dep](https://github.com/golang/dep)",
     "pub_date": "2018-12-16T14:07:42.402Z",
     "user": 2,
     "tags": [
@@ -3676,6 +3676,20 @@
       1,
       37,
       67
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 238,
+  "fields": {
+    "title": "UbuntuでディスプレイなしのPCにVNC接続する設定",
+    "content": "# ダミービデオドライバのインストール\r\n\r\nディスプレイを接続せずにVNCで画面表示させるために，ダミーのビデオドライバを使って X.Org（X11）を動作させる．\r\n\r\n```console\r\n$ sudo apt install xserver-xorg-video-dummy\r\n```\r\n\r\n# VNC表示画面設定ファイル\r\n\r\nVNCで接続した画面の表示設定をファイルに保存する．ファイル名の数字は優先順位．\r\n\r\n```console\r\n$ cat /usr/share/X11/xorg.conf.d/80-dummy.conf\r\nSection \"Device\"\r\n    Identifier  \"Configured Video Device\"\r\n    Driver      \"dummy\"\r\n    VideoRam 256000\r\nEndSection\r\n \r\nSection \"Monitor\"\r\n    Identifier  \"Configured Monitor\"\r\n    HorizSync 5.0 - 1000.0\r\n    VertRefresh 5.0 - 200.0\r\n    # 1920x1080 59.96 Hz (CVT 2.07M9) hsync: 67.16 kHz; pclk: 173.00 MHz\r\n    Modeline \"1920x1080_60.00\"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync\r\nEndSection\r\n \r\nSection \"Screen\"\r\n    Identifier  \"Default Screen\"\r\n    Monitor     \"Configured Monitor\"\r\n    Device      \"Configured Video Device\"\r\n    DefaultDepth 24\r\n    SubSection \"Display\"\r\n        Depth 24\r\n        Modes \"1920x1080\"\r\n    EndSubSection\r\nEndSection\r\n \r\nSection \"InputClass\"\r\n    Identifier \"system-keyboard\"\r\n    MatchIsKeyboard \"on\"\r\n    Option \"XkbLayout\" \"jp,us\"\r\n    Option \"XkbModel\" \"jp106\"\r\n    Option \"XkbVariant\" \",dvorak\"\r\n    Option \"XkbOptions\" \"grp:alt_shift_toggle\"\r\nEndSection\r\n```\r\n\r\n解像度の設定値は`cvt`コマンドで生成する．\r\n\r\n```console\r\n$ cvt 1920 1080\r\n# 1920x1080 59.96 Hz (CVT 2.07M9) hsync: 67.16 kHz; pclk: 173.00 MHz\r\nModeline \"1920x1080_60.00\"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync\r\n```",
+    "pub_date": "2020-12-29T09:19:05.075Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
     ]
   }
 }

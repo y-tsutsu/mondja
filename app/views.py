@@ -23,8 +23,7 @@ def home(request):
             sort_item = '-' + sort_item
 
         sort_tag_id = request.GET.get('sort_tag_id')
-        all_memo = Memo.objects.all() if sort_tag_id == '' else Tag.objects.get(
-            id=sort_tag_id).memo_set.all()
+        all_memo = Memo.objects.all() if sort_tag_id == '' else Tag.objects.get(id=sort_tag_id).memo_set.all()
 
         sort_user_id = request.GET.get('sort_user_id')
         if sort_user_id != '':
@@ -41,16 +40,14 @@ def home(request):
         search_tag_id = request.GET.get('search_tag_id')
         search_user_id = request.GET.get('search_user_id')
 
-        all_memo = Memo.objects.all() if search_tag_id == '' else Tag.objects.get(
-            id=search_tag_id).memo_set.all()
+        all_memo = Memo.objects.all() if search_tag_id == '' else Tag.objects.get(id=search_tag_id).memo_set.all()
 
         if search_user_id != '':
             user = User.objects.get(id=search_user_id)
             all_memo = all_memo.filter(user=user)
 
         if search_title != '' and search_content != '':
-            all_memo = all_memo.filter(
-                title__icontains=search_title, content__icontains=search_content)
+            all_memo = all_memo.filter(title__icontains=search_title, content__icontains=search_content)
         elif search_title != '':
             all_memo = all_memo.filter(title__icontains=search_title)
         elif search_content != '':
@@ -145,15 +142,14 @@ def add_or_edit_memo(request, memo_form, is_edit):
                     new_memo.tags.add(new_tag)
                     new_memo.save()
                 else:
-                    messages.error(
-                        request, 'Incorrect tag name. ({0})'.format(stag))
+                    messages.error(request, 'Incorrect tag name. ({0})'.format(stag))
             else:
                 tag = get_object_or_404(Tag, name=stag)
                 new_memo.tags.add(tag)
                 new_memo.save()
 
         if is_edit:
-            clear_notused_tag()
+            clear_notused_tags()
     else:
         messages.error(request, 'Incorrect title or content.')
 
@@ -168,7 +164,7 @@ def delete_memo(request, id):
             raise PermissionDenied
 
         memo.delete()
-        clear_notused_tag()
+        clear_notused_tags()
 
     if 'HTTP_REFERER' in request.META:
         return redirect(request.META['HTTP_REFERER'] + '#memo')
@@ -186,7 +182,7 @@ def is_valid_tag(tag):
     return len(tag) <= 10
 
 
-def clear_notused_tag():
+def clear_notused_tags():
     ''' 不要なtagを削除 '''
     for tag in Tag.objects.all():
         if len(tag.memo_set.all()) == 0:

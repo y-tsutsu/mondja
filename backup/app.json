@@ -3692,5 +3692,19 @@
       52
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 239,
+  "fields": {
+    "title": "Qtアプリのデプロイ方法",
+    "content": "# 依存ライブラリを取集する\r\n\r\n`windeployqt.exe`を使用して依存ライブラリを自動で取得する．\r\n\r\n```console\r\n$ mkdir ./DISTDIR\r\n$ copy path/to/QTAPP.exe ./DISTDIR\r\n$ # qmlがある場合\r\n$ \"C:/Qt/5.15.2/mingw81_64/bin/windeployqt.exe\" ./DISTDIR/QTAPP.exe --qmldir path/to/SOURCE\r\n$ # qmlがない場合\r\n$ \"C:/Qt/5.15.2/mingw81_64/bin/windeployqt.exe\" ./DISTDIR/QTAPP.exe\r\n```",
+    "pub_date": "2021-01-13T13:14:10.304Z",
+    "user": 2,
+    "tags": [
+      1,
+      57
+    ]
+  }
 }
 ]

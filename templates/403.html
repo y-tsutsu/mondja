@@ -2,23 +2,23 @@
 
 {% block content %}
 
-    <!-- Main -->
-    <div id="main" class="my403">
+<!-- Main -->
+<div id="main" class="my403">
 
-        <article id="404" class="panel">
-            <div class="alert alert-danger" role="alert">
-                403 Error
-            </div>
+    <article id="404" class="panel">
+        <div class="alert alert-danger" role="alert">
+            403 Error
+        </div>
 
-            <div role="main">
-                <h1>Forbidden</h1>
-                <p>
-                    You are not authorized to access this page.
-                    Here's a link to the <a href="{% url 'app:home' %}">Home Page</a>. You know, just in case.
-                </p>
-            </div>
-        </article>
+        <div role="main">
+            <h1>Forbidden</h1>
+            <p>
+                You are not authorized to access this page.
+                Here's a link to the <a href="{% url 'app:home' %}">Home Page</a>. You know, just in case.
+            </p>
+        </div>
+    </article>
 
-    </div>
+</div>
 
 {% endblock %}

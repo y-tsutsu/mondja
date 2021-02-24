@@ -3,51 +3,63 @@
 {% block content %}
 
 <!-- Nav -->
-    <nav id="nav">
-        <a href="#home" class="fas fa-home"><span>Home</span></a>
-        <a href="#memo" class="fas fa-sticky-note"><span>Memo</span></a>
-        <a href="#about" class="fas fa-smile"><span>About</span></a>
-        <a href="https://github.com/y-tsutsu/mondja" class="fas fa-code-branch" target="_blank"><span>GitHub</span></a>
-        <a href="/logout/" class="fas fa-sign-out-alt"><span>Log-out</span></a>
-    </nav>
+<nav id="nav">
+    <a href="#home" class="fas fa-home">
+        <span>Home</span>
+    </a>
+    <a href="#memo" class="fas fa-sticky-note">
+        <span>Memo</span>
+    </a>
+    <a href="#about" class="fas fa-smile">
+        <span>About</span>
+    </a>
+    <a href="https://github.com/y-tsutsu/mondja" class="fas fa-code-branch" target="_blank">
+        <span>GitHub</span>
+    </a>
+    <a href="/logout/" class="fas fa-sign-out-alt">
+        <span>Log-out</span>
+    </a>
+</nav>
 
-    <!-- Main -->
-    <div id="main">
+<!-- Main -->
+<div id="main">
 
-        <!-- Home -->
-        <article id="home" class="panel intro">
-            <header>
-                <h1>_mondja_py_( ..)φ</h1>
-                <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
-            </header>
-            <a href="#memo" class="jumplink pic">
-                <span class="arrow icon solid fa-chevron-right"><span>See my memo</span></span>
-                <img src="{{ STATIC_URL }}images/profile.png" alt="" />
-            </a>
-        </article>
+    <!-- Home -->
+    <article id="home" class="panel intro">
+        <header>
+            <h1>_mondja_py_( ..)φ</h1>
+            <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
+        </header>
+        <a href="#memo" class="jumplink pic">
+            <span class="arrow icon solid fa-chevron-right">
+                <span>See my memo</span>
+            </span>
+            <img src="{{ STATIC_URL }}images/profile.png" alt="" />
+        </a>
+    </article>
 
-        <!-- Memo -->
-        {% include 'app/memo.html' %}
+    <!-- Memo -->
+    {% include 'app/memo.html' %}
 
-        <!-- About -->
-        <article id="about" class="panel">
-            <header>
-                <h1>_mondja_py_( ..)φ</h1>
-            </header>
-            <div class="myabout">
-                <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes or shou'd I?</p>
-                <pre><code class="python"># Python3: Fibonacci series up to n
+    <!-- About -->
+    <article id="about" class="panel">
+        <header>
+            <h1>_mondja_py_( ..)φ</h1>
+        </header>
+        <div class="myabout">
+            <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes or shou'd I?</p>
+            <pre><code class="python"># Python3: Fibonacci series up to n
 In [1]: def fib(n):
-   ...:     a, b  = 0, 1
+   ...:     a, b = 0, 1
    ...:     while a < n:
    ...:         print(a, end=' ')
    ...:         a, b = b, a+b
    ...:     print()
    ...: fib(1000)
 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</code></pre>
-            </div>
-        </article>
+        </div>
+    </article>
 
-    </div>
+</div>
 
 {% endblock %}

@@ -305,12 +305,15 @@ textarea.mydialog {
     html {
         font-size: 100%;
     }
+
     pre>code {
         font-size: 0.9rem;
     }
+
     #memo .modal-footer button {
         width: 6.5rem;
     }
+
     #memo #totop {
         bottom: 0.5rem;
         right: 0.5rem;
@@ -323,26 +326,32 @@ textarea.mydialog {
     html {
         font-size: 60%;
     }
+
     pre>code {
         font-size: 1.1rem;
     }
+
     #memo .modal-footer button {
         width: 9.5rem;
     }
+
     #memo .modal-header button {
         display: initial;
         width: initial;
         padding: initial;
         text-align: initial;
     }
+
     #memo #memo-button button {
         width: initial;
         padding: initial;
     }
+
     #memo #totop {
         bottom: 0.5rem;
         right: 0.3rem;
     }
+
     #memo #totop>a {
         font-size: 3.2rem;
     }

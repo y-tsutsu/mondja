@@ -1,199 +1,269 @@
 {% if user.is_superuser %}
 
-    <div id="memo-top">
+<div id="memo-top">
 
-        <div id="circle-button" class="clear row">
-            <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalEdit"><i class="fas fa-pencil-alt fa-lg"></i></a></div>
-            <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalSort"><i class="fas fa-sort fa-lg"></i></a></div>
-            <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalSearch"><i class="fas fa-search fa-lg" ></i></a></div>
-            <div class="col-md-1-5 col-xs-1-5"><a data-toggle="modal" data-target="#myModalTags"><i class="fas fa-tags fa-lg"></i></a></div>
-            <div class="col-md-1-5 col-xs-1-5"><a href="{% url 'app:refresh_memo' %}"><i class="fas fa-sync-alt fa-lg"></i></a></div>
+    <div id="circle-button" class="clear row">
+        <div class="col-md-1-5 col-xs-1-5">
+            <a data-toggle="modal" data-target="#myModalEdit">
+                <i class="fas fa-pencil-alt fa-lg"></i>
+            </a>
         </div>
-
-        <!-- 追加ダイアログ -->
-        <form method="post" action="{% url 'app:add_memo' %}">
-            {% csrf_token %}
-            <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">_mondja_py_( ..)φ</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="id_title">Title:</label>
-                                <input id="id_title" class="form-control" maxlength="200" name="title" type="text" placeholder="Type a title" autofocus required />
-                            </div>
-                            <div class="form-group">
-                                <label for="id_content">Content:</label>
-                                <textarea cols="75" id="id_content" class="form-control mydialog" name="content" rows="12" placeholder="Type a content (Markdown)" required ></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="id_tags">Tags:</label>
-                                <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type tags" />
-                            </div>
-                            <input type="hidden" name="user" value="{{ user.id }}" id="id_user" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cancel</button>
-                            <button type="submit" class="btn btn-success"><i class="fas fa-cloud-upload-alt fa-fw"></i>Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <!-- ソートダイアログ -->
-        <form method="get" action="{% url 'app:home' %}#memo">
-            <div class="modal fade" id="myModalSort" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">_mondja_py_( ..)φ</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="id_sort">Sort:</label>
-                                <div class="row" id="id_sort">
-                                    <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" data-header="Select a sort item" name="sort_item">
-                                        <option value=""></option>
-                                        <option value="pub_date">Date</option>
-                                        <option value="title">Title</option>
-                                        <option value="content">Content</option>
-                                    </select>
-                                    <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
-                                        <label class="btn btn-default active sort-btn">
-                                            <input type="radio" name="sort_op" value="asc" autocomplete="off" checked><i class="fas fa-sort-amount-down fa-lg fa-fw"></i>
-                                        </label>
-                                        <label class="btn btn-default sort-btn">
-                                            <input type="radio" name="sort_op" value="desc" autocomplete="off"><i class="fas fa-sort-amount-up fa-lg fa-fw"></i>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="id_tag">Tag:</label>
-                                <div class="row" id="id_tag">
-                                    <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" name="sort_tag_id">
-                                        <option value=""></option>
-                                        {% for item in all_tags %}
-                                            <option value="{{ item.id }}">{{ item.name }}</option>
-                                        {% endfor%}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="id_user">User:</label>
-                                <div class="row" id="id_user">
-                                    <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" name="sort_user_id">
-                                        <option value=""></option>
-                                        {% if user.is_superuser %}
-                                            <option value={{ user.id }}>My user</option>
-                                        {% endif %}
-                                        {% for item in all_users %}
-                                            <option value="{{ item.id }}">{{ item.username }}</option>
-                                        {% endfor%}
-                                    </select>
-                                </div>
-                            </div>
-                            <input type="hidden" name="now" value="{{ now_str }}" id="id_now" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cancel</button>
-                            <button type="submit" class="btn btn-success"><i class="fas fa-sort fa-fw"></i>Sort</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="types" value="sort" />
-        </form>
-
-        <!-- 検索ダイアログ -->
-        <form method="get" action="{% url 'app:home' %}#memo">
-            <div class="modal fade" id="myModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">_mondja_py_( ..)φ</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="id_title">Title:</label>
-                                <input id="id_title" class="form-control" maxlength="32" name="search_title" type="text" placeholder="Type a title" autofocus />
-                            </div>
-                            <div class="form-group">
-                                <label for="id_content">Content:</label>
-                                <input id="id_content" class="form-control" maxlength="32" name="search_content" type="text" placeholder="Type a content" />
-                            </div>
-                            <div class="form-group">
-                                <label for="id_tag">Tag:</label>
-                                <div id="id_tag">
-                                    <select class="selectpicker" data-style="btn-info" data-header="Select a tag" data-live-search="true" data-width="100%" name="search_tag_id">
-                                        <option value=""></option>
-                                        {% for item in all_tags %}
-                                            <option value="{{ item.id }}">{{ item.name }}</option>
-                                        {% endfor%}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="id_user">User:</label>
-                                <div id="id_user">
-                                    <select class="selectpicker" data-style="btn-warning" data-header="Select a user" data-live-search="true" data-width="100%" name="search_user_id">
-                                        <option value=""></option>
-                                        {% if user.is_superuser %}
-                                            <option value={{ user.id }}>My user</option>
-                                        {% endif %}
-                                        {% for item in all_users %}
-                                            <option value="{{ item.id }}">{{ item.username }}</option>
-                                        {% endfor%}
-                                    </select>
-                                </div>
-                            </div>
-                            <input type="hidden" name="now" value="{{ now_str }}" id="id_now" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cancel</button>
-                            <button type="submit" class="btn btn-success"><i class="fas fa-search fa-fw"></i>Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="types" value="search" />
-        </form>
-
-        <!-- タグ一覧ダイアログ -->
-        <form method="get" action="{% url 'app:home' %}#memo">
-            <div class="modal fade" id="myModalTags" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">_mondja_py_( ..)φ</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                {% for item in top_tags %}
-                                    <div class="col-md-2 col-xs-6 mydialogtag">
-                                        <input type="checkbox" data-toggle="toggle" data-on={{ item.name }} data-off={{ item.name }} data-onstyle={{ item.get_toggle_onstyle }} data-size="mini" data-width="100%" name="select_tag" value={{ item.id }}>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <input type="hidden" name="now" value="{{ now_str }}" id="id_now" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cancel</button>
-                            <button type="submit" class="btn btn-success"><i class="fas fa-tags fa-fw"></i>Tags</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="types" value="tags" />
-        </form>
-
+        <div class="col-md-1-5 col-xs-1-5">
+            <a data-toggle="modal" data-target="#myModalSort">
+                <i class="fas fa-sort fa-lg"></i>
+            </a>
+        </div>
+        <div class="col-md-1-5 col-xs-1-5">
+            <a data-toggle="modal" data-target="#myModalSearch">
+                <i class="fas fa-search fa-lg"></i>
+            </a>
+        </div>
+        <div class="col-md-1-5 col-xs-1-5">
+            <a data-toggle="modal" data-target="#myModalTags">
+                <i class="fas fa-tags fa-lg"></i>
+            </a>
+        </div>
+        <div class="col-md-1-5 col-xs-1-5">
+            <a href="{% url 'app:refresh_memo' %}">
+                <i class="fas fa-sync-alt fa-lg"></i>
+            </a>
+        </div>
     </div>
+
+    <!-- 追加ダイアログ -->
+    <form method="post" action="{% url 'app:add_memo' %}">
+        {% csrf_token %}
+        <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="id_title">Title:</label>
+                            <input id="id_title" class="form-control" maxlength="200" name="title" type="text"
+                                placeholder="Type a title" autofocus required />
+                        </div>
+                        <div class="form-group">
+                            <label for="id_content">Content:</label>
+                            <textarea cols="75" id="id_content" class="form-control mydialog" name="content" rows="12"
+                                placeholder="Type a content (Markdown)" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_tags">Tags:</label>
+                            <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text"
+                                placeholder="Type tags" />
+                        </div>
+                        <input type="hidden" name="user" value="{{ user.id }}" id="id_user" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fas fa-times fa-fw"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-cloud-upload-alt fa-fw"></i>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- ソートダイアログ -->
+    <form method="get" action="{% url 'app:home' %}#memo">
+        <div class="modal fade" id="myModalSort" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="id_sort">Sort:</label>
+                            <div class="row" id="id_sort">
+                                <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary"
+                                    data-header="Select a sort item" name="sort_item">
+                                    <option value=""></option>
+                                    <option value="pub_date">Date</option>
+                                    <option value="title">Title</option>
+                                    <option value="content">Content</option>
+                                </select>
+                                <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
+                                    <label class="btn btn-default active sort-btn">
+                                        <input type="radio" name="sort_op" value="asc" autocomplete="off" checked>
+                                        <i class="fas fa-sort-amount-down fa-lg fa-fw"></i>
+                                    </label>
+                                    <label class="btn btn-default sort-btn">
+                                        <input type="radio" name="sort_op" value="desc" autocomplete="off">
+                                        <i class="fas fa-sort-amount-up fa-lg fa-fw"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_tag">Tag:</label>
+                            <div class="row" id="id_tag">
+                                <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info"
+                                    data-header="Select a tag" name="sort_tag_id">
+                                    <option value=""></option>
+                                    {% for item in all_tags %}
+                                    <option value="{{ item.id }}">{{ item.name }}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_user">User:</label>
+                            <div class="row" id="id_user">
+                                <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning"
+                                    data-header="Select a user" name="sort_user_id">
+                                    <option value=""></option>
+                                    {% if user.is_superuser %}
+                                    <option value="{{ user.id }}">My user</option>
+                                    {% endif %}
+                                    {% for item in all_users %}
+                                    <option value="{{ item.id }}">{{ item.username }}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
+                        </div>
+                        <input type="hidden" name="now" value="{{ now_str }}" id="id_now" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fas fa-times fa-fw"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-sort fa-fw"></i>
+                            Sort
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="types" value="sort" />
+    </form>
+
+    <!-- 検索ダイアログ -->
+    <form method="get" action="{% url 'app:home' %}#memo">
+        <div class="modal fade" id="myModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="id_title">Title:</label>
+                            <input id="id_title" class="form-control" maxlength="32" name="search_title" type="text"
+                                placeholder="Type a title" autofocus />
+                        </div>
+                        <div class="form-group">
+                            <label for="id_content">Content:</label>
+                            <input id="id_content" class="form-control" maxlength="32" name="search_content" type="text"
+                                placeholder="Type a content" />
+                        </div>
+                        <div class="form-group">
+                            <label for="id_tag">Tag:</label>
+                            <div id="id_tag">
+                                <select class="selectpicker" data-style="btn-info" data-header="Select a tag"
+                                    data-live-search="true" data-width="100%" name="search_tag_id">
+                                    <option value=""></option>
+                                    {% for item in all_tags %}
+                                    <option value="{{ item.id }}">{{ item.name }}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_user">User:</label>
+                            <div id="id_user">
+                                <select class="selectpicker" data-style="btn-warning" data-header="Select a user"
+                                    data-live-search="true" data-width="100%" name="search_user_id">
+                                    <option value=""></option>
+                                    {% if user.is_superuser %}
+                                    <option value="{{ user.id }}">My user</option>
+                                    {% endif %}
+                                    {% for item in all_users %}
+                                    <option value="{{ item.id }}">{{ item.username }}</option>
+                                    {% endfor%}
+                                </select>
+                            </div>
+                        </div>
+                        <input type="hidden" name="now" value="{{ now_str }}" id="id_now" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fas fa-times fa-fw"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-search fa-fw"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="types" value="search" />
+    </form>
+
+    <!-- タグ一覧ダイアログ -->
+    <form method="get" action="{% url 'app:home' %}#memo">
+        <div class="modal fade" id="myModalTags" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            {% for item in top_tags %}
+                            <div class="col-md-2 col-xs-6 mydialogtag">
+                                <input type="checkbox" data-toggle="toggle" data-on="{{ item.name }}"
+                                    data-off="{{ item.name }}" data-onstyle="{{ item.get_toggle_onstyle }}"
+                                    data-size="mini" data-width="100%" name="select_tag" value="{{ item.id }}">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input type="hidden" name="now" value="{{ now_str }}" id="id_now" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fas fa-times fa-fw"></i>
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-tags fa-fw"></i>
+                            Tags
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="types" value="tags" />
+    </form>
+
+</div>
 
 {% endif %}

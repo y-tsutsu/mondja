@@ -2,23 +2,23 @@
 
 {% block content %}
 
-    <!-- Main -->
-    <div id="main" class="my404">
+<!-- Main -->
+<div id="main" class="my404">
 
-        <article id="404" class="panel">
-            <div class="alert alert-danger" role="alert">
-                404 Error
-            </div>
+    <article id="404" class="panel">
+        <div class="alert alert-danger" role="alert">
+            404 Error
+        </div>
 
-            <div role="main">
-                <h1>Page not found</h1>
-                <p>
-                    Looks like you followed a bad link. If you think it's our fault, please <a href="https://github.com/y-tsutsu/mondja">let us know</a>.
-                    Here's a link to the <a href="{% url 'app:home' %}">Home Page</a>. You know, just in case.
-                </p>
-            </div>
-        </article>
+        <div role="main">
+            <h1>Page not found</h1>
+            <p>
+                Looks like you followed a bad link. If you think it's our fault, please <a href="https://github.com/y-tsutsu/mondja">let us know</a>.
+                Here's a link to the <a href="{% url 'app:home' %}">Home Page</a>. You know, just in case.
+            </p>
+        </div>
+    </article>
 
-    </div>
+</div>
 
 {% endblock %}

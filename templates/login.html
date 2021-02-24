@@ -2,47 +2,57 @@
 
 {% block content %}
 
-    <!-- Main -->
-    <div id="main" class="mylogin">
+<!-- Main -->
+<div id="main" class="mylogin">
 
-        <!-- Login -->
-        <article id="login" class="panel">
-            <header>
-                <h1>Log-in to mondja</h1>
-                {% if form.errors %}
-                    <p id="error">Incorrect username or password.</p>
-                {% else %}
-                    <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
-                {% endif %}
-            </header>
+    <!-- Login -->
+    <article id="login" class="panel">
+        <header>
+            <h1>Log-in to mondja</h1>
+            {% if form.errors %}
+            <p id="error">Incorrect username or password.</p>
+            {% else %}
+            <p>I thought what I'd do was, I'd pretend I was one of those deaf-mutes</p>
+            {% endif %}
+        </header>
 
-            <form method="post" action="{% url 'login' %}" role="form">
+        <form method="post" action="{% url 'login' %}" role="form">
             {% csrf_token %}
-                <div class="mycontrol">
-                    <input id="id_username" maxlength="254" name="username" type="text" class="form-control" placeholder="User ID" aria-describedby="sizing-addon1" autofocus required />
-                </div>
-                <div class="mycontrol">
-                    <input id="id_password" maxlength="256" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" required />
-                </div>
-                <div class="mycontrol">
-                    <input type="submit" value="Log-in" />
-                </div>
-                {% if ENABLED_SOCIAL_AUTH %}
-                    <div class="mycontrol">
-                        <div class="row">
-                            <div class="col-md-6 col-xs-6">
-                                <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fab fa-facebook fa-lg fa-fw"></i>Facebook</button>
-                            </div>
-                            <div class="col-md-6 col-xs-6">
-                                <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'" class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}><i class="fab fa-twitter fa-lg fa-fw"></i>Twitter</button>
-                            </div>
-                        </div>
+            <div class="mycontrol">
+                <input id="id_username" maxlength="254" name="username" type="text" class="form-control"
+                    placeholder="User ID" aria-describedby="sizing-addon1" autofocus required />
+            </div>
+            <div class="mycontrol">
+                <input id="id_password" maxlength="256" name="password" type="password" class="form-control"
+                    placeholder="Password" aria-describedby="sizing-addon1" required />
+            </div>
+            <div class="mycontrol">
+                <input type="submit" value="Log-in" />
+            </div>
+            {% if ENABLED_SOCIAL_AUTH %}
+            <div class="mycontrol">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'"
+                            class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}>
+                            <i class="fab fa-facebook fa-lg fa-fw"></i>
+                            Facebook
+                        </button>
                     </div>
-                {% endif %}
-                <input type="hidden" name="next" value="{{ next }}" />
-            </form>
-        </article>
+                    <div class="col-md-6 col-xs-6">
+                        <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'"
+                            class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}>
+                            <i class="fab fa-twitter fa-lg fa-fw"></i>
+                            Twitter
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+    </article>
 
-    </div>
+</div>
 
 {% endblock %}

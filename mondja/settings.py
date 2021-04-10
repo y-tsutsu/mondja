@@ -142,6 +142,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace(os.path.sep, '/')
 
 
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
 

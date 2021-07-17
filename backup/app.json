@@ -3706,5 +3706,19 @@
       57
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 240,
+  "fields": {
+    "title": "Linuxでディレクトリのサイズを確認",
+    "content": "# サイズを一覧してソート\r\n\r\n`du`コマンドでディレクトリ・ファイルのサイズを一覧して`sort`で並び替え．\r\n\r\n```console\r\n$ du -BM | sort -nr\r\n```",
+    "pub_date": "2021-07-17T06:35:48.307Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
 }
 ]

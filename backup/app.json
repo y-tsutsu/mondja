@@ -3720,5 +3720,47 @@
       52
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 241,
+  "fields": {
+    "title": "C#のコンソールアプリでasync/awaitを使用する方法",
+    "content": "# コンソールアプリのMainメソッドでawaitできるようにする\r\n\r\nC#のMainメソッドには直接asyncキーワードをつけることができないので，awaitで呼び出すこともできない．そこでasyncのMainメソッドを別に用意して本来のMainメソッドから呼び出し，Resultを取得するようにしてブロックすればそちら側でawaitすることができる．\r\n\r\n```cs\r\nstatic void Main(string[] args)\r\n{\r\n    try\r\n    {\r\n        var result = InternalMainAsync(args).Result;\r\n    }\r\n    catch (Exception ex)\r\n    {\r\n        Console.WriteLine(ex.Message);\r\n    }\r\n}\r\n\r\nprivate static async Task<bool> InternalMainAsync(string[] args)\r\n{\r\n    var result = await HogeAsync();\r\n    return true;\r\n}\r\n```",
+    "pub_date": "2021-08-05T05:41:19.659Z",
+    "user": 2,
+    "tags": [
+      1,
+      10
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 242,
+  "fields": {
+    "title": "PythonでNode.jsのような非同期実行",
+    "content": "# Pythonでasyncioを使って任意のタイミングで非同期実行\r\n\r\nメインのスレッドでevent loopをまわして`asyncio.Queue`を使って外部からTaskを追加．Queueはスレッドセーフではないので`call_soon_threadsafe`を使う必要があるので注意．\r\n\r\n```py\r\nimport asyncio\r\nimport signal\r\nimport time\r\nfrom datetime import datetime\r\nfrom threading import Thread\r\n\r\ndef do_another_thread(loop: asyncio.AbstractEventLoop, queue: asyncio.Queue):\r\n    for i in range(10):\r\n        loop.call_soon_threadsafe(lambda: queue.put_nowait((3, i)))\r\n        time.sleep(1)\r\n\r\nasync def do_async(delay, value):\r\n    print(f'[{datetime.now()}] start value: {value}')\r\n    await asyncio.sleep(delay)\r\n    print(f'[{datetime.now()}] stop value: {value}')\r\n\r\nasync def main_lop(loop: asyncio.AbstractEventLoop):\r\n    queue = asyncio.Queue()  # queueはevent loop内で生成する\r\n    Thread(target=do_another_thread, args=(loop, queue), daemon=True).start()\r\n    while True:\r\n        delay, value = await queue.get()\r\n        loop.create_task(do_async(delay, value))\r\n\r\ndef main():\r\n    loop = asyncio.get_event_loop()\r\n    loop.add_signal_handler(signal.SIGTERM, lambda: [task.cancel() for task in asyncio.Task.all_tasks()])\r\n    try:\r\n        loop.run_until_complete(main_lop(loop))\r\n    except KeyboardInterrupt:\r\n        pass\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2021-08-07T08:16:22.578Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 243,
+  "fields": {
+    "title": "簡単にwith文で使えるコンテキストマネージャを実装",
+    "content": "# デコレータでコンテキストマネージャを定義\r\n\r\n通常は`__enter__`と`__exit__`を実装したClassを用意する必要があるが，`@contextlib.contextmanager`を使うと簡単にコンテキストマネージャを定義することができる．\r\n\r\n\r\n```py\r\nfrom contextlib import contextmanager\r\n\r\n@contextmanager\r\ndef reading(filename):\r\n    file = open(filename, 'r')\r\n    try:\r\n        yield file\r\n    finally:\r\n        file.close()\r\n\r\ndef main():\r\n    with reading('spam.txt') as f:\r\n        print(f.readline())\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2021-08-10T17:58:34.424Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
 }
 ]

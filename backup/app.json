@@ -531,6 +531,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 68,
+  "fields": {
+    "name": "Vim",
+    "pub_date": "2021-09-20T14:58:52.639Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -3760,6 +3769,21 @@
     "tags": [
       1,
       2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 244,
+  "fields": {
+    "title": "Vimでペーストするときにインデントがずれないように",
+    "content": "# ペーストするときにインデントがずれてしまうときの対応\r\n\r\n```bash\r\n:set paste    # ペーストモード\r\n:set nopaste  # ペーストモード解除\r\n:set paste!   # ペーストモード切替え\r\n```",
+    "pub_date": "2021-09-20T14:58:52.586Z",
+    "user": 2,
+    "tags": [
+      1,
+      52,
+      68
     ]
   }
 }

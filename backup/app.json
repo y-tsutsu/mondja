@@ -540,6 +540,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 69,
+  "fields": {
+    "name": "AtCoder",
+    "pub_date": "2021-12-18T05:38:22.739Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -3784,6 +3793,36 @@
       1,
       52,
       68
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 245,
+  "fields": {
+    "title": "UnionFindのPython実装",
+    "content": "# UnionFindをPythonを使って実装\r\n\r\n1. グループ作り (Union)\r\n2. グループに属しているかどうか (Find)\r\n\r\n[https://www.slideshare.net/chokudai/union-find-49066733/1](https://www.slideshare.net/chokudai/union-find-49066733/1)\r\n\r\n```py\r\nfrom sys import setrecursionlimit\r\nsetrecursionlimit(1000000)\r\n\r\nclass UnionFind:\r\n    def __init__(self, n):\r\n        self._n = n\r\n        self._root_or_size = [-1 for _ in range(n)]\r\n\r\n    def find(self, i):\r\n        if self._root_or_size[i] < 0:\r\n            return i\r\n        self._root_or_size[i] = self.find(self._root_or_size[i])\r\n        return self._root_or_size[i]\r\n\r\n    def unite(self, i, j):\r\n        ri = self.find(i)\r\n        rj = self.find(j)\r\n        if ri == rj:\r\n            return ri\r\n        if -self._root_or_size[ri] < -self._root_or_size[rj]:\r\n            ri, rj = rj, ri\r\n        self._root_or_size[ri] += self._root_or_size[rj]\r\n        self._root_or_size[rj] = ri\r\n        return ri\r\n\r\n    def same(self, i, j):\r\n        return self.find(i) == self.find(j)\r\n\r\n    def size(self, i):\r\n        return -self._root_or_size[self.find(i)]\r\n\r\n    def groups(self):\r\n        result = [[] for _ in range(self._n)]\r\n        for i in range(self._n):\r\n            result[self.find(i)].append(i)\r\n        return [x for x in result if x]\r\n\r\ndef main():\r\n    uf = UnionFind(8)\r\n    uf.unite(0, 1)\r\n    uf.unite(1, 3)\r\n    uf.unite(0, 4)\r\n    uf.unite(5, 6)\r\n    uf.unite(3, 7)\r\n    print(uf.groups())    # [[0, 1, 3, 4, 7], [2], [5, 6]]\r\n    print(uf.find(3))     # 0\r\n    print(uf.same(1, 7))  # True\r\n    print(uf.same(0, 5))  # False\r\n    print(uf.size(6))     # 2\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2021-12-18T05:38:22.706Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      69
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 246,
+  "fields": {
+    "title": "尺取り法の実装",
+    "content": "# 尺取り法のサンプル実装\r\n\r\n`ri`側は条件に合う一つ外側を指すようにするのが実装が楽そう．\r\n\r\n[https://atcoder.jp/contests/abc229/editorial/2956](https://atcoder.jp/contests/abc229/editorial/2956)\r\n\r\n```py\r\nfrom sys import stdin\r\n\r\ndef main():\r\n    s = stdin.readline().rstrip()\r\n    k = int(stdin.readline().rstrip())\r\n    ri = 0\r\n    count = 0\r\n    ans = 0\r\n    for le in range(len(s)):\r\n        while ri < len(s):\r\n            if count + (1 if s[ri] == '.' else 0) > k:\r\n                break\r\n            count += 1 if s[ri] == '.' else 0\r\n            ri += 1\r\n        ans = max(ans, ri - le)\r\n        count -= 1 if s[le] == '.' else 0\r\n    print(ans)\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2021-12-19T01:46:53.409Z",
+    "user": 2,
+    "tags": [
+      1,
+      2,
+      69
     ]
   }
 }

@@ -1,7 +1,7 @@
 """mondja URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -13,13 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf.urls import static, url
+from django.conf import settings
+from django.conf.urls import static
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
-from django.urls import include, path
+from django.urls import include, path, re_path
 from django.views.generic import RedirectView
 
-from . import dumpdata, settings
+from . import dumpdata
 
 urlpatterns = [
     # app
@@ -41,7 +42,7 @@ urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
 
     # MEDIA_ROOT
-    url(r'media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),
 
     # favicon
     path('favicon.ico', RedirectView.as_view(url='/static/images/favicon.ico', permanent=True)),

@@ -1,4 +1,4 @@
-{% ifnotequal all_memo.paginator.num_pages 1 %}
+{% if all_memo.paginator.num_pages != 1 %}
 <div class="pager">
     {% if all_memo.has_previous %}
     <a href="?{{ all_memo.previous_page_number.querystring }}#memo" class="prev">&lsaquo;&lsaquo;</a>
@@ -10,11 +10,11 @@
 
     {% if page %}
 
-    {% ifequal page all_memo.number %}
+    {% if page == all_memo.number %}
     <span class="current page">{{ page }}</span>
     {% else %}
     <a href="?{{ page.querystring }}#memo" class="page">{{ page }}</a>
-    {% endifequal %}
+    {% endif %}
 
     {% else %}
     ...
@@ -28,4 +28,4 @@
     <span class="disabled next">&rsaquo;&rsaquo;</span>
     {% endif %}
 </div>
-{% endifnotequal %}
+{% endif %}

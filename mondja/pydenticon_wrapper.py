@@ -3,7 +3,7 @@ import os.path
 import pydenticon
 from django.conf import settings
 
-dir = settings.MEDIA_ROOT + '/identicon/'
+dir = settings.MEDIA_ROOT / 'identicon'
 
 foreground = ['rgb(63, 81, 181)', 'rgb(255, 152, 0)', 'rgb(156, 39, 176)',
               'rgb(33, 150, 243)', 'rgb(244, 67, 54)', 'rgb(76, 175, 80)', 'rgb(156, 39, 176)']
@@ -17,7 +17,7 @@ generator = pydenticon.Generator(
 
 
 def create_identicon(username):
-    filename = dir + username + '.png'
+    filename = os.path.join(str(dir), f'{username}.png')
     if os.path.isfile(filename):
         return
 

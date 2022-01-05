@@ -91,7 +91,7 @@ def home(request):
     return render(request, 'app/index.html', locals())
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
+@user_passes_test(lambda u: u.is_superuser, login_url=f'/{settings.LOGIN_URL}?need_superuser=True')
 def add_memo(request):
     ''' メモを新規に追加する． '''
     if request.method == 'POST':
@@ -103,7 +103,7 @@ def add_memo(request):
     return redirect('/#memo')
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
+@user_passes_test(lambda u: u.is_superuser, login_url=f'/{settings.LOGIN_URL}?need_superuser=True')
 def edit_memo(request, id):
     ''' 既存のメモを編集する． '''
     memo = get_object_or_404(Memo, pk=id)
@@ -154,7 +154,7 @@ def add_or_edit_memo(request, memo_form, is_edit):
         messages.error(request, 'Incorrect title or content.')
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
+@user_passes_test(lambda u: u.is_superuser, login_url=f'/{settings.LOGIN_URL}?need_superuser=True')
 def delete_memo(request, id):
     ''' メモを削除する． '''
     memo = get_object_or_404(Memo, pk=id)
@@ -171,7 +171,7 @@ def delete_memo(request, id):
     return redirect('/#memo')
 
 
-@user_passes_test(lambda u: u.is_superuser, login_url=settings.LOGIN_URL + '?need_superuser=True')
+@user_passes_test(lambda u: u.is_superuser, login_url=f'/{settings.LOGIN_URL}?need_superuser=True')
 def refresh_memo(request):
     ''' メモの表示をリフレッシュする． '''
     return redirect('/#memo')

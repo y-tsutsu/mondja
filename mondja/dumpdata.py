@@ -4,7 +4,7 @@ from django.core.management import call_command
 from django.shortcuts import HttpResponseRedirect
 
 
-@user_passes_test(lambda u: u.is_staff, login_url=settings.LOGIN_URL + '?need_staff=True')
+@user_passes_test(lambda u: u.is_staff, login_url=f'/{settings.LOGIN_URL}?need_staff=True')
 def dumpdata_app(request, app_name):
     '''appのDBのエクスポートを行う．'''
     filename = f'{settings.MEDIA_ROOT / app_name}.json'

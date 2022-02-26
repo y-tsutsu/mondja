@@ -3,10 +3,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from pure_pagination import PageNotAnInteger, Paginator
 
 from .forms import MemoForm, TagForm
 from .models import Memo, Tag
@@ -75,13 +75,16 @@ def home(request):
     else:
         all_memo = Memo.objects.all().order_by('-pub_date')
 
-    paginator = Paginator(all_memo, 30, request=request)
     page = request.GET.get('page', 1)
+    paginator = Paginator(all_memo, 30)
+    paginator_page_range = paginator.get_elided_page_range(number=page, on_each_side=1, on_ends=2)
 
     try:
         all_memo = paginator.page(page)
     except PageNotAnInteger:
         all_memo = paginator.page(1)
+    except EmptyPage:
+        all_memo = paginator.page(paginator.num_pages)
 
     all_users = User.objects.annotate(count_memos=Count('memo')).order_by('-count_memos')
     all_tags = Tag.objects.annotate(count_memos=Count('memo')).order_by('-count_memos', '-pub_date')

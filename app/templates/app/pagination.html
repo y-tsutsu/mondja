@@ -1,29 +1,25 @@
 {% if all_memo.paginator.num_pages != 1 %}
 <div class="pager">
     {% if all_memo.has_previous %}
-    <a href="?{{ all_memo.previous_page_number.querystring }}#memo" class="prev">&lsaquo;&lsaquo;</a>
+    <a href="?page={{ all_memo.previous_page_number }}#memo" class="prev">&lsaquo;&lsaquo;</a>
     {% else %}
     <span class="disabled prev">&lsaquo;&lsaquo;</span>
     {% endif %}
 
-    {% for page in all_memo.pages %}
-
-    {% if page %}
+    {% for page in paginator_page_range %}
 
     {% if page == all_memo.number %}
     <span class="current page">{{ page }}</span>
+    {% elif page == all_memo.paginator.ELLIPSIS%}
+    {{ all_memo.paginator.ELLIPSIS }}
     {% else %}
-    <a href="?{{ page.querystring }}#memo" class="page">{{ page }}</a>
-    {% endif %}
-
-    {% else %}
-    ...
+    <a href="?page={{ page }}#memo" class="page">{{ page }}</a>
     {% endif %}
 
     {% endfor %}
 
     {% if all_memo.has_next %}
-    <a href="?{{ all_memo.next_page_number.querystring }}#memo" class="next">&rsaquo;&rsaquo;</a>
+    <a href="?page={{ all_memo.next_page_number }}#memo" class="next">&rsaquo;&rsaquo;</a>
     {% else %}
     <span class="disabled next">&rsaquo;&rsaquo;</span>
     {% endif %}

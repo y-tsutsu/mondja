@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gunicorn',
     'social_django',
-    'pure_pagination',
     'app.apps.AppConfig',
 ]
 
@@ -179,13 +178,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
     'social_core.pipeline.social_auth.associate_by_email',
 )
-
-
-PAGINATION_SETTINGS = {
-    'PAGE_RANGE_DISPLAYED': 2,
-    'MARGIN_PAGES_DISPLAYED': 2,
-    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
-}
 
 
 # Activate Django-Heroku.

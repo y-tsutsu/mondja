@@ -12,7 +12,6 @@ coverage = "*"
 [packages]
 django = "*"
 django-heroku = "*"
-django-pure-pagination = "*"
 docutils = "*"
 gunicorn = "*"
 markdown = "*"

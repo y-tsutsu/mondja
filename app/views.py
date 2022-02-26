@@ -5,11 +5,23 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist, PermissionDenied
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Count
+from django.http import HttpResponseServerError
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
+from django.views.decorators.csrf import requires_csrf_token
 
 from .forms import MemoForm, TagForm
 from .models import Memo, Tag
+
+
+@requires_csrf_token
+def my_customized_server_error(request, template_name='500.html'):
+    import sys
+
+    from django.views import debug
+
+    error_html = debug.technical_500_response(request, *sys.exc_info()).content
+    return HttpResponseServerError(error_html)
 
 
 @login_required

@@ -3876,7 +3876,7 @@
   "pk": 250,
   "fields": {
     "title": "ワーシャルフロイド法のサンプル実装",
-    "content": "# ワーシャルフロイド法をPythonを使って実装\r\n\r\n最短経路を算出するアルゴリズム．グラフ上の全ての頂点間の最短経路をO(n**3)で算出する．iからjまでの最短経路を，途中経路kを順に切り替えながら最小値を更新し算出する．\r\n\r\n```py\r\nINF = 1001001001\r\n\r\nn = 23  # nは頂点数\r\nm = 42  # mは辺数\r\nabc = [[0, 1, 2] for _ in range(m)]  # aからbへの距離cの辺数がm\r\n\r\nd = [[INF for _ in range(n)] for _ in range(n)]  # iからjへの最短経路テーブル（初期値はINF）\r\nfor i in range(n):\r\n    d[i][i] = 0  # 自分自身への移動は0\r\nfor a, b, c in abc:\r\n    d[a][b] = c  # aからbへの直接の距離cを設定\r\n\r\ndef warshall_floyd(n):\r\n    for k in range(n):  # kは経由する頂点\r\n        for i in range(n):\r\n            for j in range(n):\r\n                d[i][j] = min(d[i][j], d[i][k] + d[k][j])\r\n\r\nwarshall_floyd()\r\nprint(*d, sep='\\n')\r\n```",
+    "content": "# ワーシャルフロイド法をPythonを使って実装\r\n\r\n最短経路を算出するアルゴリズム．グラフ上の全ての頂点間の最短経路をO(n**3)で算出する．iからjまでの最短経路を，途中経路kを順に切り替えながら最小値を更新し算出する．\r\n\r\n```py\r\nINF = 1001001001\r\n\r\nn = 23  # nは頂点数\r\nm = 42  # mは辺数\r\nabc = [[0, 1, 2] for _ in range(m)]  # aからbへの距離cの辺数がm\r\n\r\nd = [[INF for _ in range(n)] for _ in range(n)]  # iからjへの最短経路テーブル（初期値はINF）\r\nfor i in range(n):\r\n    d[i][i] = 0  # 自分自身への移動は0\r\nfor a, b, c in abc:\r\n    d[a][b] = c  # aからbへの直接の距離cを設定\r\n\r\ndef warshall_floyd(n):\r\n    for k in range(n):  # kは経由する頂点\r\n        for i in range(n):\r\n            for j in range(n):\r\n                d[i][j] = min(d[i][j], d[i][k] + d[k][j])\r\n\r\nwarshall_floyd(n)\r\nprint(*d, sep='\\n')\r\n```",
     "pub_date": "2022-01-31T15:17:10.869Z",
     "user": 2,
     "tags": [

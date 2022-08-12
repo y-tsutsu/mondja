@@ -10,7 +10,7 @@ rope = "*"
 coverage = "*"
 
 [packages]
-django = "*"
+django = "==4.0.7"
 django-heroku = "*"
 docutils = "*"
 gunicorn = "*"

@@ -7,8 +7,8 @@ from mondja.pydenticon_wrapper import create_identicon
 
 
 class MondjaMiddleware(MiddlewareMixin):
-    def __init__(self, get_response=None):
-        self.get_response = get_response
+    def __init__(self, get_response):
+        super().__init__(get_response)
 
     def process_request(self, request):
         # Heroku用にidenticonを生成

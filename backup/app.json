@@ -3945,5 +3945,20 @@
       69
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 255,
+  "fields": {
+    "title": "UbuntuのDockerコンテナでの最低限の設定",
+    "content": "# 国内のリポジトリに変更\r\n\r\nデフォルトでは通信速度が遅いので国内のリポジトリに変更する\r\n\r\n```console\r\n# sed -i.org -e 's|archive.ubuntu.com|ubuntutym.u-toyama.ac.jp|g' /etc/apt/sources.list\r\n# apt update && apt upgrade -y\r\n```\r\n\r\n# プロンプトのデザイン変更\r\n\r\nプロンプトに色をつける\r\n\r\n```console\r\n# echo \"PS1='\\${debian_chroot:+(\\$debian_chroot)}\\[\\e[38;05;74m\\]\\u\\[\\e[00m\\]@\\[\\e[38;05;186m\\]\\h\\[\\e[00m\\]:\\[\\e[38;05;172m\\]\\w\\[\\e[00m\\]\\\\$ '\" >> ~/.bashrc\r\n# source ~/.bashrc\r\n```\r\n\r\n# 日本語化\r\n\r\n表示の日本語化とタイムゾーンをJSTに変更\r\n\r\n```console\r\n# apt install locales\r\n# sed -i -E 's/# (ja_JP.UTF-8)/\\1/' /etc/locale.gen\r\n# locale-gen\r\n# echo 'export LANG=ja_JP.UTF-8' >> ~/.bashrc\r\n# source ~/.bashrc\r\n# apt install tzdata\r\n```\r\n\r\n# vimの設定\r\n\r\nダークモードへの変更と行番号表示，インデント関連の設定など\r\n\r\n```bash\r\nset number\r\nset expandtab\r\nset tabstop=4\r\nset shiftwidth=4\r\nset smartindent\r\nset background=dark\r\nset cursorline\r\nsyntax enable\r\nhighlight CursorLine ctermbg=darkgray\r\n```\r\n\r\n# manのインストール\r\n\r\nmanコマンドのインストールと日本語化\r\n\r\n```console\r\n# apt install man manpages-ja manpages-ja-dev less\r\n# unminimize\r\n```",
+    "pub_date": "2022-10-29T10:15:05.843Z",
+    "user": 2,
+    "tags": [
+      1,
+      52,
+      62
+    ]
+  }
 }
 ]

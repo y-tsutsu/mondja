@@ -1,14 +1,12 @@
 # mondja
 \_mondja\_py\_( ..)φ
 
-[![Heroku Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/y-tsutsu/mondja)
-
 # Note
 Simple memo web application.
 
 # Requirements
 * Python: 3.10
-* Django: 4.0
+* Django: 4.1
 
 # Run
 ```

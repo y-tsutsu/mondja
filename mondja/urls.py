@@ -35,11 +35,11 @@ urlpatterns = [
     # Log-out:
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
 
-    # Admin
-    path('admin/', admin.site.urls),
-
     # Admin Doc
     path('admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Admin
+    path('admin/', admin.site.urls),
 
     # MEDIA_ROOT
     re_path(r'media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT}),

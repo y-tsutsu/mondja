@@ -11,8 +11,8 @@ coverage = "*"
 
 [packages]
 django = "*"
+django-docutils = "*"
 django-heroku = "*"
-docutils = "*"
 gunicorn = "*"
 markdown = "*"
 pydenticon = "*"

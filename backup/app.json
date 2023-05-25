@@ -3984,5 +3984,21 @@
       70
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 257,
+  "fields": {
+    "title": "VSCodeでのC++のデバッグ設定",
+    "content": "# launch.jsonとtask.jsonの設定内容\r\n\r\nlaunch.jsonでgdbでデバッグする構成を記述し，またその中でtask.jsonに記述しているビルドタスクを事前に呼び出すようにしている．\r\n\r\n## launch.jsonの設定\r\n\r\ngdbを使ったデバッグのデフォルト設定．`configurations`でインテリセンスを動かすと出力される内容．`program`はコメントに従って適切な内容に編集する．また追加で`preLaunchTask`を指定している．\r\n\r\n```json\r\n{\r\n    \"version\": \"0.2.0\",\r\n    \"configurations\": [\r\n        {\r\n            \"name\": \"(gdb) 起動\",\r\n            \"type\": \"cppdbg\",\r\n            \"request\": \"launch\",\r\n            \"program\": \"${workspaceFolder}/main\",\r\n            \"args\": [],\r\n            \"stopAtEntry\": true,\r\n            \"cwd\": \"${fileDirname}\",\r\n            \"environment\": [],\r\n            \"externalConsole\": false,\r\n            \"MIMode\": \"gdb\",\r\n            \"setupCommands\": [\r\n                {\r\n                    \"description\": \"gdb の再フォーマットを有効にする\",\r\n                    \"text\": \"-enable-pretty-printing\",\r\n                    \"ignoreFailures\": true\r\n                },\r\n                {\r\n                    \"description\": \"逆アセンブリ フレーバーを Intel に設定\",\r\n                    \"text\": \"-gdb-set disassembly-flavor intel\",\r\n                    \"ignoreFailures\": true\r\n                }\r\n            ],\r\n            \"preLaunchTask\": \"C/C++: g++ アクティブなファイルのビルド\"\r\n        }\r\n    ]\r\n}\r\n```\r\n\r\n## tasks.jsonの設定\r\n\r\ng++でのビルドタスク．デバッグで使うには`-g`オプションをつけておく．こちらの内容もデフォルト構成の中から選択すると出力される．追加で`presentation`で`\"focus\": true`としておくと，単体でビルドタスクを使用するときにビルド時のターミナルを閉じるのに便利．\r\n\r\n```\r\n{\r\n    \"version\": \"2.0.0\",\r\n    \"tasks\": [\r\n        {\r\n            \"type\": \"cppbuild\",\r\n            \"label\": \"C/C++: g++ アクティブなファイルのビルド\",\r\n            \"command\": \"/usr/bin/g++\",\r\n            \"args\": [\r\n                \"-fdiagnostics-color=always\",\r\n                \"-g\",\r\n                \"${file}\",\r\n                \"-o\",\r\n                \"${fileDirname}/${fileBasenameNoExtension}\"\r\n            ],\r\n            \"options\": {\r\n                \"cwd\": \"${fileDirname}\"\r\n            },\r\n            \"problemMatcher\": [\r\n                \"$gcc\"\r\n            ],\r\n            \"group\": {\r\n                \"kind\": \"build\",\r\n                \"isDefault\": true\r\n            },\r\n            \"detail\": \"コンパイラ: /usr/bin/g++\",\r\n            \"presentation\": {\r\n                \"echo\": true,\r\n                \"reveal\": \"always\",\r\n                \"focus\": true,\r\n                \"panel\": \"shared\",\r\n                \"showReuseMessage\": true,\r\n                \"clear\": false\r\n            }\r\n        }\r\n    ]\r\n}\r\n```",
+    "pub_date": "2023-05-20T06:06:13.872Z",
+    "user": 2,
+    "tags": [
+      1,
+      8,
+      16,
+      55
+    ]
+  }
 }
 ]

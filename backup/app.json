@@ -2342,7 +2342,7 @@
   "pk": 141,
   "fields": {
     "title": "VSCodeのExtension一覧",
-    "content": "# Extension一覧\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Better TOML\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake Tools\r\n* Code Runner\r\n* CodeLLDB\r\n* Docker\r\n* EditorConfig for VS Code\r\n* Find Then Jump\r\n* Flake8\r\n* Git Graph\r\n* gitignore\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* isort\r\n* Japanese Language Pack for Visual Studio Code\r\n* Marp for VS Code\r\n* Path Intellisense\r\n* PlantUML\r\n* Python\r\n* Qt for Python\r\n* Rainbow CSV\r\n* Remote Development\r\n* rust-analyzer\r\n* SSH FS\r\n* Table Formatter\r\n* Vetur\r\n* Vscode Google Translate\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nbungcip.better-toml\r\nchristian-kohler.path-intellisense\r\ncodezombiech.gitignore\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nfunkyremi.vscode-google-translate\r\ngolang.go\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmarp-team.marp-vscode\r\nmechatroner.rainbow-csv\r\nmhutchie.git-graph\r\nmichelemelluso.code-beautifier\r\nms-azuretools.vscode-docker\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-dotnettools.csharp\r\nms-python.flake8\r\nms-python.isort\r\nms-python.python\r\nms-vscode-remote.vscode-remote-extensionpack\r\nms-vscode.cmake-tools\r\nms-vscode.cpptools\r\noctref.vetur\r\nrust-lang.rust-analyzer\r\ns-nlf-fh.glassit\r\nseanwu.vscode-qt-for-python\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\nteabyii.ayu\r\ntranhl.find-then-jump\r\nvadimcn.vscode-lldb\r\n```\r\n\r\n![image](https://www.depthbomb.net/wp-content/uploads/2020/09/vscode.png)",
+    "content": "# Extension一覧\r\n\r\n* Ayu\r\n* Bash beautify\r\n* Beautify css/sass/scss/less\r\n* Bookmarks\r\n* C/C++\r\n* C#\r\n* CMake Tools\r\n* Code Runner\r\n* CodeLLDB\r\n* Docker\r\n* EditorConfig for VS Code\r\n* Even Better TOML\r\n* Find Then Jump\r\n* Flake8\r\n* Git Graph\r\n* gitignore\r\n* GitLens\r\n* GlassIt-VSC\r\n* Go\r\n* isort\r\n* Japanese Language Pack for Visual Studio Code\r\n* Marp for VS Code\r\n* Path Intellisense\r\n* PlantUML\r\n* Python\r\n* Qt for Python\r\n* Rainbow CSV\r\n* Remote Development\r\n* rust-analyzer\r\n* SSH FS\r\n* Table Formatter\r\n* Vetur\r\n* Vscode Google Translate\r\n\r\n```shell\r\n$ code --list-extensions\r\nalefragnani.Bookmarks\r\nchristian-kohler.path-intellisense\r\ncodezombiech.gitignore\r\neamodio.gitlens\r\nEditorConfig.EditorConfig\r\nformulahendry.code-runner\r\nfunkyremi.vscode-google-translate\r\ngolang.go\r\njebbs.plantuml\r\nKelvin.vscode-sshfs\r\nmarp-team.marp-vscode\r\nmechatroner.rainbow-csv\r\nmhutchie.git-graph\r\nmichelemelluso.code-beautifier\r\nms-azuretools.vscode-docker\r\nMS-CEINTL.vscode-language-pack-ja\r\nms-dotnettools.csharp\r\nms-python.flake8\r\nms-python.isort\r\nms-python.python\r\nms-vscode-remote.vscode-remote-extensionpack\r\nms-vscode.cmake-tools\r\nms-vscode.cpptools\r\noctref.vetur\r\nrust-lang.rust-analyzer\r\ns-nlf-fh.glassit\r\nseanwu.vscode-qt-for-python\r\nshakram02.bash-beautify\r\nshuworks.vscode-table-formatter\r\ntamasfe.even-better-toml\r\nteabyii.ayu\r\ntranhl.find-then-jump\r\ntwxs.cmake\r\nvadimcn.vscode-lldb\r\n```\r\n\r\n![image](https://www.depthbomb.net/wp-content/uploads/2020/09/vscode.png)",
     "pub_date": "2017-02-08T16:18:28.917Z",
     "user": 2,
     "tags": [
@@ -3998,6 +3998,21 @@
       8,
       16,
       55
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 258,
+  "fields": {
+    "title": "WSL2のDockerでGUIを使う",
+    "content": "# そのまま立ち上げたコンテナでGUIを起動する\r\n\r\nまずはコンテナを起動\r\n\r\n```console\r\n$ docker run -v /mnt/wslg:/mnt/wslg -v /tmp/.X11-unix:/tmp/.X11-unix -it --rm debian /bin/bash\r\n```\r\n\r\nコンテナに入ったら環境を更新\r\n\r\n```console\r\n# apt update && apt upgrade -y\r\n```\r\n\r\n必要な環境変数を設定\r\n\r\n```console\r\n# apt install -y vim\r\n# vim .bashrc\r\n# source .bashrc\r\n```\r\n\r\n```sh\r\n# .bashrc\r\nexport DISPLAY=:0\r\nexport PULSE_SERVER=unix:/mnt/wslg/PulseServer\r\nexport WAYLAND_DISPLAY=wayland-0\r\nexport XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir\r\n```\r\n\r\nGUIアプリをインストールして起動\r\n\r\n```console\r\n# apt install -y x11-apps\r\n# xeyes\r\n```\r\n\r\n# Dockerfileを用意してGUIを起動\r\n\r\nまずはDockerfileを作成\r\n\r\n```sh\r\n# Dockerfile\r\nFROM debian:latest\r\nVOLUME /mnt/wslg\r\nVOLUME /tmp/.X11-unix\r\nARG DISPLAY\r\nARG PULSE_SERVER\r\nARG WAYLAND_DISPLAY\r\nARG XDG_RUNTIME_DIR\r\nENV DISPLAY $DISPLAY\r\nENV PULSE_SERVER $PULSE_SERVER\r\nENV WAYLAND_DISPLAY $WAYLAND_DISPLAY\r\nENV XDG_RUNTIME_DIR $XDG_RUNTIME_DIR\r\nRUN\tapt update && apt upgrade -y\r\nRUN\tapt install -y x11-apps\r\nCMD xeyes\r\n```\r\n\r\nDockerfileからイメージを作成\r\n\r\n```console\r\n$ docker build \\\r\n    --build-arg DISPLAY=$DISPLAY \\\r\n    --build-arg PULSE_SERVER=$PULSE_SERVER \\\r\n    --build-arg WAYLAND_DISPLAY=$WAYLAND_DISPLAY \\\r\n    --build-arg XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \\\r\n    . -t guidebian\r\n```\r\n\r\n作成したイメージからコンテナを起動\r\n\r\n```console\r\n$ docker run -v /mnt/wslg:/mnt/wslg -v /tmp/.X11-unix:/tmp/.X11-unix -it --rm guidebian\r\n```",
+    "pub_date": "2023-08-06T02:25:02.279Z",
+    "user": 2,
+    "tags": [
+      1,
+      52,
+      70
     ]
   }
 }

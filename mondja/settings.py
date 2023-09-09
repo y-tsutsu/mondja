@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_docutils',
+    'fontawesomefree',
     'gunicorn',
     'social_django',
     'app.apps.AppConfig',

@@ -35,15 +35,15 @@
                     <div class="col-md-6 col-xs-6">
                         <button type="button" onclick="location.href='{% url 'social:begin' 'facebook' %}'"
                             class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}>
-                            <i class="fab fa-facebook fa-lg fa-fw"></i>
+                            <i class="fa-brands fa-facebook fa-lg fa-fw"></i>
                             Facebook
                         </button>
                     </div>
                     <div class="col-md-6 col-xs-6">
                         <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'"
                             class="btn btn-default mysociallogin" {% if not user.is_anonymous %} disabled {% endif %}>
-                            <i class="fab fa-twitter fa-lg fa-fw"></i>
-                            Twitter
+                            <i class="fa-brands fa-x-twitter fa-lg fa-fw"></i>
+                            X-Twitter
                         </button>
                     </div>
                 </div>

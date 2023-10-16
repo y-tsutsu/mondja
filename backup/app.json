@@ -549,15 +549,6 @@
   }
 },
 {
-  "model": "app.tag",
-  "pk": 70,
-  "fields": {
-    "name": "WSL2",
-    "pub_date": "2023-02-10T04:00:02.694Z",
-    "user": 2
-  }
-},
-{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -3981,7 +3972,7 @@
     "tags": [
       1,
       52,
-      70
+      67
     ]
   }
 },
@@ -4012,7 +4003,23 @@
     "tags": [
       1,
       52,
-      70
+      62,
+      67
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 259,
+  "fields": {
+    "title": "WSL2上でWestonが起動できない場合の対処法",
+    "content": "# Westonのインストールと起動\r\n\r\naptでWestonをインストール\r\n\r\n```console\r\n$ sudo apt install weston\r\n```\r\n\r\nWestonの起動\r\n\r\n```console\r\n$ weston\r\n```\r\n\r\nこれでWestonのウィンドウが表示されない場合は以下のオプションをつける\r\n\r\n```console\r\n$ weston --use-pixman\r\n```",
+    "pub_date": "2023-10-16T09:22:47.732Z",
+    "user": 2,
+    "tags": [
+      1,
+      52,
+      67
     ]
   }
 }

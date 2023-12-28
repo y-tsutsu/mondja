@@ -267,12 +267,6 @@ textarea.mydialog {
     display: none;
 }
 
-#hidden-logout-form button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 /* define bootstrap 5 columns */
 
 .col-xs-1-5,

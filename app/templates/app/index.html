@@ -6,7 +6,6 @@
 <nav id="nav">
     <form id="hidden-logout-form" action="{% url 'logout' %}" method="post">
         {% csrf_token %}
-        <button type="submit">Log-out</button>
     </form>
     <a href="#home" class="fa-solid fa-house">
         <span>Home</span>

@@ -30,8 +30,10 @@ class ViewTests(TestCase):
         self.assertEqual(200, response.status_code)
 
     def test_view_logout(self):
-        response = self.client.get(resolve_url('/logout/'))
+        response = self.client.post(resolve_url('/logout/'))
         self.assertEqual(302, response.status_code)
+        response = self.client.get(resolve_url('/logout/'))
+        self.assertEqual(405, response.status_code)
 
 
 class DatabaseTest(TestCase):

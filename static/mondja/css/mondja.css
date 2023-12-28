@@ -231,7 +231,7 @@ textarea.mydialog {
     font-size: 2.3rem;
 }
 
-/*○ボタン*/
+/* ○ボタン */
 
 #circle-button {
     text-align: center;
@@ -259,6 +259,18 @@ textarea.mydialog {
 #circle-button i:before {
     padding: 0;
     line-height: 3.5rem;
+}
+
+/* 非表示のログアウトフォーム */
+
+#hidden-logout-form {
+    display: none;
+}
+
+#hidden-logout-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* define bootstrap 5 columns */

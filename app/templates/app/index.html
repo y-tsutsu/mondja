@@ -4,6 +4,10 @@
 
 <!-- Nav -->
 <nav id="nav">
+    <form id="hidden-logout-form" action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log-out</button>
+    </form>
     <a href="#home" class="fa-solid fa-house">
         <span>Home</span>
     </a>
@@ -16,7 +20,7 @@
     <a href="https://github.com/y-tsutsu/mondja" class="fa-brands fa-github" target="_blank">
         <span>GitHub</span>
     </a>
-    <a href="/logout/" class="fa-solid fa-right-from-bracket">
+    <a href="#" class="fa-solid fa-right-from-bracket" onclick="submitLogoutForm(event)">
         <span>Log-out</span>
     </a>
 </nav>

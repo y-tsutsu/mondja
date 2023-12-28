@@ -32,5 +32,11 @@ $('.modal').on('shown.bs.modal', function () {
     $(this).find('[autofocus]').focus();
 });
 
+// 非表示のフォームをクリックしてsubmitを実行
+function submitLogoutForm(event) {
+    event.preventDefault();  // デフォルトの動作を抑制してスクロールしてしまうのを防ぐ
+    document.getElementById('hidden-logout-form').submit();
+}
+
 // highlight.js initialize
 hljs.initHighlightingOnLoad();

@@ -4022,5 +4022,19 @@
       67
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 260,
+  "fields": {
+    "title": "画像をハーフトーン化するスクリプト",
+    "content": "# ハーフトーン化\r\n\r\n小さいドットの重なりや大小だけで，写真などの階調（濃淡）を表現する印刷手法．\r\n\r\n```\r\nimport math\r\n\r\nfrom PIL import Image\r\n\r\ndef apply_halftone(image, strength=1.0, grid_size=4, scale=1.0, shift=0, bg_color=(255, 255, 255), gamma=1.0):\r\n    ''' ハーフトーンを適用する関数\r\n        引数: 画像, 強度, グリッドサイズ, スケール, シフト, ドットの色, 背景色, ガンマ\r\n        強度: ハーフトーンの強度 (0.0 - 1.0)\r\n        グリッドサイズ: ドットの間隔\r\n        スケール: ドットの大きさ\r\n        シフト: ドットのシフト\r\n        ドットの色: ドットの色\r\n        背景色: 背景の色\r\n        ガンマ: ガンマ補正\r\n        戻り値: 画像'''\r\n    pixels = image.load()\r\n    width, height = image.size\r\n    for y in range(height):\r\n        for x in range(width):\r\n            original_r, original_g, original_b, alpha = pixels[x, y]\r\n            # 輝度を計算\r\n            luminance = (original_r + original_g + original_b) / 3 / 255.0\r\n            # 対応するグリッドの位置を計算\r\n            grid_x = (x + shift) % grid_size\r\n            grid_y = (y + shift) % grid_size\r\n            # グリッドの中心までの距離を計算\r\n            dist = math.sqrt(grid_x**2 + grid_y**2) * grid_size\r\n            # ドットの大きさを計算\r\n            dot_size = (1 - luminance**gamma) * scale * grid_size\r\n            # 割合を計算\r\n            ratio = min(1, max(0, strength * (1 - (dist - dot_size))))\r\n            # 新しい色を計算\r\n            new_r = ratio * original_r + (1 - ratio) * bg_color[0]\r\n            new_g = ratio * original_g + (1 - ratio) * bg_color[1]\r\n            new_b = ratio * original_b + (1 - ratio) * bg_color[2]\r\n            # ピクセルの色を更新\r\n            pixels[x, y] = (int(new_r), int(new_g), int(new_b), alpha)\r\n    return image\r\n\r\ndef main():\r\n    file_path = 'cullet.png'\r\n    input_image = Image.open(file_path)\r\n    output_image = apply_halftone(input_image, strength=1.0, grid_size=4, scale=100, shift=0, bg_color=(235, 235, 235), gamma=0.05)\r\n    output_image.save(f'halftone_{file_path}')\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n```",
+    "pub_date": "2024-02-13T07:54:32.033Z",
+    "user": 2,
+    "tags": [
+      1,
+      2
+    ]
+  }
 }
 ]

@@ -549,6 +549,15 @@
   }
 },
 {
+  "model": "app.tag",
+  "pk": 70,
+  "fields": {
+    "name": "Chrome",
+    "pub_date": "2024-03-02T04:55:36.297Z",
+    "user": 2
+  }
+},
+{
   "model": "app.memo",
   "pk": 1,
   "fields": {
@@ -4034,6 +4043,19 @@
     "tags": [
       1,
       2
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 261,
+  "fields": {
+    "title": "ChromeのVimライクな操作",
+    "content": "# Vimiumのインストール\r\n\r\nChrome拡張のVimiumをインストールする\r\n\r\n[https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)\r\n\r\n# キーバインドの設定\r\n\r\n`Custom key mappings`に下記の追加設定を行う．\r\n\r\n```\r\nmap h goBack\r\nmap l goForward\r\nmap i LinkHints.activateMode\r\nmap I LinkHints.activateModeToOpenInNewTab\r\n```\r\n\r\n# 操作方法\r\n\r\n### ページの上下スクロール\r\n* `j`で下へスクロール\r\n* `k`で上へスクロール\r\n\r\n### タブの移動\r\n* `J(shift + j)`で左のタブに移動\r\n* `K(shift + k)`で右のタブに移動\r\n\r\n### ページの戻る・進む\r\n* `h`で履歴を戻る\r\n* `l`で履歴を進む\r\n\r\n### リンクのクリック\r\n* `i`で現タブでリンク先のページへ移動\r\n* `I(shift + i)`で新規タブでリンク先のページへ移動\r\n\r\n### ページの最上部と最下部\r\n* `gg`で最上部にスクロール\r\n* `G`で最下部にスクロール\r\n\r\n### 検索\r\n* `/`でページ内検索",
+    "pub_date": "2024-03-02T04:55:36.286Z",
+    "user": 2,
+    "tags": [
+      70
     ]
   }
 }

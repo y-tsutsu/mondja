@@ -3583,7 +3583,7 @@
   "pk": 229,
   "fields": {
     "title": "CMakeLists.txtの最低限の記述",
-    "content": "# CMakeLists.txtの基本的な内容\r\n\r\n```\r\ncmake_minimum_required(VERSION 3.0.0)\r\nproject(eglsample VERSION 0.1.0)\r\n\r\nset(CMAKE_CONFIGURATION_TYPES \"Debug;Release\" CACHE STRING \"limited configs\" FORCE)\r\n\r\nadd_executable(eglsample\r\n    eglsample.cpp\r\n)\r\n\r\ntarget_compile_features(eglsample\r\n    PRIVATE cxx_std_17\r\n)\r\n\r\nfind_package(X11 REQUIRED)\r\nfind_package(PNG REQUIRED)\r\nfind_library(EGL_LIBRARY NAMES EGL)\r\nfind_library(GLES2_LIBRARY NAMES GLESv2)\r\n\r\ntarget_link_libraries(eglsample\r\n    ${X11_LIBRARIES}\r\n    ${EGL_LIBRARY}\r\n    ${GLES2_LIBRARY}\r\n    ${PNG_LIBRARIES}\r\n)\r\n```\r\n\r\n# ビルド（Release/Debug）\r\n\r\n```\r\n$ mkdir build && cd build\r\n$ cmake -DCMAKE_BUILD_TYPE=Release(Debug) ..\r\n$ cmake --build .\r\n```",
+    "content": "# CMakeLists.txtの基本的な内容\r\n\r\n```\r\ncmake_minimum_required(VERSION 3.0.0)\r\nproject(eglsample VERSION 0.1.0)\r\n\r\nset(CMAKE_CONFIGURATION_TYPES \"Debug;Release\" CACHE STRING \"limited configs\" FORCE)\r\n\r\nadd_executable(eglsample\r\n    eglsample.cpp\r\n)\r\n\r\ntarget_compile_features(eglsample\r\n    PRIVATE cxx_std_17\r\n)\r\n\r\nfind_package(X11 REQUIRED)\r\nfind_package(PNG REQUIRED)\r\nfind_library(EGL_LIBRARY NAMES EGL)\r\nfind_library(GLES2_LIBRARY NAMES GLESv2)\r\n\r\ntarget_link_libraries(eglsample\r\n    ${X11_LIBRARIES}\r\n    ${EGL_LIBRARY}\r\n    ${GLES2_LIBRARY}\r\n    ${PNG_LIBRARIES}\r\n)\r\n```\r\n\r\n# ビルド（Release/Debug）\r\n\r\n```\r\n$ mkdir build && cd build\r\n$ cmake -DCMAKE_BUILD_TYPE=Release(or Debug) ..\r\n$ cmake --build .\r\n```",
     "pub_date": "2020-06-03T15:07:00.865Z",
     "user": 2,
     "tags": [
@@ -4056,6 +4056,21 @@
     "user": 2,
     "tags": [
       70
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 262,
+  "fields": {
+    "title": "CMakeLists.txtの最低限の記述（最新版）",
+    "content": "# CMakeLists.txtの基本的な内容\r\n\r\n```\r\ncmake_minimum_required(VERSION 3.0.0)\r\nproject(eglsample VERSION 0.1.0)\r\n\r\nset(CMAKE_CONFIGURATION_TYPES \"Debug;Release\" CACHE STRING \"limited configs\" FORCE)\r\n\r\nadd_executable(eglsample\r\n    eglsample.cpp\r\n)\r\n\r\ntarget_compile_features(eglsample\r\n    PRIVATE cxx_std_23\r\n)\r\n\r\ntarget_compile_options(eglsample\r\n    PRIVATE -O2 -Wall\r\n)\r\n\r\nfind_package(X11 REQUIRED)\r\nfind_package(PNG REQUIRED)\r\nfind_library(EGL_LIBRARY NAMES EGL)\r\nfind_library(GLES2_LIBRARY NAMES GLESv2)\r\n\r\ntarget_link_libraries(eglsample\r\n    ${X11_LIBRARIES}\r\n    ${EGL_LIBRARY}\r\n    ${GLES2_LIBRARY}\r\n    ${PNG_LIBRARIES}\r\n)\r\n```\r\n\r\n# ビルド（Release/Debug）\r\n\r\n```\r\n$ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release(or Debug)\r\n$ cmake --build ./build\r\n```",
+    "pub_date": "2024-06-12T07:29:22.242Z",
+    "user": 2,
+    "tags": [
+      1,
+      8,
+      16
     ]
   }
 }

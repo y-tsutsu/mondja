@@ -5,7 +5,7 @@ jobs: # 1回の実行の基本作業単位
     working_directory: ~/mondja
     docker: # Docker でステップを実行します
       # CircleCI Python イメージは https://hub.docker.com/r/cimg/python/ で入手できます
-      - image: cimg/python:3.12
+      - image: cimg/python:3.13
         environment: # プライマリコンテナの環境変数
           PIPENV_VENV_IN_PROJECT: true
           # DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable

@@ -12,13 +12,17 @@ coverage = "*"
 [packages]
 django = "*"
 django-docutils = "*"
-django-heroku = "*"
+dj-database-url = "*"
+dj-static = "*"
 fontawesomefree = "*"
 gunicorn = "*"
 markdown = "*"
+psycopg2-binary = "*"
 pydenticon = "*"
+python-decouple = "*"
 python-social-auth = "*"
 social-auth-app-django = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.13"

@@ -1,0 +1,24 @@
+databases:
+  - name: mondja
+    databaseName: mondja
+    user: mondja
+    plan: free
+    region: singapore
+
+services:
+  - type: web
+    name: mondja_demo
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn mondja.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mondja
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+    plan: free
+    region: singapore

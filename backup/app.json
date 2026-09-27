@@ -4103,5 +4103,34 @@
       52
     ]
   }
+},
+{
+  "model": "app.memo",
+  "pk": 265,
+  "fields": {
+    "title": "Dockerコンテナ内でとりあえず一般ユーザで作業する方法",
+    "content": "# コンテナを起動\r\n\r\nとりあえず使い捨て(--rm)でコンテナを起動\r\n\r\n```console\r\n$ docker run -it --rm debian /bin/bash\r\n```\r\n\r\n# 一般ユーザに切り替え\r\n\r\n一般ユーザを生成して最低限の設定を行って切り替え\r\n\r\n```console\r\n# apt update && apt upgrade -y\r\n# apt install -y sudo\r\n# useradd -m myusr\r\n# usermod -aG sudo myusr\r\n# passwd myusr\r\n# chsh -s /bin/bash myusr\r\n# su - myusr\r\n```\r\n\r\n# 一般ユーザでプロンプトの色つけ\r\n\r\n```console\r\n$ sed -i 's/^# *force_color_prompt=yes/force_color_prompt=yes/' ~/.bashrc\r\n$ source .bashrc\r\n```",
+    "pub_date": "2026-04-04T06:44:34.975Z",
+    "user": 2,
+    "tags": [
+      1,
+      52,
+      62
+    ]
+  }
+},
+{
+  "model": "app.memo",
+  "pk": 298,
+  "fields": {
+    "title": "Weston上でフォントがうまく読み込まれない対策",
+    "content": "# フォントのインストール\r\n\r\n日本語入りのフォントの他UI向けフォントなどもインストールする\r\n\r\n```console\r\n$ sudo apt install -y fonts-noto-cjk fonts-dejavu-core\r\n$ sudo apt install -y fonts-noto-core fonts-noto-ui-core fonts-noto-mono fonts-liberation fonts-freefont-ttf\r\n```\r\n# フォントの優先順位の設定\r\n\r\nfontconfigで優先順位を指定する\r\n\r\n```console\r\n$ mkdir -p ~/.config/fontconfig\r\n$ vim ~/.config/fontconfig/fonts.conf\r\n```\r\n\r\n`fonts.conf`内では下記のように優先順位を指定する\r\n\r\n```xml\r\n<?xml version=\"1.0\"?>\r\n<!DOCTYPE fontconfig SYSTEM \"fonts.dtd\">\r\n<fontconfig>\r\n\r\n  <!-- sans の優先順位 -->\r\n  <alias>\r\n    <family>sans-serif</family>\r\n    <prefer>\r\n      <family>Noto Sans</family>\r\n      <family>DejaVu Sans</family>\r\n      <family>Noto Sans CJK JP</family>\r\n    </prefer>\r\n  </alias>\r\n\r\n</fontconfig>\r\n```\r\n\r\n# 設定の反映\r\n\r\nフォントキャッシュを更新\r\n\r\n```console\r\n$ fc-cache -fv\r\n```",
+    "pub_date": "2026-04-12T11:36:02.681Z",
+    "user": 2,
+    "tags": [
+      1,
+      52
+    ]
+  }
 }
 ]
